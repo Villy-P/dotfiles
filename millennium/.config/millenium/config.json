@@ -1,0 +1,109 @@
+{
+  "general": {
+    "accentColor": "DEFAULT_ACCENT_COLOR",
+    "checkForMillenniumUpdates": true,
+    "checkForPluginAndThemeUpdates": true,
+    "injectCSS": true,
+    "injectJavascript": true,
+    "millenniumUpdateChannel": "stable",
+    "onMillenniumUpdate": 1,
+    "shouldShowThemePluginUpdateNotifications": true
+  },
+  "misc": {
+    "hasShownWelcomeModal": true
+  },
+  "network": {
+    "proxy": "",
+    "proxyPassword": "",
+    "proxyUsername": ""
+  },
+  "notifications": {
+    "showNotifications": true,
+    "showPluginNotifications": true,
+    "showUpdateNotifications": true
+  },
+  "plugins": {
+    "enabledPlugins": [
+      "extendium"
+    ]
+  },
+  "themes": {
+    "activeTheme": "Steam",
+    "allowedScripts": true,
+    "allowedStyles": true,
+    "conditions": {
+      "Steam": {
+        "Add shelf button": "no",
+        "Always show download bar": "no",
+        "Always show game infos": "no",
+        "Always show sidebar": "yes",
+        "Banner Infos": "no",
+        "Banner position": "Middle (default)",
+        "Big Picture Mode button": "no",
+        "Bigger banner": "no",
+        "Border radius": "8",
+        "Broadcast": "no",
+        "Darken not installed games": "yes",
+        "Digital product info": "no",
+        "Dynamic banner height": "no",
+        "Follow the creators": "no",
+        "Font": "Be Vietnam Pro (default)",
+        "Footer": "no",
+        "Friend icon": "no",
+        "Friend list button": "no",
+        "Game Overlay": "no",
+        "Game cover shiny effect": "no",
+        "Game info box artwork": "no",
+        "Hide group chat": "no",
+        "Info sidebar on right": "no",
+        "Landing Header": "no",
+        "Max Width": "1200",
+        "Mica & Acrylic plugin support": "no",
+        "Mica Transparency": "50",
+        "Navigation buttons": "no",
+        "News button": "no",
+        "Notification button": "no",
+        "Playbar in Banner": "no",
+        "Playbar play button center": "no",
+        "Playbar play button only icon": "no",
+        "Profile pages header": "no",
+        "Recommendations": "no",
+        "Scrollbars": "no",
+        "Sidebar on left": "no",
+        "Sidebar on right": "no",
+        "Sidebar only on hover": "no",
+        "Steam VR button": "no",
+        "Steam-Custom-Artworks Support": "no",
+        "System accent colors": "no",
+        "Tabs Section": "no",
+        "URL bar": "no",
+        "VAC-Ban visibility": "Show",
+        "Wallet balance": "no",
+        "What's New": "Compact",
+        "Window Controls": "Show",
+        "Write a Review": "no"
+      }
+    },
+    "themeColors": {
+      "Steam": {
+        "--st-accent-1": "102, 108, 255",
+        "--st-accent-2": "135, 140, 255",
+        "--st-background": "10, 10, 10",
+        "--st-blue": "75, 137, 239",
+        "--st-blue-hover": "100, 154, 242",
+        "--st-color-1": "17, 17, 17",
+        "--st-color-2": "30, 30, 30",
+        "--st-color-3": "20, 20, 20",
+        "--st-color-4": "24, 24, 24",
+        "--st-color-5": "38, 41, 44",
+        "--st-color-6": "38, 38, 41",
+        "--st-green": "36, 166, 90",
+        "--st-green-hover": "39, 185, 100",
+        "--st-red": "240, 74, 74",
+        "--st-red-hover": "242, 99, 99",
+        "--st-yellow": "239, 141, 75",
+        "--st-yellow-hover": "239, 141, 75"
+      }
+    }
+  }
+}
