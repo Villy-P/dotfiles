@@ -1,0 +1,74 @@
+[kernel]
+linux = "the kernel itself"
+linux-headers = "needed to build dkms modules (nvidia) against the kernel"
+linux-firmware = "firmware blobs for hardware support"
+amd-ucode = "AMD CPU microcode updates, loaded at boot"
+
+[bootloader]
+grub = "bootloader"
+efibootmgr = "manage UEFI boot entries"
+
+[base_system]
+base = "core Arch base package group"
+base-devel = "build tools (makepkg deps, compilers, etc), needed for AUR"
+sudo = "privilege escalation"
+
+[package_management]
+yay = "AUR helper"
+yay-debug = "debug symbols for yay"
+pkgfile = "tool for detecting which package provides a file"
+
+[graphics_drivers]
+nvidia-open-dkms = "open-source nvidia kernel driver modules, built via dkms"
+nvidia-utils = "nvidia userspace utilities/libraries"
+
+[audio]
+pipewire-pulse = "PulseAudio-compatible layer for PipeWire"
+
+[networking]
+networkmanager = "network connection management"
+
+[hyprland_desktop]
+hyprland = "the Hyprland Wayland compositor/window manager"
+hyprpolkitagent = "polkit authentication agent for Hyprland"
+xdg-desktop-portal-hyprland = "desktop portal backend for Hyprland (screen share, file pickers, etc)"
+rose-pine-hyprcursor = "Rose Pine cursor theme for Hyprland"
+rofi = "application launcher"
+waybar = "status bar for Wayland"
+
+[terminal_and_shell]
+kitty = "terminal emulator"
+fastfetch = "system info fetch tool"
+starship = "cross-shell prompt"
+zsh = "shell"
+zsh-autosuggestions = "Zsh plugin for command suggestions based on history"
+zsh-syntax-highlighting = "Zsh plugin for syntax highlighting of commands"
+ex-vi-compat = "vi/ex compatibility, likely a dependency for some tool/workflow"
+
+[editors]
+nano = "simple terminal text editor"
+visual-studio-code-bin = "VS Code, main IDE"
+
+[development]
+git = "version control"
+clang = "C/C++ compiler"
+cmake = "build system generator"
+doxygen = "documentation generator"
+ninja = "build system"
+npm = "Node.js package manager"
+python-pipx = "Python package manager for isolated environments"
+
+[browsers]
+vivaldi = "web browser"
+
+[file_manager]
+dolphin = "KDE file manager"
+ncdu = "terminal file size analyzer"
+
+[gaming]
+steam = "game platform/launcher"
+millennium = "Steam client theming/customization tool"
+
+[fonts]
+ttf-jetbrains-mono-nerd = "JetBrains Mono, patched with Nerd Font icons"
+noto-fonts-emoji = "Noto Emoji font for emoji support"
