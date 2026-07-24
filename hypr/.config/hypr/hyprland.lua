@@ -169,6 +169,14 @@ hl.window_rule({
     move = {"monitor_w / 2 - 700", "40"},
 })
 
+hl.window_rule({
+    name = "float-tui-fs",
+    match = { class = "float-tui-fs" },
+    float = true,
+    size = "monitor_w-40 monitor_h-80",
+    move = {"20", "40"},
+})
+
 -- Default curves and animations, see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Animations/
 hl.curve("easeOutQuint",   { type = "bezier", points = { {0.23, 1},    {0.32, 1}    } })
 hl.curve("easeInOutCubic", { type = "bezier", points = { {0.65, 0.05}, {0.36, 1}    } })

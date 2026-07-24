@@ -2,9 +2,9 @@
     "layer": "top",
     "position": "top",
     "height": 30,
-    "modules-left": [],
+    "modules-left": ["custom/btop"],
     "modules-center": ["clock"],
-    "modules-right": ["network"],
+    "modules-right": ["network", "pulseaudio"],
 
     "clock": {
         "format": "{:%I:%M %p   %A, %B %d}",
@@ -17,5 +17,22 @@
         "format-disconnected": "⚠ Disconnected",
         "tooltip-format": "{ifname} via {gwaddr}",
         "on-click": "kitty --class float-tui-tr -e wifitui"
+    },
+
+    "custom/btop": {
+        "format": "  ",
+        "on-click": "kitty --class float-tui-fs -e btop"
+    },
+
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "format-muted": "🔇 Muted",
+        "format-icons": {
+            "headphone": "🎧",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol",
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%"
     }
 }
