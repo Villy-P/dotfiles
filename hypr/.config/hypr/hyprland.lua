@@ -154,11 +154,19 @@ hl.config({
 })
 
 hl.window_rule({
-    name = "float-wifitui",
-    match = { class = "wifitui-float" },
+    name = "float-tui-tr",
+    match = { class = "float-tui-tr" },
     float = true,
     size = "700 900",
     move = {"monitor_w - 720", "40"},
+})
+
+hl.window_rule({
+    name = "float-tui-t",
+    match = { class = "float-tui-t" },
+    float = true,
+    size = "1400 500",
+    move = {"monitor_w / 2 - 700", "40"},
 })
 
 -- Default curves and animations, see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Animations/
