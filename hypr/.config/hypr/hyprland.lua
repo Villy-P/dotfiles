@@ -66,6 +66,7 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("waybar")
     hl.exec_cmd("wpaperd")
     hl.exec_cmd("wal")
+    hl.exec_cmd("pypr &")
 end)
 
 
@@ -150,6 +151,14 @@ hl.config({
     animations = {
         enabled = true,
     },
+})
+
+hl.window_rule({
+    name = "float-wifitui",
+    match = { class = "wifitui-float" },
+    float = true,
+    size = "700 900",
+    move = {"monitor_w - 720", "40"},
 })
 
 -- Default curves and animations, see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Animations/

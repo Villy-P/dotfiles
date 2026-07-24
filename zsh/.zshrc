@@ -33,3 +33,5 @@ export COPILOT_HOME="$XDG_CONFIG_HOME"/copilot
 
 # Run on startup
 fastfetch
+# Created by `pipx` on 2026-07-24 21:23:22
+export PATH="$PATH:/home/valerius/.local/bin"
