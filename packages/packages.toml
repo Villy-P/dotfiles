@@ -22,6 +22,7 @@ wifitui-bin = "terminal WiFi manager"
 [terminal_utils]
 jq = "JSON processor"
 stow = "manage dotfiles with symlinks"
+wl-clipboard = "copy/paste to/from the Wayland clipboard"
 
 [package_management]
 yay = "AUR helper"
@@ -84,3 +85,8 @@ millennium = "Steam client theming/customization tool"
 [fonts]
 ttf-jetbrains-mono-nerd = "JetBrains Mono, patched with Nerd Font icons"
 noto-fonts-emoji = "Noto Emoji font for emoji support"
+
+[screenshots]
+grim = "screenshot utility for Wayland"
+slurp = "select a region of the screen for screenshots"
+swappy = "screenshot annotation tool"

@@ -10,6 +10,7 @@ efibootmgr
 ex-vi-compat
 fastfetch
 git
+grim
 grub
 hyprland
 hyprpolkitagent
@@ -33,13 +34,16 @@ python-pip
 python-pipx
 python-pywal
 rofi
+slurp
 starship
 steam
 stow
 sudo
+swappy
 ttf-jetbrains-mono-nerd
 vivaldi
 waybar
+wl-clipboard
 wpaperd
 xdg-desktop-portal-hyprland
 zsh
