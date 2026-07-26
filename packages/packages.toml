@@ -13,6 +13,16 @@ base = "core Arch base package group"
 base-devel = "build tools (makepkg deps, compilers, etc), needed for AUR"
 sudo = "privilege escalation"
 
+[terminal_ui]
+btop = "resource monitor"
+calcure = "calendar TUI"
+pulsemixer = "terminal mixer for PulseAudio/PipeWire"
+wifitui-bin = "terminal WiFi manager"
+
+[terminal_utils]
+jq = "JSON processor"
+stow = "manage dotfiles with symlinks"
+
 [package_management]
 yay = "AUR helper"
 yay-debug = "debug symbols for yay"
@@ -35,6 +45,7 @@ xdg-desktop-portal-hyprland = "desktop portal backend for Hyprland (screen share
 rose-pine-hyprcursor = "Rose Pine cursor theme for Hyprland"
 rofi = "application launcher"
 waybar = "status bar for Wayland"
+wpaperd = "wallpaper daemon for Wayland"
 
 [terminal_and_shell]
 kitty = "terminal emulator"
@@ -57,6 +68,7 @@ doxygen = "documentation generator"
 ninja = "build system"
 npm = "Node.js package manager"
 python-pipx = "Python package manager for isolated environments"
+python-pywal = "Python tool for generating color schemes from images"
 
 [browsers]
 vivaldi = "web browser"
