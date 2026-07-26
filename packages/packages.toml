@@ -6,12 +6,17 @@ amd-ucode = "AMD CPU microcode updates, loaded at boot"
 
 [bootloader]
 grub = "bootloader"
+grub-btrfs = "GRUB plugin for booting Btrfs snapshots"
 efibootmgr = "manage UEFI boot entries"
 
 [base_system]
 base = "core Arch base package group"
 base-devel = "build tools (makepkg deps, compilers, etc), needed for AUR"
+btrfs-progs = "Btrfs filesystem utilities"
+snapper = "Btrfs snapshot management tool"
+zram-generator = "create compressed swap in RAM"
 sudo = "privilege escalation"
+inotify-tools = "file system event monitoring"
 
 [terminal_ui]
 btop = "resource monitor"
@@ -26,7 +31,6 @@ wl-clipboard = "copy/paste to/from the Wayland clipboard"
 
 [package_management]
 yay = "AUR helper"
-yay-debug = "debug symbols for yay"
 pkgfile = "tool for detecting which package provides a file"
 
 [graphics_drivers]
@@ -55,7 +59,6 @@ starship = "cross-shell prompt"
 zsh = "shell"
 zsh-autosuggestions = "Zsh plugin for command suggestions based on history"
 zsh-syntax-highlighting = "Zsh plugin for syntax highlighting of commands"
-ex-vi-compat = "vi/ex compatibility, likely a dependency for some tool/workflow"
 
 [editors]
 nano = "simple terminal text editor"
@@ -91,13 +94,6 @@ grim = "screenshot utility for Wayland"
 slurp = "select a region of the screen for screenshots"
 swappy = "screenshot annotation tool"
 
-[uncategorized]
-btrfs-progs
-grub-btrfs
-inotify-tools
-mkinitcpio
-snapper
-wpa_supplicant
-zram-generator
-bluetui
-bluez
+[bluetooth]
+bluez = "Bluetooth protocol stack"
+bluetui = "terminal-based Bluetooth manager"

@@ -24,7 +24,6 @@ kitty
 linux
 linux-firmware
 linux-headers
-mkinitcpio
 nano
 ncdu
 networkmanager
@@ -51,7 +50,6 @@ ttf-jetbrains-mono-nerd
 vivaldi
 waybar
 wl-clipboard
-wpa_supplicant
 wpaperd
 xdg-desktop-portal-hyprland
 zram-generator
