@@ -33,7 +33,10 @@ export BUN_INSTALL="$XDG_DATA_HOME"/bun
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export COPILOT_HOME="$XDG_CONFIG_HOME"/copilot
 
+# Set PATH variables 
+export PATH="$PATH
+:/home/valerius/.local/bin
+:/home/valerius/dotfiles/scripts"
+
 # Run on startup
 fastfetch
-# Created by `pipx` on 2026-07-24 21:23:22
-export PATH="$PATH:/home/valerius/.local/bin"
