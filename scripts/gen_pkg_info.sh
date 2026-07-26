@@ -1,4 +1,6 @@
 #!/bin/bash
+set -euo pipefail
+
 PACKAGE_DIR=~/dotfiles/packages
 PACKAGE_TOML="$PACKAGE_DIR/packages.toml"
 
