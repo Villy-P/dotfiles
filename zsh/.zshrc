@@ -38,5 +38,15 @@ export PATH="$PATH
 :/home/valerius/.local/bin
 :/home/valerius/dotfiles/scripts"
 
+# Custom Alias Commands
+lazy-commit() {
+    if [ -z "$1" ]; then
+        echo "Usage: lazy-commit <commit-message>"
+        return 1
+    fi
+
+    git add . && git commit -m "$1" && git push
+}
+
 # Run on startup
 fastfetch
