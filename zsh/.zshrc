@@ -14,8 +14,8 @@ eval "$(starship init zsh)"
 
 # Set up key bindings
 bindkey '^H' backward-kill-word
-bindkey ';2D' backward-word
-bindkey ';2C' forward-word
+bindkey ';5D' backward-word
+bindkey ';5C' forward-word
 
 # Enable plugins
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
