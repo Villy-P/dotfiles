@@ -9,5 +9,10 @@
     "files.exclude": {
         "**/.git": false
     },
-    "search.followSymlinks": false
+    "search.followSymlinks": false,
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.autoIndentOnPaste": true,
+    "telemetry.feedback.enabled": false,
+    "telemetry.telemetryLevel": "off"
 }
