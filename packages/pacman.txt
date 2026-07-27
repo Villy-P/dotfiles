@@ -2,6 +2,7 @@ amd-ucode
 base
 base-devel
 btop
+btrfs-progs
 clang
 cmake
 dolphin
@@ -12,13 +13,16 @@ fastfetch
 git
 grim
 grub
+grub-btrfs
 hyprland
 hyprpolkitagent
+inotify-tools
 jq
 kitty
 linux
 linux-firmware
 linux-headers
+mkinitcpio
 nano
 ncdu
 networkmanager
@@ -35,6 +39,7 @@ python-pipx
 python-pywal
 rofi
 slurp
+snapper
 starship
 steam
 stow
@@ -44,8 +49,10 @@ ttf-jetbrains-mono-nerd
 vivaldi
 waybar
 wl-clipboard
+wpa_supplicant
 wpaperd
 xdg-desktop-portal-hyprland
+zram-generator
 zsh
 zsh-autosuggestions
 zsh-syntax-highlighting

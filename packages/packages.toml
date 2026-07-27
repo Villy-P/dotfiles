@@ -90,3 +90,12 @@ noto-fonts-emoji = "Noto Emoji font for emoji support"
 grim = "screenshot utility for Wayland"
 slurp = "select a region of the screen for screenshots"
 swappy = "screenshot annotation tool"
+
+[uncategorized]
+btrfs-progs
+grub-btrfs
+inotify-tools
+mkinitcpio
+snapper
+wpa_supplicant
+zram-generator
