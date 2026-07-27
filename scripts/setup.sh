@@ -25,6 +25,7 @@ stow ~/dotfiles/rofi
 stow ~/dotfiles/waybar
 stow ~/dotfiles/wpaperd
 stow ~/dotfiles/zsh
+stow ~/dotfiles/btop
 
 chsh -s /usr/bin/zsh
 
