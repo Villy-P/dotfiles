@@ -99,3 +99,5 @@ mkinitcpio
 snapper
 wpa_supplicant
 zram-generator
+bluetui
+bluez
