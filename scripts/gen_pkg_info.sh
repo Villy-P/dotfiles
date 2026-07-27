@@ -10,3 +10,5 @@ pacman -Qqem > "$PACKAGE_DIR/aur.txt"
 yay -Qqe | while IFS= read -r package; do
     grep -q "^$package" $PACKAGE_TOML || echo "$package" >> $PACKAGE_TOML
 done
+
+code --list-extensions > "$PACKAGE_DIR/vscode.txt"

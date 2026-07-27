@@ -1,0 +1,9 @@
+bradlc.vscode-tailwindcss
+dbaeumer.vscode-eslint
+esbenp.prettier-vscode
+mads-hartmann.bash-ide-vscode
+ms-vscode.cmake-tools
+ms-vscode.cpp-devtools
+svelte.svelte-vscode
+tamasfe.even-better-toml
+vscode-icons-team.vscode-icons

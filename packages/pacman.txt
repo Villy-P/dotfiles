@@ -10,7 +10,6 @@ cmake
 dolphin
 doxygen
 efibootmgr
-ex-vi-compat
 fastfetch
 git
 grim
