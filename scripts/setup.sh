@@ -26,6 +26,8 @@ stow ~/dotfiles/waybar
 stow ~/dotfiles/wpaperd
 stow ~/dotfiles/zsh
 stow ~/dotfiles/btop
+stow ~/dotfiles/code
+stow ~/dotfiles/calcure
 
 chsh -s /usr/bin/zsh
 

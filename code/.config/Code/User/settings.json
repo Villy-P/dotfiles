@@ -1,0 +1,13 @@
+{
+    "workbench.iconTheme": "vscode-icons",
+    "files.autoSave": "afterDelay",
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    "animations.Install-Method": "Apc Customize UI++",
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "files.exclude": {
+        "**/.git": false
+    },
+    "search.followSymlinks": false
+}
