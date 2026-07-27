@@ -14,5 +14,10 @@
     "editor.formatOnPaste": true,
     "editor.autoIndentOnPaste": true,
     "telemetry.feedback.enabled": false,
-    "telemetry.telemetryLevel": "off"
+    "telemetry.telemetryLevel": "off",
+    "terminal.integrated.fontLigatures.enabled": true,
+    "editor.cursorBlinking": "smooth",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.smoothScrolling": true,
+    "git.autofetch": true
 }
