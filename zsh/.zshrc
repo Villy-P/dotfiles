@@ -48,5 +48,29 @@ lazy-commit() {
     git add . && git commit -m "$1" && git push
 }
 
+a() {
+    local command="$1"
+    shift
+
+    case "$command" in
+        "pc")
+            local msg="$1"
+            if [ -z "$msg" ]; then
+                echo -n "Commit message: "
+                read msg
+                if [ -z "$msg" ]; then
+                    echo "Commit message cannot be empty."
+                    return 1
+                fi
+            fi
+            git add . && git commit -m "$msg" && git push
+            ;;
+        *)
+            echo "Unknown command: $command"
+            return 1
+            ;;
+    esac
+}
+
 # Run on startup
 fastfetch
