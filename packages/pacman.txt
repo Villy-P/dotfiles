@@ -31,6 +31,7 @@ noto-fonts-emoji
 npm
 nvidia-open-dkms
 nvidia-utils
+os-prober
 pipewire-pulse
 pkgfile
 pulsemixer

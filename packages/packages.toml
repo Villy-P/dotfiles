@@ -7,6 +7,7 @@ amd-ucode = "AMD CPU microcode updates, loaded at boot"
 [bootloader]
 grub = "bootloader"
 grub-btrfs = "GRUB plugin for booting Btrfs snapshots"
+os-prober = "detect other OSes for GRUB"
 efibootmgr = "manage UEFI boot entries"
 
 [base_system]
