@@ -1,6 +1,7 @@
 bradlc.vscode-tailwindcss
 dbaeumer.vscode-eslint
 esbenp.prettier-vscode
+llvm-vs-code-extensions.vscode-clangd
 mads-hartmann.bash-ide-vscode
 ms-vscode.cmake-tools
 ms-vscode.cpp-devtools
