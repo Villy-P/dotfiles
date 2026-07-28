@@ -1,23 +1,31 @@
 {
     "workbench.iconTheme": "vscode-icons",
-    "files.autoSave": "afterDelay",
+
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
-    "animations.Install-Method": "Apc Customize UI++",
-    "git.enableSmartCommit": true,
-    "git.confirmSync": false,
-    "files.exclude": {
-        "**/.git": false
-    },
-    "search.followSymlinks": false,
+
+    "terminal.integrated.fontLigatures.enabled": true,
+
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true,
     "editor.autoIndentOnPaste": true,
-    "telemetry.feedback.enabled": false,
-    "telemetry.telemetryLevel": "off",
-    "terminal.integrated.fontLigatures.enabled": true,
     "editor.cursorBlinking": "smooth",
     "editor.cursorSmoothCaretAnimation": "on",
     "editor.smoothScrolling": true,
-    "git.autofetch": true
+
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "git.autofetch": true,
+
+    "animations.Install-Method": "Apc Customize UI++",
+
+    "files.autoSave": "afterDelay",
+    "files.exclude": {
+        "**/.git": false
+    },
+
+    "search.followSymlinks": false,
+    
+    "telemetry.feedback.enabled": false,
+    "telemetry.telemetryLevel": "off"
 }
