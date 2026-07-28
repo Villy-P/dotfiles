@@ -74,6 +74,9 @@ ninja = "build system"
 npm = "Node.js package manager"
 python-pipx = "Python package manager for isolated environments"
 python-pywal = "Python tool for generating color schemes from images"
+boost = "C++ libraries"
+freeglut = "OpenGL utility library"
+glew = "OpenGL Extension Wrangler Library"
 
 [browsers]
 vivaldi = "web browser"

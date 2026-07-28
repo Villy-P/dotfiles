@@ -3,6 +3,7 @@ base
 base-devel
 bluetui
 bluez
+boost
 btop
 btrfs-progs
 clang
@@ -11,7 +12,9 @@ dolphin
 doxygen
 efibootmgr
 fastfetch
+freeglut
 git
+glew
 grim
 grub
 grub-btrfs
