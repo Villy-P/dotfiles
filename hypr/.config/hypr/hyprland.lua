@@ -171,7 +171,7 @@ hl.window_rule({
     name = "float-tui-t",
     match = { class = "float-tui-t" },
     float = true,
-    size = "1400 500",
+    size = "1400 600",
     move = {"monitor_w / 2 - 700", "40"},
 })
 
