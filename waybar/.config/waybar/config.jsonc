@@ -2,9 +2,9 @@
     "layer": "top",
     "position": "top",
     "height": 30,
-    "modules-left": ["custom/btop"],
+    "modules-left": [],
     "modules-center": ["clock"],
-    "modules-right": ["network", "pulseaudio"],
+    "modules-right": ["custom/btop", "network", "pulseaudio"],
 
     "clock": {
         "format": "{:%I:%M %p   %A, %B %d}",
@@ -12,25 +12,25 @@
     },
 
     "network": {
-        "format-wifi": "  {essid} ({signalStrength}%)",
+        "format-wifi": "  ",
         "format-ethernet": "  {ifname}",
-        "format-disconnected": "⚠ Disconnected",
-        "tooltip-format": "{ifname} via {gwaddr}",
+        "format-disconnected": "󰤭",
+        "tooltip-format": "{ifname} via {gwaddr}\n{essid} ({signalStrength}%)",
         "on-click": "kitty --class float-tui-tr -e wifitui"
     },
 
     "custom/btop": {
-        "format": "  ",
+        "format": "  ",
         "on-click": "kitty --class float-tui-fs -e btop"
     },
 
     "pulseaudio": {
-        "format": "{icon}  {volume}%",
-        "format-muted": "🔇 Muted",
+        "format": "{icon}  ",
+        "format-muted": "󰝟",
         "format-icons": {
-            "headphone": "🎧",
             "default": ["", "", ""]
         },
+        "tooltip-format": "Volume: {volume}%",
         "on-click": "kitty --class float-tui-tr-wide -e pulsemixer",
         "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
         "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%"
