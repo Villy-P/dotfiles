@@ -6,6 +6,7 @@
 
     "terminal.integrated.fontLigatures.enabled": true,
 
+    "editor.fontFamily": "JetBrainsMono Nerd Font, monospace",
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true,
     "editor.autoIndentOnPaste": true,
@@ -27,5 +28,5 @@
     "search.followSymlinks": false,
     
     "telemetry.feedback.enabled": false,
-    "telemetry.telemetryLevel": "off"
+    "telemetry.telemetryLevel": "off",
 }
