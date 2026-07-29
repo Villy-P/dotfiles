@@ -8,6 +8,7 @@
 
     "clock": {
         "format": "{:%I:%M %p   %A, %B %d}",
+        "tooltip-format": "Calendar",
         "on-click": "kitty --class float-tui-t -e calcure"
     },
 
@@ -21,6 +22,7 @@
 
     "custom/btop": {
         "format": "  ",
+        "tooltip-format": "System Monitor",
         "on-click": "kitty --class float-tui-fs -e btop"
     },
 
