@@ -77,5 +77,12 @@ a() {
     esac
 }
 
+alias ls='eza'
+alias ll='eza -l --icons'
+alias la='eza -la --icons'
+alias lt='eza --tree --icons'
+
+alias eject-usb='read -p "Device (e.g. sdb): " dev && udisksctl unmount -b /dev/${dev}1 && udisksctl power-off -b /dev/${dev}'
+
 # Run on startup
 fastfetch

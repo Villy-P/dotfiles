@@ -30,6 +30,7 @@ jq = "JSON processor"
 gum = "tool for prompting users in the terminal"
 expac = "query information about installed packages"
 eza = "modern replacement for ls"
+unzip = "tool for extracting files from ZIP archives"
 stow = "manage dotfiles with symlinks"
 wl-clipboard = "copy/paste to/from the Wayland clipboard"
 
@@ -91,6 +92,7 @@ ncdu = "terminal file size analyzer"
 [gaming]
 steam = "game platform/launcher"
 millennium = "Steam client theming/customization tool"
+prismlauncher = "Minecraft launcher for multiple versions and modpacks"
 
 [fonts]
 ttf-jetbrains-mono-nerd = "JetBrains Mono, patched with Nerd Font icons"
@@ -105,3 +107,7 @@ swappy = "screenshot annotation tool"
 [bluetooth]
 bluez = "Bluetooth protocol stack"
 bluetui = "terminal-based Bluetooth manager"
+
+[usb]
+udiskie = "automatically mount and unmount removable media"
+udisks2 = "D-Bus service for managing removable media"

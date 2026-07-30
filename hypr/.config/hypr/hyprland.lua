@@ -73,6 +73,7 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("wpaperd")
     hl.exec_cmd("wal")
     hl.exec_cmd("pypr &")
+    hl.exec_cmd("udiskie --tray")
 end)
 
 

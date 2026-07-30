@@ -41,6 +41,7 @@ nvidia-utils
 os-prober
 pipewire-pulse
 pkgfile
+prismlauncher
 pulsemixer
 python-pip
 python-pipx
@@ -54,6 +55,9 @@ stow
 sudo
 swappy
 ttf-jetbrains-mono-nerd
+udiskie
+udisks2
+unzip
 vivaldi
 waybar
 wl-clipboard
