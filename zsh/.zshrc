@@ -32,6 +32,7 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export BUN_INSTALL="$XDG_DATA_HOME"/bun
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export COPILOT_HOME="$XDG_CONFIG_HOME"/copilot
+export npm_config_cache="$XDG_CACHE_HOME/npm"
 
 # Set PATH variables 
 export PATH="$PATH
