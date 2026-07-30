@@ -15,6 +15,7 @@ eza
 fastfetch
 freeglut
 git
+github-cli
 glew
 grim
 grub

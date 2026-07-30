@@ -68,6 +68,7 @@ visual-studio-code-bin = "VS Code, main IDE"
 
 [development]
 git = "version control"
+github-cli = "GitHub command-line interface"
 clang = "C/C++ compiler"
 cmake = "build system generator"
 doxygen = "documentation generator"
