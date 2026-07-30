@@ -67,6 +67,7 @@ a() {
                 full_msg="$choice: $msg"
             fi
 
+            echo "Committing with message: $full_msg"
             git add . && git commit -m "$full_msg" && git push
             ;;
         *)
