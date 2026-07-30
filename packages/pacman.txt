@@ -20,6 +20,7 @@ glew
 grim
 grub
 grub-btrfs
+gum
 hyprland
 hyprpolkitagent
 inotify-tools
