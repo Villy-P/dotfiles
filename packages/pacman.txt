@@ -30,6 +30,7 @@ nano
 ncdu
 networkmanager
 ninja
+noto-fonts-cjk
 noto-fonts-emoji
 npm
 nvidia-open-dkms
