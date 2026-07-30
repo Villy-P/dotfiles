@@ -13,7 +13,7 @@
     },
 
     "network": {
-        "format-wifi": "  ",
+        "format-wifi": "   {signalStrength}%   ",
         "format-ethernet": "  {ifname}",
         "format-disconnected": "󰤭",
         "tooltip-format": "{ifname} via {gwaddr}\n{essid} ({signalStrength}%)",
@@ -27,7 +27,7 @@
     },
 
     "pulseaudio": {
-        "format": "{icon}  ",
+        "format": "{icon}  {volume:02d}%  ",
         "format-muted": "󰝟",
         "format-icons": {
             "default": ["", "", ""]
