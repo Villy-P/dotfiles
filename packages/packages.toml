@@ -27,6 +27,7 @@ wifitui-bin = "terminal WiFi manager"
 
 [terminal_utils]
 jq = "JSON processor"
+eza = "modern replacement for ls"
 stow = "manage dotfiles with symlinks"
 wl-clipboard = "copy/paste to/from the Wayland clipboard"
 
@@ -102,4 +103,3 @@ swappy = "screenshot annotation tool"
 [bluetooth]
 bluez = "Bluetooth protocol stack"
 bluetui = "terminal-based Bluetooth manager"
-eza
