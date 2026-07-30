@@ -17,8 +17,6 @@
     "git.enableSmartCommit": true,
     "git.confirmSync": false,
     "git.autofetch": true,
-
-    "animations.Install-Method": "Apc Customize UI++",
     
     "svelte.enable-ts-plugin": true,
 
