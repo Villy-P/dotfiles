@@ -19,6 +19,8 @@
     "git.autofetch": true,
 
     "animations.Install-Method": "Apc Customize UI++",
+    
+    "svelte.enable-ts-plugin": true,
 
     "files.autoSave": "afterDelay",
     "files.exclude": {
