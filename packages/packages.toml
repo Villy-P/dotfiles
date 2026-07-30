@@ -28,6 +28,7 @@ wifitui-bin = "terminal WiFi manager"
 [terminal_utils]
 jq = "JSON processor"
 gum = "tool for prompting users in the terminal"
+expac = "query information about installed packages"
 eza = "modern replacement for ls"
 stow = "manage dotfiles with symlinks"
 wl-clipboard = "copy/paste to/from the Wayland clipboard"
@@ -85,7 +86,6 @@ glew = "OpenGL Extension Wrangler Library"
 vivaldi = "web browser"
 
 [file_manager]
-dolphin = "KDE file manager"
 ncdu = "terminal file size analyzer"
 
 [gaming]

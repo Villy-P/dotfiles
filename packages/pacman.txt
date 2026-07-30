@@ -8,9 +8,9 @@ btop
 btrfs-progs
 clang
 cmake
-dolphin
 doxygen
 efibootmgr
+expac
 eza
 fastfetch
 freeglut
