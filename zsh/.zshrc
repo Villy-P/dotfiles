@@ -48,13 +48,18 @@ a() {
         "pc")
             echo "Select conventional commit type:"
             choice=$(gum choose "feat" "fix" "docs" "style" "refactor" "test" "chore")
-            echo -n "Commit message: "
-            read msg
+            if [ -z "$choice" ]; then
+                echo "No commit type selected. Aborted."
+                return 1
+            fi
+
+            msg=$(gum input --placeholder "Commit message")
             if [ -z "$msg" ]; then
                 echo "Commit message cannot be empty."
                 return 1
             fi
-            git add . && git commit -m "$choice $msg" && git push
+
+            git add . && git commit -m "$choice: $msg" && git push
             ;;
         *)
             echo "Unknown command: $command"
