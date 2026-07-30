@@ -53,13 +53,21 @@ a() {
                 return 1
             fi
 
+            scope=$(gum input --placeholder "Scope (optional, press enter to skip)")
+
             msg=$(gum input --placeholder "Commit message")
             if [ -z "$msg" ]; then
                 echo "Commit message cannot be empty."
                 return 1
             fi
 
-            git add . && git commit -m "$choice: $msg" && git push
+            if [ -n "$scope" ]; then
+                full_msg="$choice($scope): $msg"
+            else
+                full_msg="$choice: $msg"
+            fi
+
+            git add . && git commit -m "$full_msg" && git push
             ;;
         *)
             echo "Unknown command: $command"
