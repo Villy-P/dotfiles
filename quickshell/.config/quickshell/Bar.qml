@@ -28,7 +28,12 @@ Scope {
 
             Rectangle {
                 anchors.fill: parent
-                color: Theme.background
+                color: Qt.rgba(
+                    Theme.surface.r,
+                    Theme.surface.g,
+                    Theme.surface.b,
+                    0.65
+                )
                 radius: 12
 
                 Row {
