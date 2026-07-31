@@ -12,4 +12,6 @@ ms-vscode.cmake-tools
 ms-vscode.cpp-devtools
 svelte.svelte-vscode
 tamasfe.even-better-toml
+theqtcompany.qt-core
+theqtcompany.qt-qml
 vscode-icons-team.vscode-icons

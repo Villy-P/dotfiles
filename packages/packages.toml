@@ -55,6 +55,7 @@ xdg-desktop-portal-hyprland = "desktop portal backend for Hyprland (screen share
 rose-pine-hyprcursor = "Rose Pine cursor theme for Hyprland"
 rofi = "application launcher"
 waybar = "status bar for Wayland"
+quickshell = "Wayland shell for Hyprland"
 wpaperd = "wallpaper daemon for Wayland"
 
 [terminal_and_shell]
@@ -83,6 +84,7 @@ python-pywal = "Python tool for generating color schemes from images"
 boost = "C++ libraries"
 freeglut = "OpenGL utility library"
 glew = "OpenGL Extension Wrangler Library"
+qt6-languageserver = "Qt6 Language Server for IDEs"
 
 [browsers]
 vivaldi = "web browser"
