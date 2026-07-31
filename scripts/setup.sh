@@ -34,6 +34,7 @@ stow ~/dotfiles/zsh
 stow ~/dotfiles/btop
 stow ~/dotfiles/code
 stow ~/dotfiles/calcure
+stow ~/dotfiles/quickshell
 
 chsh -s /usr/bin/zsh
 

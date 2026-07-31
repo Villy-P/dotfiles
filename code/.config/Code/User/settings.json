@@ -1,32 +1,39 @@
 {
-    "workbench.iconTheme": "vscode-icons",
-
-    "explorer.confirmDragAndDrop": false,
-    "explorer.confirmDelete": false,
-
-    "terminal.integrated.fontLigatures.enabled": true,
-
-    "editor.fontFamily": "JetBrainsMono Nerd Font, monospace",
-    "editor.formatOnSave": true,
-    "editor.formatOnPaste": true,
-    "editor.autoIndentOnPaste": true,
-    "editor.cursorBlinking": "smooth",
-    "editor.cursorSmoothCaretAnimation": "on",
-    "editor.smoothScrolling": true,
-
-    "git.enableSmartCommit": true,
-    "git.confirmSync": false,
-    "git.autofetch": true,
-    
-    "svelte.enable-ts-plugin": true,
-
-    "files.autoSave": "afterDelay",
-    "files.exclude": {
-        "**/.git": false
-    },
-
-    "search.followSymlinks": false,
-    
-    "telemetry.feedback.enabled": false,
-    "telemetry.telemetryLevel": "off",
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.editorAssociations": {
+    "*.copilotmd": "vscode.markdown.preview.editor",
+    "*.qrc": "qt-core.qrcEditor",
+    "{git,gitlens,chat-editing-snapshot-text-model,copilot,git-graph,git-graph-3}:/**/*.qrc": "default"
+  },
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  "terminal.integrated.fontLigatures.enabled": true,
+  "editor.fontFamily": "JetBrainsMono Nerd Font, monospace",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.autoIndentOnPaste": true,
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.smoothScrolling": true,
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "git.autofetch": true,
+  "files.autoSave": "afterDelay",
+  "files.exclude": {
+    "**/.git": false
+  },
+  "languageServers": {
+    "qml": {
+      "command": "qml-language-server",
+      "filetypes": [
+        "qml"
+      ]
+    }
+  },
+  "qt-qml.qmlls.customExePath": "/usr/bin/qmlls6",
+  "qt-qml.qmlls.useQmlImportPathEnvVar": true,
+  "search.followSymlinks": false,
+  "svelte.enable-ts-plugin": true,
+  "telemetry.feedback.enabled": false,
+  "telemetry.telemetryLevel": "off"
 }
