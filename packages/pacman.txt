@@ -1,4 +1,5 @@
 amd-ucode
+awww
 base
 base-devel
 bluetui
@@ -29,6 +30,7 @@ kitty
 linux
 linux-firmware
 linux-headers
+matugen
 nano
 ncdu
 networkmanager
@@ -64,7 +66,6 @@ unzip
 vivaldi
 waybar
 wl-clipboard
-wpaperd
 xdg-desktop-portal-hyprland
 zram-generator
 zsh
