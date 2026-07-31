@@ -28,7 +28,6 @@ stow ~/dotfiles/hypr
 stow ~/dotfiles/kitty
 stow ~/dotfiles/millennium
 stow ~/dotfiles/rofi
-stow ~/dotfiles/waybar
 stow ~/dotfiles/zsh
 stow ~/dotfiles/btop
 stow ~/dotfiles/code

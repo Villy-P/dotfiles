@@ -64,7 +64,6 @@ udiskie
 udisks2
 unzip
 vivaldi
-waybar
 wl-clipboard
 xdg-desktop-portal-hyprland
 zram-generator
