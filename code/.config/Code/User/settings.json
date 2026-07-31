@@ -35,5 +35,6 @@
   "search.followSymlinks": false,
   "svelte.enable-ts-plugin": true,
   "telemetry.feedback.enabled": false,
-  "telemetry.telemetryLevel": "off"
+  "telemetry.telemetryLevel": "off",
+  "workbench.colorTheme": "Matugen"
 }

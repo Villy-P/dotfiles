@@ -7,3 +7,11 @@ output_path = "~/.local/state/quickshell/generated/colors.json"
 [templates.kitty]
 input_path = "~/.config/matugen/templates/kitty.conf"
 output_path = "~/.config/kitty/matugen.conf"
+
+[templates.vscode-raw]
+input_path = '~/.config/matugen/templates/vscode-colors'
+output_path = '~/.cache/matugen/vscode-colors'
+
+[templates.vscode-json]
+input_path = '~/.config/matugen/templates/vscode-colors.json'
+output_path = '~/.cache/matugen/vscode-colors.json'
