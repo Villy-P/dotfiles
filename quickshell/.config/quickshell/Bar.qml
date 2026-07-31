@@ -28,7 +28,7 @@ Scope {
 
             Rectangle {
                 anchors.fill: parent
-                color: "#1e1e2e"
+                color: Theme.background
                 radius: 12
 
                 Row {
@@ -44,7 +44,7 @@ Scope {
 
                     Text {
                         text: "󰣇"
-                        color: "#cdd6f4"
+                        color: Theme.text
                         font.pixelSize: 16
                     }
 

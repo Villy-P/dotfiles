@@ -2,5 +2,5 @@ import QtQuick
 
 Text {
     text: Time.time
-    color: "white"
+    color: Theme.text
 }
