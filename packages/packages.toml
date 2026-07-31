@@ -56,7 +56,6 @@ rose-pine-hyprcursor = "Rose Pine cursor theme for Hyprland"
 rofi = "application launcher"
 waybar = "status bar for Wayland"
 quickshell = "Wayland shell for Hyprland"
-wpaperd = "wallpaper daemon for Wayland"
 
 [terminal_and_shell]
 kitty = "terminal emulator"

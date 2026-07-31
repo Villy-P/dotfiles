@@ -24,7 +24,7 @@
   },
   "languageServers": {
     "qml": {
-      "command": "qml-language-server",
+      "command": "qmlls6",
       "filetypes": [
         "qml"
       ]

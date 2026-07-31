@@ -29,12 +29,15 @@ stow ~/dotfiles/kitty
 stow ~/dotfiles/millennium
 stow ~/dotfiles/rofi
 stow ~/dotfiles/waybar
-stow ~/dotfiles/wpaperd
 stow ~/dotfiles/zsh
 stow ~/dotfiles/btop
 stow ~/dotfiles/code
 stow ~/dotfiles/calcure
 stow ~/dotfiles/quickshell
+stow ~/dotfiles/matugen
+
+mkdir -p ~/.config/matugen/templates
+mkdir -p ~/.local/state/quickshell/generated
 
 chsh -s /usr/bin/zsh
 
