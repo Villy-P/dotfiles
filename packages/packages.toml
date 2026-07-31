@@ -68,6 +68,7 @@ zsh-syntax-highlighting = "Zsh plugin for syntax highlighting of commands"
 [editors]
 nano = "simple terminal text editor"
 visual-studio-code-bin = "VS Code, main IDE"
+obsidian = "knowledge base and note-taking app"
 
 [development]
 git = "version control"

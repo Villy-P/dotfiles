@@ -38,6 +38,7 @@ noto-fonts-emoji
 npm
 nvidia-open-dkms
 nvidia-utils
+obsidian
 os-prober
 pipewire-pulse
 pkgfile
