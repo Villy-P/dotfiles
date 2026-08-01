@@ -48,7 +48,6 @@ prismlauncher
 pulsemixer
 python-pip
 python-pipx
-python-pywal
 qt6-languageserver
 quickshell
 rofi
