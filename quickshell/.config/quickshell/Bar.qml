@@ -59,6 +59,8 @@ Scope {
                     anchors.rightMargin: 8
                     anchors.verticalCenter: parent.verticalCenter
                     spacing: 8
+
+                    Widget.Wifi {}
                 }
             }
         }
