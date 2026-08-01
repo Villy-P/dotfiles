@@ -1,5 +1,7 @@
 import QtQuick
+import QtQuick.Controls.Basic
 import QtQuick.Layouts
+import Quickshell
 import Quickshell.Io
 import ".."
 
@@ -52,5 +54,57 @@ Item {
         spacing: 4
         Text { text: root.wifiIcon(); font.pixelSize: 16; color: Theme.text }
         Text { visible: root.connected; text: root.ssid; color: Theme.text }
+    }
+
+    MouseArea {
+        anchors.fill: parent
+        onClicked: popup.visible = !popup.visible
+        cursorShape: Qt.PointingHandCursor
+    }
+
+    PopupWindow {
+        id: popup
+        implicitWidth: 200
+        implicitHeight: 300
+        anchor.item: root
+        anchor.rect.x: 0
+        anchor.rect.y: root.height
+
+        property var networks: []
+        property string connectingSSID: ""
+        property string errorText: ""
+
+        onVisibleChanged: if (visible) rescan()
+
+        function rescan() {
+            errorText = ""
+            scanProcess.running = true
+        }
+
+        Process {
+            id: scanProcess
+            command: [
+                "sh", "-c", 
+                "nmcli dev wifi rescan 2>/dev/null; sleep 1; nmcli -t -f in-use,ssid,signal,security dev wifi list"]
+            stdout: StdioCollector {
+                onStreamFinished: {
+                    const lines = text().trim().split("\n").filter(line => line.length > 0)
+                    const seen = new Set()
+                    const results = []
+                    for (const line of lines) {
+                        const parts = line.split(":")
+                        const inUse = parts[0] === "*"
+                        const ssid = parts[1] || ""
+                        const signal = parseInt(parts[2]) || 0
+                        const security = parts[3] || ""
+                        if (!ssid || seen.has(ssid)) continue
+                        seen.add(ssid)
+                        results.push({ inUse, ssid, signal, security })
+                    }
+                    results.sort((a, b) => b.signal - a.signal)
+                    popup.networks = results
+                }
+            }
+        }
     }
 }
