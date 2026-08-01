@@ -1,10 +1,10 @@
 #browser {
     --colorFg: {{colors.on_surface.default.rgb}} !important;  /* foreground text */
-    --colorFgAlpha: {{colors.on_surface.default.rgba | set_alpha: 0.10}} !important; /* foreground text */
+    --colorFgAlpha: {{colors.on_surface.default.rgba | set_alpha: 0.9}} !important; /* foreground text */
     --colorFgIntense: {{colors.on_surface.default.rgb}} !important; /* foreground text */
-    --colorFgFaded: {{colors.on_surface.default.rgb | set_lightness: -10.0}} !important; /* unfocused window foreground text */
-    --colorFgFadedMore: {{colors.on_surface.default.rgb | set_lightness: -15.0}} !important; /* unfocused window foreground text */
-    --colorFgFadedMost: {{colors.on_surface.default.rgb | set_lightness: -25.0}} !important; /* unfocused window foreground text */
+    --colorFgFaded: {{colors.on_surface.default.rgb | set_lightness: -2.0}} !important; /* unfocused window foreground text */
+    --colorFgFadedMore: {{colors.on_surface.default.rgb | set_lightness: -3.0}} !important; /* unfocused window foreground text */
+    --colorFgFadedMost: {{colors.on_surface.default.rgb | set_lightness: -5.0}} !important; /* unfocused window foreground text */
     --colorBg: {{colors.secondary_container.default.rgb}} !important; /* adress bar and selected tab and settings sidebar */
     --colorBgAlpha: {{colors.secondary_container.default.rgba | set_alpha: 0.90}} !important; /* adress bar and selected tab and settings sidebar */
     --colorBgAlphaHeavy: {{colors.secondary_container.default.rgba | set_alpha: 0.65}} !important; /* adress bar and selected tab and settings sidebar */
@@ -33,13 +33,13 @@
     --colorAccentBgAlphaHeavy: {{colors.surface.default.rgba | set_alpha: 0.35}} !important; /* tab bg color */
     --colorAccentBgDark: {{colors.surface_container_low.default.rgb}} !important; /* n/a */
     --colorAccentBgDarker: {{colors.surface_container_lowest.default.rgb}} !important; /* n/a */
-    --colorAccentBgFaded: {{colors.surface_dim.default.rgb}} !important; /* unfocused tab bg color */
+    --colorAccentBgFaded: {{colors.surface.default.rgb | set_lightness: -4.0}} !important; /* unfocused tab bg color */    
     --colorAccentBgFadedMore: {{colors.surface_container_low.default.rgb}} !important; /* n/a */
     --colorAccentBgFadedMost: {{colors.surface_container_lowest.default.rgb}} !important; /* n/a */
     --colorAccentBorder: {{colors.outline_variant.default.rgb}} !important; /* n/a */
     --colorAccentBorderDark: {{colors.outline_variant.default.rgb | set_lightness: -10.0}} !important; /* n/a */
     --colorAccentFg: {{colors.on_surface.default.rgb}} !important;  /* tab titles and vivaldi sign */
-    --colorAccentFgFaded: {{colors.on_surface_variant.default.rgb | set_lightness: -20.0}} !important; /* tab titles and vivaldi sign */
+    --colorAccentFgFaded: {{colors.on_surface_variant.default.rgb | set_lightness: -6.0}} !important; /* tab titles and vivaldi sign */
     --colorAccentFgAlpha: {{colors.on_surface.default.rgba | set_alpha: 0.15}} !important; /* tab titles and vivaldi sign */
     --colorAccentFgAlphaHeavy: {{colors.on_surface.default.rgba | set_alpha: 0.35}} !important; /* tab titles and vivaldi sign */
     --colorBorder: {{colors.outline.default.rgb}} !important; /* some borders */

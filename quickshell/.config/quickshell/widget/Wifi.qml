@@ -64,8 +64,9 @@ Item {
 
     PopupWindow {
         id: popup
-        implicitWidth: 200
+        implicitWidth: 400
         implicitHeight: 300
+        grabFocus: true
         anchor.item: root
         anchor.rect.x: 0
         anchor.rect.y: root.height
@@ -95,7 +96,7 @@ Item {
                 "nmcli dev wifi rescan 2>/dev/null; sleep 1; nmcli -t -f in-use,ssid,signal,security dev wifi list"]
             stdout: StdioCollector {
                 onStreamFinished: {
-                    const lines = text().trim().split("\n").filter(line => line.length > 0)
+                    const lines = text.trim().split("\n").filter(line => line.length > 0)
                     const seen = new Set()
                     const results = []
                     for (const line of lines) {
@@ -131,6 +132,49 @@ Item {
                 visible: popup.errorText.length > 0
                 text: popup.errorText
                 color: Theme.error
+            }
+
+            ListView {
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                clip: true
+                model: popup.networks
+
+                delegate: Item {
+                    required property var modelData
+                    width: ListView.view.width
+
+                    property bool connecting: modelData.ssid === popup.connectingSSID
+                    signal connectRequested(string ssid, string security)
+
+                    implicitHeight: col.implicitHeight + 8
+                    
+                    property bool expanded: false
+
+                    ColumnLayout {
+                        id: col
+                        width: parent.width
+                        spacing: 4
+
+                        RowLayout {
+                            width: parent.width
+                            Text {
+                                text: (modelData.inUse ? "󰤨 " : "") + modelData.ssid
+                                Layout.fillWidth: true
+                                elide: Text.ElideRight
+                                color: Theme.text
+                            }
+                            Text {
+                                text: modelData.security ? "󰌾" : ""
+                                color: Theme.text
+                            }
+                            Text {
+                                text: modelData.signal + "%"
+                                color: Theme.text
+                            }
+                        }
+                    }
+                }
             }
         }
     }
