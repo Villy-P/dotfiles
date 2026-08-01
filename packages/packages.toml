@@ -94,7 +94,7 @@ ncdu = "terminal file size analyzer"
 
 [gaming]
 steam = "game platform/launcher"
-millennium = "Steam client theming/customization tool"
+adwsteamgtk = "Adwaita theme for Steam GTK"
 prismlauncher = "Minecraft launcher for multiple versions and modpacks"
 
 [fonts]

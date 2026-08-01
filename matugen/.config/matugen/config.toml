@@ -15,3 +15,12 @@ output_path = '~/.cache/matugen/vscode-colors'
 [templates.vscode-json]
 input_path = '~/.config/matugen/templates/vscode-colors.json'
 output_path = '~/.cache/matugen/vscode-colors.json'
+
+[templates.vivaldi]
+input_path = "~/.config/matugen/templates/vivaldi.css"
+output_path = "~/.config/vivaldi/Default/CustomThemes/matugen.css"
+
+[templates.steam]
+input_path = '~/.config/matugen/templates/steam.css'
+output_path = '~/.config/AdwSteamGtk/custom.css'
+post_hook =  'adwaita-steam-gtk -i'
