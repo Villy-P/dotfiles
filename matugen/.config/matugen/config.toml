@@ -24,3 +24,7 @@ output_path = "~/.config/vivaldi/Default/CustomThemes/matugen.css"
 input_path = '~/.config/matugen/templates/steam.css'
 output_path = '~/.config/AdwSteamGtk/custom.css'
 post_hook =  'adwaita-steam-gtk -i'
+
+[templates.prismlauncher]
+input_path = '~/.config/matugen/templates/prismlauncher.json'
+output_path = '~/.local/share/PrismLauncher/themes/Matugen/theme.json'
