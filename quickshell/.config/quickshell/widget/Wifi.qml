@@ -70,6 +70,13 @@ Item {
         anchor.rect.x: 0
         anchor.rect.y: root.height
 
+        color: Qt.rgba(
+            Theme.surface.r,
+            Theme.surface.g,
+            Theme.surface.b,
+            0.95
+        )
+
         property var networks: []
         property string connectingSSID: ""
         property string errorText: ""
@@ -104,6 +111,26 @@ Item {
                     results.sort((a, b) => b.signal - a.signal)
                     popup.networks = results
                 }
+            }
+        }
+
+        ColumnLayout {
+            anchors.fill: parent
+            anchors.margins: 8
+            spacing: 4
+
+            RowLayout {
+                Text { text: "Wi-Fi Networks"; font.pixelSize: 16; color: Theme.text }
+                Button { 
+                    text: "⟳";
+                    onClicked: popup.rescan()
+                }
+            }
+
+            Text {
+                visible: popup.errorText.length > 0
+                text: popup.errorText
+                color: Theme.error
             }
         }
     }
