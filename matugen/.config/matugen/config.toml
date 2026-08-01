@@ -28,3 +28,11 @@ post_hook =  'adwaita-steam-gtk -i'
 [templates.prismlauncher]
 input_path = '~/.config/matugen/templates/prismlauncher.json'
 output_path = '~/.local/share/PrismLauncher/themes/Matugen/theme.json'
+
+[templates.obsidian]
+input_path = '~/.config/matugen/templates/obsidian.css'
+output_path = '~/notes/.obsidian/snippets/matugen.css'
+
+[templates.rofi]
+input_path = '~/.config/matugen/templates/colors.rasi'
+output_path = '~/.config/rofi/colors.rasi'
