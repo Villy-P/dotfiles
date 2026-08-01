@@ -12,6 +12,14 @@ Item {
     property string ssid: ""
     property int signalStrength: 0
 
+    function wifiIcon() {
+        if (!connected) return "󰤭"
+        if (signalStrength > 80) return "󰤨"
+        if (signalStrength > 55) return "󰤥"
+        if (signalStrength > 30) return "󰤢"
+        return "󰤟"
+    }
+
     Process {
         id: statusProcess
         command: ["sh", "-c", "nmcli -t -f active,ssid,signal dev wifi | grep ^yes"]
@@ -42,9 +50,7 @@ Item {
     RowLayout {
         id: row
         spacing: 4
-        Text {
-            text: root.connected ? root.ssid : "󰖩"
-            color: Theme.text
-        }
+        Text { text: root.wifiIcon(); font.pixelSize: 16; color: Theme.text }
+        Text { visible: root.connected; text: root.ssid; color: Theme.text }
     }
 }
