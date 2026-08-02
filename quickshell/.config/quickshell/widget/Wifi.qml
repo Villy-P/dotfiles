@@ -66,17 +66,13 @@ Item {
         id: popup
         implicitWidth: 400
         implicitHeight: 300
+        
         grabFocus: true
         anchor.item: root
         anchor.rect.x: 0
-        anchor.rect.y: root.height
+        anchor.rect.y: root.height + 4
 
-        color: Qt.rgba(
-            Theme.surface.r,
-            Theme.surface.g,
-            Theme.surface.b,
-            0.95
-        )
+        color: "transparent"
 
         property var networks: []
         property string connectingSSID: ""
@@ -115,62 +111,74 @@ Item {
             }
         }
 
-        ColumnLayout {
+        Rectangle {
             anchors.fill: parent
-            anchors.margins: 8
-            spacing: 4
+            radius: 12
 
-            RowLayout {
-                Text { text: "Wi-Fi Networks"; font.pixelSize: 16; color: Theme.text }
-                Button { 
-                    text: "⟳";
-                    onClicked: popup.rescan()
+            color: Qt.rgba(
+                Theme.surface.r,
+                Theme.surface.g,
+                Theme.surface.b,
+                0.95
+            )
+
+            ColumnLayout {
+                anchors.fill: parent
+                anchors.margins: 8
+                spacing: 4
+
+                RowLayout {
+                    Text { text: "Wi-Fi Networks"; font.pixelSize: 16; color: Theme.text }
+                    Button { 
+                        text: "⟳";
+                        onClicked: popup.rescan()
+                    }
                 }
-            }
 
-            Text {
-                visible: popup.errorText.length > 0
-                text: popup.errorText
-                color: Theme.error
-            }
+                Text {
+                    visible: popup.errorText.length > 0
+                    text: popup.errorText
+                    color: Theme.error
+                }
 
-            ListView {
-                Layout.fillWidth: true
-                Layout.fillHeight: true
-                clip: true
-                model: popup.networks
+                ListView {
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    clip: true
+                    model: popup.networks
 
-                delegate: Item {
-                    required property var modelData
-                    width: ListView.view.width
+                    delegate: Item {
+                        required property var modelData
+                        width: ListView.view.width
 
-                    property bool connecting: modelData.ssid === popup.connectingSSID
-                    signal connectRequested(string ssid, string security)
+                        property bool connecting: modelData.ssid === popup.connectingSSID
+                        signal connectRequested(string ssid, string security)
 
-                    implicitHeight: col.implicitHeight + 8
-                    
-                    property bool expanded: false
+                        implicitHeight: col.implicitHeight + 8
+                        
+                        property bool expanded: false
 
-                    ColumnLayout {
-                        id: col
-                        width: parent.width
-                        spacing: 4
-
-                        RowLayout {
+                        ColumnLayout {
+                            id: col
                             width: parent.width
-                            Text {
-                                text: (modelData.inUse ? "󰤨 " : "") + modelData.ssid
-                                Layout.fillWidth: true
-                                elide: Text.ElideRight
-                                color: Theme.text
-                            }
-                            Text {
-                                text: modelData.security ? "󰌾" : ""
-                                color: Theme.text
-                            }
-                            Text {
-                                text: modelData.signal + "%"
-                                color: Theme.text
+                            spacing: 4
+
+                            RowLayout {
+                                width: parent.width
+                                Text {
+                                    text: (modelData.inUse ? "󰤨 " : "") + modelData.ssid
+                                    Layout.fillWidth: true
+                                    elide: Text.ElideRight
+                                    color: Theme.text
+                                }
+                                Text {
+                                    text: modelData.security ? "󰌾" : ""
+                                    color: Theme.text
+                                }
+                                Text {
+                                    text: modelData.signal + "%"
+                                    color: Theme.text
+                                }
                             }
                         }
                     }
