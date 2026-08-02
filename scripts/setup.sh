@@ -21,8 +21,6 @@ while read -r extension; do
     code --install-extension "$extension"
 done < ~/dotfiles/packages/vscode.txt
 
-cp ~/dotfiles/calcure/.config/calcure/config.example.ini ~/dotfiles/calcure/.config/calcure/config.ini
-
 stow ~/dotfiles/git
 stow ~/dotfiles/hypr
 stow ~/dotfiles/kitty
@@ -31,7 +29,6 @@ stow ~/dotfiles/rofi
 stow ~/dotfiles/zsh
 stow ~/dotfiles/btop
 stow ~/dotfiles/code
-stow ~/dotfiles/calcure
 stow ~/dotfiles/quickshell
 stow ~/dotfiles/matugen
 

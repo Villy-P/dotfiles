@@ -21,9 +21,6 @@ inotify-tools = "file system event monitoring"
 
 [terminal_ui]
 btop = "resource monitor"
-calcure = "calendar TUI"
-pulsemixer = "terminal mixer for PulseAudio/PipeWire"
-wifitui-bin = "terminal WiFi manager"
 
 [terminal_utils]
 jq = "JSON processor"

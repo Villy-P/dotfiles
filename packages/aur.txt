@@ -1,6 +1,4 @@
 adwsteamgtk
-calcure
 rose-pine-hyprcursor
 visual-studio-code-bin
-wifitui-bin
 yay

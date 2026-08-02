@@ -46,7 +46,6 @@ os-prober
 pipewire-pulse
 pkgfile
 prismlauncher
-pulsemixer
 python-pip
 python-pipx
 qt6-languageserver
