@@ -61,6 +61,7 @@ matugen = "theme generator for Hyprland and other apps"
 [terminal_and_shell]
 kitty = "terminal emulator"
 fastfetch = "system info fetch tool"
+onefetch = "git repository info fetch tool"
 starship = "cross-shell prompt"
 zsh = "shell"
 zsh-autosuggestions = "Zsh plugin for command suggestions based on history"

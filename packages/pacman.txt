@@ -41,6 +41,7 @@ npm
 nvidia-open-dkms
 nvidia-utils
 obsidian
+onefetch
 os-prober
 pipewire-pulse
 pkgfile
