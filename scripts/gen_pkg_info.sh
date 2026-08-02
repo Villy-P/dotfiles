@@ -12,3 +12,5 @@ yay -Qqe | while IFS= read -r package; do
 done
 
 code --list-extensions > "$PACKAGE_DIR/vscode.txt"
+
+pipx list --short > "$PACKAGE_DIR/pipx.txt"
