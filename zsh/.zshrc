@@ -100,3 +100,5 @@ alias eject-usb='read -p "Device (e.g. sdb): " dev && udisksctl unmount -b /dev/
 
 # Run on startup
 fastfetch
+echo ""
+onefetch 2>/dev/null
