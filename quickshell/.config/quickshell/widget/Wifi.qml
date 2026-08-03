@@ -119,7 +119,7 @@ Item {
             RowLayout {
                 Text { text: "Wi-Fi Networks"; font.pixelSize: 16; color: Theme.text }
                 Button {
-                    text: "⟳";
+                    text: "󰑓";
                     onClicked: popup.rescan()
                 }
             }
