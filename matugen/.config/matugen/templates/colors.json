@@ -1,5 +1,8 @@
 {
     "primary": "{{colors.primary.default.hex}}",
+    "primary_container": "{{colors.primary_container.default.hex}}",
+    "primary_fixed": "{{colors.primary_fixed.default.hex}}",
+    "primary_fixed_dim": "{{colors.primary_fixed_dim.default.hex}}",
     "secondary": "{{colors.secondary.default.hex}}",
     "tertiary": "{{colors.tertiary.default.hex}}",
     "background": "{{colors.surface.default.hex}}",

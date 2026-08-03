@@ -21,6 +21,9 @@ QtObject {
     property var jsonData: ({})
 
     property color primary: jsonData.primary || "#000000"
+    property color primary_container: jsonData.primary_container || "#111111"
+    property color primary_fixed: jsonData.primary_fixed || "#222222"
+    property color primary_fixed_dim: jsonData.primary_fixed_dim || "#333333"
     property color background: jsonData.background || "#000000"
     property color surface: jsonData.surface || "#111111"
     property color text: jsonData.text || "#ffffff"

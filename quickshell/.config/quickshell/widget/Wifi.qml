@@ -117,10 +117,28 @@ Item {
             spacing: 4
 
             RowLayout {
-                Text { text: "Wi-Fi Networks"; font.pixelSize: 16; color: Theme.text }
+                Text { 
+                    text: "Wi-Fi Networks"
+                    font.bold: true
+                    font.pixelSize: 16
+                    Layout.fillWidth: true
+                    color: Theme.text 
+                }
                 Button {
+                    id: reloadButton
+                    hoverEnabled: true
                     text: "󰑓";
+                    palette.buttonText: Theme.on_primary
                     onClicked: popup.rescan()
+
+                    background: Rectangle {
+                        color: reloadButton.hovered ? Theme.primary_fixed_dim : Theme.primary_fixed
+                        radius: 4
+                    }
+
+                    HoverHandler {
+                        cursorShape: Qt.PointingHandCursor
+                    }
                 }
             }
 
@@ -155,7 +173,7 @@ Item {
 
                             Text {
                                 text: root.wifiIcon(modelData.signal)
-                                color: modelData.inUse ? Theme.inverse_primary : Theme.text
+                                color: modelData.inUse ? Theme.primary : Theme.text
                                 font.pixelSize: 20
                             }
 
