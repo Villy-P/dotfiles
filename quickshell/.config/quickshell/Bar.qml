@@ -33,7 +33,7 @@ Scope {
                     Theme.surface.r,
                     Theme.surface.g,
                     Theme.surface.b,
-                    0.65
+                    0.80
                 )
                 radius: 12
 
