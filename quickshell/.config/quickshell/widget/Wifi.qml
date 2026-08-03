@@ -15,11 +15,11 @@ Item {
     property string ssid: ""
     property int signalStrength: 0
 
-    function wifiIcon() {
+    function wifiIcon(strength) {
         if (!connected) return "󰤭"
-        if (signalStrength > 80) return "󰤨"
-        if (signalStrength > 55) return "󰤥"
-        if (signalStrength > 30) return "󰤢"
+        if (strength > 80) return "󰤨"
+        if (strength > 55) return "󰤥"
+        if (strength > 30) return "󰤢"
         return "󰤟"
     }
 
@@ -53,7 +53,7 @@ Item {
     RowLayout {
         id: row
         spacing: 4
-        Text { text: root.wifiIcon(); font.pixelSize: 16; color: Theme.text }
+        Text { text: root.wifiIcon(root.signalStrength); font.pixelSize: 16; color: Theme.text }
         Text { visible: root.connected; text: root.ssid; color: Theme.text }
     }
 
@@ -87,16 +87,22 @@ Item {
                 "nmcli dev wifi rescan 2>/dev/null; sleep 1; nmcli -t -f in-use,ssid,signal,security dev wifi list"]
             stdout: StdioCollector {
                 onStreamFinished: {
-                    const lines = text.trim().split("\n").filter(line => line.length > 0)
+                    const lines = text.split("\n").filter(line => line.length > 0)
                     const seen = new Set()
                     const results = []
                     for (const line of lines) {
                         const parts = line.split(":")
-                        const inUse = parts[0] === "*"
+                        const inUse = parts[0] == "*"
                         const ssid = parts[1] || ""
                         const signal = parseInt(parts[2]) || 0
                         const security = parts[3] || ""
-                        if (!ssid || seen.has(ssid)) continue
+                        if (seen.has(ssid)) {
+                            if (inUse) {
+                                const existing = results.find(r => r.ssid === ssid)
+                                if (existing) existing.inUse = true
+                            }
+                            continue
+                        }
                         seen.add(ssid)
                         results.push({ inUse, ssid, signal, security })
                     }
@@ -145,16 +151,33 @@ Item {
                         spacing: 4
 
                         RowLayout {
-                            width: parent.width
+                            implicitWidth: parent.width
+
                             Text {
-                                text: (modelData.inUse ? "󰤨 " : "") + modelData.ssid
-                                Layout.fillWidth: true
-                                elide: Text.ElideRight
-                                color: Theme.text
+                                text: root.wifiIcon(modelData.signal)
+                                color: modelData.inUse ? Theme.inverse_primary : Theme.text
+                                font.pixelSize: 20
                             }
-                            Text {
-                                text: modelData.security ? "󰌾" : ""
-                                color: Theme.text
+
+                            ColumnLayout {
+                                Layout.fillWidth: true
+                                spacing: 0
+
+                                Text {
+                                    text: modelData.ssid
+                                    Layout.fillWidth: true
+                                    elide: Text.ElideRight
+                                    color: Theme.text
+                                    font.bold: true
+                                }
+                                Text {
+                                    text: modelData.security ? qsTr("Secured") + " - " + modelData.security : qsTr("Open network")
+                                    Layout.fillWidth: true
+                                    elide: Text.ElideRight
+                                    color: Theme.text
+                                    opacity: 0.7
+                                    font.pixelSize: 11
+                                }
                             }
                             Text {
                                 text: modelData.signal + "%"

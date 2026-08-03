@@ -24,4 +24,5 @@ QtObject {
     property color background: jsonData.background || "#000000"
     property color surface: jsonData.surface || "#111111"
     property color text: jsonData.text || "#ffffff"
+    property color inverse_primary: jsonData.inverse_primary || "#ffffff"
 }
