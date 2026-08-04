@@ -4,7 +4,7 @@
     --colorFgIntense: {{colors.on_surface.default.rgb}} !important; /* foreground text */
     --colorFgFaded: {{colors.on_surface.default.rgb | set_lightness: -2.0}} !important; /* unfocused window foreground text */
     --colorFgFadedMore: {{colors.on_surface.default.rgb | set_lightness: -3.0}} !important; /* unfocused window foreground text */
-    --colorFgFadedMost: {{colors.on_surface.default.rgb | set_lightness: -5.0}} !important; /* unfocused window foreground text */
+    --colorFgFadedMost: {{colors.on_surface.default.rgb}} !important; /* unfocused window foreground text */
     --colorBg: {{colors.secondary_container.default.rgb}} !important; /* adress bar and selected tab and settings sidebar */
     --colorBgAlpha: {{colors.secondary_container.default.rgba | set_alpha: 0.90}} !important; /* adress bar and selected tab and settings sidebar */
     --colorBgAlphaHeavy: {{colors.secondary_container.default.rgba | set_alpha: 0.65}} !important; /* adress bar and selected tab and settings sidebar */
