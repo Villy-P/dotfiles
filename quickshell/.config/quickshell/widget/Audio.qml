@@ -12,6 +12,7 @@ Item {
     implicitHeight: row.implicitHeight
 
     property int volume: 0
+    property var popupHost
 
     function volumeIcon(volume) {
         if (volume == 0) return "󰖁"
@@ -62,13 +63,23 @@ Item {
     HoverHandler {
         id: iconHover
         cursorShape: Qt.PointingHandCursor
+        onHoveredChanged: {
+            if (iconHover.hovered) {
+                root.popupHost.activate(root, audioContent, 700, 500)
+            } else {
+                root.popupHost.deactivate(root)
+            }
+        }
     }
 
-    AnimatedPopup {
-        id: popup
-        anchorItem: root
-        hovering: iconHover.hovered
-        popupWidth: 400
-        popupHeight: 300
+    Component {
+        id: audioContent
+
+        Item {
+            Text {
+                text: "Audio settings"
+                color: Theme.text
+            }
+        }
     }
 }

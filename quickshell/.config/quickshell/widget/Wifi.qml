@@ -14,6 +14,7 @@ Item {
     property bool connected: false
     property string ssid: ""
     property int signalStrength: 0
+    property var popupHost
 
     function wifiIcon(strength) {
         if (!connected) return "󰤭"
@@ -60,146 +61,153 @@ Item {
     HoverHandler {
         id: iconHover
         cursorShape: Qt.PointingHandCursor
+        onHoveredChanged: {
+            if (iconHover.hovered) {
+                root.popupHost.activate(root, wifiContent, 400, 700)
+            } else {
+                root.popupHost.deactivate(root)
+            }
+        }
     }
 
-    AnimatedPopup {
-        id: popup
-        anchorItem: root
-        hovering: iconHover.hovered
-        popupWidth: 400
-        popupHeight: 300
+    Component {
+        id: wifiContent
 
-        property var networks: []
-        property string connectingSSID: ""
-        property string errorText: ""
+        Item {
+            id: contentRoot
 
-        onWindowVisibleChanged: if (windowVisible) rescan()
+            property var networks: []
+            property string connectingSSID: ""
+            property string errorText: ""
 
-        function rescan() {
-            errorText = ""
-            scanProcess.running = true
-        }
+            Component.onCompleted: rescan()
 
-        Process {
-            id: scanProcess
-            command: [
-                "sh", "-c",
-                "nmcli dev wifi rescan 2>/dev/null; sleep 1; nmcli -t -f in-use,ssid,signal,security dev wifi list"]
-            stdout: StdioCollector {
-                onStreamFinished: {
-                    const lines = text.split("\n").filter(line => line.length > 0)
-                    const seen = new Set()
-                    const results = []
-                    for (const line of lines) {
-                        const parts = line.split(":")
-                        const inUse = parts[0] == "*"
-                        const ssid = parts[1] || ""
-                        const signal = parseInt(parts[2]) || 0
-                        const security = parts[3] || ""
-                        if (seen.has(ssid)) {
-                            if (inUse) {
-                                const existing = results.find(r => r.ssid === ssid)
-                                if (existing) existing.inUse = true
+            function rescan() {
+                errorText = ""
+                scanProcess.running = true
+            }
+
+            Process {
+                id: scanProcess
+                command: [
+                    "sh", "-c",
+                    "nmcli dev wifi rescan 2>/dev/null; sleep 1; nmcli -t -f in-use,ssid,signal,security dev wifi list"]
+                stdout: StdioCollector {
+                    onStreamFinished: {
+                        const lines = text.split("\n").filter(line => line.length > 0)
+                        const seen = new Set()
+                        const results = []
+                        for (const line of lines) {
+                            const parts = line.split(":")
+                            const inUse = parts[0] == "*"
+                            const ssid = parts[1] || ""
+                            const signal = parseInt(parts[2]) || 0
+                            const security = parts[3] || ""
+                            if (seen.has(ssid)) {
+                                if (inUse) {
+                                    const existing = results.find(r => r.ssid === ssid)
+                                    if (existing) existing.inUse = true
+                                }
+                                continue
                             }
-                            continue
+                            seen.add(ssid)
+                            results.push({ inUse, ssid, signal, security })
                         }
-                        seen.add(ssid)
-                        results.push({ inUse, ssid, signal, security })
+                        results.sort((a, b) => b.signal - a.signal)
+                        contentRoot.networks = results
                     }
-                    results.sort((a, b) => b.signal - a.signal)
-                    popup.networks = results
                 }
             }
-        }
 
-        ColumnLayout {
-            anchors.fill: parent
-            spacing: 4
+            ColumnLayout {
+                anchors.fill: parent
+                spacing: 4
 
-            RowLayout {
-                Text { 
-                    text: "Wi-Fi Networks"
-                    font.bold: true
-                    font.pixelSize: 16
+                RowLayout {
+                    Text { 
+                        text: "Wi-Fi Networks"
+                        font.bold: true
+                        font.pixelSize: 16
+                        Layout.fillWidth: true
+                        color: Theme.text 
+                    }
+                    Button {
+                        id: reloadButton
+                        hoverEnabled: true
+                        text: "󰑓";
+                        palette.buttonText: Theme.on_primary
+                        onClicked: contentRoot.rescan()
+
+                        background: Rectangle {
+                            color: reloadButton.hovered ? Theme.primary_fixed_dim : Theme.primary_fixed
+                            radius: 4
+                        }
+
+                        HoverHandler {
+                            cursorShape: Qt.PointingHandCursor
+                        }
+                    }
+                }
+
+                Text {
+                    visible: contentRoot.errorText.length > 0
+                    text: contentRoot.errorText
+                    color: Theme.error
+                }
+
+                ListView {
                     Layout.fillWidth: true
-                    color: Theme.text 
-                }
-                Button {
-                    id: reloadButton
-                    hoverEnabled: true
-                    text: "󰑓";
-                    palette.buttonText: Theme.on_primary
-                    onClicked: popup.rescan()
+                    Layout.fillHeight: true
+                    clip: true
+                    model: contentRoot.networks
 
-                    background: Rectangle {
-                        color: reloadButton.hovered ? Theme.primary_fixed_dim : Theme.primary_fixed
-                        radius: 4
-                    }
+                    delegate: Item {
+                        required property var modelData
+                        width: ListView.view.width
 
-                    HoverHandler {
-                        cursorShape: Qt.PointingHandCursor
-                    }
-                }
-            }
+                        property bool connecting: modelData.ssid === contentRoot.connectingSSID
+                        signal connectRequested(string ssid, string security)
 
-            Text {
-                visible: popup.errorText.length > 0
-                text: popup.errorText
-                color: Theme.error
-            }
+                        implicitHeight: col.implicitHeight + 8
 
-            ListView {
-                Layout.fillWidth: true
-                Layout.fillHeight: true
-                clip: true
-                model: popup.networks
+                        ColumnLayout {
+                            id: col
+                            width: parent.width
+                            spacing: 4
 
-                delegate: Item {
-                    required property var modelData
-                    width: ListView.view.width
-
-                    property bool connecting: modelData.ssid === popup.connectingSSID
-                    signal connectRequested(string ssid, string security)
-
-                    implicitHeight: col.implicitHeight + 8
-
-                    ColumnLayout {
-                        id: col
-                        width: parent.width
-                        spacing: 4
-
-                        RowLayout {
-                            implicitWidth: parent.width
-
-                            Text {
-                                text: root.wifiIcon(modelData.signal)
-                                color: modelData.inUse ? Theme.primary : Theme.text
-                                font.pixelSize: 20
-                            }
-
-                            ColumnLayout {
-                                Layout.fillWidth: true
-                                spacing: 0
+                            RowLayout {
+                                implicitWidth: parent.width
 
                                 Text {
-                                    text: modelData.ssid
+                                    text: root.wifiIcon(modelData.signal)
+                                    color: modelData.inUse ? Theme.primary : Theme.text
+                                    font.pixelSize: 20
+                                }
+
+                                ColumnLayout {
                                     Layout.fillWidth: true
-                                    elide: Text.ElideRight
-                                    color: Theme.text
-                                    font.bold: true
+                                    spacing: 0
+
+                                    Text {
+                                        text: modelData.ssid
+                                        Layout.fillWidth: true
+                                        elide: Text.ElideRight
+                                        color: Theme.text
+                                        font.bold: true
+                                    }
+                                    Text {
+                                        text: modelData.security ? qsTr("Secured") + " - " + modelData.security : qsTr("Open network")
+                                        Layout.fillWidth: true
+                                        elide: Text.ElideRight
+                                        color: Theme.text
+                                        opacity: 0.7
+                                        font.pixelSize: 11
+                                    }
                                 }
                                 Text {
-                                    text: modelData.security ? qsTr("Secured") + " - " + modelData.security : qsTr("Open network")
-                                    Layout.fillWidth: true
-                                    elide: Text.ElideRight
+                                    text: modelData.signal + "%"
                                     color: Theme.text
-                                    opacity: 0.7
-                                    font.pixelSize: 11
                                 }
-                            }
-                            Text {
-                                text: modelData.signal + "%"
-                                color: Theme.text
                             }
                         }
                     }
