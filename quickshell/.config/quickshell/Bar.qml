@@ -61,6 +61,7 @@ Scope {
                     spacing: 8
 
                     Widget.Wifi {}
+                    Widget.Audio {}
                 }
             }
         }
