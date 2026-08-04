@@ -1,10 +1,11 @@
 import QtQuick
 import QtQuick.Controls.Basic
 import QtQuick.Layouts
-import Quickshell
 import Quickshell.Io
 import ".."
 import "../components"
+
+pragma ComponentBehavior: Bound
 
 Item {
     id: root
@@ -77,6 +78,7 @@ Item {
             id: contentRoot
 
             property var networks: []
+            property var currentNetwork: null
             property string connectingSSID: ""
             property string errorText: ""
 
@@ -91,7 +93,7 @@ Item {
                 id: scanProcess
                 command: [
                     "sh", "-c",
-                    "nmcli dev wifi rescan 2>/dev/null; sleep 1; nmcli -t -f in-use,ssid,signal,security dev wifi list"]
+                    "nmcli dev wifi rescan 2>/dev/null; sleep 1; nmcli -t -f in-use,ssid,signal,security,band dev wifi list"]
                 stdout: StdioCollector {
                     onStreamFinished: {
                         const lines = text.split("\n").filter(line => line.length > 0)
@@ -103,6 +105,7 @@ Item {
                             const ssid = parts[1] || ""
                             const signal = parseInt(parts[2]) || 0
                             const security = parts[3] || ""
+                            const band = parts[4] || ""
                             if (seen.has(ssid)) {
                                 if (inUse) {
                                     const existing = results.find(r => r.ssid === ssid)
@@ -111,105 +114,93 @@ Item {
                                 continue
                             }
                             seen.add(ssid)
-                            results.push({ inUse, ssid, signal, security })
+                            results.push({ inUse, ssid, signal, security, band })
                         }
                         results.sort((a, b) => b.signal - a.signal)
+                        contentRoot.currentNetwork = results.splice(results.findIndex(n => n.inUse), 1)[0] || null
                         contentRoot.networks = results
                     }
                 }
             }
 
-            ColumnLayout {
+            StackView {
+                id: stackView
                 anchors.fill: parent
-                spacing: 4
+                initialItem: wifiListView
+                pushEnter: Transition {}
+                pushExit: Transition {}
+                popEnter: Transition {}
+                popExit: Transition {}
+            }
 
-                RowLayout {
-                    Text { 
-                        text: "Wi-Fi Networks"
-                        font.bold: true
-                        font.pixelSize: 16
-                        Layout.fillWidth: true
-                        color: Theme.text 
-                    }
-                    Button {
-                        id: reloadButton
-                        hoverEnabled: true
-                        text: "󰑓";
-                        palette.buttonText: Theme.on_primary
-                        onClicked: contentRoot.rescan()
+            Component {
+                id: wifiListView
 
-                        background: Rectangle {
-                            color: reloadButton.hovered ? Theme.primary_fixed_dim : Theme.primary_fixed
-                            radius: 4
+                ColumnLayout {
+                    anchors.fill: parent
+                    spacing: 4
+
+                    RowLayout {
+                        Text { 
+                            text: "Wi-Fi"
+                            font.bold: true
+                            font.pixelSize: 16
+                            Layout.fillWidth: true
+                            color: Theme.text 
                         }
+                        Button {
+                            id: reloadButton
+                            hoverEnabled: true
+                            text: "󰑓";
+                            palette.buttonText: Theme.on_primary
+                            onClicked: stackView.push(wifiPasswordView)
 
-                        HoverHandler {
-                            cursorShape: Qt.PointingHandCursor
-                        }
-                    }
-                }
+                            background: Rectangle {
+                                color: reloadButton.hovered ? Theme.primary_fixed_dim : Theme.primary_fixed
+                                radius: 4
+                            }
 
-                Text {
-                    visible: contentRoot.errorText.length > 0
-                    text: contentRoot.errorText
-                    color: Theme.error
-                }
-
-                ListView {
-                    Layout.fillWidth: true
-                    Layout.fillHeight: true
-                    clip: true
-                    model: contentRoot.networks
-
-                    delegate: Item {
-                        required property var modelData
-                        width: ListView.view.width
-
-                        property bool connecting: modelData.ssid === contentRoot.connectingSSID
-                        signal connectRequested(string ssid, string security)
-
-                        implicitHeight: col.implicitHeight + 8
-
-                        ColumnLayout {
-                            id: col
-                            width: parent.width
-                            spacing: 4
-
-                            RowLayout {
-                                implicitWidth: parent.width
-
-                                Text {
-                                    text: root.wifiIcon(modelData.signal)
-                                    color: modelData.inUse ? Theme.primary : Theme.text
-                                    font.pixelSize: 20
-                                }
-
-                                ColumnLayout {
-                                    Layout.fillWidth: true
-                                    spacing: 0
-
-                                    Text {
-                                        text: modelData.ssid
-                                        Layout.fillWidth: true
-                                        elide: Text.ElideRight
-                                        color: Theme.text
-                                        font.bold: true
-                                    }
-                                    Text {
-                                        text: modelData.security ? qsTr("Secured") + " - " + modelData.security : qsTr("Open network")
-                                        Layout.fillWidth: true
-                                        elide: Text.ElideRight
-                                        color: Theme.text
-                                        opacity: 0.7
-                                        font.pixelSize: 11
-                                    }
-                                }
-                                Text {
-                                    text: modelData.signal + "%"
-                                    color: Theme.text
-                                }
+                            HoverHandler {
+                                cursorShape: Qt.PointingHandCursor
                             }
                         }
+                    }
+                    
+                    WifiItem {
+                        visible: contentRoot.currentNetwork !== null
+                        Layout.fillWidth: true
+
+                        modelData: contentRoot.currentNetwork
+                        contentRoot: contentRoot
+                    }
+
+                    Text {
+                        text: scanProcess.running ? "Scanning..." : (contentRoot.errorText.length > 0 ? contentRoot.errorText : (contentRoot.networks.length === 0 ? "No networks found" : "Networks"))
+                        color: Theme.text
+                    }
+
+                    ListView {
+                        Layout.fillWidth: true
+                        Layout.fillHeight: true
+                        clip: true
+                        model: contentRoot.networks
+
+                        delegate: WifiItem {
+                            contentRoot: contentRoot
+                        }
+                    }
+                }
+            }
+
+            Component {
+                id: wifiPasswordView
+
+                Item {
+                    anchors.fill: parent
+
+                    Text {
+                        text: "Password view for connecting to a Wi-Fi network"
+                        color: Theme.text
                     }
                 }
             }
