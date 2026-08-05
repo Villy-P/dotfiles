@@ -8,7 +8,7 @@
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
   "terminal.integrated.fontLigatures.enabled": true,
-  "editor.fontFamily": "JetBrainsMono Nerd Font, monospace",
+  "editor.fontFamily": "CaskaydiaCove Nerd Font Mono",
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
   "editor.autoIndentOnPaste": true,
