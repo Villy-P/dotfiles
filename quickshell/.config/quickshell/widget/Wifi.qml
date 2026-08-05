@@ -81,12 +81,25 @@ Item {
             property var currentNetwork: null
             property string connectingSSID: ""
             property string errorText: ""
+            property int page: 0
 
             Component.onCompleted: rescan()
 
             function rescan() {
                 errorText = ""
                 scanProcess.running = true
+            }
+
+            property string password: ""
+
+            Process {
+                id: passwordProcess
+                command: ["sh", "-c", "nmcli device wifi show-password"]
+                stdout: StdioCollector {
+                    onStreamFinished: {
+                        password = text.trim()
+                    }
+                }
             }
 
             Process {
@@ -123,14 +136,9 @@ Item {
                 }
             }
 
-            StackView {
-                id: stackView
+            CrossfadeLoader {
                 anchors.fill: parent
-                initialItem: wifiListView
-                pushEnter: Transition {}
-                pushExit: Transition {}
-                popEnter: Transition {}
-                popExit: Transition {}
+                sourceComponent: contentRoot.page === 0 ? wifiListView : wifiPasswordView
             }
 
             Component {
@@ -153,7 +161,10 @@ Item {
                             hoverEnabled: true
                             text: "󰑓";
                             palette.buttonText: Theme.on_primary
-                            onClicked: stackView.push(wifiPasswordView)
+                            onClicked: { 
+                                passwordProcess.running = true
+                                contentRoot.page = 1
+                            }
 
                             background: Rectangle {
                                 color: reloadButton.hovered ? Theme.primary_fixed_dim : Theme.primary_fixed
@@ -172,6 +183,7 @@ Item {
 
                         modelData: contentRoot.currentNetwork
                         contentRoot: contentRoot
+                        passwordProcess: passwordProcess
                     }
 
                     Text {
@@ -187,6 +199,7 @@ Item {
 
                         delegate: WifiItem {
                             contentRoot: contentRoot
+                            passwordProcess: passwordProcess
                         }
                     }
                 }
@@ -199,7 +212,7 @@ Item {
                     anchors.fill: parent
 
                     Text {
-                        text: "Password view for connecting to a Wi-Fi network"
+                        text: passwordProcess.running ? "Loading..." : (contentRoot.password.length > 0 ? contentRoot.password : "No password available")
                         color: Theme.text
                     }
                 }

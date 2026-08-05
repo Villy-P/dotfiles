@@ -6,6 +6,7 @@ import ".."
 Item {
     required property var modelData
     required property var contentRoot
+    required property var passwordProcess
     width: ListView.view.width
 
     property bool connecting: modelData.ssid === contentRoot.connectingSSID
@@ -76,8 +77,9 @@ Item {
                             cursorShape: Qt.PointingHandCursor
                             hoverEnabled: true
                             onClicked: {
-
-                            }
+                                contentRoot.page = 1
+                                passwordProcess.running = true
+                            } 
                         }
                     }
                 }
