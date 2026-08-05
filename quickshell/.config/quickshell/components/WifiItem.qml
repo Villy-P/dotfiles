@@ -1,4 +1,5 @@
 import QtQuick
+import Quickshell.Io
 import QtQuick.Controls
 import QtQuick.Layouts
 import ".."
@@ -6,13 +7,18 @@ import ".."
 Item {
     required property var modelData
     required property var contentRoot
-    required property var passwordProcess
+    property bool showPassword: false
     width: ListView.view.width
 
     property bool connecting: modelData.ssid === contentRoot.connectingSSID
     signal connectRequested(string ssid, string security)
 
     implicitHeight: col.implicitHeight + 8
+
+    Process {
+        id: copyPasswordProcess
+        command: ["sh", "-c", "echo -n '" + contentRoot.password + "' | wl-copy"]
+    }
 
     ColumnLayout {
         id: col
@@ -61,12 +67,31 @@ Item {
                         color: Theme.text
                         opacity: 0.7
                         font.pixelSize: 11
+                        visible: !showPassword
+                    }
+
+                    Text {
+                        text: contentRoot.password
+                        elide: Text.ElideRight
+                        color: Theme.text
+                        opacity: 0.7
+                        font.pixelSize: 11
+                        visible: showPassword
+
+                        MouseArea {
+                            anchors.fill: parent
+                            cursorShape: Qt.PointingHandCursor
+                            hoverEnabled: true
+                            onClicked: {
+                                copyPasswordProcess.running = true
+                            }
+                        }
                     }
 
                     Text {
                         id: eyeIcon
                         visible: modelData.inUse
-                        text: "󰈈"
+                        text: showPassword ? "󰈉" : "󰈈"
                         color: Theme.text
                         opacity: 0.7
                         font.pixelSize: 12
@@ -76,10 +101,7 @@ Item {
                             anchors.fill: parent
                             cursorShape: Qt.PointingHandCursor
                             hoverEnabled: true
-                            onClicked: {
-                                contentRoot.page = 1
-                                passwordProcess.running = true
-                            } 
+                            onClicked: showPassword = !showPassword
                         }
                     }
                 }

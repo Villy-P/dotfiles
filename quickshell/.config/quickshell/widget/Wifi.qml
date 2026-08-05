@@ -88,13 +88,14 @@ Item {
             function rescan() {
                 errorText = ""
                 scanProcess.running = true
+                passwordProcess.running = true
             }
 
             property string password: ""
 
             Process {
                 id: passwordProcess
-                command: ["sh", "-c", "nmcli device wifi show-password"]
+                command: ["sh", "-c", "nmcli device wifi show-password | awk -F': ' '/Password/ {print $2}'"]
                 stdout: StdioCollector {
                     onStreamFinished: {
                         password = text.trim()
@@ -183,7 +184,6 @@ Item {
 
                         modelData: contentRoot.currentNetwork
                         contentRoot: contentRoot
-                        passwordProcess: passwordProcess
                     }
 
                     Text {
@@ -199,7 +199,6 @@ Item {
 
                         delegate: WifiItem {
                             contentRoot: contentRoot
-                            passwordProcess: passwordProcess
                         }
                     }
                 }
