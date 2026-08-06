@@ -58,6 +58,7 @@ steam
 stow
 sudo
 swappy
+ttf-cascadia-code-nerd
 ttf-jetbrains-mono-nerd
 udiskie
 udisks2

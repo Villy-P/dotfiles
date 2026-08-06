@@ -52,11 +52,13 @@ Item {
         Text { 
             text: root.volumeIcon(root.volume)
             font.pixelSize: 16
+            font.family: Theme.family
             color: Theme.text
         }
         Text { 
             text: root.volume + "%"
             color: Theme.text
+            font.family: Theme.family
         }
     }
 

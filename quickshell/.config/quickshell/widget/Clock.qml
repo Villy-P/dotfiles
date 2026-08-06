@@ -3,6 +3,6 @@ import ".."
 
 Text {
     text: Time.time
-    font.family: "CaskaydiaCove NF"
+    font.family: Theme.family
     color: Theme.text
 }

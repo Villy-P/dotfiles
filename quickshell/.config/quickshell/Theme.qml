@@ -20,6 +20,8 @@ QtObject {
 
     property var jsonData: ({})
 
+    property string family: "CaskaydiaCove NF"
+
     property color primary: jsonData.primary || "#000000"
     property color primary_container: jsonData.primary_container || "#111111"
     property color primary_fixed: jsonData.primary_fixed || "#222222"

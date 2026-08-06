@@ -96,6 +96,7 @@ prismlauncher = "Minecraft launcher for multiple versions and modpacks"
 
 [fonts]
 ttf-jetbrains-mono-nerd = "JetBrains Mono, patched with Nerd Font icons"
+ttf-cascadia-code-nerd = "Cascadia Code, patched with Nerd Font icons"
 noto-fonts-emoji = "Noto Emoji font for emoji support"
 noto-fonts-cjk = "Noto CJK fonts for Chinese, Japanese, and Korean support"
 

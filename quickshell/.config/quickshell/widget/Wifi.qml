@@ -55,8 +55,8 @@ Item {
     RowLayout {
         id: row
         spacing: 4
-        Text { text: root.wifiIcon(root.signalStrength); font.pixelSize: 16; color: Theme.text }
-        Text { visible: root.connected; text: root.ssid; color: Theme.text }
+        Text { text: root.wifiIcon(root.signalStrength); font.pixelSize: 16; color: Theme.text; font.family: Theme.family }
+        Text { visible: root.connected; text: root.ssid; color: Theme.text; font.family: Theme.family }
     }
 
     HoverHandler {
@@ -156,11 +156,13 @@ Item {
                             font.pixelSize: 16
                             Layout.fillWidth: true
                             color: Theme.text 
+                            font.family: Theme.family
                         }
                         Button {
                             id: reloadButton
                             hoverEnabled: true
                             text: "󰑓";
+                            font.family: Theme.family
                             palette.buttonText: Theme.on_primary
                             onClicked: { 
                                 passwordProcess.running = true
@@ -189,6 +191,7 @@ Item {
                     Text {
                         text: scanProcess.running ? "Scanning..." : (contentRoot.errorText.length > 0 ? contentRoot.errorText : (contentRoot.networks.length === 0 ? "No networks found" : "Networks"))
                         color: Theme.text
+                        font.family: Theme.family
                     }
 
                     ListView {
@@ -213,6 +216,7 @@ Item {
                     Text {
                         text: passwordProcess.running ? "Loading..." : (contentRoot.password.length > 0 ? contentRoot.password : "No password available")
                         color: Theme.text
+                        font.family: Theme.family
                     }
                 }
             }
