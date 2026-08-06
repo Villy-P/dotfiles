@@ -2,6 +2,7 @@ amd-ucode
 awww
 base
 base-devel
+bat
 bluetui
 bluez
 boost
@@ -9,6 +10,8 @@ btop
 btrfs-progs
 clang
 cmake
+docker
+docker-compose
 doxygen
 efibootmgr
 expac

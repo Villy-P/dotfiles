@@ -23,6 +23,7 @@ inotify-tools = "file system event monitoring"
 btop = "resource monitor"
 
 [terminal_utils]
+bat = "cat clone with syntax highlighting and Git integration"
 jq = "JSON processor"
 gum = "tool for prompting users in the terminal"
 expac = "query information about installed packages"
@@ -112,3 +113,7 @@ bluetui = "terminal-based Bluetooth manager"
 [usb]
 udiskie = "automatically mount and unmount removable media"
 udisks2 = "D-Bus service for managing removable media"
+
+[virtualization]
+docker = "containerization platform"
+docker-compose = "tool for defining and running multi-container Docker applications"
