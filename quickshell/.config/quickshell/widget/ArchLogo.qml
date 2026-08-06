@@ -1,9 +1,9 @@
 import QtQuick
 import ".."
+import "../components"
 
-Text {
+StyledText {
     text: "󰣇"
-    color: Theme.text
-    font.family: Theme.family
+    color: "#168eca"
     font.pixelSize: 16
 }

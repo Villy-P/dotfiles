@@ -1,8 +1,15 @@
 import QtQuick
+import QtQuick.Layouts
 import ".."
+import "../components"
 
-Text {
-    text: Time.time
-    font.family: Theme.family
-    color: Theme.text
+RowLayout {
+    StyledText {
+        text: " "
+        color: "#ee729d"
+    }
+
+    StyledText {
+        text: Time.time
+    }
 }

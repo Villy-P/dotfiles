@@ -28,11 +28,10 @@ Item {
         RowLayout {
             width: parent.width
 
-            Text {
+            StyledText {
                 text: root.wifiIcon(modelData.signal)
                 color: modelData.inUse ? Theme.primary : Theme.text
                 font.pixelSize: 20
-                font.family: Theme.family
             }
 
             GridLayout {
@@ -41,47 +40,39 @@ Item {
                 columnSpacing: 0
                 rowSpacing: 0
 
-                Text {
+                StyledText {
                     text: modelData.ssid
                     Layout.fillWidth: true
                     font.bold: true
-                    color: Theme.text
                     elide: Text.ElideRight
-                    font.family: Theme.family
                 }
 
-                Text {
+                StyledText {
                     text: modelData.band
-                    color: Theme.text
                     Layout.alignment: Qt.AlignRight
                     horizontalAlignment: Text.AlignRight
-                    font.family: Theme.family
                 }
 
                 RowLayout {
                     Layout.fillWidth: true
                     spacing: 4
 
-                    Text {
+                    StyledText {
                         text: modelData.security
                             ? qsTr("Secured") + " - " + modelData.security
                             : qsTr("Open network")
                         elide: Text.ElideRight
-                        color: Theme.text
                         opacity: 0.7
                         font.pixelSize: 11
                         visible: !showPassword
-                        font.family: Theme.family
                     }
 
-                    Text {
+                    StyledText {
                         text: contentRoot.password
                         elide: Text.ElideRight
-                        color: Theme.text
                         opacity: 0.7
                         font.pixelSize: 11
                         visible: showPassword
-                        font.family: Theme.family
 
                         MouseArea {
                             anchors.fill: parent
@@ -93,13 +84,11 @@ Item {
                         }
                     }
 
-                    Text {
+                    StyledText {
                         id: eyeIcon
                         visible: modelData.inUse
                         text: showPassword ? "󰈉" : "󰈈"
-                        color: Theme.text
                         opacity: 0.7
-                        font.family: Theme.family
                         font.pixelSize: 12
 
                         MouseArea {
@@ -112,14 +101,12 @@ Item {
                     }
                 }
 
-                Text {
+                StyledText {
                     text: modelData.signal + "%"
                     Layout.alignment: Qt.AlignRight
                     horizontalAlignment: Text.AlignRight
                     opacity: 0.7
-                    color: Theme.text
                     font.pixelSize: 11
-                    font.family: Theme.family
                 }
             }
         }

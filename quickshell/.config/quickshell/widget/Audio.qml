@@ -49,16 +49,15 @@ Item {
     RowLayout {
         id: row
         spacing: 4
-        Text { 
+
+        StyledText { 
             text: root.volumeIcon(root.volume)
             font.pixelSize: 16
-            font.family: Theme.family
-            color: Theme.text
+            color: "#eea9ca"
         }
-        Text { 
+
+        StyledText { 
             text: root.volume + "%"
-            color: Theme.text
-            font.family: Theme.family
         }
     }
 
@@ -78,9 +77,8 @@ Item {
         id: audioContent
 
         Item {
-            Text {
+            StyledText {
                 text: "Audio settings"
-                color: Theme.text
             }
         }
     }

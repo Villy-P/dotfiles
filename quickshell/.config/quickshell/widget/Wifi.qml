@@ -55,8 +55,15 @@ Item {
     RowLayout {
         id: row
         spacing: 4
-        Text { text: root.wifiIcon(root.signalStrength); font.pixelSize: 16; color: Theme.text; font.family: Theme.family }
-        Text { visible: root.connected; text: root.ssid; color: Theme.text; font.family: Theme.family }
+        StyledText { 
+            text: root.wifiIcon(root.signalStrength)
+            font.pixelSize: 16
+            color: "#fb8c78"
+        }
+        StyledText { 
+            visible: root.connected
+            text: root.ssid
+        }
     }
 
     HoverHandler {
@@ -150,13 +157,11 @@ Item {
                     spacing: 4
 
                     RowLayout {
-                        Text { 
+                        StyledText { 
                             text: "Wi-Fi"
                             font.bold: true
                             font.pixelSize: 16
                             Layout.fillWidth: true
-                            color: Theme.text 
-                            font.family: Theme.family
                         }
                         Button {
                             id: reloadButton
@@ -188,10 +193,9 @@ Item {
                         contentRoot: contentRoot
                     }
 
-                    Text {
+
+                    StyledText {
                         text: scanProcess.running ? "Scanning..." : (contentRoot.errorText.length > 0 ? contentRoot.errorText : (contentRoot.networks.length === 0 ? "No networks found" : "Networks"))
-                        color: Theme.text
-                        font.family: Theme.family
                     }
 
                     ListView {
@@ -213,10 +217,8 @@ Item {
                 Item {
                     anchors.fill: parent
 
-                    Text {
+                    StyledText {
                         text: passwordProcess.running ? "Loading..." : (contentRoot.password.length > 0 ? contentRoot.password : "No password available")
-                        color: Theme.text
-                        font.family: Theme.family
                     }
                 }
             }
