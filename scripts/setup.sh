@@ -39,3 +39,9 @@ chsh -s /usr/bin/zsh
 
 mkdir -p ~/pictures
 curl -o ~/pictures/wallpaper/wallpaper.jpg https://images.unsplash.com/photo-1464822759023-fed622ff2c3b
+
+chmod +x ~/dotfiles/scripts/setwall.sh
+chmod +x ~/dotfiles/scripts/ignore_desktop.sh
+
+source ~/dotfiles/scripts/setwall.sh ~/pictures/wallpaper/wallpaper.jpg
+source ~/dotfiles/scripts/ignore_desktop.sh
