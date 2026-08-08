@@ -10,8 +10,6 @@ btop
 btrfs-progs
 clang
 cmake
-docker
-docker-compose
 doxygen
 efibootmgr
 expac
