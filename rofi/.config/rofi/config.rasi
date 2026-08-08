@@ -1,1 +1,149 @@
 @import "colors.rasi"
+
+configuration {
+    show-icons: true;
+    icon-theme: "Papirus";
+}
+
+* {
+    transparent: #00000000;
+    font: "CaskaydiaCove NF";
+}
+
+window {
+    background-color:  @surface-container-low;
+    border:             1px;
+    border-color:       @outline-variant;
+    border-radius:      12px;
+    padding:            8px;
+    width:              32%;
+    location:           center;
+    anchor:              center;
+}
+
+mainbox {
+    background-color:  @transparent;
+    children:            [ inputbar, message, listview ];
+    spacing:              10px;
+    padding:              4px;
+}
+
+inputbar {
+    background-color:  @surface-container-high;
+    text-color:          @on-surface;
+    border-radius:       10px;
+    padding:              10px 12px;
+    spacing:              8px;
+    children:             [ prompt, entry ];
+}
+
+prompt {
+    background-color:  @transparent;
+    text-color:          @primary;
+    font:                 "JetBrainsMono Nerd Font Bold 11";
+}
+
+entry {
+    background-color:  @transparent;
+    text-color:          @on-surface;
+    placeholder:          "Search…";
+    placeholder-color:    @on-surface-variant;
+}
+
+message {
+    background-color:  @error-container;
+    border-radius:       8px;
+    padding:              6px 10px;
+}
+
+textbox {
+    text-color:  @on-error-container;
+}
+
+listview {
+    background-color:  @transparent;
+    columns:              1;
+    lines:                8;
+    spacing:              4px;
+    cycle:                true;
+    dynamic:              true;
+    scrollbar:            true;
+}
+
+scrollbar {
+    background-color:  @surface-container;
+    handle-color:        @outline;
+    handle-width:         6px;
+    border-radius:        6px;
+}
+
+element {
+    background-color:  @transparent;
+    text-color:          @on-surface-variant;
+    border-radius:       8px;
+    padding:              8px 10px;
+    spacing:              8px;
+}
+
+element normal.normal {
+    background-color:  @transparent;
+    text-color:          @on-surface-variant;
+}
+
+element alternate.normal {
+    background-color:  @surface-container;
+    text-color:          @on-surface-variant;
+}
+
+element selected.normal {
+    background-color:  @primary-container;
+    text-color:          @on-primary-container;
+}
+
+element selected.active {
+    background-color:  @tertiary-container;
+    text-color:          @on-tertiary-container;
+}
+
+element selected.urgent {
+    background-color:  @error-container;
+    text-color:          @on-error-container;
+}
+
+element normal.active {
+    background-color:  @transparent;
+    text-color:          @tertiary;
+}
+
+element normal.urgent {
+    background-color:  @transparent;
+    text-color:          @error;
+}
+
+element-icon {
+    size:        22px;
+    background-color: @transparent;
+}
+
+element-text {
+    background-color: @transparent;
+    text-color:  inherit;
+    vertical-align: 0.5;
+}
+
+mode-switcher {
+    background-color:  @transparent;
+    spacing:              6px;
+}
+
+button {
+    background-color:  @surface-container-high;
+    text-color:          @on-surface-variant;
+    border-radius:       8px;
+    padding:              6px 10px;
+}
+
+button selected {
+    background-color:  @secondary-container;
+    text-color:          @on-secondary-container;
+}
