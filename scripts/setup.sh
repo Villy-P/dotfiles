@@ -38,4 +38,4 @@ mkdir -p ~/.local/state/quickshell/generated
 chsh -s /usr/bin/zsh
 
 mkdir -p ~/pictures
-curl -o ~/pictures/wallpaper.jpg https://images.unsplash.com/photo-1464822759023-fed622ff2c3b
+curl -o ~/pictures/wallpaper/wallpaper.jpg https://images.unsplash.com/photo-1464822759023-fed622ff2c3b
