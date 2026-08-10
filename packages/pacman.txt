@@ -43,6 +43,7 @@ nvidia-open-dkms
 nvidia-utils
 obsidian
 onefetch
+openssh
 os-prober
 pipewire-pulse
 pkgfile
@@ -59,8 +60,8 @@ steam
 stow
 sudo
 swappy
+tailscale
 ttf-cascadia-code-nerd
-ttf-jetbrains-mono-nerd
 udiskie
 udisks2
 unzip

@@ -19,10 +19,8 @@ zram-generator = "create compressed swap in RAM"
 sudo = "privilege escalation"
 inotify-tools = "file system event monitoring"
 
-[terminal_ui]
+[cli_tools]
 btop = "resource monitor"
-
-[terminal_utils]
 bat = "cat clone with syntax highlighting and Git integration"
 jq = "JSON processor"
 gum = "tool for prompting users in the terminal"
@@ -45,6 +43,7 @@ pipewire-pulse = "PulseAudio-compatible layer for PipeWire"
 
 [networking]
 networkmanager = "network connection management"
+openssh = "OpenSSH server and client"
 
 [hyprland_desktop]
 hyprland = "the Hyprland Wayland compositor/window manager"
@@ -56,7 +55,7 @@ quickshell = "Wayland shell for Hyprland"
 awww = "wallpaper setter for Wayland"
 matugen = "theme generator for Hyprland and other apps"
 
-[terminal_and_shell]
+[shell_environment]
 kitty = "terminal emulator"
 fastfetch = "system info fetch tool"
 onefetch = "git repository info fetch tool"
@@ -87,7 +86,7 @@ qt6-languageserver = "Qt6 Language Server for IDEs"
 [browsers]
 vivaldi = "web browser"
 
-[file_manager]
+[disk_usage]
 ncdu = "terminal file size analyzer"
 
 [gaming]
@@ -96,7 +95,6 @@ adwsteamgtk = "Adwaita theme for Steam GTK"
 prismlauncher = "Minecraft launcher for multiple versions and modpacks"
 
 [fonts]
-ttf-jetbrains-mono-nerd = "JetBrains Mono, patched with Nerd Font icons"
 ttf-cascadia-code-nerd = "Cascadia Code, patched with Nerd Font icons"
 noto-fonts-emoji = "Noto Emoji font for emoji support"
 noto-fonts-cjk = "Noto CJK fonts for Chinese, Japanese, and Korean support"
@@ -113,3 +111,6 @@ bluetui = "terminal-based Bluetooth manager"
 [usb]
 udiskie = "automatically mount and unmount removable media"
 udisks2 = "D-Bus service for managing removable media"
+
+[vpn]
+tailscale = "Virtual private network client"
