@@ -12,6 +12,7 @@ clang
 cmake
 doxygen
 efibootmgr
+exfatprogs
 expac
 eza
 fastfetch
@@ -26,6 +27,7 @@ gum
 hyprland
 hyprpolkitagent
 inotify-tools
+inter-font
 jq
 kitty
 linux
@@ -41,6 +43,7 @@ noto-fonts-emoji
 npm
 nvidia-open-dkms
 nvidia-utils
+obs-studio
 obsidian
 onefetch
 openssh

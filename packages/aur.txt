@@ -1,4 +1,5 @@
 adwsteamgtk
 rose-pine-hyprcursor
+ttf-bitstream-charter
 visual-studio-code-bin
 yay
