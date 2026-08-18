@@ -69,7 +69,6 @@ tailscale
 ttf-cascadia-code-nerd
 udiskie
 udisks2
-unzip
 vivaldi
 wl-clipboard
 xdg-desktop-portal-hyprland
