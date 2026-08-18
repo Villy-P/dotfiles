@@ -1,0 +1,29 @@
+{
+    "Theme": "Cerene Dark",
+    "Language": "English",
+    "ModGroupingMethod": 0,
+    "Version": "1.9.0",
+    "LastSelectedProfileName": "Default",
+    "SMAPIFolderPath": "/home/valerius/games/heroic/Stardew Valley/game",
+    "ModFolderPath": "/home/valerius/games/heroic/Stardew Valley/game/Mods",
+    "ModInstallPath": "/home/valerius/games/heroic/Stardew Valley/game/Mods/Stardrop Installed Mods",
+    "IgnoreHiddenFolders": false,
+    "EnableProfileSpecificModConfigs": false,
+    "ShouldWriteToModConfigs": false,
+    "EnableModsOnAdd": false,
+    "AlwaysAskToDelete": true,
+    "ShouldAutomaticallySaveProfileChanges": true,
+    "ShowModThumbnails": false,
+    "PreferredNexusServer": 0,
+    "IsAskingBeforeAcceptingNXM": true,
+    "GameDetails": {
+      "GameVersion": "1.6.15",
+      "SmapiVersion": "4.5.2",
+      "System": 1
+    },
+    "NexusDetails": {
+      "Username": null,
+      "IsPremium": false,
+      "Key": null
+    }
+}

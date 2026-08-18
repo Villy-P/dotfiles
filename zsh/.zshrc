@@ -33,6 +33,7 @@ export BUN_INSTALL="$XDG_DATA_HOME"/bun
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export COPILOT_HOME="$XDG_CONFIG_HOME"/copilot
 export npm_config_cache="$XDG_CACHE_HOME/npm"
+export NUGET_PACKAGES="$XDG_CACHE_HOME"/NuGetPackages
 
 # Set PATH variables 
 export PATH="$PATH
