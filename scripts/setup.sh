@@ -21,16 +21,7 @@ while read -r extension; do
     code --install-extension "$extension"
 done < ~/dotfiles/packages/vscode.txt
 
-cd ~/dotfiles
-stow git
-stow hypr
-stow kitty
-stow rofi
-stow zsh
-stow btop
-stow code
-stow quickshell
-stow matugen
+~/dotfiles/scripts/stow_all.sh
 
 mkdir -p ~/.config/matugen/templates
 mkdir -p ~/.local/state/quickshell/generated
