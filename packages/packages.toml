@@ -38,6 +38,7 @@ pkgfile = "tool for detecting which package provides a file"
 [graphics_drivers]
 nvidia-open-dkms = "open-source nvidia kernel driver modules, built via dkms"
 nvidia-utils = "nvidia userspace utilities/libraries"
+directx-shader-compiler = "Compiler for DirectX shaders"
 
 [audio]
 pipewire-pulse = "PulseAudio-compatible layer for PipeWire"
@@ -92,6 +93,7 @@ ncdu = "terminal file size analyzer"
 
 [gaming]
 steam = "game platform/launcher"
+heroic-games-launcher-bin = "Epic Games/GOG Launcher for Linux"
 adwsteamgtk = "Adwaita theme for Steam GTK"
 prismlauncher = "Minecraft launcher for multiple versions and modpacks"
 

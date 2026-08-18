@@ -10,6 +10,7 @@ btop
 btrfs-progs
 clang
 cmake
+directx-shader-compiler
 doxygen
 efibootmgr
 exfatprogs
