@@ -1,6 +1,7 @@
 adwsteamgtk
 heroic-games-launcher-bin
 rose-pine-hyprcursor
+stardrop
 ttf-bitstream-charter
 visual-studio-code-bin
 yay

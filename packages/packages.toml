@@ -28,6 +28,7 @@ gum = "tool for prompting users in the terminal"
 expac = "query information about installed packages"
 eza = "modern replacement for ls"
 unzip = "tool for extracting files from ZIP archives"
+7zip = "tool for extracting files from 7z archives"
 stow = "manage dotfiles with symlinks"
 wl-clipboard = "copy/paste to/from the Wayland clipboard"
 
@@ -93,6 +94,7 @@ ncdu = "terminal file size analyzer"
 
 [gaming]
 steam = "game platform/launcher"
+stardrop = "game launcher for Stardew Valley mods"
 heroic-games-launcher-bin = "Epic Games/GOG Launcher for Linux"
 adwsteamgtk = "Adwaita theme for Steam GTK"
 prismlauncher = "Minecraft launcher for multiple versions and modpacks"
