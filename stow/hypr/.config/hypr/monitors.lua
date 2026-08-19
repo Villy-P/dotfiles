@@ -1,15 +1,15 @@
 hl.monitor({
     output   = "DP-4",
-    mode     = "preferred",
+    mode     = "1920x1080@180.06Hz",
     position = "auto",
     scale    = 1,
 })
 
 hl.monitor({
     output   = "DP-5",
-    mode     = "preferred",
+    mode     = "2560x1440@180.00Hz",
     position = "auto",
-    scale    = 1,
+    scale    = 1
 })
 
 hl.monitor({
