@@ -37,4 +37,7 @@
   "telemetry.feedback.enabled": false,
   "telemetry.telemetryLevel": "off",
   "workbench.colorTheme": "Matugen",
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  },
 }

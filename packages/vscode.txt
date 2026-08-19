@@ -21,4 +21,6 @@ svelte.svelte-vscode
 tamasfe.even-better-toml
 theqtcompany.qt-core
 theqtcompany.qt-qml
+tomoki1207.pdf
 vscode-icons-team.vscode-icons
+yzhang.markdown-all-in-one
