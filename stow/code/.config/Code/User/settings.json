@@ -40,4 +40,7 @@
   "[markdown]": {
     "editor.defaultFormatter": "yzhang.markdown-all-in-one"
   },
+  "Lua.diagnostics.globals": [
+    "hl"
+  ],
 }

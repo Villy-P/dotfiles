@@ -1,0 +1,5 @@
+Terminal    = "kitty"
+FileManager = "dolphin"
+Browser     = "vivaldi"
+IDE         = "code"
+Launcher    = "rofi"
