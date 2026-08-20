@@ -43,4 +43,6 @@
   "Lua.diagnostics.globals": [
     "hl"
   ],
+  "workbench.list.smoothScrolling": true,
+  "terminal.integrated.smoothScrolling": true,
 }

@@ -117,6 +117,7 @@ bluetui = "terminal-based Bluetooth manager"
 [usb]
 udiskie = "automatically mount and unmount removable media"
 udisks2 = "D-Bus service for managing removable media"
+ventoy-bin = "bootable USB creation tool"
 
 [vpn]
 tailscale = "Virtual private network client"

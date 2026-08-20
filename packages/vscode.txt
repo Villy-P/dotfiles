@@ -17,6 +17,7 @@ ms-vscode.cmake-tools
 ms-vscode.cpp-devtools
 ms-vscode.remote-explorer
 printfn.jpeg-xl
+sumneko.lua
 svelte.svelte-vscode
 tamasfe.even-better-toml
 theqtcompany.qt-core

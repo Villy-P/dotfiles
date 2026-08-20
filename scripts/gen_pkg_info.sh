@@ -15,6 +15,8 @@ code --list-extensions > "$PACKAGE_DIR/vscode.txt"
 
 pipx list --short > "$PACKAGE_DIR/pipx.txt"
 
+systemctl list-units --type=service --state=running --no-legend | awk '{print $1}' > "$PACKAGE_DIR/services.txt"
+
 for dir in ~/.config/vivaldi/Default/Extensions/*/; do
     id=$(basename "$dir")
     manifest=$(find "$dir" -name "manifest.json" | head -n1)

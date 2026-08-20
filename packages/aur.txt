@@ -3,5 +3,6 @@ heroic-games-launcher-bin
 rose-pine-hyprcursor
 stardrop
 ttf-bitstream-charter
+ventoy-bin
 visual-studio-code-bin
 yay
