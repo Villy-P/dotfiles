@@ -13,11 +13,13 @@ efibootmgr = "manage UEFI boot entries"
 [base_system]
 base = "core Arch base package group"
 base-devel = "build tools (makepkg deps, compilers, etc), needed for AUR"
-btrfs-progs = "Btrfs filesystem utilities"
 snapper = "Btrfs snapshot management tool"
 zram-generator = "create compressed swap in RAM"
 sudo = "privilege escalation"
 inotify-tools = "file system event monitoring"
+
+[filesystem]
+btrfs-progs = "Btrfs filesystem utilities"
 exfatprogs = "tools for exFAT filesystem support"
 
 [cli_tools]
@@ -25,27 +27,25 @@ btop = "resource monitor"
 bat = "cat clone with syntax highlighting and Git integration"
 jq = "JSON processor"
 gum = "tool for prompting users in the terminal"
-expac = "query information about installed packages"
 eza = "modern replacement for ls"
 7zip = "tool for extracting files from 7z archives"
 stow = "manage dotfiles with symlinks"
-wl-clipboard = "copy/paste to/from the Wayland clipboard"
 
 [package_management]
 yay = "AUR helper"
 pkgfile = "tool for detecting which package provides a file"
+aur-scanner = "AUR package scanner for malware and security issues"
+expac = "query information about installed packages"
 
 [graphics_drivers]
 nvidia-open-dkms = "open-source nvidia kernel driver modules, built via dkms"
 nvidia-utils = "nvidia userspace utilities/libraries"
-directx-shader-compiler = "Compiler for DirectX shaders"
 
 [audio]
 pipewire-pulse = "PulseAudio-compatible layer for PipeWire"
 
 [networking]
 networkmanager = "network connection management"
-openssh = "OpenSSH server and client"
 
 [hyprland_desktop]
 hyprland = "the Hyprland Wayland compositor/window manager"
@@ -56,6 +56,11 @@ rofi = "application launcher"
 quickshell = "Wayland shell for Hyprland"
 awww = "wallpaper setter for Wayland"
 matugen = "theme generator for Hyprland and other apps"
+wl-clipboard = "copy/paste to/from the Wayland clipboard"
+
+[peripherals]
+openrgb = "RGB lighting control for various devices"
+i2c-tools = "I2C bus utilities for hardware communication"
 
 [shell_environment]
 kitty = "terminal emulator"
@@ -69,6 +74,8 @@ zsh-syntax-highlighting = "Zsh plugin for syntax highlighting of commands"
 [editors]
 nano = "simple terminal text editor"
 visual-studio-code-bin = "VS Code, main IDE"
+
+[note-taking]
 obsidian = "knowledge base and note-taking app"
 
 [development]
@@ -84,12 +91,10 @@ boost = "C++ libraries"
 freeglut = "OpenGL utility library"
 glew = "OpenGL Extension Wrangler Library"
 qt6-languageserver = "Qt6 Language Server for IDEs"
+openssh = "OpenSSH server and client"
 
 [browsers]
 vivaldi = "web browser"
-
-[disk_usage]
-ncdu = "terminal file size analyzer"
 
 [gaming]
 steam = "game platform/launcher"
@@ -97,6 +102,7 @@ stardrop = "game launcher for Stardew Valley mods"
 heroic-games-launcher-bin = "Epic Games/GOG Launcher for Linux"
 adwsteamgtk = "Adwaita theme for Steam GTK"
 prismlauncher = "Minecraft launcher for multiple versions and modpacks"
+directx-shader-compiler = "Compiler for DirectX shaders"
 
 [fonts]
 ttf-cascadia-code-nerd = "Cascadia Code, patched with Nerd Font icons"
@@ -122,5 +128,5 @@ ventoy-bin = "bootable USB creation tool"
 [vpn]
 tailscale = "Virtual private network client"
 
-[video_conferencing]
+[recording]
 obs-studio = "Open Broadcaster Software for video recording and live streaming"

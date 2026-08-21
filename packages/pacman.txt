@@ -28,6 +28,7 @@ grub-btrfs
 gum
 hyprland
 hyprpolkitagent
+i2c-tools
 inotify-tools
 inter-font
 jq
@@ -37,7 +38,6 @@ linux-firmware
 linux-headers
 matugen
 nano
-ncdu
 networkmanager
 ninja
 noto-fonts-cjk
@@ -48,6 +48,7 @@ nvidia-utils
 obs-studio
 obsidian
 onefetch
+openrgb
 openssh
 os-prober
 pipewire-pulse
