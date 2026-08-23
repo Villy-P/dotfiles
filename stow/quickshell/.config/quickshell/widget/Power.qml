@@ -40,7 +40,7 @@ Item {
         }
 
         StyledText {
-            text: root.battery + "%"
+            text: root.battery + (UPower.onBattery ? "%" : "󱐋")
         }
     }
 
