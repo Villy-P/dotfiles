@@ -1,5 +1,7 @@
 import Quickshell
 import QtQuick
+import QtQuick.Layouts
+import "./Theme"
 
 import "./widget" as Widget
 
@@ -111,10 +113,24 @@ Scope {
                     anchors.verticalCenter: parent.verticalCenter
                     spacing: 8
 
-                    Widget.Wifi { popupHost: popupHost }
-                    Widget.Bluetooth { }
-                    Widget.Audio { popupHost: popupHost }
-                    Widget.Power { popupHost: popupHost }
+                    Rectangle {
+                        id: sysTray
+                        implicitWidth: sysRow.implicitWidth + 10
+                        implicitHeight: 35
+                        color: Theme.transparent
+                        radius: 6
+
+                        RowLayout {
+                            id: sysRow
+                            anchors.fill: parent
+                            spacing: 8
+
+                            Widget.Wifi { popupHost: popupHost }
+                            Widget.Bluetooth { }
+                            Widget.Audio { popupHost: popupHost }
+                            Widget.Power { popupHost: popupHost }
+                        }
+                    }
                 }
             }
         }
