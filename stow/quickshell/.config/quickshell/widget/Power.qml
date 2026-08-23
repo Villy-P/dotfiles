@@ -15,6 +15,8 @@ Item {
     property int battery: Math.round(UPower.displayDevice.percentage * 100)
     property var popupHost
 
+    visible: UPower.displayDevice.isPresent
+
     function batteryIcon(battery) {
         if (battery < 10) return "󰂃"
         if (battery < 20) return "󰁻"

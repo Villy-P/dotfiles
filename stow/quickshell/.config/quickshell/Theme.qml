@@ -30,4 +30,11 @@ QtObject {
     property color surface: jsonData.surface || "#111111"
     property color text: jsonData.text || "#ffffff"
     property color inverse_primary: jsonData.inverse_primary || "#ffffff"
+
+    property color transparent: Qt.rgba(
+        surface.r,
+        surface.g,
+        surface.b,
+        0.80
+    )
 }

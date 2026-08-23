@@ -18,7 +18,7 @@ Scope {
                 right: true
             }
 
-            implicitHeight: 26
+            implicitHeight: 40
             color: "transparent"
 
             margins {
@@ -83,12 +83,7 @@ Scope {
             Rectangle {
                 id: barRow
                 anchors.fill: parent
-                color: Qt.rgba(
-                           Theme.surface.r,
-                           Theme.surface.g,
-                           Theme.surface.b,
-                           0.80
-                           )
+                color: "transparent"
                 radius: 12
 
                 Row {
@@ -116,6 +111,7 @@ Scope {
                     spacing: 8
 
                     Widget.Wifi { popupHost: popupHost }
+                    Widget.Bluetooth { }
                     Widget.Audio { popupHost: popupHost }
                     Widget.Power { popupHost: popupHost }
                 }

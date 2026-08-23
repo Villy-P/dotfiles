@@ -119,6 +119,7 @@ swappy = "screenshot annotation tool"
 
 [bluetooth]
 bluez = "Bluetooth protocol stack"
+bluez-utils = "Bluetooth utilities"
 bluetui = "terminal-based Bluetooth manager"
 
 [usb]

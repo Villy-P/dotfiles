@@ -6,6 +6,7 @@ base-devel
 bat
 bluetui
 bluez
+bluez-utils
 boost
 btop
 btrfs-progs

@@ -6,10 +6,12 @@ import Quickshell.Hyprland
 import ".."
 import "../components"
 
-Item {
+Rectangle {
     id: root
     implicitWidth: row.implicitWidth
-    implicitHeight: row.implicitHeight
+    implicitHeight: 35
+    color: Theme.transparent
+    radius: 6
     property var popupHost
 
     function prominentWindow(wsId) {
