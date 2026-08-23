@@ -98,6 +98,7 @@ Scope {
                     spacing: 8
 
                     Widget.ArchLogo {}
+                    Widget.Workspace { popupHost: popupHost }
                 }
 
                 Row {
