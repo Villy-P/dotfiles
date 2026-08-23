@@ -17,7 +17,7 @@ Rectangle {
     color: Theme.transparent
     radius: 6
 
-    visible: Mpris.players.values.length > 0
+    visible: Mpris.players.values.length > 0 && activePlayer.length !== 0
 
     readonly property bool isPlaying: activePlayer.isPlaying
     readonly property MprisPlayer activePlayer: Mpris.players.values[0] ?? null

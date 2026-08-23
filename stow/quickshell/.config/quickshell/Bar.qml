@@ -116,14 +116,14 @@ Scope {
 
                     Rectangle {
                         id: sysTray
-                        implicitWidth: sysRow.implicitWidth + 10
+                        implicitWidth: sysRow.implicitWidth + 20
                         implicitHeight: 35
                         color: Theme.transparent
                         radius: 6
 
                         RowLayout {
                             id: sysRow
-                            anchors.fill: parent
+                            anchors.centerIn: parent
                             spacing: 8
 
                             RiceWidget.Wifi { popupHost: popupHost }

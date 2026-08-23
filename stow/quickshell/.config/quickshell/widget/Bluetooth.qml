@@ -9,8 +9,8 @@ import "../components"
 
 Item {
     id: root
-    implicitWidth: row.implicitWidth
-    implicitHeight: row.implicitHeight
+    implicitWidth: container.implicitWidth
+    implicitHeight: container.implicitHeight
 
     readonly property var connectedDevices: Bluetooth.devices.values.filter(d => d.connected)
 
@@ -19,18 +19,29 @@ Item {
         return "󰂲"
     }
 
-    RowLayout {
-        id: row
-        spacing: 4
+    Rectangle {
+        id: container
+        implicitWidth: row.implicitWidth + 10
+        implicitHeight: 25
+        anchors.centerIn: parent
+        color: Theme.primary_container
+        radius: 6
 
-        StyledText {
-            text: root.bluetoothIcon()
-            font.pixelSize: 16
-            color: "#77f6cb"
-        }
+        RowLayout {
+            id: row
+            spacing: 4
+            anchors.centerIn: parent
 
-        StyledText {
-            text: root.connectedDevices[0].name + (root.connectedDevices.length > 1 ? " +" + (root.connectedDevices.length - 1) : "")
+            StyledText {
+                text: root.bluetoothIcon()
+                font.pixelSize: 16
+                color: Theme.on_primary_container
+            }
+            StyledText {
+                visible: root.connectedDevices.length > 0
+                text: root.connectedDevices[0].name + (root.connectedDevices.length > 1 ? " +" + (root.connectedDevices.length - 1) : "") + " (" + root.connectedDevices[0].battery * 100 + "%)"
+                color: Theme.on_primary_container
+            }
         }
     }
 }

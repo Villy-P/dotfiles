@@ -49,12 +49,13 @@ Rectangle {
                 implicitWidth: 25
                 implicitHeight: 25
                 radius: 6
-                color: currentWorkspace === (index + 1) ? "#007c98" : Theme.transparent
+                color: currentWorkspace === (index + 1) ? Theme.primary : Theme.transparent
 
                 StyledText {
                     anchors.centerIn: parent
                     text: getWorkspaceTitleIcon(index + 1)
                     font.pixelSize: 18
+                    color: currentWorkspace === (index + 1) ? Theme.on_primary : Theme.text
                 }
             }
         }

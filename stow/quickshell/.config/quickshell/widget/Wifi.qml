@@ -52,17 +52,28 @@ Item {
         onTriggered: statusProcess.running = true
     }
 
-    RowLayout {
-        id: row
-        spacing: 4
-        StyledText { 
-            text: root.wifiIcon(root.signalStrength)
-            font.pixelSize: 16
-            color: "#fb8c78"
-        }
-        StyledText { 
-            visible: root.connected
-            text: root.ssid
+    Rectangle {
+        color: Theme.primary_container
+        implicitWidth: row.implicitWidth + 10
+        implicitHeight: 25
+        radius: 6
+        anchors.centerIn: parent
+
+        RowLayout {
+            anchors.centerIn: parent
+            id: row
+            spacing: 4
+            
+            StyledText { 
+                text: root.wifiIcon(root.signalStrength)
+                font.pixelSize: 16
+                color: Theme.on_primary_container
+            }
+            StyledText { 
+                visible: root.connected
+                text: root.ssid + " (" + root.signalStrength + "%)"
+                color: Theme.on_primary_container
+            }
         }
     }
 
