@@ -35,6 +35,6 @@ QtObject {
         surface.r,
         surface.g,
         surface.b,
-        0.80
+        0.6
     )
 }

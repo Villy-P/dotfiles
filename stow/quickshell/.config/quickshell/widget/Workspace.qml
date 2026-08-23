@@ -8,7 +8,7 @@ import "../components"
 
 Rectangle {
     id: root
-    implicitWidth: row.implicitWidth
+    implicitWidth: row.implicitWidth + 10
     implicitHeight: 35
     color: Theme.transparent
     radius: 6
@@ -28,8 +28,8 @@ Rectangle {
 
     function getWorkspaceTitleIcon(wsId) {
         let prominent = prominentWindow(wsId);
-        if (!prominent) return "";
-        if (prominent.title.endsWith("Vivaldi")) return "";
+        if (!prominent) return wsId;
+        if (prominent.title.endsWith("Vivaldi")) return "";
         if (prominent.title.endsWith("Visual Studio Code")) return "";
         if (prominent.title.endsWith("Steam")) return "";
         return "";
@@ -40,12 +40,22 @@ Rectangle {
     RowLayout {
         id: row
         spacing: 4
+
+        anchors.centerIn: parent
+
         Repeater {
             model: 5
-            delegate: StyledText {
-                text: getWorkspaceTitleIcon(index + 1)
-                font.pixelSize: 16
-                color: currentWorkspace === (index + 1) ? '#a9ecee' : '#007c98'
+            delegate: Rectangle {
+                implicitWidth: 25
+                implicitHeight: 25
+                radius: 6
+                color: currentWorkspace === (index + 1) ? "#007c98" : Theme.transparent
+
+                StyledText {
+                    anchors.centerIn: parent
+                    text: getWorkspaceTitleIcon(index + 1)
+                    font.pixelSize: 18
+                }
             }
         }
     }
