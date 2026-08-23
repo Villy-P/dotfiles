@@ -117,6 +117,7 @@ Scope {
 
                     Widget.Wifi { popupHost: popupHost }
                     Widget.Audio { popupHost: popupHost }
+                    Widget.Power { popupHost: popupHost }
                 }
             }
         }

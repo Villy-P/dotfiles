@@ -1,0 +1,68 @@
+import QtQuick
+import QtQuick.Controls.Basic
+import QtQuick.Layouts
+import Quickshell
+import Quickshell.Io
+import Quickshell.Services.UPower
+import ".."
+import "../components"
+
+Item {
+    id: root
+    implicitWidth: row.implicitWidth
+    implicitHeight: row.implicitHeight
+
+    property int battery: Math.round(UPower.displayDevice.percentage * 100)
+    property var popupHost
+
+    function batteryIcon(battery) {
+        if (battery < 10) return "󰂃"
+        if (battery < 20) return "󰁻"
+        if (battery < 30) return "󰁼"
+        if (battery < 40) return "󰁽"
+        if (battery < 50) return "󰁾"
+        if (battery < 60) return "󰁿"
+        if (battery < 70) return "󰂀"
+        if (battery < 80) return "󰂁"
+        if (battery < 90) return "󰂂"
+        if (battery < 100) return "󰁹"
+        return "󰁽"
+    }
+
+    RowLayout {
+        id: row
+        spacing: 4
+
+        StyledText {
+            text: root.batteryIcon(root.battery)
+            font.pixelSize: 16
+            color: "#77f6cb"
+        }
+
+        StyledText {
+            text: root.battery + "%"
+        }
+    }
+
+    HoverHandler {
+        id: iconHover
+        cursorShape: Qt.PointingHandCursor
+        onHoveredChanged: {
+            if (iconHover.hovered) {
+                root.popupHost.activate(root, powerContent, 700, 500)
+            } else {
+                root.popupHost.deactivate(root)
+            }
+        }
+    }
+
+    Component {
+        id: powerContent
+
+        Item {
+            StyledText {
+                text: "Power settings"
+            }
+        }
+    }
+}
