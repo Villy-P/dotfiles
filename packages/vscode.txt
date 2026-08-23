@@ -8,6 +8,9 @@ hyperoot.settings-organizer
 llvm-vs-code-extensions.vscode-clangd
 mads-hartmann.bash-ide-vscode
 ms-azuretools.vscode-containers
+ms-dotnettools.csdevkit
+ms-dotnettools.csharp
+ms-dotnettools.vscode-dotnet-runtime
 ms-python.debugpy
 ms-python.python
 ms-python.vscode-pylance

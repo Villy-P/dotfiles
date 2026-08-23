@@ -67,6 +67,7 @@ stow
 sudo
 swappy
 tailscale
+tiled
 ttf-cascadia-code-nerd
 udiskie
 udisks2

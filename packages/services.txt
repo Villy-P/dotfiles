@@ -1,7 +1,9 @@
+bluetooth.service
 dbus-broker.service
 getty@tty1.service
 NetworkManager.service
 polkit.service
+systemd-hostnamed.service
 systemd-journald.service
 systemd-logind.service
 systemd-timesyncd.service
