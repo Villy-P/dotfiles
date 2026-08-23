@@ -98,6 +98,7 @@ Scope {
                     spacing: 8
 
                     Widget.ArchLogo {}
+                    Widget.Workspace { popupHost: popupHost }
                 }
 
                 Row {
@@ -116,6 +117,7 @@ Scope {
 
                     Widget.Wifi { popupHost: popupHost }
                     Widget.Audio { popupHost: popupHost }
+                    Widget.Power { popupHost: popupHost }
                 }
             }
         }

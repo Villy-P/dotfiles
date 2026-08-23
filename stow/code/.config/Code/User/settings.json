@@ -3,7 +3,7 @@
   "workbench.editorAssociations": {
     "*.copilotmd": "vscode.markdown.preview.editor",
     "*.qrc": "qt-core.qrcEditor",
-    "{git,gitlens,chat-editing-snapshot-text-model,copilot,git-graph,git-graph-3}:/**/*.qrc": "default"
+    "{git,gitlens,chat-editing-snapshot-text-model,copilot,git-graph,git-graph-3}:/**/*.qrc": "default",
   },
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
@@ -20,15 +20,13 @@
   "git.autofetch": true,
   "files.autoSave": "afterDelay",
   "files.exclude": {
-    "**/.git": false
+    "**/.git": false,
   },
   "languageServers": {
     "qml": {
       "command": "qmlls6",
-      "filetypes": [
-        "qml"
-      ]
-    }
+      "filetypes": ["qml"],
+    },
   },
   "qt-qml.qmlls.customExePath": "/usr/bin/qmlls6",
   "qt-qml.qmlls.useQmlImportPathEnvVar": true,
@@ -38,11 +36,15 @@
   "telemetry.telemetryLevel": "off",
   "workbench.colorTheme": "Matugen",
   "[markdown]": {
-    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
   },
-  "Lua.diagnostics.globals": [
-    "hl"
-  ],
+  "Lua.diagnostics.globals": ["hl"],
   "workbench.list.smoothScrolling": true,
   "terminal.integrated.smoothScrolling": true,
+  "qt-core.additionalQtPaths": [
+    {
+      "name": "Qt-5.15.19-linux-g++-x86_64_from_PATH",
+      "path": "/usr/bin/qmake",
+    },
+  ],
 }
