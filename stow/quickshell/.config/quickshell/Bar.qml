@@ -3,7 +3,7 @@ import QtQuick
 import QtQuick.Layouts
 import "./Theme"
 
-import "./widget" as Widget
+import "./widget" as RiceWidget
 
 Scope {
     Variants {
@@ -95,8 +95,9 @@ Scope {
                     anchors.verticalCenter: parent.verticalCenter
                     spacing: 8
 
-                    Widget.ArchLogo {}
-                    Widget.Workspace { popupHost: popupHost }
+                    RiceWidget.ArchLogo {}
+                    RiceWidget.Workspace { popupHost: popupHost }
+                    RiceWidget.Track {}
                 }
 
                 Row {
@@ -104,7 +105,7 @@ Scope {
                     anchors.verticalCenter: parent.verticalCenter
                     spacing: 8
 
-                    Widget.Clock {}
+                    RiceWidget.Clock {}
                 }
 
                 Row {
@@ -125,10 +126,10 @@ Scope {
                             anchors.fill: parent
                             spacing: 8
 
-                            Widget.Wifi { popupHost: popupHost }
-                            Widget.Bluetooth { }
-                            Widget.Audio { popupHost: popupHost }
-                            Widget.Power { popupHost: popupHost }
+                            RiceWidget.Wifi { popupHost: popupHost }
+                            RiceWidget.Bluetooth { }
+                            RiceWidget.Audio { popupHost: popupHost }
+                            RiceWidget.Power { popupHost: popupHost }
                         }
                     }
                 }
