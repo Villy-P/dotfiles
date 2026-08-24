@@ -66,6 +66,7 @@ Rectangle {
             StyledText {
                 text: activePlayer.trackArtist + " - " + (formatTime(activePlayer.position) + " / " + formatTime(activePlayer.length))
                 font.pixelSize: 10
+                color: Theme.text_dim
             }
         }
 

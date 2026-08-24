@@ -17,5 +17,6 @@
     "surface": "{{colors.surface_container.default.hex}}",
     "inverse_primary": "{{colors.inverse_primary.default.hex}}",
     "text": "{{colors.on_surface.default.hex}}",
+    "text_dim": "{{colors.on_surface_variant.default.hex}}",
     "error": "{{colors.error.default.hex}}"
 }

@@ -54,6 +54,7 @@ openssh
 os-prober
 pipewire-pulse
 pkgfile
+playerctl
 prismlauncher
 python-pip
 python-pipx

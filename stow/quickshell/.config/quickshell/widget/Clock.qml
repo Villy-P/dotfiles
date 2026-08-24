@@ -36,7 +36,7 @@ Rectangle {
             Layout.alignment: Qt.AlignHCenter
             text: Time.date
             font.pixelSize: 11
-            color: Theme.textSecondary ?? "#9a9a9a"
+            color: Theme.text_dim
         }
     }
 }

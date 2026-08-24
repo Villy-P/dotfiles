@@ -43,6 +43,7 @@ nvidia-utils = "nvidia userspace utilities/libraries"
 
 [audio]
 pipewire-pulse = "PulseAudio-compatible layer for PipeWire"
+playerctl = "control media players from the command line"
 
 [networking]
 networkmanager = "network connection management"
