@@ -11,7 +11,12 @@ Item {
         id: loaderA
         anchors.fill: parent
         opacity: root.useA ? 1 : 0
-        Behavior on opacity { NumberAnimation { duration: root.fadeDuration } }
+        Behavior on opacity {
+            NumberAnimation {
+                duration: root.fadeDuration
+                onFinished: if (loaderA.opacity === 0) loaderA.active = false
+            }
+        }
         onOpacityChanged: if (opacity === 0) active = false
     }
 
@@ -19,7 +24,12 @@ Item {
         id: loaderB
         anchors.fill: parent
         opacity: root.useA ? 0 : 1
-        Behavior on opacity { NumberAnimation { duration: root.fadeDuration } }
+        Behavior on opacity {
+            NumberAnimation {
+                duration: root.fadeDuration
+                onFinished: if (loaderA.opacity === 0) loaderA.active = false
+            }
+        }
         onOpacityChanged: if (opacity === 0) active = false
     }
 

@@ -126,6 +126,7 @@ Scope {
                             anchors.centerIn: parent
                             spacing: 8
 
+                            RiceWidget.USB { }
                             RiceWidget.Wifi { popupHost: popupHost }
                             RiceWidget.Bluetooth { }
                             RiceWidget.Audio { popupHost: popupHost }

@@ -33,13 +33,25 @@ PopupWindow {
         x: Math.max(0, Math.min(popupHost.triggerX, popup.implicitWidth - targetWidth))
 
         Behavior on x {
-            NumberAnimation { duration: popup.animDuration; easing.type: Easing.OutExpo }
+            NumberAnimation {
+                duration: popup.animDuration
+                easing.type: Easing.BezierSpline
+                easing.bezierCurve: [0.05, 0.7, 0.1, 1.0, 1, 1]
+            }
         }
         Behavior on width {
-            NumberAnimation { duration: popup.animDuration; easing.type: Easing.OutExpo }
+            NumberAnimation {
+                duration: popup.animDuration
+                easing.type: Easing.BezierSpline
+                easing.bezierCurve: [0.05, 0.7, 0.1, 1.0, 1, 1]
+            }
         }
         Behavior on height {
-            NumberAnimation { duration: popup.animDuration; easing.type: Easing.OutExpo }
+            NumberAnimation {
+                duration: popup.animDuration
+                easing.type: Easing.BezierSpline
+                easing.bezierCurve: [0.05, 0.7, 0.1, 1.0, 1, 1]
+            }
         }
 
         HoverHandler {
