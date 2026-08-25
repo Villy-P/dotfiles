@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<profiles version="23">
+    <profile kind="CodeFormatterProfile" name="Custom-Java-Rules" version="23">
+        <!-- Use spaces for indentation -->
+        <setting id="org.eclipse.jdt.core.formatter.tabulation.char" value="space"/>
+        
+        <!-- Set indentation size to 4 spaces -->
+        <setting id="org.eclipse.jdt.core.formatter.tabulation.size" value="4"/>
+        
+        <!-- Do not automatically join lines that were wrapped manually -->
+        <setting id="org.eclipse.jdt.core.formatter.join_wrapped_lines" value="false"/>
+        
+        <!-- Set maximum line width before wrapping -->
+        <setting id="org.eclipse.jdt.core.formatter.lineSplit" value="100"/>
+        
+        <!-- Put braces on the same line (Blocks, Classes, Methods) -->
+        <setting id="org.eclipse.jdt.core.formatter.brace_position_for_block" value="end_of_line"/>
+        <setting id="org.eclipse.jdt.core.formatter.brace_position_for_method_declaration" value="end_of_line"/>
+        <setting id="org.eclipse.jdt.core.formatter.brace_position_for_type_declaration" value="end_of_line"/>
+    </profile>
+</profiles>
