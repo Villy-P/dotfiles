@@ -32,11 +32,13 @@ hyprpolkitagent
 i2c-tools
 inotify-tools
 inter-font
+jdk-openjdk
 jq
 kitty
 linux
 linux-firmware
 linux-headers
+lostfiles
 matugen
 nano
 networkmanager
@@ -60,6 +62,7 @@ python-pip
 python-pipx
 qt6-languageserver
 quickshell
+reflector
 rofi
 slurp
 snapper

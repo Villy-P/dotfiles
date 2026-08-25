@@ -36,6 +36,7 @@ yay = "AUR helper"
 pkgfile = "tool for detecting which package provides a file"
 aur-scanner = "AUR package scanner for malware and security issues"
 expac = "query information about installed packages"
+lostfiles = "detects files not associated with pacman"
 
 [graphics_drivers]
 nvidia-open-dkms = "open-source nvidia kernel driver modules, built via dkms"
@@ -47,6 +48,7 @@ playerctl = "control media players from the command line"
 
 [networking]
 networkmanager = "network connection management"
+reflector = "automatically changes mirror locations"
 
 [hyprland_desktop]
 hyprland = "the Hyprland Wayland compositor/window manager"
@@ -94,6 +96,8 @@ freeglut = "OpenGL utility library"
 glew = "OpenGL Extension Wrangler Library"
 qt6-languageserver = "Qt6 Language Server for IDEs"
 openssh = "OpenSSH server and client"
+checkstyle = "Java static analysis tool"
+jdk-openjdk = "Open source JDK"
 
 [browsers]
 vivaldi = "web browser"

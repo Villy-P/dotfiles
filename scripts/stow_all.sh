@@ -7,5 +7,5 @@ echo "Stowing all directories in ~/dotfiles/stow..."
 for dir in */; do
     pkg="${dir%/}"
     echo "Stowing $pkg..."
-    stow -t ~ "$pkg"
+    stow --override -d ~/dotfiles/stow -t ~ "$pkg"
 done

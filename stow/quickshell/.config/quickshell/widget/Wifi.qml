@@ -53,7 +53,7 @@ Item {
     }
 
     Rectangle {
-        color: Theme.primary_container
+        color: Theme.primary
         implicitWidth: row.implicitWidth + 10
         implicitHeight: 25
         radius: 6
@@ -67,12 +67,12 @@ Item {
             StyledText { 
                 text: root.wifiIcon(root.signalStrength)
                 font.pixelSize: 16
-                color: Theme.on_primary_container
+                color: Theme.on_primary
             }
             StyledText { 
                 visible: root.connected
                 text: root.ssid + " (" + root.signalStrength + "%)"
-                color: Theme.on_primary_container
+                color: Theme.on_primary
             }
         }
     }
