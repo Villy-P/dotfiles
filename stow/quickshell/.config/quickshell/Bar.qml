@@ -98,6 +98,7 @@ Scope {
                     RiceWidget.ArchLogo {}
                     RiceWidget.Workspace { popupHost: popupHost }
                     RiceWidget.Track {}
+                    RiceWidget.Clock {}
                 }
 
                 Row {
@@ -105,7 +106,7 @@ Scope {
                     anchors.verticalCenter: parent.verticalCenter
                     spacing: 8
 
-                    RiceWidget.Clock {}
+                    
                 }
 
                 Row {
