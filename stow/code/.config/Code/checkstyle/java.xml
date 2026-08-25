@@ -20,6 +20,10 @@
 <!-- 5.5 Scope -->
 <!-- 5.7 Preconditions and Exceptions -->
 <!-- 5.8 Remove unnecessary and unneeded code - REPEATED -->
+<!-- 6.2 Descriptiveness -->
+<!-- 6.3 Method names -->
+<!-- 7. Data Types - Every Rule -->
+<!-- 8. Efficiency and Redundancy -->
 
 <!-- Certain Formatting rules can instead be found in format_spec/java.xml -->
 
@@ -75,6 +79,23 @@
         <module name="RequireThis">
             <property name="checkFields" value="true"/>
             <property name="checkMethods" value="true"/>
+        </module>
+
+        <!-- 6.1 Casing -->
+        <module name="MethodName">
+            <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
+        </module>
+        <module name="MemberName">
+            <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
+        </module>
+        <module name="LocalVariableName">
+            <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
+        </module>
+        <module name="TypeName">
+            <property name="format" value="^[A-Z][a-zA-Z0-9]*$"/>
+        </module>
+        <module name="ConstantName">
+            <property name="format" value="^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$"/>
         </module>
 
         <!-- Disable writing == true -->
