@@ -36,7 +36,7 @@ Item {
         implicitWidth: row.implicitWidth + 10
         implicitHeight: 25
         anchors.centerIn: parent
-        color: Theme.secondary_container
+        color: Theme.secondary
         radius: 6
 
         RowLayout {
@@ -47,12 +47,12 @@ Item {
             StyledText {
                 text: "󰕓"
                 font.pixelSize: 16
-                color: Theme.on_secondary_container
+                color: Theme.on_secondary
             }
             StyledText {
                 visible: root.devices > 0
                 text: root.devices
-                color: Theme.on_secondary_container
+                color: Theme.on_secondary
             }
         }
     }

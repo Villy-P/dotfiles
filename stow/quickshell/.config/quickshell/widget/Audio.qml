@@ -48,7 +48,7 @@ Item {
 
         Rectangle {
             id: outputRect
-            color: Theme.tertiary_container
+            color: Theme.tertiary
             implicitWidth: row.implicitWidth + 10
             implicitHeight: 25
             radius: 6
@@ -61,11 +61,11 @@ Item {
                 StyledText {
                     text: root.volumeIcon()
                     font.pixelSize: 16
-                    color: Theme.on_tertiary_container
+                    color: Theme.on_tertiary
                 }
 
                 StyledText {
-                    color: Theme.on_tertiary_container
+                    color: Theme.on_tertiary
                     text: root.sink.description + " (" + (root.muted ? "Muted" : root.volume + "%") + ")"
                 }
             }
@@ -73,7 +73,7 @@ Item {
 
         Rectangle {
             id: inputRect
-            color: Theme.tertiary_container
+            color: Theme.tertiary
             implicitWidth: input_row.implicitWidth + 10
             implicitHeight: 25
             radius: 6
@@ -86,11 +86,11 @@ Item {
                 StyledText {
                     text: root.inputVolumeIcon()
                     font.pixelSize: 16
-                    color: Theme.on_tertiary_container
+                    color: Theme.on_tertiary
                 }
 
                 StyledText {
-                    color: Theme.on_tertiary_container
+                    color: Theme.on_tertiary
                     text: root.source.description + " (" + (root.inputMuted ? "Muted" : root.inputVolume + "%") + ")"
                 }
             }

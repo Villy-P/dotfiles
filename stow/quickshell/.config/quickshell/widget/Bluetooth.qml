@@ -24,7 +24,7 @@ Item {
         implicitWidth: row.implicitWidth + 10
         implicitHeight: 25
         anchors.centerIn: parent
-        color: Theme.primary_container
+        color: Theme.primary
         radius: 6
 
         RowLayout {
@@ -35,7 +35,7 @@ Item {
             StyledText {
                 text: root.bluetoothIcon()
                 font.pixelSize: 16
-                color: Theme.on_primary_container
+                color: Theme.on_primary
             }
             StyledText {
                 visible: root.connectedDevices.length > 0
