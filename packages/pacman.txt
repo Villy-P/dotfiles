@@ -32,6 +32,7 @@ hyprpolkitagent
 i2c-tools
 inotify-tools
 inter-font
+jdk-openjdk
 jq
 kitty
 linux

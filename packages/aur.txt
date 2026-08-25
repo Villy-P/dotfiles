@@ -1,5 +1,6 @@
 adwsteamgtk
 aur-scanner
+checkstyle
 heroic-games-launcher-bin
 rose-pine-hyprcursor
 stardrop

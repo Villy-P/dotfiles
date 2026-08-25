@@ -94,6 +94,8 @@ freeglut = "OpenGL utility library"
 glew = "OpenGL Extension Wrangler Library"
 qt6-languageserver = "Qt6 Language Server for IDEs"
 openssh = "OpenSSH server and client"
+checkstyle = "Java static analysis tool"
+jdk-openjdk = "Open source JDK"
 
 [browsers]
 vivaldi = "web browser"
