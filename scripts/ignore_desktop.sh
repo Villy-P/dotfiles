@@ -5,8 +5,13 @@ to_ignore=(
     "rofi"
     "bssh"
     "bvnc"
+    "qv4l2"
     "lstopo"
+    "qvidcap"
     "avahi-discover"
+    "java-java-openjdk"
+    "jshell-java-openjdk"
+    "jconsole-java-openjdk"
     "org.freedesktop.Xwayland"
 )
 
