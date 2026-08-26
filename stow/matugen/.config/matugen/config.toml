@@ -40,3 +40,8 @@ output_path = '~/.config/rofi/colors.rasi'
 [templates.heroic]
 input_path = '~/.config/matugen/templates/heroic.css'
 output_path = '~/.config/heroic/themes/matugen.css'
+
+[templates.openrgb]
+input_path = '~/.config/matugen/templates/openrgb.sh'
+output_path = '~/.config/OpenRGB/themes/openrgb.sh'
+post_hook = 'source ~/.config/OpenRGB/themes/openrgb.sh && ~/dotfiles/scripts/openrgb_matugen.sh'
