@@ -1,5 +1,8 @@
 {
   "enabledCssSnippets": [
     "matugen"
-  ]
+  ],
+  "interfaceFontFamily": "Inter",
+  "textFontFamily": "Charter",
+  "monospaceFontFamily": "CaskaydiaCove Nerd Font Mono"
 }
