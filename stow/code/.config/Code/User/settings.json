@@ -58,6 +58,7 @@
   },
   "git.openRepositoryInParentFolders": "never",
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
+  "python.analysis.typeCheckingMode": "strict",
 }
