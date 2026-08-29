@@ -3,6 +3,7 @@ linux = "the kernel itself"
 linux-headers = "needed to build dkms modules (nvidia) against the kernel"
 linux-firmware = "firmware blobs for hardware support"
 amd-ucode = "AMD CPU microcode updates, loaded at boot"
+intel-ucode = "Intel CPU microcode updates, loaded at boot"
 
 [bootloader]
 grub = "bootloader"
@@ -17,6 +18,8 @@ snapper = "Btrfs snapshot management tool"
 zram-generator = "create compressed swap in RAM"
 sudo = "privilege escalation"
 inotify-tools = "file system event monitoring"
+mkinitcpio = "Bash script to create initramfs images"
+upower = "power management service"
 
 [filesystem]
 btrfs-progs = "Btrfs filesystem utilities"
@@ -48,6 +51,7 @@ playerctl = "control media players from the command line"
 
 [networking]
 networkmanager = "network connection management"
+wpa_supplicant = "networkmanager dependency"
 reflector = "automatically changes mirror locations"
 
 [hyprland_desktop]
@@ -60,6 +64,7 @@ quickshell = "Wayland shell for Hyprland"
 awww = "wallpaper setter for Wayland"
 matugen = "theme generator for Hyprland and other apps"
 wl-clipboard = "copy/paste to/from the Wayland clipboard"
+brightnessctl = "control brightness from the CLI"
 
 [peripherals]
 openrgb = "RGB lighting control for various devices"
@@ -137,3 +142,11 @@ tailscale = "Virtual private network client"
 
 [recording]
 obs-studio = "Open Broadcaster Software for video recording and live streaming"
+
+[latex]
+texlive-basic = "Base LaTex support"
+texlive-bin = "LaTex utilites"
+texlive-binextra = "Extra LaTex utilities"
+texlive-fontsrecommended = "Recommended fonts for LaTex"
+texlive-latexextra = "Extra LaTex utiltiies"
+

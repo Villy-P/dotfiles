@@ -5,6 +5,7 @@ github.codespaces
 github.remotehub
 haikalllp.matugen-theme
 hyperoot.settings-organizer
+james-yu.latex-workshop
 llvm-vs-code-extensions.vscode-clangd
 mads-hartmann.bash-ide-vscode
 ms-azuretools.vscode-containers

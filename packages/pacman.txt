@@ -8,6 +8,7 @@ bluetui
 bluez
 bluez-utils
 boost
+brightnessctl
 btop
 btrfs-progs
 clang
@@ -31,6 +32,7 @@ hyprland
 hyprpolkitagent
 i2c-tools
 inotify-tools
+intel-ucode
 inter-font
 jdk-openjdk
 jq
@@ -40,6 +42,7 @@ linux-firmware
 linux-headers
 lostfiles
 matugen
+mkinitcpio
 nano
 networkmanager
 ninja
@@ -72,12 +75,19 @@ stow
 sudo
 swappy
 tailscale
+texlive-basic
+texlive-bin
+texlive-binextra
+texlive-fontsrecommended
+texlive-latexextra
 tiled
 ttf-cascadia-code-nerd
 udiskie
 udisks2
+upower
 vivaldi
 wl-clipboard
+wpa_supplicant
 xdg-desktop-portal-hyprland
 zram-generator
 zsh
