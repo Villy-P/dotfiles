@@ -31,18 +31,28 @@ Item {
         return "󰁽"
     }
 
-    RowLayout {
+    Rectangle {
         id: row
-        spacing: 4
+        color: "#77f6cb"
+        implicitWidth: input_row.implicitWidth + 10
+        implicitHeight: 25
+        radius: 6
 
-        StyledText {
-            text: root.batteryIcon(root.battery)
-            font.pixelSize: 16
-            color: "#77f6cb"
-        }
+        RowLayout {
+            id: input_row
+            spacing: 4
+            anchors.centerIn: parent
 
-        StyledText {
-            text: root.battery + (UPower.onBattery ? "%" : "󱐋")
+            StyledText {
+                text: root.batteryIcon(root.battery)
+                font.pixelSize: 16
+                color: Theme.on_primary
+            }
+
+            StyledText {
+                color: Theme.on_primary
+                text: root.battery + (UPower.onBattery ? "%" : "󱐋")
+            }
         }
     }
 
