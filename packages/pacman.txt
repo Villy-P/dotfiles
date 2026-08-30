@@ -60,6 +60,7 @@ os-prober
 pipewire-pulse
 pkgfile
 playerctl
+power-profiles-daemon
 prismlauncher
 python-pip
 python-pipx

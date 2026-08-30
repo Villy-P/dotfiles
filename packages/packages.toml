@@ -20,6 +20,7 @@ sudo = "privilege escalation"
 inotify-tools = "file system event monitoring"
 mkinitcpio = "Bash script to create initramfs images"
 upower = "power management service"
+power-profiles-daemon = "power profile management service"
 
 [filesystem]
 btrfs-progs = "Btrfs filesystem utilities"
