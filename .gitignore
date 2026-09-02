@@ -1,3 +1,6 @@
 *.bak
 stow/kitty/.config/kitty/matugen.conf
 stow/rofi/.config/rofi/colors.rasi
+stow/obsidian/notes/**/*.md
+stow/obsidian/notes/.gitignore
+stow/heroic/.config/heroic/**/*.css

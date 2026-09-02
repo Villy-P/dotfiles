@@ -32,6 +32,7 @@ Rectangle {
         if (prominent.title.endsWith("Vivaldi")) return "";
         if (prominent.title.endsWith("Visual Studio Code")) return "";
         if (prominent.title.endsWith("Steam")) return "";
+        if (prominent.title.includes("Obsidian")) return "";
         return "";
     }
 
