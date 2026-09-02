@@ -29,10 +29,11 @@ Rectangle {
     function getWorkspaceTitleIcon(wsId) {
         let prominent = prominentWindow(wsId);
         if (!prominent) return wsId;
-        if (prominent.title.endsWith("Vivaldi")) return "";
-        if (prominent.title.endsWith("Visual Studio Code")) return "";
-        if (prominent.title.endsWith("Steam")) return "";
-        if (prominent.title.includes("Obsidian")) return "";
+        if (prominent.wayland.appId == "vivaldi-stable") return "";
+        if (prominent.wayland.appId.includes("code")) return "";
+        if (prominent.wayland.appId.includes("steam")) return "";
+        if (prominent.wayland.appId.includes("Obsidian")) return "";
+        if (prominent.wayland.appId.includes("kitty")) return "";
         return "";
     }
 
