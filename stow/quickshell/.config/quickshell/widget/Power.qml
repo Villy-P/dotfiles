@@ -27,13 +27,19 @@ Item {
         if (battery < 70) return "󰂀"
         if (battery < 80) return "󰂁"
         if (battery < 90) return "󰂂"
-        if (battery < 100) return "󰁹"
+        if (battery <= 100) return "󰁹"
         return "󰁽"
+    }
+
+    function getPowerColor(battery) {
+        if (battery < 10) return "#CB4C4E";
+        if (battery < 30) return "#E0D268";
+        return "#77f6cb"
     }
 
     Rectangle {
         id: row
-        color: "#77f6cb"
+        color: root.getPowerColor(root.battery)
         implicitWidth: input_row.implicitWidth + 10
         implicitHeight: 25
         radius: 6
