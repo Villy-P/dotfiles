@@ -34,6 +34,7 @@ gum = "tool for prompting users in the terminal"
 eza = "modern replacement for ls"
 7zip = "tool for extracting files from 7z archives"
 stow = "manage dotfiles with symlinks"
+yazi = "file manager"
 
 [package_management]
 yay = "AUR helper"
@@ -102,7 +103,12 @@ openssh = "OpenSSH server and client"
 checkstyle = "Java static analysis tool"
 jdk-openjdk = "Open source JDK"
 tree-sitter-cli = "plugin for NeoVim"
+eslint = "linter for Javascript family"
+
+[formatters]
 stylua = "formatter for Lua"
+prettier = "formatter for Javascript family"
+tex-fmt-bin = "formatter for LaTex"
 
 [libraries]
 boost = "C++ libraries"

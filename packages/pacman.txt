@@ -16,6 +16,7 @@ cmake
 directx-shader-compiler
 doxygen
 efibootmgr
+eslint
 exfatprogs
 expac
 eza
@@ -43,6 +44,7 @@ linux-headers
 lostfiles
 lua-language-server
 matugen
+mkinitcpio
 nano
 neovim
 networkmanager
@@ -62,6 +64,7 @@ pipewire-pulse
 pkgfile
 playerctl
 power-profiles-daemon
+prettier
 prismlauncher
 python-pip
 python-pipx
@@ -94,7 +97,9 @@ udisks2
 upower
 vivaldi
 wl-clipboard
+wpa_supplicant
 xdg-desktop-portal-hyprland
+yazi
 zram-generator
 zsh
 zsh-autosuggestions
