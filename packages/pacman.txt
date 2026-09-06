@@ -41,9 +41,10 @@ linux
 linux-firmware
 linux-headers
 lostfiles
+lua-language-server
 matugen
-mkinitcpio
 nano
+neovim
 networkmanager
 ninja
 noto-fonts-cjk
@@ -82,13 +83,13 @@ texlive-binextra
 texlive-fontsrecommended
 texlive-latexextra
 tiled
+tree-sitter-cli
 ttf-cascadia-code-nerd
 udiskie
 udisks2
 upower
 vivaldi
 wl-clipboard
-wpa_supplicant
 xdg-desktop-portal-hyprland
 zram-generator
 zsh

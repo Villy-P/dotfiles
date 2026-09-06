@@ -83,6 +83,7 @@ zsh-syntax-highlighting = "Zsh plugin for syntax highlighting of commands"
 [editors]
 nano = "simple terminal text editor"
 visual-studio-code-bin = "VS Code, main IDE"
+neovim = "advanced terminal text editor"
 
 [productivity]
 obsidian = "knowledge base and note-taking app"
@@ -104,6 +105,8 @@ qt6-languageserver = "Qt6 Language Server for IDEs"
 openssh = "OpenSSH server and client"
 checkstyle = "Java static analysis tool"
 jdk-openjdk = "Open source JDK"
+lua-language-server = "Language server for Lua"
+tree-sitter-cli = "plugin for NeoVim"
 
 [browsers]
 vivaldi = "web browser"
@@ -150,4 +153,3 @@ texlive-bin = "LaTex utilites"
 texlive-binextra = "Extra LaTex utilities"
 texlive-fontsrecommended = "Recommended fonts for LaTex"
 texlive-latexextra = "Extra LaTex utiltiies"
-

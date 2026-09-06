@@ -3,7 +3,7 @@ dbus-broker.service
 getty@tty1.service
 NetworkManager.service
 polkit.service
-systemd-hostnamed.service
+power-profiles-daemon.service
 systemd-journald.service
 systemd-logind.service
 systemd-timesyncd.service
