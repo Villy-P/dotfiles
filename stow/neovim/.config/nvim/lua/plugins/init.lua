@@ -5,7 +5,17 @@ return {
 		build = ":TSUpdate",
 		config = function()
 			require("nvim-treesitter.configs").setup({
-				ensure_installed = { "lua", "vim", "vimdoc", "typescript", "tsx", "svelte" },
+				ensure_installed = {
+					"lua",
+					"vim",
+					"vimdoc",
+					"typescript",
+					"tsx",
+					"svelte",
+					"markdown",
+					"markdown_inline",
+					"cmake",
+				},
 				highlight = { enable = true },
 				indent = { enable = true },
 			})
@@ -70,6 +80,7 @@ return {
 				require("conform").setup({
 					formatters_by_ft = {
 						lua = { "stylua" },
+						cmake = { "cmake_format" },
 					},
 					format_on_save = {
 						timeout_ms = 500,
@@ -96,6 +107,31 @@ return {
 		},
 		config = function()
 			require("config.cmp")
+		end,
+	},
+
+	{
+		"lewis6991/gitsigns.nvim",
+		event = { "BufReadPre", "BufNewFile" },
+		config = function()
+			require("gitsigns").setup({
+				signs = {
+					add = { text = "│" },
+					change = { text = "│" },
+					delete = { text = "_" },
+					topdelete = { text = "‾" },
+					changedelete = { text = "~" },
+				},
+			})
+		end,
+	},
+
+	{
+		"MeanderingProgrammer/render-markdown.nvim",
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
+		ft = { "markdown" },
+		config = function()
+			require("render-markdown").setup({})
 		end,
 	},
 }

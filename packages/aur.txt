@@ -1,6 +1,7 @@
 adwsteamgtk
 aur-scanner
 checkstyle
+cmake-language-server
 heroic-games-launcher-bin
 rose-pine-hyprcursor
 stardrop

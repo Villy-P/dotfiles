@@ -25,3 +25,10 @@ vim.opt.smartcase = true
 
 require("lazy").setup("plugins")
 require("config.lsp")
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    vim.treesitter.start()
+  end,
+})

@@ -114,7 +114,8 @@ lua-language-server = "Language server for Lua"
 qt6-languageserver = "Qt6 Language Server for IDEs"
 svelte-language-server = "Language server for Svelte"
 tailwindcss-language-server = "Language server for TailwindCSS"
-typescript-language-server = "Lanugage server for TailwindCSS"
+typescript-language-server = "Lanugage server for Typescript"
+cmake-language-server = "Language server for CMake"
 
 [browsers]
 vivaldi = "web browser"
