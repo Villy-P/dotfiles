@@ -45,3 +45,9 @@ output_path = '~/.config/heroic/themes/matugen.css'
 input_path = '~/.config/matugen/templates/openrgb.sh'
 output_path = '~/.config/OpenRGB/themes/openrgb.sh'
 post_hook = 'source ~/.config/OpenRGB/themes/openrgb.sh && ~/dotfiles/scripts/openrgb_matugen.sh'
+
+[templates.neovim]
+input_path = "~/.config/matugen/templates/nvim-colors.json"
+output_path = "~/.config/matugen/themes/nvim-colors.json"
+post_hook = "pkill -SIGUSR1 nvim"
+

@@ -39,6 +39,7 @@ export NUGET_PACKAGES="$XDG_CACHE_HOME"/NuGetPackages
 export PATH="$PATH
 :/home/valerius/.local/bin
 :/home/valerius/dotfiles/scripts"
+export EDITOR="nvim"
 
 # Custom Alias Commands
 a() {

@@ -4,3 +4,4 @@ stow/rofi/.config/rofi/colors.rasi
 stow/obsidian/notes/**/*.md
 stow/obsidian/notes/.gitignore
 stow/heroic/.config/heroic/**/*.css
+stow/matugen/.config/matugen/themes/*
