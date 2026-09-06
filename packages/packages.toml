@@ -98,15 +98,23 @@ doxygen = "documentation generator"
 ninja = "build system"
 npm = "Node.js package manager"
 python-pipx = "Python package manager for isolated environments"
-boost = "C++ libraries"
-freeglut = "OpenGL utility library"
-glew = "OpenGL Extension Wrangler Library"
-qt6-languageserver = "Qt6 Language Server for IDEs"
 openssh = "OpenSSH server and client"
 checkstyle = "Java static analysis tool"
 jdk-openjdk = "Open source JDK"
-lua-language-server = "Language server for Lua"
 tree-sitter-cli = "plugin for NeoVim"
+stylua = "formatter for Lua"
+
+[libraries]
+boost = "C++ libraries"
+freeglut = "OpenGL utility library"
+glew = "OpenGL Extension Wrangler Library"
+
+[language_servers]
+lua-language-server = "Language server for Lua"
+qt6-languageserver = "Qt6 Language Server for IDEs"
+svelte-language-server = "Language server for Svelte"
+tailwindcss-language-server = "Language server for TailwindCSS"
+typescript-language-server = "Lanugage server for TailwindCSS"
 
 [browsers]
 vivaldi = "web browser"

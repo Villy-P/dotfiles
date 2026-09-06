@@ -74,9 +74,12 @@ snapper
 starship
 steam
 stow
+stylua
 sudo
+svelte-language-server
 swappy
 tailscale
+tailwindcss-language-server
 texlive-basic
 texlive-bin
 texlive-binextra
@@ -85,6 +88,7 @@ texlive-latexextra
 tiled
 tree-sitter-cli
 ttf-cascadia-code-nerd
+typescript-language-server
 udiskie
 udisks2
 upower

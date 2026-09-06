@@ -1,6 +1,7 @@
 bluetooth.service
 dbus-broker.service
 getty@tty1.service
+gpg-agent@etc-pacman.d-gnupg.service
 NetworkManager.service
 polkit.service
 power-profiles-daemon.service
