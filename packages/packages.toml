@@ -116,6 +116,7 @@ svelte-language-server = "Language server for Svelte"
 tailwindcss-language-server = "Language server for TailwindCSS"
 typescript-language-server = "Lanugage server for Typescript"
 cmake-language-server = "Language server for CMake"
+jdtls = "Language server for Java"
 
 [browsers]
 vivaldi = "web browser"

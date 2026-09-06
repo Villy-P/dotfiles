@@ -15,6 +15,10 @@ return {
 					"markdown",
 					"markdown_inline",
 					"cmake",
+					"c",
+					"cpp",
+					"c_sharp",
+					"java",
 				},
 				highlight = { enable = true },
 				indent = { enable = true },
@@ -132,6 +136,18 @@ return {
 		ft = { "markdown" },
 		config = function()
 			require("render-markdown").setup({})
+		end,
+	},
+
+	{
+		"seblyng/roslyn.nvim",
+		ft = "cs",
+		config = function()
+			require("roslyn").setup({
+				config = {
+					capabilities = require("cmp_nvim_lsp").default_capabilities(),
+				},
+			})
 		end,
 	},
 }
