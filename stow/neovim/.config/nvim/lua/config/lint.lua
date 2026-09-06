@@ -2,6 +2,9 @@ local lint = require("lint")
 
 lint.linters_by_ft = {
 	java = { "checkstyle" },
+	javascript = { "eslint" },
+	typescript = { "eslint" },
+	svelte = { "eslint" },
 }
 
 -- Completely override checkstyle to use standard text parsing
@@ -29,6 +32,7 @@ lint.linters.checkstyle = {
 
 -- Trigger linting automatically
 vim.api.nvim_create_autocmd({ "BufWritePost", "BufEnter", "InsertLeave" }, {
+	pattern = { "*.java", "*.js", "*.ts", "*.svelte" },
 	callback = function()
 		lint.try_lint()
 	end,
