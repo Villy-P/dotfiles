@@ -85,6 +85,9 @@ return {
 					formatters_by_ft = {
 						lua = { "stylua" },
 						cmake = { "cmake_format" },
+						typescript = { "prettier" },
+						javascript = { "prettier" },
+						svelte = { "prettier" },
 					},
 					format_on_save = {
 						timeout_ms = 500,
