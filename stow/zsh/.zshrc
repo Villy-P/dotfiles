@@ -11,6 +11,7 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
 
 # Set up key bindings
 bindkey '^H' backward-kill-word
@@ -82,7 +83,7 @@ a() {
 LAST_REPO=""
 
 cd() {
-    zoxide "$@"
+    builtin cd "$@"
     git rev-parse 2>/dev/null
 
     if [ $? -eq 0 ]; then
@@ -99,7 +100,6 @@ alias la='eza -la --icons'
 alias lt='eza --tree --icons'
 
 alias cat='bat'
-alias z='zoxide'
 
 alias eject-usb='read -p "Device (e.g. sdb): " dev && udisksctl unmount -b /dev/${dev}1 && udisksctl power-off -b /dev/${dev}'
 
