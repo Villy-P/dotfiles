@@ -62,4 +62,5 @@
   },
   "python.analysis.typeCheckingMode": "strict",
   "qt-core.showWelcomePageOnActivation": false,
+  "editor.wordWrap": "on",
 }

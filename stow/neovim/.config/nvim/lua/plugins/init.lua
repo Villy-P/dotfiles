@@ -19,8 +19,6 @@ return {
 					"cpp",
 					"c_sharp",
 					"java",
-					"latex",
-					"bibtex",
 				},
 				highlight = { enable = true },
 				indent = { enable = true },
@@ -90,6 +88,7 @@ return {
 						typescript = { "prettier" },
 						javascript = { "prettier" },
 						svelte = { "prettier" },
+						tex = { "latexindent" },
 					},
 					format_on_save = {
 						timeout_ms = 500,
