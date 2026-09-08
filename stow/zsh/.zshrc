@@ -82,7 +82,7 @@ a() {
 LAST_REPO=""
 
 cd() {
-    builtin cd "$@"
+    zoxide "$@"
     git rev-parse 2>/dev/null
 
     if [ $? -eq 0 ]; then
@@ -99,6 +99,7 @@ alias la='eza -la --icons'
 alias lt='eza --tree --icons'
 
 alias cat='bat'
+alias z='zoxide'
 
 alias eject-usb='read -p "Device (e.g. sdb): " dev && udisksctl unmount -b /dev/${dev}1 && udisksctl power-off -b /dev/${dev}'
 
