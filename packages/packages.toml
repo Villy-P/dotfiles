@@ -85,6 +85,9 @@ zsh-syntax-highlighting = "Zsh plugin for syntax highlighting of commands"
 nano = "simple terminal text editor"
 visual-studio-code-bin = "VS Code, main IDE"
 neovim = "advanced terminal text editor"
+vim = "used for access to vimtutor"
+zathura = "document viewer"
+zathura-pdf-poppler = "pdf support for zathura"
 
 [productivity]
 obsidian = "knowledge base and note-taking app"
@@ -108,7 +111,6 @@ eslint = "linter for Javascript family"
 [formatters]
 stylua = "formatter for Lua"
 prettier = "formatter for Javascript family"
-tex-fmt-bin = "formatter for LaTex"
 
 [libraries]
 boost = "C++ libraries"
@@ -169,3 +171,7 @@ texlive-bin = "LaTex utilites"
 texlive-binextra = "Extra LaTex utilities"
 texlive-fontsrecommended = "Recommended fonts for LaTex"
 texlive-latexextra = "Extra LaTex utiltiies"
+biber = "LaTex runner"
+perl-file-homedir = "Used for LaTex utilities in Neovim"
+perl-yaml-tiny = "Used for LaTex utilities in Neovim"
+xdotool = "Used for LaTex utilities in Neovim"

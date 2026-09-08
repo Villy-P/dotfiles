@@ -4,6 +4,7 @@ awww
 base
 base-devel
 bat
+biber
 bluetui
 bluez
 bluez-utils
@@ -60,6 +61,8 @@ onefetch
 openrgb
 openssh
 os-prober
+perl-file-homedir
+perl-yaml-tiny
 pipewire-pulse
 pkgfile
 playerctl
@@ -95,11 +98,15 @@ typescript-language-server
 udiskie
 udisks2
 upower
+vim
 vivaldi
 wl-clipboard
 wpa_supplicant
 xdg-desktop-portal-hyprland
+xdotool
 yazi
+zathura
+zathura-pdf-poppler
 zram-generator
 zsh
 zsh-autosuggestions

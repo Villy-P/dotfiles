@@ -6,7 +6,6 @@ heroic-games-launcher-bin
 jdtls
 rose-pine-hyprcursor
 stardrop
-tex-fmt-bin
 ttf-bitstream-charter
 ventoy-bin
 visual-studio-code-bin
