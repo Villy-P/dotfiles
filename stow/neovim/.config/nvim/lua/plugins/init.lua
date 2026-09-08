@@ -19,6 +19,8 @@ return {
 					"cpp",
 					"c_sharp",
 					"java",
+					"latex",
+					"bibtex",
 				},
 				highlight = { enable = true },
 				indent = { enable = true },
@@ -170,5 +172,15 @@ return {
 			load_theme = true,
 			palette_path = "~/.config/matugen/themes/nvim-colors.json",
 		},
+	},
+
+	{
+		"lervag/vimtex",
+		lazy = false,
+		init = function()
+			vim.g.vimtex_view_method = "zathura"
+			vim.g.vimtex_quickfix_mode = 0
+			vim.g.tex_flavor = "latex"
+		end,
 	},
 }
