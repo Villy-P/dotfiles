@@ -33,6 +33,7 @@ vim.lsp.config("jdtls", {
 		},
 	},
 })
+vim.lsp.config("taplo", { capabilities = capabilities })
 
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("ts_ls")
@@ -41,6 +42,7 @@ vim.lsp.enable("tailwindcss")
 vim.lsp.enable("cmake")
 vim.lsp.enable("clangd")
 vim.lsp.enable("jdtls")
+vim.lsp.enable("taplo")
 
 vim.keymap.set("n", "gd", vim.lsp.buf.definition)
 vim.keymap.set("n", "K", vim.lsp.buf.hover)

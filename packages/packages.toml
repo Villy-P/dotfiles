@@ -27,6 +27,8 @@ btrfs-progs = "Btrfs filesystem utilities"
 exfatprogs = "tools for exFAT filesystem support"
 
 [cli_tools]
+wget = "tool to extract data from web servers"
+ripgrep = "command line search tool"
 btop = "resource monitor"
 bat = "cat clone with syntax highlighting and Git integration"
 jq = "JSON processor"
@@ -34,9 +36,11 @@ gum = "tool for prompting users in the terminal"
 eza = "modern replacement for ls"
 7zip = "tool for extracting files from 7z archives"
 stow = "manage dotfiles with symlinks"
+zoxide = "modern replacement for cd"
 yazi = "file manager"
 
 [package_management]
+luarocks = "Lua package manager"
 yay = "AUR helper"
 pkgfile = "tool for detecting which package provides a file"
 aur-scanner = "AUR package scanner for malware and security issues"
@@ -118,6 +122,7 @@ freeglut = "OpenGL utility library"
 glew = "OpenGL Extension Wrangler Library"
 
 [language_servers]
+taplo-cli = "Language server for TOML"
 lua-language-server = "Language server for Lua"
 qt6-languageserver = "Qt6 Language Server for IDEs"
 svelte-language-server = "Language server for Svelte"

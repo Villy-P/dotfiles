@@ -19,6 +19,7 @@ return {
 					"cpp",
 					"c_sharp",
 					"java",
+					"toml",
 				},
 				highlight = { enable = true },
 				indent = { enable = true },

@@ -44,6 +44,7 @@ linux-firmware
 linux-headers
 lostfiles
 lua-language-server
+luarocks
 matugen
 mkinitcpio
 nano
@@ -74,6 +75,7 @@ python-pipx
 qt6-languageserver
 quickshell
 reflector
+ripgrep
 rofi
 slurp
 snapper
@@ -86,6 +88,7 @@ svelte-language-server
 swappy
 tailscale
 tailwindcss-language-server
+taplo-cli
 texlive-basic
 texlive-bin
 texlive-binextra
@@ -100,6 +103,7 @@ udisks2
 upower
 vim
 vivaldi
+wget
 wl-clipboard
 wpa_supplicant
 xdg-desktop-portal-hyprland
@@ -107,6 +111,7 @@ xdotool
 yazi
 zathura
 zathura-pdf-poppler
+zoxide
 zram-generator
 zsh
 zsh-autosuggestions
