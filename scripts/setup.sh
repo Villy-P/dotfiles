@@ -17,10 +17,6 @@ if ! command -v yay &> /dev/null; then
 fi
 yay -S --needed --noconfirm $(cat ~/dotfiles/packages/aur.txt | grep -Ev "yay")
 
-while read -r extension; do
-    code --install-extension "$extension"
-done < ~/dotfiles/packages/vscode.txt
-
 ~/dotfiles/scripts/stow_all.sh
 
 mkdir -p ~/.config/matugen/templates
