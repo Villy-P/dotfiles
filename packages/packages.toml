@@ -86,10 +86,7 @@ zsh-autosuggestions = "Zsh plugin for command suggestions based on history"
 zsh-syntax-highlighting = "Zsh plugin for syntax highlighting of commands"
 
 [editors]
-nano = "simple terminal text editor"
-visual-studio-code-bin = "VS Code, main IDE"
 neovim = "advanced terminal text editor"
-vim = "used for access to vimtutor"
 zathura = "document viewer"
 zathura-pdf-poppler = "pdf support for zathura"
 
@@ -132,7 +129,7 @@ cmake-language-server = "Language server for CMake"
 jdtls = "Language server for Java"
 
 [browsers]
-vivaldi = "web browser"
+floorp-bin = "web browser"
 
 [gaming]
 steam = "game platform/launcher"

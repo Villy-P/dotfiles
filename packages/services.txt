@@ -1,4 +1,3 @@
-bluetooth.service
 dbus-broker.service
 getty@tty1.service
 NetworkManager.service

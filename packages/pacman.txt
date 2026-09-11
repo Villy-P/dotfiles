@@ -47,7 +47,6 @@ lua-language-server
 luarocks
 matugen
 mkinitcpio
-nano
 neovim
 networkmanager
 ninja
@@ -101,8 +100,6 @@ typescript-language-server
 udiskie
 udisks2
 upower
-vim
-vivaldi
 wget
 wl-clipboard
 wpa_supplicant
