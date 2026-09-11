@@ -1,4 +1,16 @@
 local cmp = require("cmp")
+local lspkind = require("lspkind")
+
+local custom_border = {
+	"╭",
+	"─",
+	"╮",
+	"│",
+	"╯",
+	"─",
+	"╰",
+	"│",
+}
 
 cmp.setup({
 	mapping = cmp.mapping.preset.insert({
@@ -9,5 +21,20 @@ cmp.setup({
 	}),
 	sources = {
 		{ name = "nvim_lsp" },
+	},
+	window = {
+		completion = cmp.config.window.bordered({
+			border = custom_border,
+		}),
+		documentation = cmp.config.window.bordered({
+			border = custom_border,
+		}),
+	},
+	formatting = {
+		format = lspkind.cmp_format({
+			mode = "symbol_text",
+			maxwidth = 50,
+			ellipsis_char = "...",
+		}),
 	},
 })

@@ -129,7 +129,7 @@ cmake-language-server = "Language server for CMake"
 jdtls = "Language server for Java"
 
 [browsers]
-floorp-bin = "web browser"
+zen-browser-bin = "web browser"
 
 [gaming]
 steam = "game platform/launcher"
