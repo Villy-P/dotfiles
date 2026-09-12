@@ -38,3 +38,7 @@ post_hook = 'source ~/.config/OpenRGB/themes/openrgb.sh && ~/dotfiles/scripts/op
 input_path = "~/.config/matugen/templates/nvim-colors.json"
 output_path = "~/.config/matugen/themes/nvim-colors.json"
 post_hook = "pkill -SIGUSR1 nvim"
+
+[templates.zathura]
+input_path = '~/.config/matugen/templates/zathura-colors'
+output_path = '~/.config/zathura/zathurarc'

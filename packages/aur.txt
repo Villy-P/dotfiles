@@ -2,7 +2,6 @@ adwsteamgtk
 aur-scanner
 checkstyle
 cmake-language-server
-floorp-bin
 heroic-games-launcher-bin
 jdtls
 rose-pine-hyprcursor
@@ -10,3 +9,4 @@ stardrop
 ttf-bitstream-charter
 ventoy-bin
 yay
+zen-browser-bin

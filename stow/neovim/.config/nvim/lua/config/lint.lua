@@ -5,6 +5,8 @@ lint.linters_by_ft = {
 	javascript = { "eslint" },
 	typescript = { "eslint" },
 	svelte = { "eslint" },
+	sh = { "shfmt" },
+	bash = { "shfmt" },
 }
 
 -- Completely override checkstyle to use standard text parsing

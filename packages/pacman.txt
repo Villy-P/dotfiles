@@ -1,8 +1,8 @@
 7zip
-amd-ucode
 awww
 base
 base-devel
+bash-language-server
 bat
 biber
 bluetui
@@ -34,7 +34,6 @@ hyprland
 hyprpolkitagent
 i2c-tools
 inotify-tools
-intel-ucode
 inter-font
 jdk-openjdk
 jq
@@ -53,8 +52,6 @@ ninja
 noto-fonts-cjk
 noto-fonts-emoji
 npm
-nvidia-open-dkms
-nvidia-utils
 obs-studio
 obsidian
 onefetch
@@ -76,6 +73,8 @@ quickshell
 reflector
 ripgrep
 rofi
+rust
+shfmt
 slurp
 snapper
 starship
