@@ -22,6 +22,7 @@ return {
 					"java",
 					"toml",
 					"bash",
+					"python",
 				},
 				highlight = { enable = true },
 				indent = { enable = true },
@@ -142,7 +143,10 @@ return {
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
 		ft = { "markdown" },
 		config = function()
-			require("render-markdown").setup({})
+			require("render-markdown").setup({
+				latex = { enabled = false },
+				html = { enabled = false },
+			})
 		end,
 	},
 

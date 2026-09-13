@@ -35,6 +35,8 @@ vim.lsp.config("jdtls", {
 })
 vim.lsp.config("taplo", { capabilities = capabilities })
 vim.lsp.config("bashls", { capabilities = capabilities })
+vim.lsp.config("pyright", { capabilities = capabilities })
+vim.lsp.config("ruff", { capabilities = capabilities })
 
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("ts_ls")
@@ -45,6 +47,8 @@ vim.lsp.enable("clangd")
 vim.lsp.enable("jdtls")
 vim.lsp.enable("taplo")
 vim.lsp.enable("bashls")
+vim.lsp.enable("pyright")
+vim.lsp.enable("ruff")
 
 vim.keymap.set("n", "gd", vim.lsp.buf.definition)
 vim.keymap.set("n", "K", vim.lsp.buf.hover)

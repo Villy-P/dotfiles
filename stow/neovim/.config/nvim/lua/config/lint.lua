@@ -7,6 +7,7 @@ lint.linters_by_ft = {
 	svelte = { "eslint" },
 	sh = { "shfmt" },
 	bash = { "shfmt" },
+	python = { "ruff_format" },
 }
 
 -- Completely override checkstyle to use standard text parsing
