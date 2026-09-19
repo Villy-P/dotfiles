@@ -4,6 +4,7 @@ checkstyle
 cmake-language-server
 heroic-games-launcher-bin
 jdtls
+prettierd
 rose-pine-hyprcursor
 stardrop
 ttf-bitstream-charter

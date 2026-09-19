@@ -73,10 +73,16 @@ return {
 	},
 
 	{
-		"windwp/nvim-autopairs",
+		"windwp/nvim-ts-autotag",
 		event = "InsertEnter",
 		config = function()
-			require("nvim-autopairs").setup({})
+			require("nvim-ts-autotag").setup({
+				opts = {
+					enable_close = true,
+					enable_rename = true,
+					enable_close_on_slash = false,
+				},
+			})
 		end,
 	},
 
@@ -89,14 +95,21 @@ return {
 					formatters_by_ft = {
 						lua = { "stylua" },
 						cmake = { "cmake_format" },
-						typescript = { "prettier" },
-						javascript = { "prettier" },
-						svelte = { "prettier" },
+						typescript = { "prettierd" },
+						javascript = { "prettierd" },
+						svelte = { "prettierd" },
 						tex = { "latexindent" },
 					},
-					format_on_save = {
-						timeout_ms = 500,
-						lsp_fallback = true,
+					formatters = {
+						prettierd = {
+							options = {
+								ft_parsers = {
+									svelte = "svelte",
+									typescript = "typescript",
+									javascript = "babel",
+								},
+							},
+						},
 					},
 				})
 			end,
@@ -134,18 +147,6 @@ return {
 					topdelete = { text = "‾" },
 					changedelete = { text = "~" },
 				},
-			})
-		end,
-	},
-
-	{
-		"MeanderingProgrammer/render-markdown.nvim",
-		dependencies = { "nvim-treesitter/nvim-treesitter" },
-		ft = { "markdown" },
-		config = function()
-			require("render-markdown").setup({
-				latex = { enabled = false },
-				html = { enabled = false },
 			})
 		end,
 	},
@@ -217,9 +218,43 @@ return {
 	},
 
 	{
-		"m4xshen/hardtime.nvim",
-		lazy = false,
-		dependencies = { "MunifTanjim/nui.nvim" },
-		opts = {},
+		"akinsho/toggleterm.nvim",
+		version = "*",
+		keys = { "<C-\\>" },
+		config = function()
+			require("toggleterm").setup({
+				size = 15,
+				open_mapping = [[<C-\>]],
+				direction = "float",
+				float_opts = {
+					border = "curved",
+				},
+			})
+
+			function _G.set_terminal_keymaps()
+				local opts = { buffer = 0 }
+				vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], opts)
+				vim.keymap.set("t", "jk", [[<C-\><C-n>]], opts)
+			end
+
+			vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
+		end,
+	},
+
+	{
+		"kylechui/nvim-surround",
+		version = "*",
+		event = "VeryLazy",
+		config = function()
+			require("nvim-surround").setup({})
+		end,
+	},
+
+	{
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		config = function()
+			require("nvim-autopairs").setup({})
+		end,
 	},
 }

@@ -36,3 +36,7 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.treesitter.start()
 	end,
 })
+
+vim.keymap.set({ "n", "v" }, "<leader>f", function()
+	require("conform").format({ lsp_fallback = true, timeout_ms = 4000 })
+end, { desc = "Format buffer" })

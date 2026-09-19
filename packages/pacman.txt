@@ -66,6 +66,7 @@ playerctl
 power-profiles-daemon
 prettier
 prismlauncher
+pyright
 python-pip
 python-pipx
 qt6-languageserver
@@ -73,6 +74,7 @@ quickshell
 reflector
 ripgrep
 rofi
+ruff
 rust
 shfmt
 slurp
@@ -93,6 +95,7 @@ texlive-binextra
 texlive-fontsrecommended
 texlive-latexextra
 tiled
+tmux
 tree-sitter-cli
 ttf-cascadia-code-nerd
 typescript-language-server
