@@ -1,31 +1,27 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
-		branch = "master",
 		build = ":TSUpdate",
 		config = function()
-			require("nvim-treesitter.configs").setup({
-				ensure_installed = {
-					"lua",
-					"vim",
-					"vimdoc",
-					"typescript",
-					"tsx",
-					"svelte",
-					"markdown",
-					"markdown_inline",
-					"make",
-					"cmake",
-					"c",
-					"cpp",
-					"c_sharp",
-					"java",
-					"toml",
-					"bash",
-					"python",
-				},
-				highlight = { enable = true },
-				indent = { enable = true, disable = { "typescript", "javascript", "svelte" } },
+			local parsers = {
+				"lua",
+				"vim",
+				"vimdoc",
+				"typescript",
+				"tsx",
+				"svelte",
+				"markdown",
+				"markdown_inline",
+				"c",
+				"cpp",
+				"bash",
+				"python",
+			}
+
+			vim.api.nvim_create_autocmd("FileType", {
+				callback = function()
+					pcall(vim.treesitter.start)
+				end,
 			})
 		end,
 	},
@@ -99,6 +95,7 @@ return {
 						javascript = { "prettierd" },
 						svelte = { "prettierd" },
 						tex = { "latexindent" },
+						markdown = { "prettierd" },
 					},
 					formatters = {
 						prettierd = {
@@ -334,5 +331,15 @@ return {
 				},
 			})
 		end,
+	},
+
+	{
+		"MeanderingProgrammer/render-markdown.nvim",
+		-- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.nvim' },            -- if you use the mini.nvim suite
+		-- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.icons' },        -- if you use standalone mini plugins
+		dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" }, -- if you prefer nvim-web-devicons
+		---@module 'render-markdown'
+		---@type render.md.UserConfig
+		opts = {},
 	},
 }

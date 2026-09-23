@@ -8,6 +8,7 @@ lint.linters_by_ft = {
 	sh = { "shfmt" },
 	bash = { "shfmt" },
 	python = { "ruff_format" },
+    markdown = { "markdownlint-cli2" },
 }
 
 -- Completely override checkstyle to use standard text parsing
@@ -35,7 +36,7 @@ lint.linters.checkstyle = {
 
 -- Trigger linting automatically
 vim.api.nvim_create_autocmd({ "BufWritePost", "BufEnter", "InsertLeave" }, {
-	pattern = { "*.java", "*.js", "*.ts", "*.svelte" },
+	pattern = { "*.java", "*.js", "*.ts", "*.svelte", "*.md" },
 	callback = function()
 		lint.try_lint()
 	end,
