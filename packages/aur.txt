@@ -7,6 +7,7 @@ jdtls
 prettierd
 rose-pine-hyprcursor
 stardrop
+supabase-bin
 ttf-bitstream-charter
 ventoy-bin
 yay

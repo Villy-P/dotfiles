@@ -1,4 +1,8 @@
 7zip
+aarch64-linux-gnu-binutils
+aarch64-linux-gnu-gcc
+aarch64-linux-gnu-glibc
+aarch64-linux-gnu-linux-api-headers
 awww
 base
 base-devel
@@ -16,6 +20,7 @@ clang
 cmake
 directx-shader-compiler
 doxygen
+edk2-aarch64
 efibootmgr
 eslint
 exfatprogs
@@ -38,6 +43,8 @@ inter-font
 jdk-openjdk
 jq
 kitty
+libisoburn
+limine
 linux
 linux-firmware
 linux-headers
@@ -69,6 +76,7 @@ prismlauncher
 pyright
 python-pip
 python-pipx
+qemu-system-aarch64
 qt6-languageserver
 quickshell
 reflector

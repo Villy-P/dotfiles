@@ -104,6 +104,7 @@ checkstyle = "Java static analysis tool"
 jdk-openjdk = "Open source JDK"
 tree-sitter-cli = "plugin for NeoVim"
 eslint = "linter for Javascript family"
+supabase-cli = "Supabase command-line interface"
 
 [formatters]
 shfmt = "formatter for Bash"
@@ -178,3 +179,13 @@ biber = "LaTex runner"
 perl-file-homedir = "Used for LaTex utilities in Neovim"
 perl-yaml-tiny = "Used for LaTex utilities in Neovim"
 xdotool = "Used for LaTex utilities in Neovim"
+
+[operating_systems]
+aarch64-linux-gnu-binutils = "GNU binary utilities for AArch64"
+aarch64-linux-gnu-gcc = "GNU Compiler Collection for AArch64"
+aarch64-linux-gnu-glibc = "GNU C Library for AArch64"
+aarch64-linux-gnu-linux-api-headers = "Linux API headers for AArch64"
+edk2-aarch64 = "UEFI firmware for AArch64"
+libisoburn = "ISO image burning tool"
+limine = "bootloader"
+qemu-system-aarch64 = "QEMU emulator for AArch64"
