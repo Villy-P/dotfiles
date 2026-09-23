@@ -32,7 +32,10 @@ cmp.setup({
 		["<S-Tab>"] = cmp.mapping.select_prev_item(),
 	}),
 	sources = {
+		{ name = "copilot" },
 		{ name = "nvim_lsp" },
+		{ name = "path" },
+		{ name = "buffer" },
 	},
 	window = {
 		completion = cmp.config.window.bordered({ border = custom_border }),

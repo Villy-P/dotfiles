@@ -25,7 +25,7 @@ return {
 					"python",
 				},
 				highlight = { enable = true },
-				indent = { enable = true },
+				indent = { enable = true, disable = { "typescript", "javascript", "svelte" } },
 			})
 		end,
 	},
@@ -255,6 +255,84 @@ return {
 		event = "InsertEnter",
 		config = function()
 			require("nvim-autopairs").setup({})
+		end,
+	},
+
+	{
+		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		event = "InsertEnter",
+		config = function()
+			require("copilot").setup({
+				suggestion = { enabled = false },
+				panel = { enabled = false },
+				filetypes = {
+					markdown = true,
+					help = false,
+				},
+			})
+		end,
+	},
+
+	{
+		"zbirenbaum/copilot-cmp",
+		dependencies = { "zbirenbaum/copilot.lua" },
+		config = function()
+			require("copilot_cmp").setup()
+		end,
+	},
+
+	{
+		"akinsho/bufferline.nvim",
+		version = "*",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		event = "VeryLazy",
+		config = function()
+			require("bufferline").setup({
+				options = {
+					mode = "buffers",
+					diagnostics = "nvim_lsp",
+					separator_style = "thin",
+					show_buffer_close_icons = true,
+					show_close_icon = false,
+					offsets = {
+						{
+							filetype = "NvimTree",
+							text = "File Explorer",
+							highlight = "Directory",
+							separator = true,
+						},
+					},
+				},
+			})
+		end,
+	},
+
+	{
+		"Bekaboo/dropbar.nvim",
+		dependencies = { "nvim-telescope/telescope-fzf-native.nvim" },
+		config = function()
+			require("dropbar").setup({})
+
+			vim.keymap.set("n", "<leader>;", require("dropbar.api").pick, { desc = "Pick symbol in dropbar" })
+		end,
+	},
+
+	{
+		"declancm/cinnamon.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("cinnamon").setup({
+				keymaps = {
+					basic = true,
+					extra = true,
+				},
+				options = {
+					mode = "cursor",
+					delay = 5,
+					max_delay = 200,
+				},
+			})
 		end,
 	},
 }

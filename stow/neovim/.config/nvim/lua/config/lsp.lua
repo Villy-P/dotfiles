@@ -62,3 +62,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 		vim.lsp.buf.format({ async = false })
 	end,
 })
+
+vim.keymap.set("n", "<S-l>", "<cmd>BufferLineCycleNext<cr>")
+vim.keymap.set("n", "<S-h>", "<cmd>BufferLineCyclePrev<cr>")
+vim.keymap.set("n", "<leader>bd", "<cmd>bdelete<cr>")
