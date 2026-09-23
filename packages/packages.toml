@@ -100,11 +100,14 @@ doxygen = "documentation generator"
 npm = "Node.js package manager"
 python-pipx = "Python package manager for isolated environments"
 openssh = "OpenSSH server and client"
-checkstyle = "Java static analysis tool"
 jdk-openjdk = "Open source JDK"
 tree-sitter-cli = "plugin for NeoVim"
+supabase-bin = "Supabase command-line interface"
+
+[linters]
+markdownlint-cli2 = "linter for Markdown"
 eslint = "linter for Javascript family"
-supabase-cli = "Supabase command-line interface"
+checkstyle = "Java static analysis tool"
 
 [formatters]
 shfmt = "formatter for Bash"
@@ -129,6 +132,7 @@ cmake-language-server = "Language server for CMake"
 jdtls = "Language server for Java"
 pyright = "Language server & formatter for Python"
 ruff = "Language server & formatter for Python"
+marksman = "Language server for Markdown"
 
 [browsers]
 zen-browser-bin = "web browser"

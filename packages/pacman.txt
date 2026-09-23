@@ -51,6 +51,8 @@ linux-headers
 lostfiles
 lua-language-server
 luarocks
+markdownlint-cli2
+marksman
 matugen
 mkinitcpio
 neovim
