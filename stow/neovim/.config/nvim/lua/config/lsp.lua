@@ -53,7 +53,15 @@ vim.lsp.enable("ruff")
 vim.lsp.enable("marksman")
 
 vim.keymap.set("n", "gd", vim.lsp.buf.definition)
-vim.keymap.set("n", "K", vim.lsp.buf.hover)
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(event)
+    vim.keymap.set('n', 'K', function()
+      vim.lsp.buf.hover({ 
+        border = 'rounded' 
+      })
+    end, { buffer = event.buf, desc = "LSP Hover Documentation" })
+  end,
+})
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float)
