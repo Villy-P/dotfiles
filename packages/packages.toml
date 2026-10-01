@@ -174,7 +174,6 @@ grimblast-git = "screenshot utility for Wayland with additional features"
 [bluetooth]
 bluez = "Bluetooth protocol stack"
 bluez-utils = "Bluetooth utilities"
-bluetui = "terminal-based Bluetooth manager"
 
 [usb]
 udiskie = "automatically mount and unmount removable media"
