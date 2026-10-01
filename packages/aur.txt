@@ -1,9 +1,13 @@
 adwsteamgtk
 aur-scanner
+auto-cpufreq
 checkstyle
 cmake-language-server
+envycontrol
+grimblast-git
 heroic-games-launcher-bin
 jdtls
+nbfc-linux
 prettierd
 rose-pine-hyprcursor
 stardrop

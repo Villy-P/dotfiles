@@ -10,6 +10,7 @@ if not vim.loop.fs_stat(lazypath) then
 	})
 end
 vim.opt.rtp:prepend(lazypath)
+vim.env.PATH = vim.env.PATH .. ":/usr/bin:/usr/local/bin"
 
 -- basic sane settings
 vim.g.mapleader = " "

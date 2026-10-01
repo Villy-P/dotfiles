@@ -114,14 +114,6 @@ return {
 	},
 
 	{
-		"folke/tokyonight.nvim",
-		priority = 1000,
-		config = function()
-			vim.cmd.colorscheme("tokyonight")
-		end,
-	},
-
-	{
 		"hrsh7th/nvim-cmp",
 		event = "InsertEnter",
 		dependencies = {
@@ -184,7 +176,17 @@ return {
 		init = function()
 			vim.g.vimtex_view_method = "zathura"
 			vim.g.vimtex_quickfix_mode = 0
+			vim.g.vimtex_complete_enabled = 1
+			vim.g.vimtex_complete_close_braces = 1
 			vim.g.tex_flavor = "latex"
+			vim.g.vimtex_compiler_method = "latexmk"
+			vim.g.vimtex_compiler_latexmk = {
+				options = {
+					"-xelatex",
+					"-interaction=nonstopmode",
+					"-synctex=1",
+				},
+			}
 		end,
 	},
 
@@ -341,5 +343,10 @@ return {
 		---@module 'render-markdown'
 		---@type render.md.UserConfig
 		opts = {},
+	},
+
+	{
+		"hrsh7th/cmp-omni",
+		dependencies = { "hrsh7th/nvim-cmp" },
 	},
 }

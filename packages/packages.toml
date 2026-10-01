@@ -195,3 +195,23 @@ edk2-aarch64 = "UEFI firmware for AArch64"
 libisoburn = "ISO image burning tool"
 limine = "bootloader"
 qemu-system-aarch64 = "QEMU emulator for AArch64"
+auto-cpufreq
+cava
+envycontrol
+hypridle
+hyprlock
+hyprsunset
+imagemagick
+mpd-mpris
+mpv-mpris
+qt6-5compat
+qt6-multimedia
+qt6ct
+ttf-jetbrains-mono-nerd
+ttf-nerd-fonts-symbols-common
+wf-recorder
+wtype
+cliphist
+grimblast-git
+hyprshutdown
+nbfc-linux

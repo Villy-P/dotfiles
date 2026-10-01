@@ -36,6 +36,7 @@ cmp.setup({
 		{ name = "nvim_lsp" },
 		{ name = "path" },
 		{ name = "buffer" },
+        { name = "omni" },
 	},
 	window = {
 		completion = cmp.config.window.bordered({ border = custom_border }),
