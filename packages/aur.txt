@@ -9,6 +9,7 @@ rose-pine-hyprcursor
 stardrop
 supabase-bin
 ttf-bitstream-charter
+ttf-ms-fonts
 ventoy-bin
 yay
 zen-browser-bin

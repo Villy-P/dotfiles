@@ -104,6 +104,7 @@ texlive-bin
 texlive-binextra
 texlive-fontsrecommended
 texlive-latexextra
+texlive-xetex
 tiled
 tmux
 tree-sitter-cli
