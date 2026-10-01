@@ -18,7 +18,11 @@ sudo = "privilege escalation"
 inotify-tools = "file system event monitoring"
 mkinitcpio = "Bash script to create initramfs images"
 upower = "power management service"
-power-profiles-daemon = "power profile management service"
+auto-cpufreq = "automatic CPU speed & power optimizer"
+envycontrol = "NVIDIA Optimus management tool"
+mpd-mpris = "MPRIS plugin for MPD"
+mpv-mpris = "MPRIS plugin for MPV"
+nbfc-linux = "fan control for laptops"
 
 [filesystem]
 btrfs-progs = "Btrfs filesystem utilities"
@@ -36,14 +40,13 @@ eza = "modern replacement for ls"
 stow = "manage dotfiles with symlinks"
 zoxide = "modern replacement for cd"
 yazi = "file manager"
+cava = "audio visualizer for the terminal"
 
 [package_management]
 luarocks = "Lua package manager"
 yay = "AUR helper"
 pkgfile = "tool for detecting which package provides a file"
 aur-scanner = "AUR package scanner for malware and security issues"
-expac = "query information about installed packages"
-lostfiles = "detects files not associated with pacman"
 
 [audio]
 pipewire-pulse = "PulseAudio-compatible layer for PipeWire"
@@ -56,6 +59,10 @@ reflector = "automatically changes mirror locations"
 
 [hyprland_desktop]
 hyprland = "the Hyprland Wayland compositor/window manager"
+hypridle = "idle management for Hyprland"
+hyprlock = "lock screen for Hyprland"
+hyprsunset = "sunset/sunrise wallpaper changer for Hyprland"
+hyprshutdown = "shutdown/reboot utility for Hyprland"
 hyprpolkitagent = "polkit authentication agent for Hyprland"
 xdg-desktop-portal-hyprland = "desktop portal backend for Hyprland (screen share, file pickers, etc)"
 rose-pine-hyprcursor = "Rose Pine cursor theme for Hyprland"
@@ -63,7 +70,10 @@ quickshell = "Wayland shell for Hyprland"
 awww = "wallpaper setter for Wayland"
 matugen = "theme generator for Hyprland and other apps"
 wl-clipboard = "copy/paste to/from the Wayland clipboard"
+cliphist = "clipboard history manager for Wayland"
 brightnessctl = "control brightness from the CLI"
+wf-recorder = "screen recording utility for Wayland"
+wtype = "simulate keyboard input for Wayland"
 
 [peripherals]
 openrgb = "RGB lighting control for various devices"
@@ -87,6 +97,7 @@ zathura-pdf-poppler = "pdf support for zathura"
 [productivity]
 obsidian = "knowledge base and note-taking app"
 tiled = "map editor for 2D games"
+imagemagick = "image manipulation tool"
 
 [development]
 ninja = "build system"
@@ -151,11 +162,14 @@ noto-fonts-cjk = "Noto CJK fonts for Chinese, Japanese, and Korean support"
 inter-font = "Inter font family for modern UI design"
 ttf-bitstream-charter = "Bitstream Charter font family for serif text"
 ttf-ms-fonts = "Microsoft TrueType fonts for Windows compatibility"
+ttf-jetbrains-mono-nerd = "JetBrains Mono, patched with Nerd Font icons"
+ttf-nerd-fonts-symbols-common = "Nerd Font symbols for common icons"
 
 [screenshots]
 grim = "screenshot utility for Wayland"
 slurp = "select a region of the screen for screenshots"
 swappy = "screenshot annotation tool"
+grimblast-git = "screenshot utility for Wayland with additional features"
 
 [bluetooth]
 bluez = "Bluetooth protocol stack"
@@ -185,6 +199,11 @@ perl-file-homedir = "Used for LaTex utilities in Neovim"
 perl-yaml-tiny = "Used for LaTex utilities in Neovim"
 xdotool = "Used for LaTex utilities in Neovim"
 
+[qt_libraries]
+qt6-5compat = "Qt6 compatibility libraries for Qt5"
+qt6-multimedia = "Qt6 multimedia libraries"
+qt6ct = "Qt6 configuration tool"
+
 [operating_systems]
 aarch64-linux-gnu-binutils = "GNU binary utilities for AArch64"
 aarch64-linux-gnu-gcc = "GNU Compiler Collection for AArch64"
@@ -194,23 +213,3 @@ edk2-aarch64 = "UEFI firmware for AArch64"
 libisoburn = "ISO image burning tool"
 limine = "bootloader"
 qemu-system-aarch64 = "QEMU emulator for AArch64"
-auto-cpufreq
-cava
-envycontrol
-hypridle
-hyprlock
-hyprsunset
-imagemagick
-mpd-mpris
-mpv-mpris
-qt6-5compat
-qt6-multimedia
-qt6ct
-ttf-jetbrains-mono-nerd
-ttf-nerd-fonts-symbols-common
-wf-recorder
-wtype
-cliphist
-grimblast-git
-hyprshutdown
-nbfc-linux
