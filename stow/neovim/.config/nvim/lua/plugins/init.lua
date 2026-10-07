@@ -18,6 +18,8 @@ return {
 				"python",
 			}
 
+            require("nvim-treesitter").install(parsers)
+
 			vim.api.nvim_create_autocmd("FileType", {
 				callback = function()
 					pcall(vim.treesitter.start)
@@ -161,20 +163,27 @@ return {
 	},
 
 	{
-		"Senal-D-A-Gunaratna/matugen.nvim",
+		"folke/tokyonight.nvim",
 		lazy = false,
 		priority = 1000,
-		opts = {
-			load_theme = true,
-			palette_path = "~/.config/matugen/themes/nvim-colors.json",
-		},
+		config = function()
+			require("tokyonight").setup({
+				style = "night",
+				transparent = true,
+				styles = {
+					sidebars = "transparent",
+					floats = "transparent",
+				},
+			})
+			vim.cmd.colorscheme("tokyonight")
+		end,
 	},
 
 	{
 		"lervag/vimtex",
 		lazy = false,
 		init = function()
-			vim.g.vimtex_view_method = "zathura"
+			vim.g.vimtex_view_method = "zathura_simple"
 			vim.g.vimtex_quickfix_mode = 0
 			vim.g.vimtex_complete_enabled = 1
 			vim.g.vimtex_complete_close_braces = 1
@@ -191,12 +200,24 @@ return {
 	},
 
 	{
+		"xiyaowong/transparent.nvim",
+		lazy = false,
+		opts = {
+			extra_groups = {
+				"WinBar",
+				"WinBarNC",
+				"DropBarMenuNormalFloat",
+				"DropBarMenuFloatBorder",
+			},
+		},
+	},
+
+	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		config = function()
 			require("lualine").setup({
 				options = {
-					theme = "auto",
 					section_separators = "",
 					component_separators = "|",
 				},

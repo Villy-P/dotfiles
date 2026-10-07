@@ -66,12 +66,23 @@ vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float)
 
-vim.api.nvim_create_autocmd("BufWritePre", {
-	pattern = "*.java",
-	callback = function()
-		vim.lsp.buf.format({ async = false })
-	end,
+vim.diagnostic.config({
+    virtual_text = false,
+    signs = true,
+    update_in_insert = false,
+    underline = true,
+    severity_sort = true,
+    float = {
+        border = "rounded",
+    },
 })
+ 
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+-- pattern = "*.java",
+--	callback = function()
+--		vim.lsp.buf.format({ async = false })
+--	end,
+--  })
 
 vim.keymap.set("n", "<S-l>", "<cmd>BufferLineCycleNext<cr>")
 vim.keymap.set("n", "<S-h>", "<cmd>BufferLineCyclePrev<cr>")

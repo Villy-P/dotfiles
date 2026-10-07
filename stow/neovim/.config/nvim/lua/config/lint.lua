@@ -27,7 +27,7 @@ lint.linters.checkstyle = {
 		{ "severity", "file", "lnum", "col", "message" },
 		{
 			["WARN"] = vim.diagnostic.severity.WARN,
-			["ERROR"] = vim.diagnostic.severity.ERROR,
+			["ERROR"] = vim.diagnostic.severity.WARN,
 			["INFO"] = vim.diagnostic.severity.INFO,
 		},
 		{ ["source"] = "checkstyle" }
