@@ -88,14 +88,11 @@ a() {
             git add . && git commit -m "$full_msg" && git push
             ;;
         "ruc")
-            echo "Are you sure you want to remove all uncommited local changes? (y/n)"
-            choice=$(gum choose "Yes" "No")
-            if [ "$choice" = "Yes" ]; then
-                git reset --hard HEAD && git clean -fd
-                echo "All uncommitted changes have been removed."
-            else
-                echo "Operation cancelled."
-            fi
+            gum confirm "This will reset all changes and cannot be undone. Proceed?" || { echo "Operation cancelled."; return 1; }
+            git reset --hard HEAD && git clean -fd
+            ;;
+        "gs")
+            git status
             ;;
         *)
             echo "Unknown command: $command"
