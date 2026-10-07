@@ -50,6 +50,9 @@ a() {
 
     case "$command" in
         "pc")
+            echo "Performing conventional commit..."
+            echo "Current git status:"
+            git status
             echo "Select conventional commit type:"
             choice=$(gum choose "feat" "fix" "docs" "style" "refactor" "test" "chore")
             if [ -z "$choice" ]; then
@@ -57,7 +60,15 @@ a() {
                 return 1
             fi
 
-            scope=$(gum input --placeholder "Scope (optional, press enter to skip)")
+            allcommits=$(git log --pretty=format:"%s")
+            previous_scopes=(${(@f)$(printf '%s\n' "$allcommits" | sed -E -n 's/^[a-z]+\(([a-zA-Z0-9_-]+)\)!?:.*$/\1/p' | sort -u)})
+            
+            scope=$(gum choose  "None" "Other" "${previous_scopes[@]}")
+            if [ "$scope" = "Other" ]; then
+                scope=$(gum input --placeholder "Enter custom scope")
+            elif [ "$scope" = "None" ]; then
+                scope=""
+            fi
 
             msg=$(gum input --placeholder "Commit message")
             if [ -z "$msg" ]; then
@@ -72,6 +83,8 @@ a() {
             fi
 
             echo "Committing with message: $full_msg"
+            gum confirm "Stage all changes, commit, and push?" || { echo "Commit aborted."; return 1; }
+
             git add . && git commit -m "$full_msg" && git push
             ;;
         "ruc")

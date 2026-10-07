@@ -16,6 +16,7 @@ return {
 				"cpp",
 				"bash",
 				"python",
+                "zsh"
 			}
 
             require("nvim-treesitter").install(parsers)

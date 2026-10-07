@@ -45,7 +45,7 @@ hl.bind("SUPER + ALT + I", hl.dsp.exec_cmd("qs ipc -p " .. shell .. " call audio
 hl.bind("SUPER + M", hl.dsp.exec_cmd("qs ipc -p " .. shell .. " call audioMix-toggle toggle"), { description = "Brain Shell: Audio: Mixer" })
 
 -- Quick Settings
-hl.bind("SUPER + B", hl.dsp.exec_cmd("qs ipc -p " .. shell .. " call focus-toggle toggle"), { description = "Brain Shell: Focus Mode" })
+hl.bind("SUPER + G", hl.dsp.exec_cmd("qs ipc -p " .. shell .. " call focus-toggle toggle"), { description = "Brain Shell: Focus Mode" })
 hl.bind("SUPER + X", hl.dsp.exec_cmd("qs ipc -p " .. shell .. " call lock-session toggle"), { description = "Brain Shell: Lock Screen" })
 hl.bind("SUPER + SHIFT + CTRL + +", hl.dsp.exec_cmd("qs ipc -p " .. shell .. " call screenshot-toggle toggle"), { description = "Brain Shell: Screenshot" })
 hl.bind("ALT + F9", hl.dsp.exec_cmd("qs ipc -p " .. shell .. " call screenrec-on toggle"), { description = "Brain Shell: Screen Record" })
