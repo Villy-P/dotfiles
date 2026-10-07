@@ -1,5 +1,8 @@
 *.bak
 stow/brain/.config/Brain_Shell/src/*
+stow/brain/.config/Brain_Shell/matugen/*
+stow/brain/.config/Brain_Shell/.v0.2.0_migrated
+stow/hypr/.config/hypr/hyprland.lua.mod-backup-*
 stow/kitty/.config/kitty/matugen.conf
 stow/rofi/.config/rofi/colors.rasi
 stow/obsidian/notes/**/*.md

@@ -21,29 +21,31 @@ end)
 -- ==============================================================================
 
 -- Dashboard
-hl.bind("SUPER + D", hl.dsp.exec_cmd("qs ipc -c " .. shell .. " call dashboard-home toggle"))
-hl.bind("CTRL + SHIFT + ESCAPE", hl.dsp.exec_cmd("qs ipc -c " .. shell .. " call dashboard-stats toggle"))
-hl.bind("SUPER + Z", hl.dsp.exec_cmd("qs ipc -c " .. shell .. " call dashboard-kanban toggle"))
-hl.bind("SUPER + SPACE", hl.dsp.exec_cmd("qs ipc -c " .. shell .. " call dashboard-launcher toggle"))
-hl.bind("SUPER + S", hl.dsp.exec_cmd("qs ipc -c " .. shell .. " call dashboard-config toggle"))
+hl.bind("SUPER + D", hl.dsp.exec_cmd("qs ipc -p " .. shell .. " call dashboard-home toggle"), { description = "Brain Shell: Dashboard: System" })
+hl.bind("CTRL + SHIFT + ESCAPE", hl.dsp.exec_cmd("qs ipc -p " .. shell .. " call dashboard-stats toggle"), { description = "Brain Shell: Dashboard: Home" })
+hl.bind("SUPER + Z", hl.dsp.exec_cmd("qs ipc -p " .. shell .. " call dashboard-kanban toggle"), { description = "Brain Shell: Dashboard: Tasks" })
+hl.bind("SUPER + SPACE", hl.dsp.exec_cmd("qs ipc -p " .. shell .. " call dashboard-launcher toggle"), { description = "Brain Shell: Dashboard: Apps" })
+hl.bind("SUPER + S", hl.dsp.exec_cmd("qs ipc -p " .. shell .. " call dashboard-config toggle"), { description = "Brain Shell: Dashboard: Config" })
 
 -- Popups
-hl.bind("SUPER + ESCAPE", hl.dsp.exec_cmd("qs ipc -c " .. shell .. " call PowerMenu-toggle toggle"))
-hl.bind("SUPER + N", hl.dsp.exec_cmd("qs ipc -c " .. shell .. " call notification-toggle toggle"))
-hl.bind("SUPER + W", hl.dsp.exec_cmd("qs ipc -c " .. shell .. " call wallpaper-toggle toggle"))
-hl.bind("SUPER + V", hl.dsp.exec_cmd("qs ipc -c " .. shell .. " call clipboard-toggle toggle"))
+hl.bind("SUPER + ESCAPE", hl.dsp.exec_cmd("qs ipc -p " .. shell .. " call PowerMenu-toggle toggle"), { description = "Brain Shell: Power Menu" })
+hl.bind("SUPER + N", hl.dsp.exec_cmd("qs ipc -p " .. shell .. " call notification-toggle toggle"), { description = "Brain Shell: Notifications" })
+hl.bind("SUPER + W", hl.dsp.exec_cmd("qs ipc -p " .. shell .. " call wallpaper-toggle toggle"), { description = "Brain Shell: Wallpaper" })
+hl.bind("SUPER + V", hl.dsp.exec_cmd("qs ipc -p " .. shell .. " call clipboard-toggle toggle"), { description = "Brain Shell: Clipboard" })
 
 -- Network Tabs
-hl.bind("SUPER + ALT + W", hl.dsp.exec_cmd("qs ipc -c " .. shell .. " call wifi-toggle toggle"))
-hl.bind("SUPER + ALT + B", hl.dsp.exec_cmd("qs ipc -c " .. shell .. " call bluetooth-toggle toggle"))
-hl.bind("SUPER + ALT + G", hl.dsp.exec_cmd("qs ipc -c " .. shell .. " call vpn-toggle toggle"))
-hl.bind("SUPER + ALT + H", hl.dsp.exec_cmd("qs ipc -c " .. shell .. " call hotspot-toggle toggle"))
+hl.bind("SUPER + ALT + W", hl.dsp.exec_cmd("qs ipc -p " .. shell .. " call wifi-toggle toggle"), { description = "Brain Shell: Network: Wi-Fi" })
+hl.bind("SUPER + ALT + B", hl.dsp.exec_cmd("qs ipc -p " .. shell .. " call bluetooth-toggle toggle"), { description = "Brain Shell: Network: Bluetooth" })
+hl.bind("SUPER + ALT + G", hl.dsp.exec_cmd("qs ipc -p " .. shell .. " call vpn-toggle toggle"), { description = "Brain Shell: Network: VPN" })
+hl.bind("SUPER + ALT + H", hl.dsp.exec_cmd("qs ipc -p " .. shell .. " call hotspot-toggle toggle"), { description = "Brain Shell: Network: Hotspot" })
 
 -- Audio Tabs
-hl.bind("SUPER + A", hl.dsp.exec_cmd("qs ipc -c " .. shell .. " call audioOut-toggle toggle"))
-hl.bind("SUPER + ALT + I", hl.dsp.exec_cmd("qs ipc -c " .. shell .. " call audioIn-toggle toggle"))
-hl.bind("SUPER + M", hl.dsp.exec_cmd("qs ipc -c " .. shell .. " call audioMix-toggle toggle"))
+hl.bind("SUPER + A", hl.dsp.exec_cmd("qs ipc -p " .. shell .. " call audioOut-toggle toggle"), { description = "Brain Shell: Audio: Output" })
+hl.bind("SUPER + ALT + I", hl.dsp.exec_cmd("qs ipc -p " .. shell .. " call audioIn-toggle toggle"), { description = "Brain Shell: Audio: Input" })
+hl.bind("SUPER + M", hl.dsp.exec_cmd("qs ipc -p " .. shell .. " call audioMix-toggle toggle"), { description = "Brain Shell: Audio: Mixer" })
 
 -- Quick Settings
-hl.bind("SUPER + BACKSLASH", hl.dsp.exec_cmd("qs ipc -c " .. shell .. " call focus-toggle toggle"))
-hl.bind("ALT + F9", hl.dsp.exec_cmd("qs ipc -c " .. shell .. " call screenrec-on toggle"))
+hl.bind("SUPER + B", hl.dsp.exec_cmd("qs ipc -p " .. shell .. " call focus-toggle toggle"), { description = "Brain Shell: Focus Mode" })
+hl.bind("SUPER + X", hl.dsp.exec_cmd("qs ipc -p " .. shell .. " call lock-session toggle"), { description = "Brain Shell: Lock Screen" })
+hl.bind("PRINT", hl.dsp.exec_cmd("qs ipc -p " .. shell .. " call screenshot-toggle toggle"), { description = "Brain Shell: Screenshot" })
+hl.bind("ALT + F9", hl.dsp.exec_cmd("qs ipc -p " .. shell .. " call screenrec-on toggle"), { description = "Brain Shell: Screen Record" })

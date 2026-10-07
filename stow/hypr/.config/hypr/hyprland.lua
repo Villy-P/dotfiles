@@ -17,13 +17,6 @@ hl.config({
 
 hl.env("WLR_NO_HARDWARE_CURSORS", "1")
 
--- Brain Shell Autostarts
-hl.on("hyprland.start", function()
-    hl.exec_cmd("hypridle -c " .. os.getenv("HOME") .. "/.local/src/Brain_Shell/src/config/hypridle.conf")
-    hl.exec_cmd("quickshell -c " .. os.getenv("HOME") .. "/.local/src/Brain_Shell")
-    hl.exec_cmd("wl-paste --type text --watch cliphist store")
-    hl.exec_cmd("wl-paste --type image --watch cliphist store")
-end)
-
--- Brain_ShellKeybinds
-dofile("/home/valerius/.config/Brain_Shell/Brain_ShellKeybinds.lua")
+-- >>> Brain Shell Startup >>>
+dofile(os.getenv("HOME") .. "/.config/Brain_Shell/hypr/brain-shell.lua")
+-- <<< Brain Shell Startup <<<
