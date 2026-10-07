@@ -22,6 +22,7 @@ bindkey ';5C' forward-word
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/doc/pkgfile/command-not-found.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/nvm/init-nvm.sh
 
 # Set XDG Base Directory Environment Variables
 export XDG_CONFIG_HOME="$HOME/.config"

@@ -21,7 +21,7 @@ hl.monitor({
 
 hl.monitor({
 	output = "HDMI-A-1",
-	mode = "1920x1080@60.00Hz",
+    mode = "800x600@50.00Hz",
 	position = "auto",
 	scale = 1,
 	mirror = "eDP-1",

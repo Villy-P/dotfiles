@@ -32,3 +32,6 @@ chmod +x ~/dotfiles/scripts/ignore_desktop.sh
 
 source ~/dotfiles/scripts/setwall.sh ~/pictures/wallpaper/wallpaper.jpg
 source ~/dotfiles/scripts/ignore_desktop.sh
+
+sudo auto-cpufreq --install
+curl -fsSL https://raw.githubusercontent.com/Brainitech/Brain_Shell/refs/heads/main/install.sh | bash

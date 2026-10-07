@@ -1,4 +1,5 @@
 *.bak
+stow/brain/.config/Brain_Shell/src/*
 stow/kitty/.config/kitty/matugen.conf
 stow/rofi/.config/rofi/colors.rasi
 stow/obsidian/notes/**/*.md
