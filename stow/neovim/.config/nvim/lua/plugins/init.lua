@@ -329,6 +329,19 @@ return {
 				},
 			})
 
+			vim.api.nvim_create_autocmd("VimLeavePre", {
+				callback = function()
+					for _, chan in ipairs(vim.api.nvim_list_chans()) do
+						if chan.mode == "terminal" then
+							local ok, pid = pcall(vim.fn.jobpid, chan.id)
+							if ok and pid and pid > 0 then
+								vim.fn.system({ "pkill", "-TERM", "-s", tostring(pid) })
+							end
+						end
+					end
+				end,
+			})
+
 			function _G.set_terminal_keymaps()
 				local opts = { buffer = 0 }
 				vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], opts)
