@@ -16,10 +16,10 @@ return {
 				"cpp",
 				"bash",
 				"python",
-                "zsh"
+				"zsh",
 			}
 
-            require("nvim-treesitter").install(parsers)
+			require("nvim-treesitter").install(parsers)
 
 			vim.api.nvim_create_autocmd("FileType", {
 				callback = function()
@@ -48,15 +48,92 @@ return {
 			{ "<leader>fb", "<cmd>Telescope buffers<cr>" },
 		},
 	},
-
 	{
-		"nvim-tree/nvim-tree.lua",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v3.x",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons",
+			"MunifTanjim/nui.nvim",
+		},
+		cmd = "Neotree",
 		keys = {
-			{ "<leader>e", "<cmd>NvimTreeToggle<cr>" },
+			{ "<leader>e", "<cmd>Neotree toggle reveal<cr>" },
+			{ "<leader>ge", "<cmd>Neotree float git_status<cr>" },
+			{ "<leader>be", "<cmd>Neotree float buffers<cr>" },
 		},
 		config = function()
-			require("nvim-tree").setup({})
+			require("neo-tree").setup({
+				close_if_last_window = true,
+				popup_border_style = "rounded",
+				enable_git_status = true,
+				enable_diagnostics = true,
+				sources = { "filesystem", "buffers", "git_status" },
+				source_selector = {
+					winbar = true,
+					sources = {
+						{ source = "filesystem", display_name = " Files" },
+						{ source = "buffers", display_name = " Buffers" },
+						{ source = "git_status", display_name = " Git" },
+					},
+				},
+				default_component_configs = {
+					indent = {
+						with_expanders = true,
+					},
+					modified = {
+						symbol = "●",
+					},
+					diagnostics = {
+						symbols = {
+							error = "✖",
+							warn = "▲",
+							info = "I",
+							hint = "H",
+						},
+					},
+					git_status = {
+						symbols = {
+							added = "+",
+							modified = "~",
+							deleted = "✖",
+							renamed = "➜",
+							untracked = "★",
+							ignored = "◌",
+							unstaged = "✗",
+							staged = "✓",
+							conflict = "",
+						},
+					},
+				},
+				window = {
+					width = 35,
+					mappings = {
+						["<space>"] = "none",
+						["l"] = "open",
+						["h"] = "close_node",
+						["P"] = { "toggle_preview", config = { use_float = true } },
+					},
+				},
+				filesystem = {
+					follow_current_file = { enabled = true },
+					use_libuv_file_watcher = true,
+					hijack_netrw_behavior = "open_default",
+					filtered_items = {
+						visible = true,
+						hide_dotfiles = false,
+						hide_gitignored = false,
+					},
+				},
+				buffers = {
+					follow_current_file = { enabled = true },
+				},
+				git_status = {
+					window = {
+						position = "float",
+					},
+				},
+			})
 		end,
 	},
 
@@ -318,7 +395,7 @@ return {
 					show_close_icon = false,
 					offsets = {
 						{
-							filetype = "NvimTree",
+							filetype = "neo-tree",
 							text = "File Explorer",
 							highlight = "Directory",
 							separator = true,
@@ -370,5 +447,17 @@ return {
 	{
 		"hrsh7th/cmp-omni",
 		dependencies = { "hrsh7th/nvim-cmp" },
+	},
+
+	{
+		"r-pletnev/pdfreader.nvim",
+		lazy = false,
+		dependencies = {
+			"folke/snacks.nvim", -- image rendering
+			"nvim-telescope/telescope.nvim", -- pickers
+		},
+		config = function()
+			require("pdfreader").setup()
+		end,
 	},
 }
