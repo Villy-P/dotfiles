@@ -23,6 +23,7 @@ envycontrol = "NVIDIA Optimus management tool"
 mpd-mpris = "MPRIS plugin for MPD"
 mpv-mpris = "MPRIS plugin for MPV"
 nbfc-linux = "fan control for laptops"
+less = "pager program"
 
 [filesystem]
 btrfs-progs = "Btrfs filesystem utilities"
@@ -43,10 +44,14 @@ yazi = "file manager"
 cava = "audio visualizer for the terminal"
 
 [package_management]
+pnpm = "fast, disk space efficient package manager for Node.js"
+npm = "Node.js package manager"
+python-pipx = "Python package manager for isolated environments"
 luarocks = "Lua package manager"
 yay = "AUR helper"
 pkgfile = "tool for detecting which package provides a file"
 aur-scanner = "AUR package scanner for malware and security issues"
+nix = "package manager and build system"
 
 [audio]
 pipewire-pulse = "PulseAudio-compatible layer for PipeWire"
@@ -59,6 +64,7 @@ reflector = "automatically changes mirror locations"
 
 [hyprland_desktop]
 hyprland = "the Hyprland Wayland compositor/window manager"
+hyprpicker = "color picker for Hyprland"
 hypridle = "idle management for Hyprland"
 hyprlock = "lock screen for Hyprland"
 hyprsunset = "night light filter for Hyprland"
@@ -83,6 +89,7 @@ i2c-tools = "I2C bus utilities for hardware communication"
 kitty = "terminal emulator"
 fastfetch = "system info fetch tool"
 onefetch = "git repository info fetch tool"
+cpufetch = "CPU info fetch tool"
 starship = "cross-shell prompt"
 zsh = "shell"
 zsh-autosuggestions = "Zsh plugin for command suggestions based on history"
@@ -100,6 +107,7 @@ tiled = "map editor for 2D games"
 imagemagick = "image manipulation tool"
 
 [development]
+nvm = "Node Version Manager"
 ninja = "build system"
 git = "version control"
 rust = "rust development tools"
@@ -107,12 +115,12 @@ github-cli = "GitHub command-line interface"
 clang = "C/C++ compiler"
 cmake = "build system generator"
 doxygen = "documentation generator"
-npm = "Node.js package manager"
-python-pipx = "Python package manager for isolated environments"
 openssh = "OpenSSH server and client"
 jdk-openjdk = "Open source JDK"
+jdk8-openjdk = "Open source JDK 8"
 tree-sitter-cli = "plugin for NeoVim"
 supabase-bin = "Supabase command-line interface"
+bear = "generate compilation database for C/C++ projects"
 
 [linters]
 markdownlint-cli2 = "linter for Markdown"
@@ -146,6 +154,7 @@ marksman = "Language server for Markdown"
 
 [browsers]
 zen-browser-bin = "web browser"
+helium-browser-bin = "web browser for testing chrome apps"
 
 [gaming]
 steam = "game platform/launcher"
