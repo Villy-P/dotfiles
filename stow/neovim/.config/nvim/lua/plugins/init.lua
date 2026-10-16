@@ -117,21 +117,22 @@ return {
 				},
 				filesystem = {
 					follow_current_file = { enabled = true },
-					use_libuv_file_watcher = true,
+					use_libuv_file_watcher = false,
 					hijack_netrw_behavior = "open_default",
 					filtered_items = {
-						visible = true,
+						visible = false,
 						hide_dotfiles = false,
-						hide_gitignored = false,
+						hide_gitignored = true,
+						never_show = { ".git", "node_modules", ".DS_Store" },
 					},
 				},
 				buffers = {
 					follow_current_file = { enabled = true },
 				},
-				git_status = {
-					window = {
-						position = "float",
-					},
+				git_status_async_options = {
+					batch_size = 1000,
+					batch_delay = 50,
+					max_lines = 5000,
 				},
 			})
 		end,
@@ -472,5 +473,11 @@ return {
 		config = function()
 			require("pdfreader").setup()
 		end,
+	},
+
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		main = "ibl",
+		opts = {},
 	},
 }
