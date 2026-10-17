@@ -1,8 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
-systems=(archlinux)
-INITIAL_COLUMNS="archlinux" 
+systems=(archlinux windows)
+INITIAL_COLUMNS="archlinux windows" 
 
 printf "Select a system to generate package info for:\n"
 SYSTEM_PKG=$(gum choose "${systems[@]}")
@@ -18,17 +18,56 @@ rm_specific() {
     grep -vE "nvidia|ucode" || true
 }
 
-PACMAN_PACKAGES=$( (pacman -Qqen || true) | rm_specific)
-AUR_PACKAGES=$( (pacman -Qqem || true) | rm_specific)
-if command -v pipx >/dev/null; then
-    PIPX_PACKAGES=$( (pipx list --short || true) | awk '{print $1}' | rm_specific)
-else
-    PIPX_PACKAGES=""
+ALL_PACKAGES=""
+
+if [[ $SYSTEM_PKG == "archlinux" ]]; then
+    PACMAN_PACKAGES=$( (pacman -Qqen || true) | rm_specific)
+    AUR_PACKAGES=$( (pacman -Qqem || true) | rm_specific)
+    if command -v pipx >/dev/null; then
+        PIPX_PACKAGES=$( (pipx list --short || true) | awk '{print $1}' | rm_specific)
+    else
+        PIPX_PACKAGES=""
+    fi
+
+    printf '%s\n' "$PACMAN_PACKAGES" >"$PACKAGE_DIR/pacman.txt"
+    printf '%s\n' "$AUR_PACKAGES" >"$PACKAGE_DIR/aur.txt"
+    printf '%s\n' "$PIPX_PACKAGES" >"$PACKAGE_DIR/pipx.txt"
+
+    systemctl list-units --type=service --state=running --no-legend |
+        awk '{print $1}' >"$PACKAGE_DIR/services.txt"
+
+    ALL_PACKAGES="$PACMAN_PACKAGES"$'\n'"$AUR_PACKAGES"$'\n'"$PIPX_PACKAGES"
 fi
 
-printf '%s\n' "$PACMAN_PACKAGES" >"$PACKAGE_DIR/pacman.txt"
-printf '%s\n' "$AUR_PACKAGES" >"$PACKAGE_DIR/aur.txt"
-printf '%s\n' "$PIPX_PACKAGES" >"$PACKAGE_DIR/pipx.txt"
+if [[ $SYSTEM_PKG == "windows" ]]; then
+    SCOOP_PACKAGES=$(powershell -NoProfile -Command \
+        "(scoop export | ConvertFrom-Json).apps | ForEach-Object { \$_.Name }" |
+        tr -d '\r' | rm_specific)
+
+    printf '%s\n' "$SCOOP_PACKAGES" >"$PACKAGE_DIR/scoop.txt"
+    ALL_PACKAGES="$SCOOP_PACKAGES"
+fi
+
+apply_aliases() {
+    local alias_file="$PACKAGE_DIR/alias.txt"
+    if [[ -f $alias_file ]]; then
+        awk -v af="$alias_file" '
+            FILENAME == af {
+                gsub(/\r/, "")
+                if ($1 != "" && $1 !~ /^#/ && $2 != "") map[$1] = $2
+                next
+            }
+            {
+                gsub(/\r/, "")
+                if ($1 != "") print ($1 in map) ? map[$1] : $1
+            }
+        ' "$alias_file" -
+    else
+        cat
+    fi
+}
+
+ALL_PACKAGES=$(printf '%s\n' "$ALL_PACKAGES" | apply_aliases)
 
 header=$(sed -n '/^# columns:/{s/^# columns: *//p;q}' "$PACKAGE_MASTER")
 read -ra cols <<<"${header:-$INITIAL_COLUMNS}"
@@ -119,8 +158,5 @@ awk -v cols="${cols[*]}" -v ncols="${#cols[@]}" -v idx="$idx" \
             } else printf "[%s] %-*s  %s\n", F[i], sw[S[i]], N[i], D[i]
         }
     }
-' <(printf '%s\n' "$PACMAN_PACKAGES" "$AUR_PACKAGES" "$PIPX_PACKAGES") \
+' <(printf '%s\n' "$ALL_PACKAGES") \
     "$PACKAGE_MASTER" >"$tmp" && mv "$tmp" "$PACKAGE_MASTER"
-
-systemctl list-units --type=service --state=running --no-legend |
-    awk '{print $1}' >"$PACKAGE_DIR/services.txt"

@@ -1,0 +1,5 @@
+7zip
+charm-gum
+gh
+git
+neovim
