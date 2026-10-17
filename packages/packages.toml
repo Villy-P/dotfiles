@@ -121,6 +121,7 @@ jdk8-openjdk = "Open source JDK 8"
 tree-sitter-cli = "plugin for NeoVim"
 supabase-bin = "Supabase command-line interface"
 bear = "generate compilation database for C/C++ projects"
+pre-commit = "framework for managing and maintaining multi-language pre-commit hooks"
 
 [linters]
 markdownlint-cli2 = "linter for Markdown"
