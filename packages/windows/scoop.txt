@@ -32,6 +32,7 @@ shfmt
 steam
 stylua
 sudachi
+sunshine
 tailscale
 tree-sitter
 whkd

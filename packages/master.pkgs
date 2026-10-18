@@ -256,3 +256,6 @@
 [a--] libisoburn                           ISO image burning tool
 [a--] limine                               bootloader
 [a--] qemu-system-aarch64                  QEMU emulator for AArch64
+
+## unsorted -----------------------------------------------------------------------------------------------------
+[-w-] sunshine  nodesc
