@@ -64,6 +64,7 @@ markdownlint-cli2
 marksman
 matugen
 mkinitcpio
+moonlight-qt
 mpd-mpris
 mpv-mpris
 neovim

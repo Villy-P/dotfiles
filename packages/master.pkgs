@@ -257,5 +257,6 @@
 [a--] limine                               bootloader
 [a--] qemu-system-aarch64                  QEMU emulator for AArch64
 
-## unsorted -----------------------------------------------------------------------------------------------------
-[-w-] sunshine  nodesc
+## remote_desktop -----------------------------------------------------------------------------------------------
+[-w-] sunshine      streaming host
+[a--] moonlight-qt  streaming client
