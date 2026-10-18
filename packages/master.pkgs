@@ -53,15 +53,16 @@
 [--h] sysstat  system performance tools (sar, iostat, mpstat)
 
 ## package_management -------------------------------------------------------------------------------------------
-[a--] pnpm         fast, disk space efficient package manager for Node.js
-[a--] npm          Node.js package manager
-[a--] python-pip   Python package manager
-[a--] python-pipx  Python package manager for isolated environments
-[a--] luarocks     Lua package manager
-[a-h] yay          AUR helper
-[a-h] pkgfile      tool for detecting which package provides a file
-[a--] aur-scanner  AUR package scanner for malware and security issues
-[a--] nix          package manager and build system
+[a--] pnpm            fast, disk space efficient package manager for Node.js
+[a--] npm             Node.js package manager
+[a--] python-pip      Python package manager
+[a--] python-pipx     Python package manager for isolated environments
+[a--] luarocks        Lua package manager
+[a-h] yay             AUR helper
+[a-h] pkgfile         tool for detecting which package provides a file
+[a--] aur-scanner     AUR package scanner for malware and security issues
+[a--] nix             package manager and build system
+[--h] pacman-contrib  pacman Utilities
 
 ## audio --------------------------------------------------------------------------------------------------------
 [a--] pipewire-pulse  PulseAudio-compatible layer for PipeWire
@@ -141,14 +142,14 @@
 [--h] docker-compose  define and run multi-container apps from a YAML file
 
 ## linters ------------------------------------------------------------------------------------------------------
-[a--] markdownlint-cli2  linter for Markdown
+[a-h] markdownlint-cli2  linter for Markdown
 [a--] eslint             linter for Javascript family
 [a--] checkstyle         Java static analysis tool
 [--h] yamllint           linter for YAML files
 
 ## formatters ---------------------------------------------------------------------------------------------------
-[a--] shfmt      formatter for Bash
-[a--] stylua     formatter for Lua
+[a-h] shfmt      formatter for Bash
+[a-h] stylua     formatter for Lua
 [a-h] prettier   formatter for Javascript family
 [a-h] prettierd  formatter daemon for Javascript family
 
@@ -161,7 +162,7 @@
 [a--] svelte-language-server       Language server for Svelte
 [a--] taplo-cli                    Language server for TOML
 [a-h] bash-language-server         Language server for Bash
-[a--] lua-language-server          Language server for Lua
+[a-h] lua-language-server          Language server for Lua
 [a--] qt6-languageserver           Qt6 Language Server for IDEs
 [a--] tailwindcss-language-server  Language server for TailwindCSS
 [a--] typescript-language-server   Lanugage server for Typescript
@@ -241,3 +242,5 @@
 [a--] libisoburn                           ISO image burning tool
 [a--] limine                               bootloader
 [a--] qemu-system-aarch64                  QEMU emulator for AArch64
+
+## unsorted -----------------------------------------------------------------------------------------------------
