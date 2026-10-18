@@ -1,2 +1,4 @@
 gh github-cli
 charm-gum gum
+tree-sitter tree-sitter-cli
+helium

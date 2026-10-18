@@ -26,7 +26,7 @@
 [a--] mpd-mpris       MPRIS plugin for MPD
 [a--] mpv-mpris       MPRIS plugin for MPV
 [a--] nbfc-linux      fan control for laptops
-[a-h] less            pager program
+[awh] less            pager program
 [--h] powertop        power consumption analyzer and tuning tool
 [--h] tlp             laptop power management and battery optimizer
 
@@ -36,16 +36,16 @@
 
 ## cli_tools ----------------------------------------------------------------------------------------------------
 [a--] wget     tool to extract data from web servers
-[a-h] ripgrep  command line search tool
-[a-h] btop     resource monitor
-[a-h] bat      cat clone with syntax highlighting and Git integration
-[a-h] jq       JSON processor
+[awh] ripgrep  command line search tool
+[awh] btop     resource monitor
+[awh] bat      cat clone with syntax highlighting and Git integration
+[awh] jq       JSON processor
 [awh] gum      tool for prompting users in the terminal
-[a-h] eza      modern replacement for ls
+[awh] eza      modern replacement for ls
 [aw-] 7zip     tool for extracting files from 7z archives
 [a-h] stow     manage dotfiles with symlinks
-[a-h] zoxide   modern replacement for cd
-[a-h] yazi     file manager
+[awh] zoxide   modern replacement for cd
+[awh] yazi     file manager
 [a--] cava     audio visualizer for the terminal
 [--h] rsync    fast incremental file transfer and sync tool
 [--h] iotop    per-process disk I/O monitor
@@ -76,6 +76,14 @@
 [--h] fail2ban        bans IPs with repeated failed logins (ssh brute force, etc)
 [--h] nethogs         per-process network bandwidth monitor
 
+## windows_desktop ----------------------------------------------------------------------------------------------
+[-w-] autohotkey  Keybind manager for Windows
+[-w-] komorebi    tiling manager for Windows
+[-w-] whkd        hotkey daemon
+[-w-] yasb        status bar
+[-w-] powertoys   various tweaks for windows
+[-w-] dark        tool for inspecting windows msi installers
+
 ## hyprland_desktop ---------------------------------------------------------------------------------------------
 [a--] hyprland                     the Hyprland Wayland compositor/window manager
 [a--] hyprpicker                   color picker for Hyprland
@@ -101,14 +109,15 @@
 
 ## shell_environment --------------------------------------------------------------------------------------------
 [a--] kitty                    terminal emulator
-[a-h] fastfetch                system info fetch tool
-[a-h] onefetch                 git repository info fetch tool
-[a-h] cpufetch                 CPU info fetch tool
+[awh] fastfetch                system info fetch tool
+[awh] onefetch                 git repository info fetch tool
+[awh] cpufetch                 CPU info fetch tool
 [a-h] starship                 cross-shell prompt
 [a-h] zsh                      shell
 [a-h] zsh-autosuggestions      Zsh plugin for command suggestions based on history
 [a-h] zsh-syntax-highlighting  Zsh plugin for syntax highlighting of commands
-[a-h] tmux                     Terminal tiler
+[a-h] tmux                     Terminal multiplexer
+[-w-] psmux                    Terminal multiplexer for Windows
 
 ## editors ------------------------------------------------------------------------------------------------------
 [awh] neovim               advanced terminal text editor
@@ -122,17 +131,17 @@
 
 ## development --------------------------------------------------------------------------------------------------
 [a--] nvm              Node Version Manager
-[a--] ninja            build system
+[aw-] ninja            build system
 [awh] git              version control
 [a--] rust             rust development tools
 [awh] github-cli       GitHub command-line interface
 [a--] clang            C/C++ compiler
-[a--] cmake            build system generator
-[a--] doxygen          documentation generator
+[aw-] cmake            build system generator
+[aw-] doxygen          documentation generator
 [a-h] openssh          OpenSSH server and client
 [a--] jdk-openjdk      Open source JDK
 [a--] jdk8-openjdk     Open source JDK 8
-[a-h] tree-sitter-cli  plugin for NeoVim
+[awh] tree-sitter-cli  plugin for NeoVim
 [a--] supabase-bin     Supabase command-line interface
 [a--] bear             generate compilation database for C/C++ projects
 [a--] pre-commit       framework for managing and maintaining multi-language pre-commit hooks
@@ -148,8 +157,8 @@
 [--h] yamllint           linter for YAML files
 
 ## formatters ---------------------------------------------------------------------------------------------------
-[a-h] shfmt      formatter for Bash
-[a-h] stylua     formatter for Lua
+[awh] shfmt      formatter for Bash
+[awh] stylua     formatter for Lua
 [a-h] prettier   formatter for Javascript family
 [a-h] prettierd  formatter daemon for Javascript family
 
@@ -162,28 +171,33 @@
 [a--] svelte-language-server       Language server for Svelte
 [a--] taplo-cli                    Language server for TOML
 [a-h] bash-language-server         Language server for Bash
-[a-h] lua-language-server          Language server for Lua
+[awh] lua-language-server          Language server for Lua
 [a--] qt6-languageserver           Qt6 Language Server for IDEs
 [a--] tailwindcss-language-server  Language server for TailwindCSS
 [a--] typescript-language-server   Lanugage server for Typescript
 [a--] cmake-language-server        Language server for CMake
-[a--] jdtls                        Language server for Java
+[aw-] jdtls                        Language server for Java
 [a--] pyright                      Language server & formatter for Python
 [a--] ruff                         Language server & formatter for Python
 [a--] marksman                     Language server for Markdown
 [--h] yaml-language-server         Language server for YAML files
 
 ## browsers -----------------------------------------------------------------------------------------------------
-[a--] zen-browser-bin     web browser
-[a--] helium-browser-bin  web browser for testing chrome apps
+[aw-] zen-browser  web browser
+[aw-] helium       web browser for testing chrome apps
 
 ## gaming -------------------------------------------------------------------------------------------------------
-[a--] steam                      game platform/launcher
+[aw-] steam                      game platform/launcher
 [a--] stardrop                   game launcher for Stardew Valley mods
 [a--] heroic-games-launcher-bin  Epic Games/GOG Launcher for Linux
 [a--] adwsteamgtk                Adwaita theme for Steam GTK
-[a--] prismlauncher              Minecraft launcher for multiple versions and modpacks
+[aw-] prismlauncher              Minecraft launcher for multiple versions and modpacks
 [a--] directx-shader-compiler    Compiler for DirectX shaders
+[-w-] azahar                     3DS emulator
+[-w-] mgba                       GBA emulator
+[-w-] ppsspp                     PSP emulator
+[-w-] r2modman                   mod manager for various games
+[-w-] sudachi                    nintendo switch emulator
 
 ## fonts --------------------------------------------------------------------------------------------------------
 [a--] ttf-cascadia-code-nerd         Cascadia Code, patched with Nerd Font icons
@@ -211,7 +225,7 @@
 [a--] ventoy-bin  bootable USB creation tool
 
 ## vpn ----------------------------------------------------------------------------------------------------------
-[a-h] tailscale  Virtual private network client
+[awh] tailscale  Virtual private network client
 
 ## recording ----------------------------------------------------------------------------------------------------
 [a--] obs-studio  Open Broadcaster Software for video recording and live streaming
