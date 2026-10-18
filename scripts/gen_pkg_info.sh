@@ -1,8 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
-systems=(archlinux windows)
-INITIAL_COLUMNS="archlinux windows" 
+systems=(archlinux windows homelab)
+INITIAL_COLUMNS="archlinux windows homelab" 
 
 printf "Select a system to generate package info for:\n"
 SYSTEM_PKG=$(gum choose "${systems[@]}")
@@ -20,7 +20,7 @@ rm_specific() {
 
 ALL_PACKAGES=""
 
-if [[ $SYSTEM_PKG == "archlinux" ]]; then
+if [[ $SYSTEM_PKG == "archlinux" || $SYSTEM_PKG == "homelab" ]]; then
     PACMAN_PACKAGES=$( (pacman -Qqen || true) | rm_specific)
     AUR_PACKAGES=$( (pacman -Qqem || true) | rm_specific)
     if command -v pipx >/dev/null; then
