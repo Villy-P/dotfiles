@@ -177,6 +177,7 @@ return {
 						svelte = { "prettierd" },
 						tex = { "latexindent" },
 						markdown = { "prettierd" },
+                        yaml = { "prettierd" },
 					},
 					formatters = {
 						prettierd = {

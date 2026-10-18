@@ -38,6 +38,7 @@ vim.lsp.config("bashls", { capabilities = capabilities })
 vim.lsp.config("pyright", { capabilities = capabilities })
 vim.lsp.config("ruff", { capabilities = capabilities })
 vim.lsp.config("marksman", { capabilities = capabilities })
+vim.lsp.config("yamlls", { capabilities = capabilities })
 
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("ts_ls")
@@ -51,6 +52,7 @@ vim.lsp.enable("bashls")
 vim.lsp.enable("pyright")
 vim.lsp.enable("ruff")
 vim.lsp.enable("marksman")
+vim.lsp.config("yamlls", { capabilities = capabilities })
 
 vim.keymap.set("n", "gd", vim.lsp.buf.definition)
 vim.api.nvim_create_autocmd('LspAttach', {

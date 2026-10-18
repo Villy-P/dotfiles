@@ -1,228 +1,243 @@
-# columns: archlinux windows
-# legend:  a = archlinux   w = windows   - = not installed
+# columns: archlinux windows homelab
+# legend:  a = archlinux   w = windows   h = homelab   - = not installed
 
-## kernel ------------------------------------------------------------------------------------------------------
-[a-] linux           the kernel itself
-[a-] linux-headers   needed to build dkms modules (nvidia) against the kernel
-[a-] linux-firmware  firmware blobs for hardware support
+## kernel -------------------------------------------------------------------------------------------------------
+[a-h] linux           the kernel itself
+[a--] linux-headers   needed to build dkms modules (nvidia) against the kernel
+[a-h] linux-firmware  firmware blobs for hardware support
 
-## bootloader --------------------------------------------------------------------------------------------------
-[a-] grub        bootloader
-[a-] grub-btrfs  GRUB plugin for booting Btrfs snapshots
-[a-] os-prober   detect other OSes for GRUB
-[a-] efibootmgr  manage UEFI boot entries
+## bootloader ---------------------------------------------------------------------------------------------------
+[a-h] grub        bootloader
+[a-h] grub-btrfs  GRUB plugin for booting Btrfs snapshots
+[a--] os-prober   detect other OSes for GRUB
+[a-h] efibootmgr  manage UEFI boot entries
 
-## base_system -------------------------------------------------------------------------------------------------
-[a-] base            core Arch base package group
-[a-] base-devel      build tools (makepkg deps, compilers, etc), needed for AUR
-[a-] snapper         Btrfs snapshot management tool
-[a-] zram-generator  create compressed swap in RAM
-[a-] sudo            privilege escalation
-[a-] inotify-tools   file system event monitoring
-[a-] mkinitcpio      Bash script to create initramfs images
-[a-] upower          power management service
-[a-] auto-cpufreq    automatic CPU speed & power optimizer
-[a-] envycontrol     NVIDIA Optimus management tool
-[a-] mpd-mpris       MPRIS plugin for MPD
-[a-] mpv-mpris       MPRIS plugin for MPV
-[a-] nbfc-linux      fan control for laptops
-[a-] less            pager program
+## base_system --------------------------------------------------------------------------------------------------
+[a-h] base            core Arch base package group
+[a-h] base-devel      build tools (makepkg deps, compilers, etc), needed for AUR
+[a-h] snapper         Btrfs snapshot management tool
+[a--] zram-generator  create compressed swap in RAM
+[a-h] sudo            privilege escalation
+[a-h] inotify-tools   file system event monitoring
+[a-h] mkinitcpio      Bash script to create initramfs images
+[a--] upower          power management service
+[a--] auto-cpufreq    automatic CPU speed & power optimizer
+[a--] envycontrol     NVIDIA Optimus management tool
+[a--] mpd-mpris       MPRIS plugin for MPD
+[a--] mpv-mpris       MPRIS plugin for MPV
+[a--] nbfc-linux      fan control for laptops
+[a-h] less            pager program
+[--h] powertop        power consumption analyzer and tuning tool
+[--h] tlp             laptop power management and battery optimizer
 
-## filesystem --------------------------------------------------------------------------------------------------
-[a-] btrfs-progs  Btrfs filesystem utilities
-[a-] exfatprogs   tools for exFAT filesystem support
+## filesystem ---------------------------------------------------------------------------------------------------
+[a-h] btrfs-progs  Btrfs filesystem utilities
+[a--] exfatprogs   tools for exFAT filesystem support
 
-## cli_tools ---------------------------------------------------------------------------------------------------
-[a-] wget     tool to extract data from web servers
-[a-] ripgrep  command line search tool
-[a-] btop     resource monitor
-[a-] bat      cat clone with syntax highlighting and Git integration
-[a-] jq       JSON processor
-[aw] gum      tool for prompting users in the terminal
-[a-] eza      modern replacement for ls
-[aw] 7zip     tool for extracting files from 7z archives
-[a-] stow     manage dotfiles with symlinks
-[a-] zoxide   modern replacement for cd
-[a-] yazi     file manager
-[a-] cava     audio visualizer for the terminal
+## cli_tools ----------------------------------------------------------------------------------------------------
+[a--] wget     tool to extract data from web servers
+[a-h] ripgrep  command line search tool
+[a-h] btop     resource monitor
+[a-h] bat      cat clone with syntax highlighting and Git integration
+[a-h] jq       JSON processor
+[awh] gum      tool for prompting users in the terminal
+[a-h] eza      modern replacement for ls
+[aw-] 7zip     tool for extracting files from 7z archives
+[a-h] stow     manage dotfiles with symlinks
+[a-h] zoxide   modern replacement for cd
+[a-h] yazi     file manager
+[a--] cava     audio visualizer for the terminal
+[--h] rsync    fast incremental file transfer and sync tool
+[--h] iotop    per-process disk I/O monitor
+[--h] lsof     list open files and the processes using them
+[--h] sysstat  system performance tools (sar, iostat, mpstat)
 
-## package_management ------------------------------------------------------------------------------------------
-[a-] pnpm         fast, disk space efficient package manager for Node.js
-[a-] npm          Node.js package manager
-[a-] python-pip   Python package manager
-[a-] python-pipx  Python package manager for isolated environments
-[a-] luarocks     Lua package manager
-[a-] yay          AUR helper
-[a-] pkgfile      tool for detecting which package provides a file
-[a-] aur-scanner  AUR package scanner for malware and security issues
-[a-] nix          package manager and build system
+## package_management -------------------------------------------------------------------------------------------
+[a--] pnpm         fast, disk space efficient package manager for Node.js
+[a--] npm          Node.js package manager
+[a--] python-pip   Python package manager
+[a--] python-pipx  Python package manager for isolated environments
+[a--] luarocks     Lua package manager
+[a-h] yay          AUR helper
+[a-h] pkgfile      tool for detecting which package provides a file
+[a--] aur-scanner  AUR package scanner for malware and security issues
+[a--] nix          package manager and build system
 
-## audio -------------------------------------------------------------------------------------------------------
-[a-] pipewire-pulse  PulseAudio-compatible layer for PipeWire
-[a-] playerctl       control media players from the command line
+## audio --------------------------------------------------------------------------------------------------------
+[a--] pipewire-pulse  PulseAudio-compatible layer for PipeWire
+[a--] playerctl       control media players from the command line
 
-## networking --------------------------------------------------------------------------------------------------
-[a-] networkmanager  network connection management
-[a-] wpa_supplicant  networkmanager dependency
-[a-] reflector       automatically changes mirror locations
+## networking ---------------------------------------------------------------------------------------------------
+[a-h] networkmanager  network connection management
+[a-h] wpa_supplicant  networkmanager dependency
+[a--] reflector       automatically changes mirror locations
+[--h] ufw             uncomplicated firewall frontend for iptables/nftables
+[--h] fail2ban        bans IPs with repeated failed logins (ssh brute force, etc)
+[--h] nethogs         per-process network bandwidth monitor
 
-## hyprland_desktop --------------------------------------------------------------------------------------------
-[a-] hyprland                     the Hyprland Wayland compositor/window manager
-[a-] hyprpicker                   color picker for Hyprland
-[a-] hypridle                     idle management for Hyprland
-[a-] hyprlock                     lock screen for Hyprland
-[a-] hyprsunset                   night light filter for Hyprland
-[a-] hyprshutdown                 shutdown/reboot utility for Hyprland
-[a-] hyprpolkitagent              polkit authentication agent for Hyprland
-[a-] xdg-desktop-portal-hyprland  desktop portal backend for Hyprland (screen share, file pickers, etc)
-[a-] rose-pine-hyprcursor         Rose Pine cursor theme for Hyprland
-[a-] quickshell                   Wayland shell for Hyprland
-[a-] awww                         wallpaper setter for Wayland
-[a-] matugen                      theme generator for Hyprland and other apps
-[a-] wl-clipboard                 copy/paste to/from the Wayland clipboard
-[a-] cliphist                     clipboard history manager for Wayland
-[a-] brightnessctl                control brightness from the CLI
-[a-] wf-recorder                  screen recording utility for Wayland
-[a-] wtype                        simulate keyboard input for Wayland
+## hyprland_desktop ---------------------------------------------------------------------------------------------
+[a--] hyprland                     the Hyprland Wayland compositor/window manager
+[a--] hyprpicker                   color picker for Hyprland
+[a--] hypridle                     idle management for Hyprland
+[a--] hyprlock                     lock screen for Hyprland
+[a--] hyprsunset                   night light filter for Hyprland
+[a--] hyprshutdown                 shutdown/reboot utility for Hyprland
+[a--] hyprpolkitagent              polkit authentication agent for Hyprland
+[a--] xdg-desktop-portal-hyprland  desktop portal backend for Hyprland (screen share, file pickers, etc)
+[a--] rose-pine-hyprcursor         Rose Pine cursor theme for Hyprland
+[a--] quickshell                   Wayland shell for Hyprland
+[a--] awww                         wallpaper setter for Wayland
+[a--] matugen                      theme generator for Hyprland and other apps
+[a--] wl-clipboard                 copy/paste to/from the Wayland clipboard
+[a--] cliphist                     clipboard history manager for Wayland
+[a--] brightnessctl                control brightness from the CLI
+[a--] wf-recorder                  screen recording utility for Wayland
+[a--] wtype                        simulate keyboard input for Wayland
 
-## peripherals -------------------------------------------------------------------------------------------------
-[a-] openrgb    RGB lighting control for various devices
-[a-] i2c-tools  I2C bus utilities for hardware communication
+## peripherals --------------------------------------------------------------------------------------------------
+[a--] openrgb    RGB lighting control for various devices
+[a--] i2c-tools  I2C bus utilities for hardware communication
 
-## shell_environment -------------------------------------------------------------------------------------------
-[a-] kitty                    terminal emulator
-[a-] fastfetch                system info fetch tool
-[a-] onefetch                 git repository info fetch tool
-[a-] cpufetch                 CPU info fetch tool
-[a-] starship                 cross-shell prompt
-[a-] zsh                      shell
-[a-] zsh-autosuggestions      Zsh plugin for command suggestions based on history
-[a-] zsh-syntax-highlighting  Zsh plugin for syntax highlighting of commands
-[a-] tmux                     Terminal tiler
+## shell_environment --------------------------------------------------------------------------------------------
+[a--] kitty                    terminal emulator
+[a-h] fastfetch                system info fetch tool
+[a-h] onefetch                 git repository info fetch tool
+[a-h] cpufetch                 CPU info fetch tool
+[a-h] starship                 cross-shell prompt
+[a-h] zsh                      shell
+[a-h] zsh-autosuggestions      Zsh plugin for command suggestions based on history
+[a-h] zsh-syntax-highlighting  Zsh plugin for syntax highlighting of commands
+[a-h] tmux                     Terminal tiler
 
-## editors -----------------------------------------------------------------------------------------------------
-[aw] neovim               advanced terminal text editor
-[a-] zathura              document viewer
-[a-] zathura-pdf-poppler  pdf support for zathura
+## editors ------------------------------------------------------------------------------------------------------
+[awh] neovim               advanced terminal text editor
+[a--] zathura              document viewer
+[a--] zathura-pdf-poppler  pdf support for zathura
 
-## productivity ------------------------------------------------------------------------------------------------
-[a-] obsidian     knowledge base and note-taking app
-[a-] tiled        map editor for 2D games
-[a-] imagemagick  image manipulation tool
+## productivity -------------------------------------------------------------------------------------------------
+[a--] obsidian     knowledge base and note-taking app
+[a--] tiled        map editor for 2D games
+[a--] imagemagick  image manipulation tool
 
-## development -------------------------------------------------------------------------------------------------
-[a-] nvm              Node Version Manager
-[a-] ninja            build system
-[aw] git              version control
-[a-] rust             rust development tools
-[aw] github-cli       GitHub command-line interface
-[a-] clang            C/C++ compiler
-[a-] cmake            build system generator
-[a-] doxygen          documentation generator
-[a-] openssh          OpenSSH server and client
-[a-] jdk-openjdk      Open source JDK
-[a-] jdk8-openjdk     Open source JDK 8
-[a-] tree-sitter-cli  plugin for NeoVim
-[a-] supabase-bin     Supabase command-line interface
-[a-] bear             generate compilation database for C/C++ projects
-[a-] pre-commit       framework for managing and maintaining multi-language pre-commit hooks
+## development --------------------------------------------------------------------------------------------------
+[a--] nvm              Node Version Manager
+[a--] ninja            build system
+[awh] git              version control
+[a--] rust             rust development tools
+[awh] github-cli       GitHub command-line interface
+[a--] clang            C/C++ compiler
+[a--] cmake            build system generator
+[a--] doxygen          documentation generator
+[a-h] openssh          OpenSSH server and client
+[a--] jdk-openjdk      Open source JDK
+[a--] jdk8-openjdk     Open source JDK 8
+[a-h] tree-sitter-cli  plugin for NeoVim
+[a--] supabase-bin     Supabase command-line interface
+[a--] bear             generate compilation database for C/C++ projects
+[a--] pre-commit       framework for managing and maintaining multi-language pre-commit hooks
 
-## linters -----------------------------------------------------------------------------------------------------
-[a-] markdownlint-cli2  linter for Markdown
-[a-] eslint             linter for Javascript family
-[a-] checkstyle         Java static analysis tool
+## containers ---------------------------------------------------------------------------------------------------
+[--h] docker          container runtime and management tool
+[--h] docker-compose  define and run multi-container apps from a YAML file
 
-## formatters --------------------------------------------------------------------------------------------------
-[a-] shfmt      formatter for Bash
-[a-] stylua     formatter for Lua
-[a-] prettier   formatter for Javascript family
-[a-] prettierd  formatter daemon for Javascript family
+## linters ------------------------------------------------------------------------------------------------------
+[a--] markdownlint-cli2  linter for Markdown
+[a--] eslint             linter for Javascript family
+[a--] checkstyle         Java static analysis tool
+[--h] yamllint           linter for YAML files
 
-## libraries ---------------------------------------------------------------------------------------------------
-[a-] boost     C++ libraries
-[a-] freeglut  OpenGL utility library
-[a-] glew      OpenGL Extension Wrangler Library
+## formatters ---------------------------------------------------------------------------------------------------
+[a--] shfmt      formatter for Bash
+[a--] stylua     formatter for Lua
+[a-h] prettier   formatter for Javascript family
+[a-h] prettierd  formatter daemon for Javascript family
 
-## language_servers --------------------------------------------------------------------------------------------
-[a-] svelte-language-server       Language server for Svelte
-[a-] taplo-cli                    Language server for TOML
-[a-] bash-language-server         Language server for Bash
-[a-] lua-language-server          Language server for Lua
-[a-] qt6-languageserver           Qt6 Language Server for IDEs
-[a-] tailwindcss-language-server  Language server for TailwindCSS
-[a-] typescript-language-server   Lanugage server for Typescript
-[a-] cmake-language-server        Language server for CMake
-[a-] jdtls                        Language server for Java
-[a-] pyright                      Language server & formatter for Python
-[a-] ruff                         Language server & formatter for Python
-[a-] marksman                     Language server for Markdown
+## libraries ----------------------------------------------------------------------------------------------------
+[a--] boost     C++ libraries
+[a--] freeglut  OpenGL utility library
+[a--] glew      OpenGL Extension Wrangler Library
 
-## browsers ----------------------------------------------------------------------------------------------------
-[a-] zen-browser-bin     web browser
-[a-] helium-browser-bin  web browser for testing chrome apps
+## language_servers ---------------------------------------------------------------------------------------------
+[a--] svelte-language-server       Language server for Svelte
+[a--] taplo-cli                    Language server for TOML
+[a-h] bash-language-server         Language server for Bash
+[a--] lua-language-server          Language server for Lua
+[a--] qt6-languageserver           Qt6 Language Server for IDEs
+[a--] tailwindcss-language-server  Language server for TailwindCSS
+[a--] typescript-language-server   Lanugage server for Typescript
+[a--] cmake-language-server        Language server for CMake
+[a--] jdtls                        Language server for Java
+[a--] pyright                      Language server & formatter for Python
+[a--] ruff                         Language server & formatter for Python
+[a--] marksman                     Language server for Markdown
+[--h] yaml-language-server         Language server for YAML files
 
-## gaming ------------------------------------------------------------------------------------------------------
-[a-] steam                      game platform/launcher
-[a-] stardrop                   game launcher for Stardew Valley mods
-[a-] heroic-games-launcher-bin  Epic Games/GOG Launcher for Linux
-[a-] adwsteamgtk                Adwaita theme for Steam GTK
-[a-] prismlauncher              Minecraft launcher for multiple versions and modpacks
-[a-] directx-shader-compiler    Compiler for DirectX shaders
+## browsers -----------------------------------------------------------------------------------------------------
+[a--] zen-browser-bin     web browser
+[a--] helium-browser-bin  web browser for testing chrome apps
 
-## fonts -------------------------------------------------------------------------------------------------------
-[a-] ttf-cascadia-code-nerd         Cascadia Code, patched with Nerd Font icons
-[a-] noto-fonts-emoji               Noto Emoji font for emoji support
-[a-] noto-fonts-cjk                 Noto CJK fonts for Chinese, Japanese, and Korean support
-[a-] inter-font                     Inter font family for modern UI design
-[a-] ttf-bitstream-charter          Bitstream Charter font family for serif text
-[a-] ttf-ms-fonts                   Microsoft TrueType fonts for Windows compatibility
-[a-] ttf-jetbrains-mono-nerd        JetBrains Mono, patched with Nerd Font icons
-[a-] ttf-nerd-fonts-symbols-common  Nerd Font symbols for common icons
+## gaming -------------------------------------------------------------------------------------------------------
+[a--] steam                      game platform/launcher
+[a--] stardrop                   game launcher for Stardew Valley mods
+[a--] heroic-games-launcher-bin  Epic Games/GOG Launcher for Linux
+[a--] adwsteamgtk                Adwaita theme for Steam GTK
+[a--] prismlauncher              Minecraft launcher for multiple versions and modpacks
+[a--] directx-shader-compiler    Compiler for DirectX shaders
 
-## screenshots -------------------------------------------------------------------------------------------------
-[a-] grim           screenshot utility for Wayland
-[a-] slurp          select a region of the screen for screenshots
-[a-] swappy         screenshot annotation tool
-[a-] grimblast-git  screenshot utility for Wayland with additional features
+## fonts --------------------------------------------------------------------------------------------------------
+[a--] ttf-cascadia-code-nerd         Cascadia Code, patched with Nerd Font icons
+[a--] noto-fonts-emoji               Noto Emoji font for emoji support
+[a--] noto-fonts-cjk                 Noto CJK fonts for Chinese, Japanese, and Korean support
+[a--] inter-font                     Inter font family for modern UI design
+[a--] ttf-bitstream-charter          Bitstream Charter font family for serif text
+[a--] ttf-ms-fonts                   Microsoft TrueType fonts for Windows compatibility
+[a--] ttf-jetbrains-mono-nerd        JetBrains Mono, patched with Nerd Font icons
+[a--] ttf-nerd-fonts-symbols-common  Nerd Font symbols for common icons
 
-## bluetooth ---------------------------------------------------------------------------------------------------
-[a-] bluez        Bluetooth protocol stack
-[a-] bluez-utils  Bluetooth utilities
+## screenshots --------------------------------------------------------------------------------------------------
+[a--] grim           screenshot utility for Wayland
+[a--] slurp          select a region of the screen for screenshots
+[a--] swappy         screenshot annotation tool
+[a--] grimblast-git  screenshot utility for Wayland with additional features
 
-## usb ---------------------------------------------------------------------------------------------------------
-[a-] udiskie     automatically mount and unmount removable media
-[a-] udisks2     D-Bus service for managing removable media
-[a-] ventoy-bin  bootable USB creation tool
+## bluetooth ----------------------------------------------------------------------------------------------------
+[a--] bluez        Bluetooth protocol stack
+[a--] bluez-utils  Bluetooth utilities
 
-## vpn ---------------------------------------------------------------------------------------------------------
-[a-] tailscale  Virtual private network client
+## usb ----------------------------------------------------------------------------------------------------------
+[a--] udiskie     automatically mount and unmount removable media
+[a--] udisks2     D-Bus service for managing removable media
+[a--] ventoy-bin  bootable USB creation tool
 
-## recording ---------------------------------------------------------------------------------------------------
-[a-] obs-studio  Open Broadcaster Software for video recording and live streaming
+## vpn ----------------------------------------------------------------------------------------------------------
+[a-h] tailscale  Virtual private network client
 
-## latex -------------------------------------------------------------------------------------------------------
-[a-] texlive-basic             Base LaTex support
-[a-] texlive-bin               LaTex utilites
-[a-] texlive-binextra          Extra LaTex utilities
-[a-] texlive-fontsrecommended  Recommended fonts for LaTex
-[a-] texlive-latexextra        Extra LaTex utiltiies
-[a-] texlive-xetex             LaTex engine
-[a-] biber                     LaTex runner
-[a-] perl-file-homedir         Used for LaTex utilities in Neovim
-[a-] perl-yaml-tiny            Used for LaTex utilities in Neovim
-[a-] xdotool                   Used for LaTex utilities in Neovim
+## recording ----------------------------------------------------------------------------------------------------
+[a--] obs-studio  Open Broadcaster Software for video recording and live streaming
 
-## qt_libraries ------------------------------------------------------------------------------------------------
-[a-] qt6-5compat     Qt6 compatibility libraries for Qt5
-[a-] qt6-multimedia  Qt6 multimedia libraries
-[a-] qt6ct           Qt6 configuration tool
+## latex --------------------------------------------------------------------------------------------------------
+[a--] texlive-basic             Base LaTex support
+[a--] texlive-bin               LaTex utilites
+[a--] texlive-binextra          Extra LaTex utilities
+[a--] texlive-fontsrecommended  Recommended fonts for LaTex
+[a--] texlive-latexextra        Extra LaTex utiltiies
+[a--] texlive-xetex             LaTex engine
+[a--] biber                     LaTex runner
+[a--] perl-file-homedir         Used for LaTex utilities in Neovim
+[a--] perl-yaml-tiny            Used for LaTex utilities in Neovim
+[a--] xdotool                   Used for LaTex utilities in Neovim
 
-## operating_systems -------------------------------------------------------------------------------------------
-[a-] aarch64-linux-gnu-binutils           GNU binary utilities for AArch64
-[a-] aarch64-linux-gnu-gcc                GNU Compiler Collection for AArch64
-[a-] aarch64-linux-gnu-glibc              GNU C Library for AArch64
-[a-] aarch64-linux-gnu-linux-api-headers  Linux API headers for AArch64
-[a-] edk2-aarch64                         UEFI firmware for AArch64
-[a-] libisoburn                           ISO image burning tool
-[a-] limine                               bootloader
-[a-] qemu-system-aarch64                  QEMU emulator for AArch64
+## qt_libraries -------------------------------------------------------------------------------------------------
+[a--] qt6-5compat     Qt6 compatibility libraries for Qt5
+[a--] qt6-multimedia  Qt6 multimedia libraries
+[a--] qt6ct           Qt6 configuration tool
+
+## operating_systems --------------------------------------------------------------------------------------------
+[a--] aarch64-linux-gnu-binutils           GNU binary utilities for AArch64
+[a--] aarch64-linux-gnu-gcc                GNU Compiler Collection for AArch64
+[a--] aarch64-linux-gnu-glibc              GNU C Library for AArch64
+[a--] aarch64-linux-gnu-linux-api-headers  Linux API headers for AArch64
+[a--] edk2-aarch64                         UEFI firmware for AArch64
+[a--] libisoburn                           ISO image burning tool
+[a--] limine                               bootloader
+[a--] qemu-system-aarch64                  QEMU emulator for AArch64

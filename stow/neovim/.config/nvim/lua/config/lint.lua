@@ -9,6 +9,7 @@ lint.linters_by_ft = {
 	bash = { "shfmt" },
 	python = { "ruff_format" },
     markdown = { "markdownlint-cli2" },
+    yaml = { "yamllint" }
 }
 
 -- Completely override checkstyle to use standard text parsing
