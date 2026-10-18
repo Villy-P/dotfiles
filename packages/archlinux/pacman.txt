@@ -80,6 +80,7 @@ onefetch
 openrgb
 openssh
 os-prober
+pacman-contrib
 perl-file-homedir
 perl-yaml-tiny
 pipewire-pulse

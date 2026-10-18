@@ -62,7 +62,7 @@
 [a-h] pkgfile         tool for detecting which package provides a file
 [a--] aur-scanner     AUR package scanner for malware and security issues
 [a--] nix             package manager and build system
-[--h] pacman-contrib  pacman Utilities
+[a-h] pacman-contrib  pacman Utilities
 
 ## audio --------------------------------------------------------------------------------------------------------
 [a--] pipewire-pulse  PulseAudio-compatible layer for PipeWire
@@ -242,5 +242,3 @@
 [a--] libisoburn                           ISO image burning tool
 [a--] limine                               bootloader
 [a--] qemu-system-aarch64                  QEMU emulator for AArch64
-
-## unsorted -----------------------------------------------------------------------------------------------------
