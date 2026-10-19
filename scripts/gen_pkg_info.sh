@@ -15,7 +15,7 @@ mkdir -p "$PACKAGE_DIR"
 touch "$PACKAGE_MASTER"
 
 rm_specific() {
-    grep -vE "nvidia|ucode" || true
+    grep -vE "nvidia|ucode|intel" || true
 }
 
 ALL_PACKAGES=""
