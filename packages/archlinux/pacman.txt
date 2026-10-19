@@ -48,12 +48,15 @@ i2c-tools
 imagemagick
 inotify-tools
 inter-font
+iperf3
+iw
 jdk-openjdk
 jdk8-openjdk
 jq
 kitty
 less
 libisoburn
+libva-utils
 limine
 linux
 linux-firmware

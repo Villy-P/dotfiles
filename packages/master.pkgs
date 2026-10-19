@@ -13,6 +13,7 @@
 [a-h] efibootmgr  manage UEFI boot entries
 
 ## base_system --------------------------------------------------------------------------------------------------
+[a--] libva-utils     VA-API utilities for video acceleration
 [a-h] base            core Arch base package group
 [a-h] base-devel      build tools (makepkg deps, compilers, etc), needed for AUR
 [a-h] snapper         Btrfs snapshot management tool
@@ -75,6 +76,8 @@
 [--h] ufw             uncomplicated firewall frontend for iptables/nftables
 [--h] fail2ban        bans IPs with repeated failed logins (ssh brute force, etc)
 [--h] nethogs         per-process network bandwidth monitor
+[a--] iperf3          measure network bandwidth between two hosts
+[a--] iw              tool for configuring wireless devices
 
 ## windows_desktop ----------------------------------------------------------------------------------------------
 [-w-] autohotkey  Keybind manager for Windows
@@ -258,5 +261,5 @@
 [a--] qemu-system-aarch64                  QEMU emulator for AArch64
 
 ## remote_desktop -----------------------------------------------------------------------------------------------
-[-w-] sunshine      streaming host
+[aw-] sunshine      streaming host
 [a--] moonlight-qt  streaming client
