@@ -15,6 +15,9 @@ OS = {"win32": "windows", "darwin": "macos"}.get(sys.platform, "linux")
 
 
 def profiles(explicit: str | None) -> list[str]:
+    override = explicit or os.environ.get("DOTFILES_HOST", "")
+    if override:
+        return [re.sub(r"\W", "", override).lower()]
     names = [
         explicit or os.environ.get("DOTFILES_HOST", ""),
         socket.gethostname().split(".")[0],
