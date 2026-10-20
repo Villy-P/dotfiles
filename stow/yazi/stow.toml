@@ -1,5 +1,5 @@
 [[targets]]
 archlinux = "~/.config/yazi"
 windows = "%AppData%/yazi/config"
-homelab = "~/.config/nvim"
+homelab = "~/.config/yazi"
 
