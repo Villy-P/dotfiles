@@ -1,0 +1,67 @@
+- AI & Dev Tools:
+    - Claude:
+        - icon: https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cd02a42d9-Vq_H3mgS.svg
+          href: https://claude.ai/
+    - Github:
+        - icon: github.png
+          href: https://github.com/
+    - Visual Emulator:
+        - icon: https://visualemulator.com/images/favicon.svg
+          href: https://visualemulator.com/IDE.html
+    - NPM:
+        - icon: npm.png
+          href: https://www.npmjs.com/
+
+- Infrastructure:
+    - Vercel:
+        - icon: vercel.png
+          href: https://vercel.com/
+    - Supabase:
+        - icon: supabase.png
+          href: https://app.supabase.com/
+    - Resend:
+        - icon: https://resend.com/static/favicons/favicon-marketing.ico?v=1
+          href: https://resend.com/
+    - Backblaze B2:
+        - icon: https://cdn.prod.website-files.com/63d32de856f6323a43a277f2/64b1ab4aa5aef8291e9291ab_Favicon.png
+          href: https://www.backblaze.com/b2/cloud-storage.html
+    - Tailscale:
+        - icon: https://tailscale.com/favicon.ico
+          href: https://login.tailscale.com/admin/machines
+
+- Personal Projects:
+    - Blog:
+        - icon: https://valerius-petrini.vercel.app/favicon.png
+          href: https://valerius-petrini.vercel.app/
+
+- University:
+    - UT Registration Calendar:
+        - icon: https://www.utexas.edu/favicon.ico
+          href: chrome-extension://hboadpjkoaieogjimneceaahlppnipaa/calendar.html
+    - My UT:
+        - icon: https://www.utexas.edu/favicon.ico
+          href: https://my.utexas.edu/student/student/index
+
+- Google:
+    - GMail:
+        - icon: gmail.png
+          href: https://mail.google.com/
+    - Google Analytics:
+        - icon: google-analytics.png
+          href: https://analytics.google.com/
+
+- Social:
+    - Discord:
+        - icon: discord.png
+          href: https://discord.com/
+    - LinkedIn:
+        - icon: linkedin.png
+          href: https://www.linkedin.com/
+
+- Entertainment:
+    - YouTube:
+        - icon: youtube.png
+          href: https://youtube.com/
+    - Spotify:
+        - icon: spotify.png
+          href: https://open.spotify.com/

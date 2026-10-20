@@ -1,0 +1,20 @@
+name: homepage
+
+services:
+  homepage:
+    image: ghcr.io/gethomepage/homepage:latest
+    container_name: homepage
+    volumes:
+      - ./config:/app/config # Make sure your local config directory exists
+      - /var/run/docker.sock:/var/run/docker.sock:ro # (optional) For docker integrations, see alternative methods
+    environment:
+      HOMEPAGE_ALLOWED_HOSTS: homelab.tailc8658b.ts.net:8446
+    restart: unless-stopped
+    networks:
+      - proxy
+    env_file:
+      - ../.env
+
+networks:
+  proxy:
+    external: true

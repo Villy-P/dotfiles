@@ -1,0 +1,21 @@
+name: convertx
+
+services:
+  convertx:
+    image: ghcr.io/c4illin/convertx
+    container_name: convertx
+    restart: unless-stopped
+    environment:
+      - MAX_CONVERT_PROCESS=5
+      # - HTTP_ALLOWED=true # uncomment this if accessing it over a non-https connection
+    volumes:
+      - ./data:/app/data
+    mem_limit: 2g
+    mem_reservation: 512m
+    memswap_limit: 3g
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true

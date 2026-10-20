@@ -1,0 +1,14 @@
+name: it-tools
+
+services:
+  it-tools:
+    container_name: it-tools
+    image: sharevb/it-tools:latest
+    pull_policy: always
+    restart: unless-stopped
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true

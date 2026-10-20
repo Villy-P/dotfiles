@@ -1,0 +1,64 @@
+homelab.tailc8658b.ts.net:8441 {
+    tls /certs/homelab.tailc8658b.ts.net.crt /certs/homelab.tailc8658b.ts.net.key
+    reverse_proxy Kopia:51515
+}
+
+homelab.tailc8658b.ts.net:8442 {
+    tls /certs/homelab.tailc8658b.ts.net.crt /certs/homelab.tailc8658b.ts.net.key
+    reverse_proxy it-tools:8080
+}
+
+homelab.tailc8658b.ts.net:8443 {
+    tls /certs/homelab.tailc8658b.ts.net.crt /certs/homelab.tailc8658b.ts.net.key
+    reverse_proxy actual-actual_server-1:5006
+}
+
+homelab.tailc8658b.ts.net:8444 {
+    tls /certs/homelab.tailc8658b.ts.net.crt /certs/homelab.tailc8658b.ts.net.key
+    reverse_proxy immich_server:2283
+}
+
+homelab.tailc8658b.ts.net:8445 {
+    tls /certs/homelab.tailc8658b.ts.net.crt /certs/homelab.tailc8658b.ts.net.key
+    reverse_proxy pihole:80
+}
+
+homelab.tailc8658b.ts.net:8446 {
+    tls /certs/homelab.tailc8658b.ts.net.crt /certs/homelab.tailc8658b.ts.net.key
+    reverse_proxy homepage:3000
+}
+
+homelab.tailc8658b.ts.net:8447 {
+    tls /certs/homelab.tailc8658b.ts.net.crt /certs/homelab.tailc8658b.ts.net.key
+    reverse_proxy nextcloud-app-1:80
+}
+
+homelab.tailc8658b.ts.net:8448 {
+    tls /certs/homelab.tailc8658b.ts.net.crt /certs/homelab.tailc8658b.ts.net.key
+    reverse_proxy convertx:3000
+}
+
+homelab.tailc8658b.ts.net:8449 {
+    tls /certs/homelab.tailc8658b.ts.net.crt /certs/homelab.tailc8658b.ts.net.key
+    reverse_proxy vaultwarden:80
+}
+
+homelab.tailc8658b.ts.net:8450 {
+    tls /certs/homelab.tailc8658b.ts.net.crt /certs/homelab.tailc8658b.ts.net.key
+    reverse_proxy collabora:9980
+}
+
+homelab.tailc8658b.ts.net:8451 {
+    tls /certs/homelab.tailc8658b.ts.net.crt /certs/homelab.tailc8658b.ts.net.key
+    reverse_proxy stirling-pdf:8080
+}
+
+homelab.tailc8658b.ts.net:8452 {
+    tls /certs/homelab.tailc8658b.ts.net.crt /certs/homelab.tailc8658b.ts.net.key
+    reverse_proxy KopiaLocal:51516
+}
+
+homelab.tailc8658b.ts.net:8453 {
+    tls /certs/homelab.tailc8658b.ts.net.crt /certs/homelab.tailc8658b.ts.net.key
+    reverse_proxy epic-freegames:3000
+}

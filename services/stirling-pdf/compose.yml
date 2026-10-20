@@ -1,0 +1,17 @@
+name: stirling-pdf
+
+services:
+  stirling-pdf:
+    image: docker.stirlingpdf.com/stirlingtools/stirling-pdf:latest
+    container_name: stirling-pdf
+    volumes:
+      - ./stirling-data:/configs
+    restart: unless-stopped
+    environment:
+      - SECURITY_ENABLELOGIN=false
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true

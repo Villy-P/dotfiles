@@ -1,0 +1,83 @@
+name: kopia
+
+services:
+  kopia:
+    image: kopia/kopia:latest
+    hostname: Hostname
+    container_name: Kopia
+    restart: unless-stopped
+    # Setup the server that provides the web gui
+    command:
+      - server
+      - start
+      - --disable-csrf-token-checks
+      - --insecure
+      - --address=0.0.0.0:51515
+      - --server-username=Valerius
+      - --server-password=${KOPIA_PASSWORD}
+    environment:
+      # Set repository password
+      KOPIA_PASSWORD: "${KOPIA_ENCRYPTION_PASSWORD}"
+      USER: "Valerius"
+      KOPIA_CONFIG_PATH: /app/config/repository.config
+      KOPIA_CACHE_DIRECTORY: /app/cache
+      KOPIA_LOG_DIR: /app/logs
+    volumes:
+      # Mount local folders needed by kopia
+      - ./config:/app/config
+      - ./cache:/app/cache
+      - ./logs:/app/logs
+      # Mount local folders to snapshot
+      - /home/valerius/dotfiles/services/immich/library:/data/immich-library:ro
+      - /home/valerius/dotfiles/services/vaultwarden/backups:/data/vaultwarden-backups:ro
+      - /home/valerius/dotfiles/services/actual/backups:/data/actual-backups:ro
+      - /home/valerius/dotfiles/services/nextcloud/backups:/data/nextcloud-backups:ro
+      # Mount repository location
+      - ./repository:/repository
+      # Mount path for browsing mounted snapshots
+      - ./tmp:/tmp:shared
+    networks:
+      - proxy
+
+  kopia-localcpy:
+    image: kopia/kopia:latest
+    hostname: Hostname
+    container_name: KopiaLocal
+    restart: unless-stopped
+    # Setup the server that provides the web gui
+    command:
+      - server
+      - start
+      - --disable-csrf-token-checks
+      - --insecure
+      - --address=0.0.0.0:51516
+      - --server-username=Valerius
+      - --server-password=${KOPIA_PASSWORD}
+    environment:
+      # Set repository password
+      KOPIA_PASSWORD: "${KOPIA_ENCRYPTION_PASSWORD}"
+      USER: "Valerius"
+      KOPIA_CONFIG_PATH: /app/config/localcpy/repository.config
+      KOPIA_CACHE_DIRECTORY: /app/cache/localcpy
+      KOPIA_LOG_DIR: /app/logs/localcpy
+    volumes:
+      # Mount local folders needed by kopia
+      - ./localcpy/config:/app/config/localcpy
+      - ./localcpy/cache:/app/cache/localcpy
+      - ./localcpy/logs:/app/logs/localcpy
+      # Mount local folders to snapshot
+      - /home/valerius/homelab/services/immich/library:/data/immich-library:ro
+      - /home/valerius/homelab/services/vaultwarden/backups:/data/vaultwarden-backups:ro
+      - /home/valerius/homelab/services/actual/backups:/data/actual-backups:ro
+      - /home/valerius/homelab/services/nextcloud/backups:/data/nextcloud-backups:ro
+      - /mnt/usb:/mnt/usb
+      # Mount repository location
+      - ./localcpy/repository:/repository
+      # Mount path for browsing mounted snapshots
+      - ./localcpy/tmp:/tmp:shared
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true

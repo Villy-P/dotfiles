@@ -1,0 +1,18 @@
+{
+    "runOnStartup": true,
+    "cronSchedule": "0 0,6,12,18 * * *",
+    "webPortalConfig": {
+        "baseUrl": "https://homelab.tailc8658b.ts.net:8453"
+    },
+    "accounts": [
+        {
+            "email": "valeriuspetrini@gmail.com"
+        }
+    ],
+    "notifiers": [
+        {
+            "type": "discord",
+            "webhookUrl": "*******************"
+        }
+    ]
+}

@@ -1,0 +1,99 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/services/
+
+- Homelab Services:
+    - PiHole:
+        icon: pi-hole.png
+        href: https://homelab.tailc8658b.ts.net:8445/admin/
+        description: DNS and ad-blocking service.
+        # widget:
+        #     type: pihole
+        #     url: http://pihole:80
+        #     version: 6
+        #     key: {{HOMEPAGE_VAR_PI_HOLE_PASSWORD}}
+        container: pihole
+
+    - Immich:
+        icon: immich.png
+        href: https://homelab.tailc8658b.ts.net:8444/
+        description: Self-hosted photo and video backup solution.
+        # widget:
+        #     type: immich
+        #     url: http://immich_server:2283
+        #     version: 2
+        #     key: {{HOMEPAGE_VAR_IMMICH_API_KEY}}
+        container: immich_server
+
+    - Caddy:
+        icon: caddy.png
+        description: Web server and reverse proxy.
+        # widget:
+        #     type: caddy
+        #     url: http://caddy:2019
+        container: caddy
+
+    - Actual:
+        icon: https://homelab.tailc8658b.ts.net:8443/favicon.ico
+        href: https://homelab.tailc8658b.ts.net:8443/
+        description: Self-hosted budgeting software.
+        container: actual-actual_server-1
+
+    - Nextcloud:
+        icon: nextcloud.png
+        href: https://homelab.tailc8658b.ts.net:8447/
+        description: Self-hosted file sharing and collaboration platform.
+        container: nextcloud-app-1
+        # widget:
+        #     type: nextcloud
+        #     url: http://nextcloud-app-1:80
+        #     username: nextcloud
+        #     password: {{HOMEPAGE_VAR_NEXTCLOUD_ROOT_PASSWORD}}
+
+    - ConvertX:
+        icon: convertx.png
+        href: https://homelab.tailc8658b.ts.net:8448/
+        description: Self-hosted media conversion service.
+        container: convertx
+
+    - Vaultwarden:
+        icon: vaultwarden.png
+        href: https://homelab.tailc8658b.ts.net:8449/
+        description: Self-hosted password manager.
+        container: vaultwarden
+
+    - IT Tools:
+        icon: it-tools.png
+        href: https://homelab.tailc8658b.ts.net:8442/
+        description: Self-hosted IT tools and utilities.
+        container: it-tools
+
+    - Kopia:
+        icon: kopia.png
+        href: https://homelab.tailc8658b.ts.net:8441/
+        description: Fast and secure backup tool.
+        container: Kopia
+
+    - Kopia Local Copy:
+        icon: kopia.png
+        href: https://homelab.tailc8658b.ts.net:8452/
+        description: Fast and secure backup tool (local copy).
+        container: KopiaLocal
+
+    - Collabora:
+        icon: https://www.collaboraonline.com/wp-content/uploads/2023/06/collabora-symbols-600.png
+        href: https://homelab.tailc8658b.ts.net:8450/
+        description: Self-hosted online office suite.
+        container: collabora
+
+    - Stirling PDF:
+        icon: https://framerusercontent.com/images/XSySaBeEKENm2npePwLJyrxmfE.png
+        href: https://homelab.tailc8658b.ts.net:8451/
+        description: Self-hosted PDF conversion service.
+        container: stirling-pdf
+
+    - Epic Free Games:
+        icon: https://www.epicgames.com/favicon.ico
+        href: https://homelab.tailc8658b.ts.net:8453/
+        description: Self-hosted Epic Games redeemer.
+        container: epic-freegames

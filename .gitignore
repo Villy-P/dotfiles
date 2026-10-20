@@ -1,1 +1,19 @@
 *.bak
+
+# Homelab
+.env
+etc-pihole/
+library/
+postgres/
+certs/
+logs/
+actual-data/
+data/
+cache/
+services/kopia/config/
+repository/
+backups/
+stirling-data/
+localcpy/
+services/epic-freegames/config/*
+!services/epic-freegames/config/config.example.json

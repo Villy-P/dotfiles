@@ -1,0 +1,33 @@
+name: vaultwarden
+
+services:
+  vaultwarden:
+    container_name: vaultwarden
+    image: vaultwarden/server:latest
+    restart: unless-stopped
+    volumes:
+      - ./data/:/data/
+    networks:
+      - proxy
+    environment:
+      - DOMAIN=https://homelab.tailc8658b.ts.net
+      - LOGIN_RATELIMIT_MAX_BURST=10
+      - LOGIN_RATELIMIT_SECONDS=60
+      - ADMIN_RATELIMIT_MAX_BURST=10
+      - ADMIN_RATELIMIT_SECONDS=60
+      - ADMIN_TOKEN=${VAULTWARDEN_ADMIN_TOKEN}
+      - SENDS_ALLOWED=true
+      - EMERGENCY_ACCESS_ALLOWED=true
+      - WEB_VAULT_ENABLED=true
+      - SMTP_HOST=smtp.gmail.com
+      - SMTP_FROM=${EMAIL}
+      - SMTP_FROM_NAME=Vaultwarden
+      - SMTP_SECURITY=starttls
+      - SMTP_PORT=587
+      - SMTP_USERNAME=${EMAIL}
+      - SMTP_PASSWORD=${EMAIL_PASSWORD}
+      - SMTP_AUTH_MECHANISM=Plain
+
+networks:
+  proxy:
+    external: true

@@ -1,0 +1,20 @@
+name: collabora
+
+services:
+  collabora:
+    image: collabora/code:latest
+    container_name: collabora
+    networks:
+      - proxy
+    restart: unless-stopped
+    environment:
+      - extra_params=--o:ssl.enable=false --o:ssl.termination=true
+      - domain=https://homelab.tailc8658b.ts.net
+      - username=valerius
+      - password=${COLLABORA_PASSWORD}
+    extra_hosts:
+      - "homelab.tailc8658b.ts.net:172.18.0.8"
+
+networks:
+  proxy:
+    external: true

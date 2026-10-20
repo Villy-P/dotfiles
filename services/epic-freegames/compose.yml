@@ -1,0 +1,16 @@
+name: epic-freegames
+
+services:
+  epic-freegames:
+    image: ghcr.io/claabs/epicgames-freegames-node:latest
+    container_name: epic-freegames
+    restart: unless-stopped
+    mem_limit: 2g
+    volumes:
+      - ./config:/usr/app/config:rw
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true

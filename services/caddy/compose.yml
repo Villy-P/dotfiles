@@ -1,0 +1,36 @@
+name: caddy
+
+services:
+  caddy:
+    image: caddy:latest
+    container_name: caddy
+    restart: unless-stopped
+    ports:
+      - "8441:8441"
+      - "8442:8442"
+      - "8443:8443"
+      - "8444:8444"
+      - "8445:8445"
+      - "8446:8446"
+      - "8447:8447"
+      - "8448:8448"
+      - "8449:8449"
+      - "8450:8450"
+      - "8451:8451"
+      - "8452:8452"
+      - "8453:8453"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./certs:/certs
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - proxy
+
+volumes:
+  caddy_data:
+  caddy_config:
+
+networks:
+  proxy:
+    external: true
