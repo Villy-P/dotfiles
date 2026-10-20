@@ -62,3 +62,8 @@ homelab.tailc8658b.ts.net:8453 {
     tls /certs/homelab.tailc8658b.ts.net.crt /certs/homelab.tailc8658b.ts.net.key
     reverse_proxy epic-freegames:3000
 }
+
+homelab.tailc8658b.ts.net:8454 {
+    tls /certs/homelab.tailc8658b.ts.net.crt /certs/homelab.tailc8658b.ts.net.key
+    reverse_proxy navidrome-navidrome-1:4533
+}
