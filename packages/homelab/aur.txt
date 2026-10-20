@@ -1,2 +1,3 @@
 prettierd
+steamdepotdownloader-bin
 yay

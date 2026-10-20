@@ -11,6 +11,7 @@ efibootmgr
 eza
 fail2ban
 fastfetch
+ffmpeg
 git
 github-cli
 grub

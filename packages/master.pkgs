@@ -52,6 +52,7 @@
 [--h] iotop    per-process disk I/O monitor
 [--h] lsof     list open files and the processes using them
 [--h] sysstat  system performance tools (sar, iostat, mpstat)
+[--h] ffmpeg   video and audio file converter
 
 ## package_management -------------------------------------------------------------------------------------------
 [a--] pnpm            fast, disk space efficient package manager for Node.js
@@ -201,6 +202,7 @@
 [-w-] ppsspp                     PSP emulator
 [-w-] r2modman                   mod manager for various games
 [-w-] sudachi                    nintendo switch emulator
+[--h] steamdepotdownloader-bin   steam downloader for soundtracks to Navidrome
 
 ## fonts --------------------------------------------------------------------------------------------------------
 [a--] ttf-cascadia-code-nerd         Cascadia Code, patched with Nerd Font icons
