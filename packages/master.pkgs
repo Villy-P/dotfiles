@@ -180,8 +180,8 @@
 [a--] typescript-language-server   Lanugage server for Typescript
 [a--] cmake-language-server        Language server for CMake
 [aw-] jdtls                        Language server for Java
-[a--] pyright                      Language server & formatter for Python
-[a--] ruff                         Language server & formatter for Python
+[a-h] pyright                      Language server & formatter for Python
+[a-h] ruff                         Language server & formatter for Python
 [a--] marksman                     Language server for Markdown
 [--h] yaml-language-server         Language server for YAML files
 

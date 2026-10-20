@@ -35,8 +35,10 @@ pacman-contrib
 pkgfile
 powertop
 prettier
+pyright
 ripgrep
 rsync
+ruff
 shfmt
 snapper
 starship
