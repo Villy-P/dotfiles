@@ -1,0 +1,4 @@
+[[targets]]
+archlinux = "~"
+windows = "C:\\Users\\$env:USERNAME"
+homelab = "~"

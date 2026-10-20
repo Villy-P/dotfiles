@@ -1,0 +1,4 @@
+[[targets]]
+archlinux = "~/.config/nvim"
+windows = "%LOCALAPPDATA%/nvim"
+homelab = "~/.config/nvim"

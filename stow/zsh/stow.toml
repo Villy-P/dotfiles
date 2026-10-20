@@ -1,0 +1,3 @@
+[[targets]]
+archlinux = "~/.config"
+homelab = "~/.config"

@@ -1,0 +1,4 @@
+[[targets]]
+archlinux = "~/.config/btop"
+windows = "%AppData%/btop"
+homelab = "~/.config/btop"

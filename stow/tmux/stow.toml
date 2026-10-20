@@ -1,0 +1,3 @@
+[[targets]]
+archlinux = "~/.config/tmux"
+windows = "C:/Users/%USERNAME%/"
