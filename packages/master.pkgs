@@ -36,23 +36,26 @@
 [a--] exfatprogs   tools for exFAT filesystem support
 
 ## cli_tools ----------------------------------------------------------------------------------------------------
-[a--] wget     tool to extract data from web servers
-[awh] ripgrep  command line search tool
-[awh] btop     resource monitor
-[awh] bat      cat clone with syntax highlighting and Git integration
-[awh] jq       JSON processor
-[awh] gum      tool for prompting users in the terminal
-[awh] eza      modern replacement for ls
-[aw-] 7zip     tool for extracting files from 7z archives
-[a-h] stow     manage dotfiles with symlinks
-[awh] zoxide   modern replacement for cd
-[awh] yazi     file manager
-[a--] cava     audio visualizer for the terminal
-[--h] rsync    fast incremental file transfer and sync tool
-[--h] iotop    per-process disk I/O monitor
-[--h] lsof     list open files and the processes using them
-[--h] sysstat  system performance tools (sar, iostat, mpstat)
-[--h] ffmpeg   video and audio file converter
+[a--] wget            tool to extract data from web servers
+[awh] ripgrep         command line search tool
+[awh] btop            resource monitor
+[awh] bat             cat clone with syntax highlighting and Git integration
+[awh] jq              JSON processor
+[awh] gum             tool for prompting users in the terminal
+[awh] eza             modern replacement for ls
+[awh] 7zip            tool for extracting files from 7z archives
+[a-h] stow            manage dotfiles with symlinks
+[awh] zoxide          modern replacement for cd
+[awh] yazi            file manager
+[a--] cava            audio visualizer for the terminal
+[--h] rsync           fast incremental file transfer and sync tool
+[--h] iotop           per-process disk I/O monitor
+[--h] lsof            list open files and the processes using them
+[--h] sysstat         system performance tools (sar, iostat, mpstat)
+[--h] ffmpeg          video and audio file converter
+[--h] python-mutagen  tool for changing tags on music files
+[--h] yt-dlp          youtube video and audio downloader
+[--h] opustags        tool for changing tags on opus files
 
 ## package_management -------------------------------------------------------------------------------------------
 [a--] pnpm            fast, disk space efficient package manager for Node.js

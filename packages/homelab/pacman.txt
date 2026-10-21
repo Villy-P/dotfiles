@@ -1,3 +1,4 @@
+7zip
 base
 base-devel
 bash-language-server
@@ -37,6 +38,7 @@ pkgfile
 powertop
 prettier
 pyright
+python-mutagen
 ripgrep
 rsync
 ruff
@@ -56,6 +58,7 @@ wpa_supplicant
 yaml-language-server
 yamllint
 yazi
+yt-dlp
 zoxide
 zsh
 zsh-autosuggestions
