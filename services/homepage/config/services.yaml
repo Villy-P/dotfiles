@@ -116,3 +116,8 @@
         description: Service uptime tracker
         container: uptime-kuma
 
+    - Dozzle:
+        icon: dozzle.png
+        href: https://homelab.tailc8658b.ts.net:8457/
+        description: Docker logs viewer
+        container: dozzle

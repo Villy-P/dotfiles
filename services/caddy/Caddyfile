@@ -77,3 +77,8 @@ homelab.tailc8658b.ts.net:8456 {
     tls /certs/homelab.tailc8658b.ts.net.crt /certs/homelab.tailc8658b.ts.net.key
     reverse_proxy uptime-kuma:3001
 }
+
+homelab.tailc8658b.ts.net:8457 {
+    tls /certs/homelab.tailc8658b.ts.net.crt /certs/homelab.tailc8658b.ts.net.key
+    reverse_proxy dozzle:8080
+}
