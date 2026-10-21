@@ -110,4 +110,9 @@
         description: Self-hosted media tracker
         container: yamtrack
 
+    - Uptime Kuma:
+        icon: uptime-kuma.png
+        href: https://homelab.tailc8658b.ts.net:8456/
+        description: Service uptime tracker
+        container: uptime-kuma
 

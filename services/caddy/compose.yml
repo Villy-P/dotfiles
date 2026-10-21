@@ -21,13 +21,16 @@ services:
       - "8453:8453"
       - "8454:8454"
       - "8455:8455"
+      - "8456:8456"
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
       - ./certs:/certs
       - caddy_data:/data
       - caddy_config:/config
     networks:
-      - proxy
+      proxy:
+        aliases:
+          - homelab.tailc8658b.ts.net
 
 volumes:
   caddy_data:
