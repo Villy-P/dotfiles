@@ -97,3 +97,17 @@
         href: https://homelab.tailc8658b.ts.net:8453/
         description: Self-hosted Epic Games redeemer.
         container: epic-freegames
+
+    - Navidrome:
+        icon: navidrome.png
+        href: https://homelab.tailc8658b.ts.net:8454/
+        description: Self-hosted music library
+        container: navidrome-navidrome-1
+
+    - Yamtrack:
+        icon: yamtrack.png
+        href: https://homelab.tailc8658b.ts.net:8455/
+        description: Self-hosted media tracker
+        container: yamtrack
+
+

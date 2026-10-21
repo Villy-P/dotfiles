@@ -18,3 +18,4 @@ localcpy/
 services/epic-freegames/config/*
 !services/epic-freegames/config/config.example.json
 music/
+db/
