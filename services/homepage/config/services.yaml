@@ -121,3 +121,9 @@
         href: https://homelab.tailc8658b.ts.net:8457/
         description: Docker logs viewer
         container: dozzle
+
+    - Audiomuse:
+        icon: https://homelab.tailc8658b.ts.net:8458/static/images/favicon-32x32.ico
+        href: https://homelab.tailc8658b.ts.net:8458
+        description: Audio AI analysis of Navidrome music
+        container: audiomuse-audiomuse-1

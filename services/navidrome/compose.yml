@@ -7,6 +7,9 @@ services:
     ports:
       - "4533:4533"
     restart: unless-stopped
+    environment:
+      ND_PLUGINS_ENABLED: "true"
+      ND_PLUGINS_AUTORELOAD: "true"
     volumes:
       - "/home/valerius/dotfiles/services/navidrome/data:/data"
       - "/home/valerius/dotfiles/services/navidrome/music:/music:ro"

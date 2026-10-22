@@ -82,3 +82,8 @@ homelab.tailc8658b.ts.net:8457 {
     tls /certs/homelab.tailc8658b.ts.net.crt /certs/homelab.tailc8658b.ts.net.key
     reverse_proxy dozzle:8080
 }
+
+homelab.tailc8658b.ts.net:8458 {
+    tls /certs/homelab.tailc8658b.ts.net.crt /certs/homelab.tailc8658b.ts.net.key
+    reverse_proxy audiomuse:8000
+}
