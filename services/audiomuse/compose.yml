@@ -1,0 +1,74 @@
+name: audiomuse
+
+x-app-environment: &app-environment
+  TZ: ${AUDIOMUSE_TZ:-UTC}
+  POSTGRES_USER: audiomuse
+  POSTGRES_PASSWORD: ${AUDIOMUSE_POSTGRES_PASSWORD:?Set AUDIOMUSE_POSTGRES_PASSWORD in .env}
+  POSTGRES_DB: audiomusedb
+  POSTGRES_HOST: audiomuse-db
+  POSTGRES_PORT: "5432"
+  TEMP_DIR: /app/temp_audio
+
+services:
+  audiomuse-db:
+    image: postgres:15-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: audiomuse
+      POSTGRES_PASSWORD: ${AUDIOMUSE_POSTGRES_PASSWORD:?Set AUDIOMUSE_POSTGRES_PASSWORD in .env}
+      POSTGRES_DB: audiomusedb
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U audiomuse -d audiomusedb"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    cpus: "0.5"
+    mem_limit: 1g
+
+  audiomuse:
+    image: ghcr.io/neptunehub/audiomuse-ai:latest
+    restart: unless-stopped
+    environment:
+      <<: *app-environment
+      SERVICE_TYPE: flask
+    volumes:
+      - temp-app:/app/temp_audio
+      - plugins-app:/app/plugin/installed
+    depends_on:
+      audiomuse-db:
+        condition: service_healthy
+    networks:
+      - default
+      - proxy
+    cpus: "1.0"
+    mem_limit: 2g
+
+  audiomuse-worker:
+    image: ghcr.io/neptunehub/audiomuse-ai:latest
+    restart: unless-stopped
+    environment:
+      <<: *app-environment
+      SERVICE_TYPE: worker
+    volumes:
+      - temp-worker:/app/temp_audio
+      - plugins-worker:/app/plugin/installed
+    depends_on:
+      audiomuse-db:
+        condition: service_healthy
+    networks:
+      - default
+      - proxy
+    cpus: "2.0"
+    mem_limit: 6g
+
+volumes:
+  temp-app:
+  temp-worker:
+  plugins-app:
+  plugins-worker:
+
+networks:
+  proxy:
+    external: true
