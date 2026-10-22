@@ -134,7 +134,7 @@
 ## productivity -------------------------------------------------------------------------------------------------
 [a--] obsidian     knowledge base and note-taking app
 [a--] tiled        map editor for 2D games
-[a--] imagemagick  image manipulation tool
+[a-h] imagemagick  image manipulation tool
 
 ## development --------------------------------------------------------------------------------------------------
 [a--] nvm              Node Version Manager

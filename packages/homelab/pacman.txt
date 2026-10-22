@@ -18,6 +18,7 @@ github-cli
 grub
 grub-btrfs
 gum
+imagemagick
 inotify-tools
 iotop
 jq
