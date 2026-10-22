@@ -44,7 +44,6 @@
 [awh] gum             tool for prompting users in the terminal
 [awh] eza             modern replacement for ls
 [awh] 7zip            tool for extracting files from 7z archives
-[a-h] stow            manage dotfiles with symlinks
 [awh] zoxide          modern replacement for cd
 [awh] yazi            file manager
 [a--] cava            audio visualizer for the terminal
