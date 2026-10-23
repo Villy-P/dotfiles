@@ -127,3 +127,9 @@
         href: https://homelab.tailc8658b.ts.net:8458
         description: Audio AI analysis of Navidrome music
         container: audiomuse-audiomuse-1
+
+    - Feishin:
+        icon: feishin.png
+        href: https://homelab.tailc8658b.ts.net:8459
+        description: Modern UI for Navidrome
+        container: navidrome-feishin-1

@@ -10,9 +10,25 @@ services:
     environment:
       ND_PLUGINS_ENABLED: "true"
       ND_PLUGINS_AUTORELOAD: "true"
+      ND_AGENTS: "audiomuseai,lastfm,deezer"
     volumes:
       - "/home/valerius/dotfiles/services/navidrome/data:/data"
       - "/home/valerius/dotfiles/services/navidrome/music:/music:ro"
+    networks:
+      - proxy
+
+  feishin:
+    image: ghcr.io/jeffvli/feishin:latest
+    ports:
+      - "9180:9180"
+    restart: unless-stopped
+    environment:
+      SERVER_NAME: navidrome
+      SERVER_TYPE: navidrome
+      SERVER_URL: https://homelab.tailc8658b.ts.net:8454
+      SERVER_LOCK: "false"
+    depends_on:
+      - navidrome
     networks:
       - proxy
 
