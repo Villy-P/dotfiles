@@ -111,7 +111,6 @@ slurp
 snapper
 starship
 steam
-stow
 stylua
 sudo
 svelte-language-server
