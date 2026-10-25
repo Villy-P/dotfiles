@@ -124,6 +124,7 @@ alias cat='bat'
 alias grep='rg'
 alias :q='exit'
 alias update='sudo pacman -Syu'
+alias please='sudo'
 
 alias eject-usb='read -p "Device (e.g. sdb): " dev && udisksctl unmount -b /dev/${dev}1 && udisksctl power-off -b /dev/${dev}'
 
