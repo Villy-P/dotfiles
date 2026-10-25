@@ -63,6 +63,8 @@ linux-firmware
 linux-headers
 lua-language-server
 luarocks
+man-db
+man-pages
 markdownlint-cli2
 marksman
 matugen
@@ -81,6 +83,7 @@ nvm
 obs-studio
 obsidian
 onefetch
+openai-codex
 openrgb
 openssh
 os-prober

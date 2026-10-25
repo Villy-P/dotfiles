@@ -13,23 +13,26 @@
 [a-h] efibootmgr  manage UEFI boot entries
 
 ## base_system --------------------------------------------------------------------------------------------------
-[a--] libva-utils     VA-API utilities for video acceleration
-[a-h] base            core Arch base package group
-[a-h] base-devel      build tools (makepkg deps, compilers, etc), needed for AUR
-[a-h] snapper         Btrfs snapshot management tool
-[a--] zram-generator  create compressed swap in RAM
-[a-h] sudo            privilege escalation
-[a-h] inotify-tools   file system event monitoring
-[a-h] mkinitcpio      Bash script to create initramfs images
-[a--] upower          power management service
-[a--] auto-cpufreq    automatic CPU speed & power optimizer
-[a--] envycontrol     NVIDIA Optimus management tool
-[a--] mpd-mpris       MPRIS plugin for MPD
-[a--] mpv-mpris       MPRIS plugin for MPV
-[a--] nbfc-linux      fan control for laptops
-[awh] less            pager program
-[--h] powertop        power consumption analyzer and tuning tool
-[--h] tlp             laptop power management and battery optimizer
+[a--] libva-utils        VA-API utilities for video acceleration
+[a-h] base               core Arch base package group
+[a-h] base-devel         build tools (makepkg deps, compilers, etc), needed for AUR
+[a-h] snapper            Btrfs snapshot management tool
+[a--] zram-generator     create compressed swap in RAM
+[a-h] sudo               privilege escalation
+[a-h] inotify-tools      file system event monitoring
+[a-h] mkinitcpio         Bash script to create initramfs images
+[a--] upower             power management service
+[a--] auto-cpufreq       automatic CPU speed & power optimizer
+[a--] envycontrol        NVIDIA Optimus management tool
+[a--] mpd-mpris          MPRIS plugin for MPD
+[a--] mpv-mpris          MPRIS plugin for MPV
+[a--] nbfc-linux         fan control for laptops
+[awh] less               pager program
+[--h] powertop           power consumption analyzer and tuning tool
+[--h] tlp                laptop power management and battery optimizer
+[a--] man-db             database for man pages
+[a--] man-pages          man pages for Linux
+[a--] netkit-bsd-finger  BSD finger client/server
 
 ## filesystem ---------------------------------------------------------------------------------------------------
 [a-h] btrfs-progs  Btrfs filesystem utilities
@@ -132,8 +135,9 @@
 [a--] zathura-pdf-poppler  pdf support for zathura
 
 ## productivity -------------------------------------------------------------------------------------------------
-[a--] obsidian     knowledge base and note-taking app
-[a--] tiled        map editor for 2D games
+[a--] obsidian      knowledge base and note-taking app
+[a--] tiled         map editor for 2D games
+[a--] openai-codex  AI code generation tool
 
 ## development --------------------------------------------------------------------------------------------------
 [a--] nvm              Node Version Manager
@@ -267,3 +271,4 @@
 ## remote_desktop -----------------------------------------------------------------------------------------------
 [aw-] sunshine      streaming host
 [a--] moonlight-qt  streaming client
+

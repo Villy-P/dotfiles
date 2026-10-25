@@ -9,6 +9,7 @@ helium-browser-bin
 heroic-games-launcher-bin
 jdtls
 nbfc-linux
+netkit-bsd-finger
 prettierd
 rose-pine-hyprcursor
 stardrop
