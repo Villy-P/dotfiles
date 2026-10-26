@@ -15,9 +15,11 @@ fastfetch
 ffmpeg
 git
 github-cli
+go
 grub
 grub-btrfs
 gum
+id3v2
 imagemagick
 inotify-tools
 iotop
@@ -40,13 +42,14 @@ powertop
 prettier
 pyright
 python-mutagen
+python-pip
+python-pipx
 ripgrep
 rsync
 ruff
 shfmt
 snapper
 starship
-stow
 stylua
 sudo
 sysstat

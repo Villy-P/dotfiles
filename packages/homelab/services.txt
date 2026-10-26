@@ -8,6 +8,7 @@ gpg-agent@etc-pacman.d-gnupg.service
 grub-btrfsd.service
 NetworkManager.service
 polkit.service
+snapperd.service
 sshd.service
 systemd-journald.service
 systemd-logind.service

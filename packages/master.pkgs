@@ -58,13 +58,14 @@
 [--h] python-mutagen  tool for changing tags on music files
 [--h] yt-dlp          youtube video and audio downloader
 [--h] opustags        tool for changing tags on opus files
+[--h] id3v2           tool for changing tags on mp3 files
 [a-h] imagemagick     image manipulation tool
 
 ## package_management -------------------------------------------------------------------------------------------
 [a--] pnpm            fast, disk space efficient package manager for Node.js
 [a--] npm             Node.js package manager
-[a--] python-pip      Python package manager
-[a--] python-pipx     Python package manager for isolated environments
+[a-h] python-pip      Python package manager
+[a-h] python-pipx     Python package manager for isolated environments
 [a--] luarocks        Lua package manager
 [a-h] yay             AUR helper
 [a-h] pkgfile         tool for detecting which package provides a file
@@ -147,6 +148,7 @@
 [awh] github-cli       GitHub command-line interface
 [a--] clang            C/C++ compiler
 [aw-] cmake            build system generator
+[--h] go               Go compiler
 [aw-] doxygen          documentation generator
 [a-h] openssh          OpenSSH server and client
 [a--] jdk-openjdk      Open source JDK
