@@ -41,6 +41,7 @@ pkgfile
 powertop
 prettier
 pyright
+python-beautifulsoup4
 python-mutagen
 python-pip
 python-pipx
@@ -58,6 +59,8 @@ tlp
 tmux
 tree-sitter-cli
 ufw
+uv
+wget
 wpa_supplicant
 yaml-language-server
 yamllint

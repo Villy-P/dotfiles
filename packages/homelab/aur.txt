@@ -1,4 +1,5 @@
 opustags
 prettierd
+python-cloudscraper
 steamdepotdownloader-bin
 yay

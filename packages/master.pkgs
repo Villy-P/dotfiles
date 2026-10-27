@@ -39,7 +39,7 @@
 [a--] exfatprogs   tools for exFAT filesystem support
 
 ## cli_tools ----------------------------------------------------------------------------------------------------
-[a--] wget            tool to extract data from web servers
+[a-h] wget            tool to extract data from web servers
 [awh] ripgrep         command line search tool
 [awh] btop            resource monitor
 [awh] bat             cat clone with syntax highlighting and Git integration
@@ -66,6 +66,7 @@
 [a--] npm             Node.js package manager
 [a-h] python-pip      Python package manager
 [a-h] python-pipx     Python package manager for isolated environments
+[--h] uv              Modern package manager for python
 [a--] luarocks        Lua package manager
 [a-h] yay             AUR helper
 [a-h] pkgfile         tool for detecting which package provides a file
@@ -175,9 +176,11 @@
 [a-h] prettierd  formatter daemon for Javascript family
 
 ## libraries ----------------------------------------------------------------------------------------------------
-[a--] boost     C++ libraries
-[a--] freeglut  OpenGL utility library
-[a--] glew      OpenGL Extension Wrangler Library
+[a--] boost                  C++ libraries
+[a--] freeglut               OpenGL utility library
+[a--] glew                   OpenGL Extension Wrangler Library
+[--h] python-beautifulsoup4  Python library for web scraping
+[--h] python-cloudscraper    Python library for web scraping
 
 ## language_servers ---------------------------------------------------------------------------------------------
 [a--] svelte-language-server       Language server for Svelte
