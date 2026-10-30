@@ -267,11 +267,16 @@ return {
 			vim.g.vimtex_quickfix_mode = 0
 			vim.g.vimtex_complete_enabled = 1
 			vim.g.vimtex_complete_close_braces = 1
+			vim.g.vimtex_view_automatic = 1
 			vim.g.tex_flavor = "latex"
 			vim.g.vimtex_compiler_method = "latexmk"
+			vim.g.vimtex_compiler_latexmk_engines = {
+				_ = "-xelatex",
+			}
 			vim.g.vimtex_compiler_latexmk = {
 				options = {
-					"-xelatex",
+					"-verbose",
+					"-file-line-error",
 					"-interaction=nonstopmode",
 					"-synctex=1",
 				},
