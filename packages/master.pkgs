@@ -60,6 +60,8 @@
 [--h] opustags        tool for changing tags on opus files
 [--h] id3v2           tool for changing tags on mp3 files
 [a-h] imagemagick     image manipulation tool
+[--h] clamav          antivirus toolkit
+[--h] megatools       tool for downloading mega.nz links from the CLI
 
 ## package_management -------------------------------------------------------------------------------------------
 [a--] pnpm            fast, disk space efficient package manager for Node.js
@@ -276,4 +278,3 @@
 ## remote_desktop -----------------------------------------------------------------------------------------------
 [aw-] sunshine      streaming host
 [a--] moonlight-qt  streaming client
-

@@ -5,6 +5,7 @@ bash-language-server
 bat
 btop
 btrfs-progs
+clamav
 cpufetch
 docker
 docker-compose

@@ -1,3 +1,4 @@
+megatools
 opustags
 prettierd
 python-cloudscraper
