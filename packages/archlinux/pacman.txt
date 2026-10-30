@@ -81,7 +81,6 @@ noto-fonts-emoji
 npm
 nvm
 obs-studio
-obsidian
 onefetch
 openai-codex
 openrgb
