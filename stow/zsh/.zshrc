@@ -94,6 +94,17 @@ a() {
         "gs")
             git status
             ;;
+        "cvb")
+            echo "Creating Vault Backup..."
+            echo "Current git status:"
+            git status
+            commit_msg=$(echo "vault backup: $(date +'%Y-%m-%d %H:%M:%S')")
+            echo "Commit message: $commit_msg"
+            echo "Confirm?"
+            gum confirm "Stage all changes, commit, and push?" || { echo "Commit aborted."; return 1; }
+
+            git add . && git commit -m "$commit_msg" && git push
+            ;;
         *)
             echo "Unknown command: $command"
             return 1
