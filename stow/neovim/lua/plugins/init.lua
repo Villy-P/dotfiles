@@ -17,6 +17,7 @@ return {
 				"bash",
 				"python",
 				"zsh",
+                "rust"
 			}
 
 			require("nvim-treesitter").install(parsers)
@@ -178,6 +179,7 @@ return {
 						tex = { "latexindent" },
 						markdown = { "prettierd" },
 						yaml = { "prettierd" },
+                        rust = { "rustfmt" },
 					},
 					formatters = {
 						prettierd = {
@@ -484,6 +486,30 @@ return {
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
+		opts = {},
+	},
+
+	{
+		"mrcjkb/rustaceanvim",
+		version = "^6",
+		lazy = false,
+		init = function()
+			vim.g.rustaceanvim = {
+				server = {
+					default_settings = {
+						["rust-analyzer"] = {
+							check = { command = "clippy" },
+							cargo = { allFeatures = true },
+						},
+					},
+				},
+			}
+		end,
+	},
+
+	{
+		"saecki/crates.nvim", 
+		event = "BufRead Cargo.toml",
 		opts = {},
 	},
 }
