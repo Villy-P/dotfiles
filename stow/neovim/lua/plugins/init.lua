@@ -490,24 +490,6 @@ return {
 	},
 
 	{
-		"mrcjkb/rustaceanvim",
-		version = "^6",
-		lazy = false,
-		init = function()
-			vim.g.rustaceanvim = {
-				server = {
-					default_settings = {
-						["rust-analyzer"] = {
-							check = { command = "clippy" },
-							cargo = { allFeatures = true },
-						},
-					},
-				},
-			}
-		end,
-	},
-
-	{
 		"saecki/crates.nvim", 
 		event = "BufRead Cargo.toml",
 		opts = {},

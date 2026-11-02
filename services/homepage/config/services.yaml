@@ -133,3 +133,9 @@
         href: https://homelab.tailc8658b.ts.net:8459
         description: Modern UI for Navidrome
         container: navidrome-feishin-1
+
+    - Jellyfin:
+        icon: jellyfin.png
+        href: https://homelab.tailc8658b.ts.net:8460
+        description: Movie and TV show streaming
+        container: jellyfin

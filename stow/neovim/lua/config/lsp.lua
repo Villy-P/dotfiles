@@ -39,6 +39,15 @@ vim.lsp.config("pyright", { capabilities = capabilities })
 vim.lsp.config("ruff", { capabilities = capabilities })
 vim.lsp.config("marksman", { capabilities = capabilities })
 vim.lsp.config("yamlls", { capabilities = capabilities })
+vim.lsp.config("rust_analyzer", {
+	capabilities = capabilities,
+	settings = {
+		["rust-analyzer"] = {
+			check = { command = "clippy" },
+			cargo = { allFeatures = true },
+		},
+	},
+})
 
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("ts_ls")
@@ -52,33 +61,34 @@ vim.lsp.enable("bashls")
 vim.lsp.enable("pyright")
 vim.lsp.enable("ruff")
 vim.lsp.enable("marksman")
-vim.lsp.config("yamlls", { capabilities = capabilities })
+vim.lsp.enable("rust_analyzer")
+vim.lsp.enable("yamlls")
 
 vim.keymap.set("n", "gd", vim.lsp.buf.definition)
-vim.api.nvim_create_autocmd('LspAttach', {
-  callback = function(event)
-    vim.keymap.set('n', 'K', function()
-      vim.lsp.buf.hover({ 
-        border = 'rounded' 
-      })
-    end, { buffer = event.buf, desc = "LSP Hover Documentation" })
-  end,
+vim.api.nvim_create_autocmd("LspAttach", {
+	callback = function(event)
+		vim.keymap.set("n", "K", function()
+			vim.lsp.buf.hover({
+				border = "rounded",
+			})
+		end, { buffer = event.buf, desc = "LSP Hover Documentation" })
+	end,
 })
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float)
 
 vim.diagnostic.config({
-    virtual_text = false,
-    signs = true,
-    update_in_insert = false,
-    underline = true,
-    severity_sort = true,
-    float = {
-        border = "rounded",
-    },
+	virtual_text = false,
+	signs = true,
+	update_in_insert = false,
+	underline = true,
+	severity_sort = true,
+	float = {
+		border = "rounded",
+	},
 })
- 
+
 -- vim.api.nvim_create_autocmd("BufWritePre", {
 -- pattern = "*.java",
 --	callback = function()
