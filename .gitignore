@@ -19,5 +19,9 @@ services/epic-freegames/config/*
 !services/epic-freegames/config/config.example.json
 music/
 db/
+<<<<<<< HEAD
 services/jellyfin/config
 services/jellyfin/media
+=======
+lazy-lock.json
+>>>>>>> 3817ab9 (fix: remove lazy lock)
