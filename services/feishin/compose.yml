@@ -1,0 +1,16 @@
+services:
+  feishin:
+    image: ghcr.io/jeffvli/feishin:latest
+    container_name: feishin
+    environment:
+      - SERVER_NAME=Navidrome
+      - SERVER_TYPE=navidrome
+      - SERVER_URL=https://homelab.tailc8658b.ts.net:8454
+      - SERVER_LOCK=false
+    restart: unless-stopped
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true
