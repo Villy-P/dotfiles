@@ -12,9 +12,10 @@ services:
       ND_PLUGINS_AUTORELOAD: "true"
       ND_DISCARTPRIORITY: ""
       ND_ENABLEMEDIAFILECOVERART: "false"
+      ND_LYRICSPRIORITY: .lrc,nd-lyrics,.txt,embedded
     volumes:
       - "/home/valerius/dotfiles/services/navidrome/data:/data"
-      - "/home/valerius/dotfiles/services/navidrome/music:/music:ro"
+      - "/home/valerius/dotfiles/services/navidrome/music:/music"
     networks:
       - proxy
 
