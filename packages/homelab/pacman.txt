@@ -49,6 +49,8 @@ python-pipx
 ripgrep
 rsync
 ruff
+rust-analyzer
+rustup
 shfmt
 snapper
 starship
