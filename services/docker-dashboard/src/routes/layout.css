@@ -1,0 +1,7 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+@import '@valerius_petrini/corekit-ui/layout.css';
+@source '../../node_modules/@valerius_petrini/corekit-ui/';
+@custom-variant dark (&:where(.dark, .dark *));

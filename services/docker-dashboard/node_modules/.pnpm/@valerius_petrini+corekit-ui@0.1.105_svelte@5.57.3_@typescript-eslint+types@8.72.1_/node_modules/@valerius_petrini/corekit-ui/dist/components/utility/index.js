@@ -1,0 +1,2 @@
+export { default as Analytics } from "./Analytics/index.svelte";
+export { default as SEO } from "./SEO/index.svelte";

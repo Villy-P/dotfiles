@@ -1,0 +1,4 @@
+export const defaultTableClass = "w-full border-collapse text-main-text border border-form-border border-l-0";
+export const defaultTableHeaderClass = "text-left border-b border-b-1 border-b-form-border bg-sub-background font-medium";
+export const defaultTableCellClass = "p-2 text-sm border-l border-l-[1px] border-l-form-border";
+export const defaultTableBodyClass = "even:bg-sub-background odd:bg-sub-background-hover";

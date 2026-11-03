@@ -1,0 +1,364 @@
+import fs from "fs";
+import path from "path";
+import { createRequire } from "module";
+import { normalizeParserOptions } from "./parser/parser-options.js";
+import { svelteToVirtualTypeScript } from "./parser/svelte-to-virtual-ts.js";
+import { loadNewestModule } from "./utils/cjs-module.js";
+/**
+ * Experimental hook that intercepts `ts.sys.readFile` and returns virtual
+ * TypeScript for `.svelte` paths. ESLint's own reads go through `fs` and
+ * are unaffected. Activate with `SVELTE_ESLINT_PARSER_EXPERIMENTAL_TS_SYS_HOOK=1`.
+ *
+ * Several preconditions must hold for the hook to actually speed anything up
+ * (extraFileExtensions includes '.svelte', type-aware lint is on, the TS
+ * instance is reachable through CJS require.cache). When the hook is opted
+ * in but a precondition fails, a warning is emitted so users can diagnose
+ * why no speed-up materialised.
+ */
+const ENV_FLAG = "SVELTE_ESLINT_PARSER_EXPERIMENTAL_TS_SYS_HOOK";
+// TypeScript does not recognise the `.svelte` extension, so module resolution
+// falls back to appending `.ts` and probes `X.svelte.ts`. Serving the
+// component's virtual TypeScript there makes the import resolve to the real
+// prop types instead of Svelte's permissive ambient `declare module '*.svelte'`.
+const SVELTE_COMPANION_SUFFIX = ".svelte.ts";
+const translations = new Map();
+// `.svelte` paths whose companion TypeScript has read. Only those companions
+// can be stale in a program, so only those need a refresh after a parse.
+// Keys come from `companionKey`.
+const servedCompanions = new Set();
+const patchedSysObjects = new WeakSet();
+const patchedProjectServicePrototypes = new WeakSet();
+// Project services typescript-eslint has used, seen through `openClientFile`.
+const projectServices = new Set();
+let activeParserOptions = null;
+let fallbackParserOptions = undefined;
+let installed = false;
+let needsParseTimeRescan = false;
+let parserOptionsInspected = false;
+let patchAppliedCount = 0;
+let primeStoredCount = 0;
+let svelteReadFileCount = 0;
+// The collision warning sits in a hot resolution path, so it fires at most once
+// per process rather than once per file.
+let companionConflictWarned = false;
+function warn(msg) {
+    process.stderr.write(`[svelte-eslint-parser:ts-sys-hook] WARNING: ${msg}\n`);
+}
+/** Called from `parseForESLint` so translation has the user's parser config. */
+export function rememberParserOptions(options) {
+    const hadOptions = activeParserOptions !== null;
+    activeParserOptions = options;
+    // Drop fallback translations so they are redone with the real options.
+    if (!hadOptions) {
+        for (const [filePath, entry] of translations) {
+            if (entry.provisional)
+                translations.delete(filePath);
+        }
+    }
+    if (installed && !parserOptionsInspected) {
+        parserOptionsInspected = true;
+        inspectParserOptions(options);
+    }
+    // Catch a TypeScript instance that landed in `require.cache` between
+    // `installTsSysHook` and the first parse (e.g. typescript-eslint loaded
+    // after svelte-eslint-parser in `eslint.config.js`). Walking on every
+    // subsequent parse would be wasteful and gains nothing — TS instances
+    // are not added back later in a typical lint run.
+    if (!needsParseTimeRescan)
+        return;
+    needsParseTimeRescan = false;
+    patchAllLoadedTypeScripts();
+}
+function inspectParserOptions(options) {
+    // `extraFileExtensions` lives on the raw options object; normalize spreads
+    // it through, even though it isn't part of the typed interface.
+    const raw = options;
+    const extra = raw.extraFileExtensions;
+    const hasSvelteExt = Array.isArray(extra) && extra.includes(".svelte");
+    if (!hasSvelteExt) {
+        warn("parserOptions.extraFileExtensions does not include '.svelte'. " +
+            "ts.sys.readFile will not be called for .svelte paths, so the hook " +
+            "cannot speed anything up.");
+    }
+    if (options.project == null &&
+        options.projectService == null &&
+        options.EXPERIMENTAL_useProjectService == null) {
+        warn("neither `project` nor `projectService` is configured. The hook only " +
+            "helps when typescript-eslint is doing type-aware lint.");
+    }
+}
+/** Seed the cache so a later `ts.sys.readFile` skips re-translating. */
+export function primeTranslationCache(filePath, virtualCode) {
+    if (!installed)
+        return;
+    // Always keep the latest parse, even an unsaved buffer: refreshed companions
+    // and later `ts.sys` reads then see what was linted last, as typescript-eslint
+    // does for a linted `.ts` file.
+    const mtimeMs = statMtimeMs(filePath);
+    if (mtimeMs === null)
+        return;
+    translations.set(filePath, { mtimeMs, virtualCode, provisional: false });
+    primeStoredCount++;
+}
+function statMtimeMs(filePath) {
+    try {
+        return fs.statSync(filePath).mtimeMs;
+    }
+    catch {
+        return null;
+    }
+}
+function realFileExists(filePath) {
+    try {
+        return fs.statSync(filePath).isFile();
+    }
+    catch {
+        return false;
+    }
+}
+/** Virtual code of the `X.svelte` behind a probed `X.svelte.ts`, or `null` to fall through. */
+function translateCompanion(companionPath) {
+    if (!companionPath.endsWith(SVELTE_COMPANION_SUFFIX))
+        return null;
+    const sveltePath = companionPath.slice(0, -".ts".length);
+    // A real runes module wins; never shadow it.
+    if (realFileExists(companionPath)) {
+        warnCompanionConflict(companionPath, sveltePath);
+        return null;
+    }
+    return translateOnDemand(sveltePath);
+}
+/**
+ * typescript-eslint lower-cases paths on case-insensitive file systems before
+ * they reach `ts.sys.readFile`, so compare paths case-insensitively. A false
+ * match only costs one extra refresh.
+ */
+function companionKey(sveltePath) {
+    return path.resolve(sveltePath).toLowerCase();
+}
+/**
+ * The companion TypeScript has read for `sveltePath`, with its current virtual
+ * code, or `null` when nothing needs a refresh.
+ *
+ * typescript-eslint only tells TypeScript about changes to the file being
+ * linted. Linting `X.svelte` updates `X.svelte` in the program, but importers
+ * resolve `./X.svelte` to the separate `X.svelte.ts` companion, which keeps
+ * its old content. Parsing the companion path with this code makes
+ * typescript-eslint update it the same way as a linted file.
+ */
+export function getCompanionToRefresh(sveltePath) {
+    if (!installed || !servedCompanions.has(companionKey(sveltePath))) {
+        return null;
+    }
+    const companionPath = `${sveltePath}.ts`;
+    if (realFileExists(companionPath))
+        return null;
+    const code = translateOnDemand(sveltePath);
+    return code === null ? null : { filePath: companionPath, code };
+}
+/**
+ * Re-read the companion in every project service that holds it.
+ *
+ * typescript-eslint's project service does not watch the disk, and only the
+ * linted file is opened with new content. The companion is never opened, so
+ * it is reloaded through the hooked `ts.sys.readFile` instead. Opening it as
+ * a client file would move it out of the configured project.
+ */
+export function reloadCompanionInProjectServices(companionPath) {
+    for (const service of projectServices) {
+        const info = service.getScriptInfo(companionPath);
+        if (!info || info.isScriptOpen?.())
+            continue;
+        info.reloadFromFile?.();
+    }
+}
+/**
+ * Only a real `X.svelte.ts` next to a real `X.svelte` costs the user anything:
+ * the guard above suppresses the virtual companion, so `./X.svelte` resolves to
+ * the runes module and the component's prop types stay unavailable.
+ */
+function warnCompanionConflict(companionPath, sveltePath) {
+    if (companionConflictWarned)
+        return;
+    if (!realFileExists(sveltePath))
+        return;
+    companionConflictWarned = true;
+    warn(`${sveltePath} and ${companionPath} both exist. TypeScript resolves ` +
+        `'./${path.basename(sveltePath)}' to the module, so component prop ` +
+        "types are not available for this component. The lint rule " +
+        "'svelte/no-conflicting-module-names' (eslint-plugin-svelte >= 3.22.0) " +
+        "reports this name collision.");
+}
+function readUtf8(filePath) {
+    try {
+        return fs.readFileSync(filePath, "utf-8");
+    }
+    catch {
+        return null;
+    }
+}
+/** Fallback options for translations requested before the first `.svelte` parse. */
+function getFallbackParserOptions() {
+    if (fallbackParserOptions !== undefined)
+        return fallbackParserOptions;
+    try {
+        fallbackParserOptions = normalizeParserOptions({
+            parser: loadNewestModule("@typescript-eslint/parser"),
+        });
+    }
+    catch {
+        fallbackParserOptions = null;
+    }
+    return fallbackParserOptions;
+}
+function translateOnDemand(filePath) {
+    const parserOptions = activeParserOptions ?? getFallbackParserOptions();
+    if (!parserOptions)
+        return null;
+    const provisional = activeParserOptions === null;
+    const mtimeMs = statMtimeMs(filePath);
+    if (mtimeMs === null)
+        return null;
+    const cached = translations.get(filePath);
+    if (cached && cached.mtimeMs === mtimeMs)
+        return cached.virtualCode;
+    const svelteSource = readUtf8(filePath);
+    if (svelteSource === null) {
+        translations.set(filePath, { mtimeMs, virtualCode: null, provisional });
+        return null;
+    }
+    const virtualCode = svelteToVirtualTypeScript(filePath, svelteSource, parserOptions);
+    // Store the outcome — including `null` — to negative-cache failed translations.
+    translations.set(filePath, { mtimeMs, virtualCode, provisional });
+    return virtualCode;
+}
+function patchTsSys(sys) {
+    if (!sys || typeof sys.readFile !== "function")
+        return;
+    if (patchedSysObjects.has(sys))
+        return;
+    patchedSysObjects.add(sys);
+    patchAppliedCount++;
+    const originalReadFile = sys.readFile.bind(sys);
+    sys.readFile = (filePath, encoding) => {
+        if (typeof filePath === "string") {
+            // `X.svelte` is the component being linted; the `X.svelte.ts` companion is
+            // what module resolution probes for an imported component.
+            if (filePath.endsWith(".svelte")) {
+                svelteReadFileCount++;
+                const virtual = translateOnDemand(filePath);
+                if (virtual !== null)
+                    return virtual;
+            }
+            else if (filePath.endsWith(SVELTE_COMPANION_SUFFIX)) {
+                const virtual = translateCompanion(filePath);
+                if (virtual !== null) {
+                    svelteReadFileCount++;
+                    servedCompanions.add(companionKey(filePath.slice(0, -".ts".length)));
+                    return virtual;
+                }
+            }
+        }
+        return originalReadFile(filePath, encoding);
+    };
+    // Claim the companion exists so module resolution reaches the `readFile`
+    // above; otherwise resolution fails and falls back to the ambient module.
+    if (typeof sys.fileExists === "function") {
+        const originalFileExists = sys.fileExists.bind(sys);
+        sys.fileExists = (filePath) => {
+            if (typeof filePath === "string" &&
+                filePath.endsWith(SVELTE_COMPANION_SUFFIX) &&
+                translateCompanion(filePath) !== null) {
+                return true;
+            }
+            return originalFileExists(filePath);
+        };
+    }
+}
+function patchProjectService(proto) {
+    if (!proto || typeof proto.openClientFile !== "function")
+        return;
+    if (patchedProjectServicePrototypes.has(proto))
+        return;
+    patchedProjectServicePrototypes.add(proto);
+    const originalOpenClientFile = proto.openClientFile;
+    proto.openClientFile = function (...args) {
+        projectServices.add(this);
+        return originalOpenClientFile.apply(this, args);
+    };
+}
+/**
+ * Force-load the project's TypeScript so it lands in `require.cache`. The
+ * patch then happens through `patchAllLoadedTypeScripts`; no need to capture
+ * the returned module ourselves.
+ */
+function ensureTypeScriptLoaded() {
+    try {
+        loadNewestModule("typescript");
+    }
+    catch (e) {
+        warn(`failed to load 'typescript' from the project: ${e instanceof Error ? e.message : String(e)}. The hook has nothing to patch.`);
+    }
+}
+/** Patch every `typescript.js` and `tsserverlibrary.js` already in `require.cache`. */
+function patchAllLoadedTypeScripts() {
+    const cache = createRequire(import.meta.url).cache;
+    if (!cache)
+        return;
+    for (const [resolvedPath, mod] of Object.entries(cache)) {
+        if (resolvedPath.includes(`${path.sep}typescript${path.sep}`) &&
+            (resolvedPath.endsWith(`${path.sep}typescript.js`) ||
+                resolvedPath.endsWith(`${path.sep}tsserverlibrary.js`))) {
+            patchTsSys(mod?.exports?.sys);
+            patchProjectService(mod?.exports?.server?.ProjectService?.prototype);
+        }
+    }
+}
+/** Idempotent. No-op unless `SVELTE_ESLINT_PARSER_EXPERIMENTAL_TS_SYS_HOOK=1`. */
+export function installTsSysHook() {
+    if (installed)
+        return;
+    // eslint-disable-next-line no-process-env -- intentional opt-in gate
+    if (process.env[ENV_FLAG] !== "1")
+        return;
+    ensureTypeScriptLoaded();
+    patchAllLoadedTypeScripts();
+    installed = true;
+    // Arm a one-shot rescan; see `rememberParserOptions`.
+    needsParseTimeRescan = true;
+    // End-of-run check: if .svelte files were linted but the patched readFile
+    // was never hit for any of them, the hook silently did nothing.
+    process.on("exit", () => {
+        if (primeStoredCount > 0 && svelteReadFileCount === 0) {
+            warn("ts.sys.readFile was never called for a .svelte path even though " +
+                `${primeStoredCount} .svelte file(s) were parsed. Likely causes: ` +
+                "parserOptions.extraFileExtensions missing '.svelte', " +
+                "typescript-eslint not running type-aware lint, " +
+                "or the TS instance it uses was not in CJS require.cache " +
+                "(e.g. ESM-loaded).");
+        }
+        else if (patchAppliedCount === 0) {
+            warn("no `typescript.js` was found in CJS require.cache, so nothing was " +
+                "patched. The TS instance used by typescript-eslint may be " +
+                "ESM-loaded or otherwise outside the cache.");
+        }
+    });
+    // Visible on every lint run so users know they opted into an experiment.
+    process.stderr.write(`[svelte-eslint-parser] ${ENV_FLAG}=1 enables an experimental ts.sys.readFile hook. ` +
+        `Behavior and API may change or be removed in any release.\n`);
+}
+/** Test seam. The `ts.sys` patches themselves are intentionally permanent. */
+export function _resetTranslationCacheForTesting() {
+    translations.clear();
+    servedCompanions.clear();
+    projectServices.clear();
+    activeParserOptions = null;
+    fallbackParserOptions = undefined;
+    needsParseTimeRescan = false;
+    // Re-arm the once-per-process warning so tests don't depend on suite order.
+    companionConflictWarned = false;
+}
+/** Test seam: patch a caller-supplied `sys` instead of the require.cache ones. */
+export function _patchTsSysForTesting(sys) {
+    patchTsSys(sys);
+}
