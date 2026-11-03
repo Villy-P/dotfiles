@@ -33,6 +33,7 @@
 		"svelte": "^5.57.2",
 		"svelte-check": "^4.6.0",
 		"tailwindcss": "^4.3.0",
+		"tsx": "^4.23.15",
 		"typescript": "^6.0.3",
 		"typescript-eslint": "^8.60.1",
 		"vite": "^8.3.0"
@@ -43,6 +44,7 @@
 	},
 	"dependencies": {
 		"@valerius_petrini/corekit-ui": "^0.1.105",
+		"discord.js": "^14.28.0",
 		"dockerode": "^5.0.1",
 		"openmeteo": "^1.2.3"
 	}
