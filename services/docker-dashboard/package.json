@@ -43,6 +43,7 @@
 	},
 	"dependencies": {
 		"@valerius_petrini/corekit-ui": "^0.1.105",
-		"dockerode": "^5.0.1"
+		"dockerode": "^5.0.1",
+		"openmeteo": "^1.2.3"
 	}
 }
