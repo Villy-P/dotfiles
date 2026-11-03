@@ -132,10 +132,16 @@
         icon: feishin.png
         href: https://homelab.tailc8658b.ts.net:8459
         description: Modern UI for Navidrome
-        container: navidrome-feishin-1
+        container: feishin
 
     - Jellyfin:
         icon: jellyfin.png
         href: https://homelab.tailc8658b.ts.net:8460
         description: Movie and TV show streaming
         container: jellyfin
+
+    - BookOrbit:
+        icon: bookorbit.png
+        href: https://homelab.tailc8658b.ts.net:8461
+        description: Book database
+        container: bookorbit

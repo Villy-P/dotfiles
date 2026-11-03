@@ -1,0 +1,146 @@
+name: bookorbit
+
+services:
+  app:
+    container_name: bookorbit
+    image: ghcr.io/bookorbit/bookorbit:latest
+    restart: unless-stopped
+    init: true
+    environment:
+      NODE_ENV: production
+      PORT: ${PORT:-3000}
+      DATABASE_URL: ${DATABASE_URL:-}
+      POSTGRES_HOST: ${POSTGRES_HOST:-postgres}
+      POSTGRES_PORT: ${POSTGRES_PORT:-5432}
+      POSTGRES_USER: bookorbit
+      POSTGRES_PASSWORD: ${BOOKORBIT_POSTGRES_PASSWORD?required}
+      POSTGRES_DB: bookorbit
+      JWT_SECRET: ${BOOKORBIT_JWT_SECRET?required}
+      SETUP_BOOTSTRAP_TOKEN: ${BOOKORBIT_SETUP_BOOTSTRAP_TOKEN?required}
+      APP_URL: https://homelab.tailc8658b.ts.net:8461
+      CLIENT_URL: ${CLIENT_URL:-https://homelab.tailc8658b.ts.net:8461}
+      TZ: ${TZ:-UTC}
+      PUID: ${PUID:-1000}
+      PGID: ${PGID:-1000}
+      NODE_MAX_OLD_SPACE_SIZE: ${NODE_MAX_OLD_SPACE_SIZE:-auto}
+      BOOK_DOCK_PATH: ${BOOK_DOCK_PATH:-}
+      LIBRARY_BROWSE_ROOT: ${LIBRARY_BROWSE_ROOT:-}
+      DISABLE_LOCAL_AUTH: ${DISABLE_LOCAL_AUTH:-false}
+      READ_ALOUD_WORKER_URL: ${READ_ALOUD_WORKER_URL:-}
+      READ_ALOUD_WORKER_TOKEN: ${READ_ALOUD_WORKER_TOKEN:-}
+      READ_ALOUD_WORKER_TOKEN_FILE: ${READ_ALOUD_WORKER_TOKEN_FILE:-}
+      READ_ALOUD_MAX_OUTPUT_BYTES: ${READ_ALOUD_MAX_OUTPUT_BYTES:-21474836480}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ${BOOKS_HOST_PATH:-./books}:/books
+      - ./data/app:/data
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - DAC_OVERRIDE
+      - FOWNER
+      - SETGID
+      - SETUID
+    security_opt:
+      - no-new-privileges:true
+    stop_grace_period: 30s
+    networks:
+      - default
+      - proxy
+
+  # Opt-in: add `--profile tts` to your compose commands. BookOrbit reaches it inside the compose
+  # network at http://kokoro:8880/v1, so no port is published to the host.
+  kokoro:
+    container_name: bookorbit-kokoro
+    image: ${KOKORO_IMAGE:-ghcr.io/remsky/kokoro-fastapi-cpu:v0.8.0}
+    profiles: ["tts"]
+    restart: unless-stopped
+    init: true
+    expose:
+      - "8880"
+    security_opt:
+      - no-new-privileges:true
+    stop_grace_period: 30s
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          'python -c "import urllib.request;urllib.request.urlopen(''http://127.0.0.1:8880/v1/audio/voices'')"',
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+
+  # Opt-in: set COMPOSE_PROFILES=read-aloud, READ_ALOUD_WORKER_URL=http://read-aloud-worker:8787,
+  # and a shared READ_ALOUD_WORKER_TOKEN. The worker is private to the compose network and runs on
+  # CPU. It reads libraries read-only and writes only its own read-aloud folder; libraries mounted
+  # elsewhere in the app need the same read-only mount here and a READ_ALOUD_LIBRARY_ROOTS entry.
+  read-aloud-worker:
+    container_name: bookorbit-read-aloud-worker
+    image: ${READ_ALOUD_WORKER_IMAGE:-ghcr.io/bookorbit/bookorbit-read-aloud-worker:latest}
+    profiles: ["read-aloud"]
+    restart: unless-stopped
+    user: "${PUID:-1000}:${PGID:-1000}"
+    environment:
+      READ_ALOUD_WORKER_TOKEN: ${READ_ALOUD_WORKER_TOKEN:-}
+      READ_ALOUD_WORKER_TOKEN_FILE: ${READ_ALOUD_WORKER_TOKEN_FILE:-}
+      READ_ALOUD_LIBRARY_ROOTS: ${READ_ALOUD_LIBRARY_ROOTS:-/books}
+      READ_ALOUD_WORK_ROOT: /data/read-aloud/jobs
+      READ_ALOUD_CTC_DEVICE: ${READ_ALOUD_CTC_DEVICE:-auto}
+      READ_ALOUD_CTC_DTYPE: ${READ_ALOUD_CTC_DTYPE:-auto}
+      READ_ALOUD_CTC_BATCH_SIZE: ${READ_ALOUD_CTC_BATCH_SIZE:-}
+    depends_on:
+      app:
+        condition: service_healthy
+    expose:
+      - "8787"
+    volumes:
+      - ${BOOKS_HOST_PATH:-./books}:/books:ro
+      - ./data/app/read-aloud:/data/read-aloud
+    read_only: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    stop_grace_period: 60s
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          'node -e "const fs=require(''node:fs'');const token=process.env.READ_ALOUD_WORKER_TOKEN||fs.readFileSync(process.env.READ_ALOUD_WORKER_TOKEN_FILE,''utf8'').trim();fetch(''http://127.0.0.1:8787/health'',{headers:{authorization:''Bearer ''+token}}).then(r=>{if(!r.ok)process.exit(1)})"',
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+
+  postgres:
+    container_name: bookorbit-db
+    image: pgvector/pgvector:pg18
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: bookorbit
+      POSTGRES_PASSWORD: ${BOOKORBIT_POSTGRES_PASSWORD?required}
+      POSTGRES_DB: bookorbit
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    healthcheck:
+      test:
+        ["CMD-SHELL", 'pg_isready -U "$${bookorbit}" -d "$${bookorbit}"']
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+
+networks:
+  proxy:
+    external: true
+

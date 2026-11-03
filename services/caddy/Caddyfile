@@ -97,3 +97,8 @@ homelab.tailc8658b.ts.net:8460 {
     tls /certs/homelab.tailc8658b.ts.net.crt /certs/homelab.tailc8658b.ts.net.key
     reverse_proxy jellyfin:8096
 }
+
+homelab.tailc8658b.ts.net:8461 {
+    tls /certs/homelab.tailc8658b.ts.net.crt /certs/homelab.tailc8658b.ts.net.key
+    reverse_proxy bookorbit:3000
+}
