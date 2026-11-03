@@ -10,6 +10,7 @@ cpufetch
 docker
 docker-compose
 efibootmgr
+eslint
 eza
 fail2ban
 fastfetch
@@ -39,6 +40,7 @@ onefetch
 openssh
 pacman-contrib
 pkgfile
+pnpm
 powertop
 prettier
 pyright
@@ -56,11 +58,14 @@ snapper
 starship
 stylua
 sudo
+svelte-language-server
 sysstat
 tailscale
+tailwindcss-language-server
 tlp
 tmux
 tree-sitter-cli
+typescript-language-server
 ufw
 uv
 wget

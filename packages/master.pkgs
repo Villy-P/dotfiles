@@ -65,7 +65,7 @@
 [--h] khinsider-git   tool for downloading music from KHInsider
 
 ## package_management -------------------------------------------------------------------------------------------
-[a--] pnpm            fast, disk space efficient package manager for Node.js
+[a-h] pnpm            fast, disk space efficient package manager for Node.js
 [a--] npm             Node.js package manager
 [a-h] python-pip      Python package manager
 [a-h] python-pipx     Python package manager for isolated environments
@@ -168,7 +168,7 @@
 
 ## linters ------------------------------------------------------------------------------------------------------
 [a-h] markdownlint-cli2  linter for Markdown
-[a--] eslint             linter for Javascript family
+[a-h] eslint             linter for Javascript family
 [a--] checkstyle         Java static analysis tool
 [--h] yamllint           linter for YAML files
 
@@ -186,13 +186,13 @@
 [--h] python-cloudscraper    Python library for web scraping
 
 ## language_servers ---------------------------------------------------------------------------------------------
-[a--] svelte-language-server       Language server for Svelte
+[a-h] svelte-language-server       Language server for Svelte
 [a--] taplo-cli                    Language server for TOML
 [a-h] bash-language-server         Language server for Bash
 [awh] lua-language-server          Language server for Lua
 [a--] qt6-languageserver           Qt6 Language Server for IDEs
-[a--] tailwindcss-language-server  Language server for TailwindCSS
-[a--] typescript-language-server   Lanugage server for Typescript
+[a-h] tailwindcss-language-server  Language server for TailwindCSS
+[a-h] typescript-language-server   Lanugage server for Typescript
 [a--] cmake-language-server        Language server for CMake
 [aw-] jdtls                        Language server for Java
 [a-h] pyright                      Language server & formatter for Python
