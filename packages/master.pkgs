@@ -66,7 +66,7 @@
 
 ## package_management -------------------------------------------------------------------------------------------
 [a-h] pnpm            fast, disk space efficient package manager for Node.js
-[a--] npm             Node.js package manager
+[a-h] npm             Node.js package manager
 [a-h] python-pip      Python package manager
 [a-h] python-pipx     Python package manager for isolated environments
 [--h] uv              Modern package manager for python
@@ -187,7 +187,7 @@
 
 ## language_servers ---------------------------------------------------------------------------------------------
 [a-h] svelte-language-server       Language server for Svelte
-[a--] taplo-cli                    Language server for TOML
+[a-h] taplo-cli                    Language server for TOML
 [a-h] bash-language-server         Language server for Bash
 [awh] lua-language-server          Language server for Lua
 [a--] qt6-languageserver           Qt6 Language Server for IDEs

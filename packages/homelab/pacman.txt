@@ -36,6 +36,7 @@ mkinitcpio
 neovim
 nethogs
 networkmanager
+npm
 onefetch
 openssh
 pacman-contrib
@@ -62,6 +63,7 @@ svelte-language-server
 sysstat
 tailscale
 tailwindcss-language-server
+taplo-cli
 tlp
 tmux
 tree-sitter-cli
