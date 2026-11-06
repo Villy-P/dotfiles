@@ -46,6 +46,7 @@
 		"@valerius_petrini/corekit-ui": "^0.1.105",
 		"discord.js": "^14.28.0",
 		"dockerode": "^5.0.1",
+		"node-ical": "^0.27.3",
 		"openmeteo": "^1.2.3"
 	}
 }
