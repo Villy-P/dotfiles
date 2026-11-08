@@ -35,6 +35,7 @@ services:
         condition: service_healthy
     volumes:
       - ${BOOKS_HOST_PATH:-./books}:/books
+      - ./manga:/manga
       - ./data/app:/data
     read_only: true
     tmpfs:
@@ -103,6 +104,7 @@ services:
       - "8787"
     volumes:
       - ${BOOKS_HOST_PATH:-./books}:/books:ro
+      - ./manga:/manga:ro
       - ./data/app/read-aloud:/data/read-aloud
     read_only: true
     cap_drop:

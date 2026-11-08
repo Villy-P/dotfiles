@@ -23,6 +23,7 @@ services/jellyfin/config
 services/jellyfin/media
 lazy-lock.json
 books/
+manga/
 
 node_modules/
 .svelte-kit/
