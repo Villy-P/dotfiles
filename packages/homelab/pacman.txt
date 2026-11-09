@@ -25,6 +25,7 @@ grub-btrfs
 gum
 id3v2
 imagemagick
+inetutils
 inotify-tools
 iotop
 jq
@@ -57,6 +58,7 @@ ruff
 rust-analyzer
 rustup
 shfmt
+smartmontools
 snapper
 starship
 stylua

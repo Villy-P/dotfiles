@@ -34,6 +34,8 @@
 [a--] man-pages          man pages for Linux
 [a--] netkit-bsd-finger  BSD finger client/server
 [--h] cronie             cron job manager
+[--h] inetutils          includes hostname command
+[--h] smartmontools      SMART data drive analysis
 
 ## filesystem ---------------------------------------------------------------------------------------------------
 [a-h] btrfs-progs  Btrfs filesystem utilities
