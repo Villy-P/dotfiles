@@ -140,6 +140,10 @@ alias please='sudo'
 
 alias eject-usb='read -p "Device (e.g. sdb): " dev && udisksctl unmount -b /dev/${dev}1 && udisksctl power-off -b /dev/${dev}'
 
+copy() {
+    printf '\e]52;c;%s\a' "$(base64 | tr -d '\n')"
+}
+
 # Run on startup
 fastfetch
 echo ""
