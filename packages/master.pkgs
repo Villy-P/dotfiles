@@ -33,6 +33,7 @@
 [a--] man-db             database for man pages
 [a--] man-pages          man pages for Linux
 [a--] netkit-bsd-finger  BSD finger client/server
+[--h] cronie             cron job manager
 
 ## filesystem ---------------------------------------------------------------------------------------------------
 [a-h] btrfs-progs  Btrfs filesystem utilities
@@ -63,6 +64,9 @@
 [--h] clamav          antivirus toolkit
 [--h] megatools       tool for downloading mega.nz links from the CLI
 [--h] khinsider-git   tool for downloading music from KHInsider
+[--h] ani-cli         tool for downloading anime
+[--h] luffy-bin       tool for downloading movies
+[--h] aria2           cli downloader that supports parallel downloads
 
 ## package_management -------------------------------------------------------------------------------------------
 [a-h] pnpm            fast, disk space efficient package manager for Node.js

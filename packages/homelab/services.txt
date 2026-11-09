@@ -1,4 +1,5 @@
 containerd.service
+cronie.service
 dbus-broker.service
 dirmngr@etc-pacman.d-gnupg.service
 docker.service

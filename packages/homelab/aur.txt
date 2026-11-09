@@ -1,4 +1,6 @@
+ani-cli
 khinsider-git
+luffy-bin
 megatools
 opustags
 prettierd

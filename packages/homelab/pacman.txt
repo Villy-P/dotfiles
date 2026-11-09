@@ -1,4 +1,5 @@
 7zip
+aria2
 base
 base-devel
 bash-language-server
@@ -7,6 +8,7 @@ btop
 btrfs-progs
 clamav
 cpufetch
+cronie
 docker
 docker-compose
 efibootmgr
