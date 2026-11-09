@@ -107,7 +107,7 @@ quickshell
 reflector
 ripgrep
 ruff
-rust
+rustup
 shfmt
 slurp
 snapper

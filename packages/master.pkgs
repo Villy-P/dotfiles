@@ -147,7 +147,6 @@
 [a--] nvm              Node Version Manager
 [aw-] ninja            build system
 [awh] git              version control
-[a--] rust             rust development tools
 [awh] github-cli       GitHub command-line interface
 [a--] clang            C/C++ compiler
 [aw-] cmake            build system generator
@@ -159,7 +158,7 @@
 [awh] tree-sitter-cli  plugin for NeoVim
 [a--] supabase-bin     Supabase command-line interface
 [a--] bear             generate compilation database for C/C++ projects
-[--h] rustup           full language toolkit for Rust
+[a-h] rustup           full language toolkit for Rust
 [a--] pre-commit       framework for managing and maintaining multi-language pre-commit hooks
 
 ## containers ---------------------------------------------------------------------------------------------------
