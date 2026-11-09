@@ -102,3 +102,8 @@ homelab.tailc8658b.ts.net:8461 {
     tls /certs/homelab.tailc8658b.ts.net.crt /certs/homelab.tailc8658b.ts.net.key
     reverse_proxy bookorbit:3000
 }
+
+homelab.tailc8658b.ts.net:8462 {
+    tls /certs/homelab.tailc8658b.ts.net.crt /certs/homelab.tailc8658b.ts.net.key
+    reverse_proxy searxng-core:8080
+}

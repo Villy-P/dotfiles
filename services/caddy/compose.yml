@@ -27,6 +27,7 @@ services:
       - "8459:8459"
       - "8460:8460"
       - "8461:8461"
+      - "8462:8462"
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
       - ./certs:/certs
@@ -44,3 +45,4 @@ volumes:
 networks:
   proxy:
     external: true
+

@@ -27,3 +27,4 @@ manga/
 
 node_modules/
 .svelte-kit/
+core-config/
