@@ -35,6 +35,15 @@ export const getWeatherData = async () => {
 	const hourly = response.hourly()!;
 	const daily = response.daily()!;
 
+	if (!current || !hourly || !daily) {
+		console.error('Open-Meteo missing blocks', {
+			current: !!current,
+			hourly: !!hourly,
+			daily: !!daily
+		});
+		throw new Error('Open-Meteo response incomplete');
+	}
+
 	const sunrise = daily.variables(2)!;
 	const sunset = daily.variables(3)!;
 
@@ -76,4 +85,3 @@ export const getWeatherData = async () => {
 
 	return weatherData;
 };
-

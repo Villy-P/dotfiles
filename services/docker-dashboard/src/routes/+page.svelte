@@ -28,7 +28,10 @@
 	<Text tag="h1">{getHeaderGreeting()}, Valerius</Text>
 	{#if weather}
 		<Card size="full" class="flex">
-            <div>{weather.current.temperature_2m}</div>
-        </Card>
+			<div class="flex w-10 flex-col items-center px-8">
+				<p class="text-[60px]">☀️</p>
+				<p>{weather.current.temperature_2m.toFixed()}°F</p>
+			</div>
+		</Card>
 	{/if}
 </div>

@@ -145,3 +145,9 @@
         href: https://homelab.tailc8658b.ts.net:8461
         description: Book database
         container: bookorbit
+
+    - SearXNG:
+        icon: searxng.png
+        href: https://homelab.tailc8658b.ts.net:8462
+        description: Private Search Engine
+        container: searxng-core
