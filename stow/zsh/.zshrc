@@ -1,7 +1,7 @@
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=50000
+SAVEHIST=50000
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
@@ -146,6 +146,12 @@ alias eject-usb='read -p "Device (e.g. sdb): " dev && udisksctl unmount -b /dev/
 copy() {
     printf '\e]52;c;%s\a' "$(base64 | tr -d '\n')"
 }
+
+setopt AUTO_CD
+setopt HIST_IGNORE_ALL_DUPS
+setopt SHARE_HISTORY
+setopt CORRECT
+setopt GLOB_DOTS
 
 # Run on startup
 fastfetch
