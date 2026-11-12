@@ -9,6 +9,9 @@ zstyle :compinstall filename '/home/valerius/.zshrc'
 
 autoload -Uz compinit
 compinit
+if [[ -o interactive && $TERM == dumb ]]; then
+  export TERM=xterm-256color
+fi
 # End of lines added by compinstall
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
