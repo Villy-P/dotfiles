@@ -1,0 +1,3 @@
+[[targets]]
+archlinux = "~/.config/mise"
+homelab = "~/.config/mise"
