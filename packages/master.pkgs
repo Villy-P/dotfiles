@@ -47,6 +47,7 @@
 [awh] btop            resource monitor
 [awh] bat             cat clone with syntax highlighting and Git integration
 [awh] jq              JSON processor
+[--h] pup             HTML processor
 [awh] gum             tool for prompting users in the terminal
 [awh] eza             modern replacement for ls
 [awh] 7zip            tool for extracting files from 7z archives
@@ -73,8 +74,6 @@
 ## package_management -------------------------------------------------------------------------------------------
 [a-h] pnpm            fast, disk space efficient package manager for Node.js
 [a-h] npm             Node.js package manager
-[a-h] python-pip      Python package manager
-[a-h] python-pipx     Python package manager for isolated environments
 [--h] uv              Modern package manager for python
 [a--] luarocks        Lua package manager
 [a-h] yay             AUR helper
@@ -89,7 +88,6 @@
 
 ## networking ---------------------------------------------------------------------------------------------------
 [a-h] networkmanager  network connection management
-[a-h] wpa_supplicant  networkmanager dependency
 [a--] reflector       automatically changes mirror locations
 [--h] ufw             uncomplicated firewall frontend for iptables/nftables
 [--h] fail2ban        bans IPs with repeated failed logins (ssh brute force, etc)
@@ -246,7 +244,6 @@
 
 ## usb ----------------------------------------------------------------------------------------------------------
 [a--] udiskie     automatically mount and unmount removable media
-[a--] udisks2     D-Bus service for managing removable media
 [a--] ventoy-bin  bootable USB creation tool
 
 ## vpn ----------------------------------------------------------------------------------------------------------
@@ -268,7 +265,6 @@
 [a--] xdotool                   Used for LaTex utilities in Neovim
 
 ## qt_libraries -------------------------------------------------------------------------------------------------
-[a--] qt6-5compat     Qt6 compatibility libraries for Qt5
 [a--] qt6-multimedia  Qt6 multimedia libraries
 [a--] qt6ct           Qt6 configuration tool
 

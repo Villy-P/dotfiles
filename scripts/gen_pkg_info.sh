@@ -23,20 +23,20 @@ ALL_PACKAGES=""
 if [[ $SYSTEM_PKG == "archlinux" || $SYSTEM_PKG == "homelab" ]]; then
     PACMAN_PACKAGES=$( (pacman -Qqen || true) | rm_specific)
     AUR_PACKAGES=$( (pacman -Qqem || true) | rm_specific)
-    if command -v pipx >/dev/null; then
-        PIPX_PACKAGES=$( (pipx list --short || true) | awk '{print $1}' | rm_specific)
+    if command -v uv >/dev/null; then
+        UV_PACKAGES=$( (uv tool list || true) | awk '{print $1}' | rm_specific)
     else
-        PIPX_PACKAGES=""
+        UV_PACKAGES=""
     fi
 
     printf '%s\n' "$PACMAN_PACKAGES" >"$PACKAGE_DIR/pacman.txt"
     printf '%s\n' "$AUR_PACKAGES" >"$PACKAGE_DIR/aur.txt"
-    printf '%s\n' "$PIPX_PACKAGES" >"$PACKAGE_DIR/pipx.txt"
+    printf '%s\n' "$UV_PACKAGES" >"$PACKAGE_DIR/uv.txt"
 
     systemctl list-units --type=service --state=running --no-legend |
         awk '{print $1}' >"$PACKAGE_DIR/services.txt"
 
-    ALL_PACKAGES="$PACMAN_PACKAGES"$'\n'"$AUR_PACKAGES"$'\n'"$PIPX_PACKAGES"
+    ALL_PACKAGES="$PACMAN_PACKAGES"$'\n'"$AUR_PACKAGES"$'\n'"$UV_PACKAGES"
 fi
 
 if [[ $SYSTEM_PKG == "windows" ]]; then

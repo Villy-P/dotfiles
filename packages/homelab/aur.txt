@@ -4,6 +4,7 @@ luffy-bin
 megatools
 opustags
 prettierd
+pup
 python-cloudscraper
 steamdepotdownloader-bin
 yay

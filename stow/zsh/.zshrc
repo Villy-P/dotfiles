@@ -16,6 +16,9 @@ fi
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
+eval "$(uv generate-shell-completion zsh)"
+eval "$(uvx --generate-shell-completion zsh)"
+
 # Set up key bindings
 bindkey '^H' backward-kill-word
 bindkey ';5D' backward-word

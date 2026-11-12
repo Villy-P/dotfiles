@@ -50,8 +50,6 @@ prettier
 pyright
 python-beautifulsoup4
 python-mutagen
-python-pip
-python-pipx
 ripgrep
 rsync
 ruff
@@ -75,7 +73,6 @@ typescript-language-server
 ufw
 uv
 wget
-wpa_supplicant
 yaml-language-server
 yamllint
 yazi
