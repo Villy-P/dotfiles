@@ -21,7 +21,6 @@ clang
 cliphist
 cmake
 cpufetch
-cups
 directx-shader-compiler
 doxygen
 edk2-aarch64
@@ -51,8 +50,6 @@ inotify-tools
 inter-font
 iperf3
 iw
-jdk-openjdk
-jdk8-openjdk
 jq
 kitty
 less
@@ -69,6 +66,7 @@ man-pages
 markdownlint-cli2
 marksman
 matugen
+mise
 mkinitcpio
 moonlight-qt
 mpd-mpris
@@ -79,8 +77,6 @@ ninja
 nix
 noto-fonts-cjk
 noto-fonts-emoji
-npm
-nvm
 obs-studio
 onefetch
 openai-codex
@@ -93,7 +89,6 @@ perl-yaml-tiny
 pipewire-pulse
 pkgfile
 playerctl
-pnpm
 prettier
 prismlauncher
 pyright

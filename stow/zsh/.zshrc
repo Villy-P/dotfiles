@@ -19,6 +19,8 @@ eval "$(zoxide init zsh)"
 eval "$(uv generate-shell-completion zsh)"
 eval "$(uvx --generate-shell-completion zsh)"
 
+eval "$(mise activate zsh)"
+
 # Set up key bindings
 bindkey '^H' backward-kill-word
 bindkey ';5D' backward-word

@@ -72,8 +72,6 @@
 [--h] aria2           cli downloader that supports parallel downloads
 
 ## package_management -------------------------------------------------------------------------------------------
-[a-h] pnpm            fast, disk space efficient package manager for Node.js
-[a-h] npm             Node.js package manager
 [a-h] uv              Modern package manager for python
 [a--] luarocks        Lua package manager
 [a-h] yay             AUR helper
@@ -148,22 +146,19 @@
 [a--] openai-codex  AI code generation tool
 
 ## development --------------------------------------------------------------------------------------------------
-[a--] nvm              Node Version Manager
 [aw-] ninja            build system
 [awh] git              version control
 [awh] github-cli       GitHub command-line interface
 [a--] clang            C/C++ compiler
 [aw-] cmake            build system generator
-[--h] go               Go compiler
 [aw-] doxygen          documentation generator
 [a-h] openssh          OpenSSH server and client
-[a--] jdk-openjdk      Open source JDK
-[a--] jdk8-openjdk     Open source JDK 8
 [awh] tree-sitter-cli  plugin for NeoVim
 [a--] supabase-bin     Supabase command-line interface
 [a--] bear             generate compilation database for C/C++ projects
 [a-h] rustup           full language toolkit for Rust
 [a--] pre-commit       framework for managing and maintaining multi-language pre-commit hooks
+[a--] mise             polyglot runtime manager (node, pnpm, java, etc.)
 
 ## containers ---------------------------------------------------------------------------------------------------
 [--h] docker          container runtime and management tool
@@ -265,8 +260,8 @@
 [a--] xdotool                   Used for LaTex utilities in Neovim
 
 ## qt_libraries -------------------------------------------------------------------------------------------------
-[a--] qt6-5compat     Qt6 compatibility libraries for Qt5
-[a--] qt6ct           Qt6 configuration tool
+[a--] qt6-5compat  Qt6 compatibility libraries for Qt5
+[a--] qt6ct        Qt6 configuration tool
 
 ## operating_systems --------------------------------------------------------------------------------------------
 [a--] aarch64-linux-gnu-binutils           GNU binary utilities for AArch64
