@@ -35,7 +35,7 @@
 [a--] netkit-bsd-finger  BSD finger client/server
 [--h] cronie             cron job manager
 [--h] inetutils          includes hostname command
-[--h] smartmontools      SMART data drive analysis
+[a-h] smartmontools      SMART data drive analysis
 
 ## filesystem ---------------------------------------------------------------------------------------------------
 [a-h] btrfs-progs  Btrfs filesystem utilities
@@ -67,14 +67,14 @@
 [--h] clamav          antivirus toolkit
 [--h] megatools       tool for downloading mega.nz links from the CLI
 [--h] khinsider-git   tool for downloading music from KHInsider
-[--h] ani-cli         tool for downloading anime
+[a-h] ani-cli         tool for downloading anime
 [--h] luffy-bin       tool for downloading movies
 [--h] aria2           cli downloader that supports parallel downloads
 
 ## package_management -------------------------------------------------------------------------------------------
 [a-h] pnpm            fast, disk space efficient package manager for Node.js
 [a-h] npm             Node.js package manager
-[--h] uv              Modern package manager for python
+[a-h] uv              Modern package manager for python
 [a--] luarocks        Lua package manager
 [a-h] yay             AUR helper
 [a-h] pkgfile         tool for detecting which package provides a file
@@ -265,7 +265,7 @@
 [a--] xdotool                   Used for LaTex utilities in Neovim
 
 ## qt_libraries -------------------------------------------------------------------------------------------------
-[a--] qt6-multimedia  Qt6 multimedia libraries
+[a--] qt6-5compat     Qt6 compatibility libraries for Qt5
 [a--] qt6ct           Qt6 configuration tool
 
 ## operating_systems --------------------------------------------------------------------------------------------

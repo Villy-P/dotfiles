@@ -1,5 +1,6 @@
 auto-cpufreq.service
 bluetooth.service
+cups.service
 dbus-broker.service
 getty@tty1.service
 NetworkManager.service

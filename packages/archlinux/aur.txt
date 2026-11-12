@@ -1,4 +1,5 @@
 adwsteamgtk
+ani-cli
 aur-scanner
 auto-cpufreq
 checkstyle

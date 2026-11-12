@@ -21,6 +21,7 @@ clang
 cliphist
 cmake
 cpufetch
+cups
 directx-shader-compiler
 doxygen
 edk2-aarch64
@@ -96,12 +97,9 @@ pnpm
 prettier
 prismlauncher
 pyright
-python-pip
-python-pipx
 qemu-system-aarch64
 qt6-5compat
 qt6-languageserver
-qt6-multimedia
 qt6ct
 quickshell
 reflector
@@ -110,6 +108,7 @@ ruff
 rustup
 shfmt
 slurp
+smartmontools
 snapper
 starship
 steam
@@ -134,12 +133,11 @@ ttf-jetbrains-mono-nerd
 ttf-nerd-fonts-symbols-common
 typescript-language-server
 udiskie
-udisks2
 upower
+uv
 wf-recorder
 wget
 wl-clipboard
-wpa_supplicant
 wtype
 xdg-desktop-portal-hyprland
 xdotool
