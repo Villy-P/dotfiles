@@ -22,7 +22,6 @@ github-cli
 grub
 grub-btrfs
 gum
-id3v2
 imagemagick
 inetutils
 inotify-tools

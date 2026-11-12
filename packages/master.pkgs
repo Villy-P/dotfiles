@@ -61,8 +61,6 @@
 [--h] ffmpeg          video and audio file converter
 [--h] python-mutagen  tool for changing tags on music files
 [--h] yt-dlp          youtube video and audio downloader
-[--h] opustags        tool for changing tags on opus files
-[--h] id3v2           tool for changing tags on mp3 files
 [a-h] imagemagick     image manipulation tool
 [--h] clamav          antivirus toolkit
 [--h] megatools       tool for downloading mega.nz links from the CLI
