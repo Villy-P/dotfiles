@@ -19,7 +19,6 @@ fastfetch
 ffmpeg
 git
 github-cli
-go
 grub
 grub-btrfs
 gum
@@ -35,16 +34,15 @@ linux-firmware
 lsof
 lua-language-server
 markdownlint-cli2
+mise
 mkinitcpio
 neovim
 nethogs
 networkmanager
-npm
 onefetch
 openssh
 pacman-contrib
 pkgfile
-pnpm
 powertop
 prettier
 pyright

@@ -158,7 +158,7 @@
 [a--] bear             generate compilation database for C/C++ projects
 [a-h] rustup           full language toolkit for Rust
 [a--] pre-commit       framework for managing and maintaining multi-language pre-commit hooks
-[a--] mise             polyglot runtime manager (node, pnpm, java, etc.)
+[a-h] mise             polyglot runtime manager (node, pnpm, java, etc.)
 
 ## containers ---------------------------------------------------------------------------------------------------
 [--h] docker          container runtime and management tool
