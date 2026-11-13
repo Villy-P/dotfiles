@@ -1,2 +1,2 @@
 [[targets]]
-windows = "C:\\Users\\$env:USERNAME\\.config\\wezterm"
+windows = "~\\.config\\wezterm"
