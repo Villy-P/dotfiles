@@ -1,0 +1,1 @@
+C:/Users/valer/dotfiles/stow/powershell/Microsoft.PowerShell_profile.ps1
