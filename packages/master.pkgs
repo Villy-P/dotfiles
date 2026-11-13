@@ -70,7 +70,7 @@
 [-wh] aria2           cli downloader that supports parallel downloads
 
 ## package_management -------------------------------------------------------------------------------------------
-[a-h] uv              Modern package manager for python
+[awh] uv              Modern package manager for python
 [a--] luarocks        Lua package manager
 [a-h] yay             AUR helper
 [a-h] pkgfile         tool for detecting which package provides a file
@@ -128,7 +128,7 @@
 [awh] fastfetch                system info fetch tool
 [awh] onefetch                 git repository info fetch tool
 [awh] cpufetch                 CPU info fetch tool
-[a-h] starship                 cross-shell prompt
+[awh] starship                 cross-shell prompt
 [a-h] zsh                      shell
 [a-h] zsh-autosuggestions      Zsh plugin for command suggestions based on history
 [a-h] zsh-syntax-highlighting  Zsh plugin for syntax highlighting of commands
@@ -140,6 +140,7 @@
 [awh] neovim               advanced terminal text editor
 [a--] zathura              document viewer
 [a--] zathura-pdf-poppler  pdf support for zathura
+[-w-] sumatrapdf           document viewer for Windows
 
 ## productivity -------------------------------------------------------------------------------------------------
 [a--] tiled         map editor for 2D games
@@ -154,11 +155,11 @@
 [aw-] doxygen          documentation generator
 [a-h] openssh          OpenSSH server and client
 [awh] tree-sitter-cli  plugin for NeoVim
-[a--] supabase-bin     Supabase command-line interface
+[a--] supabase         Supabase command-line interface
 [a--] bear             generate compilation database for C/C++ projects
 [a-h] rustup           full language toolkit for Rust
 [a--] pre-commit       framework for managing and maintaining multi-language pre-commit hooks
-[a-h] mise             polyglot runtime manager (node, pnpm, java, etc.)
+[awh] mise             polyglot runtime manager (node, pnpm, java, etc.)
 
 ## containers ---------------------------------------------------------------------------------------------------
 [--h] docker          container runtime and management tool

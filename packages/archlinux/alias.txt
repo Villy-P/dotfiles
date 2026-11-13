@@ -1,3 +1,4 @@
 zen-browser-bin zen-browser
 helium-browser-bin helium
 sunshine-bin sunshine
+supabase-bin supabase

@@ -21,6 +21,7 @@ komorebi
 less
 lua-language-server
 mgba
+mise
 neovim
 ninja
 onefetch
@@ -32,12 +33,16 @@ pwsh
 r2modman
 ripgrep
 shfmt
+starship
 steam
 stylua
 sudachi
+SumatraPDF
 sunshine
+supabase
 tailscale
 tree-sitter
+uv
 wezterm-nightly
 whkd
 yasb
