@@ -67,7 +67,7 @@
 [--h] khinsider-git   tool for downloading music from KHInsider
 [a-h] ani-cli         tool for downloading anime
 [--h] luffy-bin       tool for downloading movies
-[--h] aria2           cli downloader that supports parallel downloads
+[-wh] aria2           cli downloader that supports parallel downloads
 
 ## package_management -------------------------------------------------------------------------------------------
 [a-h] uv              Modern package manager for python
@@ -124,6 +124,7 @@
 
 ## shell_environment --------------------------------------------------------------------------------------------
 [a--] kitty                    terminal emulator
+[-w-] wezterm-nightly          terminal emulator
 [awh] fastfetch                system info fetch tool
 [awh] onefetch                 git repository info fetch tool
 [awh] cpufetch                 CPU info fetch tool
@@ -131,6 +132,7 @@
 [a-h] zsh                      shell
 [a-h] zsh-autosuggestions      Zsh plugin for command suggestions based on history
 [a-h] zsh-syntax-highlighting  Zsh plugin for syntax highlighting of commands
+[-w-] pwsh                     Powershell 7
 [a-h] tmux                     Terminal multiplexer
 [-w-] psmux                    Terminal multiplexer for Windows
 
@@ -216,7 +218,7 @@
 [--h] steamdepotdownloader-bin   steam downloader for soundtracks to Navidrome
 
 ## fonts --------------------------------------------------------------------------------------------------------
-[a--] ttf-cascadia-code-nerd         Cascadia Code, patched with Nerd Font icons
+[aw-] ttf-cascadia-code-nerd         Cascadia Code, patched with Nerd Font icons
 [a--] noto-fonts-emoji               Noto Emoji font for emoji support
 [a--] noto-fonts-cjk                 Noto CJK fonts for Chinese, Japanese, and Korean support
 [a--] inter-font                     Inter font family for modern UI design

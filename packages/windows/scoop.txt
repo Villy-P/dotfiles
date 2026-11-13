@@ -1,8 +1,10 @@
 7zip
+aria2
 autohotkey
 azahar
 bat
 btop
+CascadiaCode-NF-Mono
 charm-gum
 cmake
 cpufetch
@@ -26,6 +28,7 @@ powertoys
 ppsspp
 prismlauncher
 psmux
+pwsh
 r2modman
 ripgrep
 shfmt
@@ -35,6 +38,7 @@ sudachi
 sunshine
 tailscale
 tree-sitter
+wezterm-nightly
 whkd
 yasb
 yazi

@@ -2,3 +2,4 @@ gh github-cli
 charm-gum gum
 tree-sitter tree-sitter-cli
 helium
+CascadiaCode-NF-Mono ttf-cascadia-code-nerd
