@@ -107,3 +107,13 @@ homelab.tailc8658b.ts.net:8462 {
     tls /certs/homelab.tailc8658b.ts.net.crt /certs/homelab.tailc8658b.ts.net.key
     reverse_proxy searxng-core:8080
 }
+
+homelab.tailc8658b.ts.net:8463 {
+    tls /certs/homelab.tailc8658b.ts.net.crt /certs/homelab.tailc8658b.ts.net.key
+    reverse_proxy ollama:11434
+}
+
+homelab.tailc8658b.ts.net:8464 {
+    tls /certs/homelab.tailc8658b.ts.net.crt /certs/homelab.tailc8658b.ts.net.key
+    reverse_proxy open-webui:8080
+}

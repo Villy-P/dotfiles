@@ -1,0 +1,25 @@
+services:
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: open-webui
+    restart: unless-stopped
+    environment:
+      - OLLAMA_BASE_URL=http://ollama:11434
+      - ENABLE_WEB_SEARCH=true
+      - WEB_SEARCH_ENGINE=searxng
+      - SEARXNG_QUERY_URL=http://searxng:8080/search?q=<query>
+      - WEB_SEARCH_RESULT_COUNT=5
+      - WEB_SEARCH_CONCURRENT_REQUESTS=2
+      - GLOBAL_LOG_LEVEL=DEBUG
+    volumes:
+      - open-webui:/app/backend/data
+    mem_limit: 2g
+    networks:
+      - proxy
+
+volumes:
+  open-webui:
+
+networks:
+  proxy:
+    external: true
