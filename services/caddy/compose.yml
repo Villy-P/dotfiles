@@ -30,6 +30,8 @@ services:
       - "8462:8462"
       - "8463:8463"
       - "8464:8464"
+      - "8465:8465"
+      - "8466:8466"
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
       - ./certs:/certs
