@@ -1,0 +1,12 @@
+services:
+  drawio:
+    image: jgraph/drawio:latest
+    container_name: drawio
+    restart: unless-stopped
+    mem_limit: 1g
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true

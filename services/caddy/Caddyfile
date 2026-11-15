@@ -127,3 +127,8 @@ homelab.tailc8658b.ts.net:8466 {
     tls /certs/homelab.tailc8658b.ts.net.crt /certs/homelab.tailc8658b.ts.net.key
     reverse_proxy grafana-grafana-1:3000
 }
+
+homelab.tailc8658b.ts.net:8467 {
+    tls /certs/homelab.tailc8658b.ts.net.crt /certs/homelab.tailc8658b.ts.net.key
+    reverse_proxy drawio:8080
+}
