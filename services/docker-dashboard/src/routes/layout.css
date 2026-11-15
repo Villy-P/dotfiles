@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
@@ -5,3 +7,9 @@
 @import '@valerius_petrini/corekit-ui/layout.css';
 @source '../../node_modules/@valerius_petrini/corekit-ui/';
 @custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+    --vpcui-font-display: 'Open Sans', sans-serif;
+    --vpcui-font-body: 'Open Sans', sans-serif;
+    --vpcui-font-mono: 'JetBrains Mono', monospace;
+}

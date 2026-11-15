@@ -1,9 +1,6 @@
 <script lang="ts">
-	import { Card, Text } from '@valerius_petrini/corekit-ui';
-	import { onMount } from 'svelte';
-	import type { Weather } from '../types/weather';
-
-	let weather: Weather | null = $state(null);
+	import { SERVICE_LIST } from '#lib/services.ts';
+	import { Card, Image, Text } from '@valerius_petrini/corekit-ui';
 
 	function getHeaderGreeting() {
 		const now = new Date();
@@ -17,21 +14,20 @@
 			return 'Good Afternoon';
 		}
 	}
-
-	onMount(async () => {
-		const res = await fetch(`/api/weather`);
-		weather = await res.json();
-	});
 </script>
 
 <div class="flex flex-col gap-4 p-3">
 	<Text tag="h1">{getHeaderGreeting()}, Valerius</Text>
-	{#if weather}
-		<Card size="full" class="flex">
-			<div class="flex w-10 flex-col items-center px-8">
-				<p class="text-[60px]">☀️</p>
-				<p>{weather.current.temperature_2m.toFixed()}°F</p>
-			</div>
-		</Card>
-	{/if}
+	<div class="flex flex-wrap gap-4">
+		{#each SERVICE_LIST as service}
+			<Card
+				class="flex w-48 flex-row items-center gap-4 p-2"
+				href="https://homelab.tailc8658b.ts.net:{service.port}"
+				external
+			>
+				<Image class="h-10 w-10" src={service.icon} alt="{service.name} Logo" />
+				<Text>{service.name}</Text>
+			</Card>
+		{/each}
+	</div>
 </div>
