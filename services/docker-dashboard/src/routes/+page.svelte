@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { SERVICE_LIST } from '#lib/services.ts';
-	import { Card, Image, Text } from '@valerius_petrini/corekit-ui';
+	import { WEBSITE_LIST } from '#lib/websites.ts';
+	import { Card, Image, Text, tooltip } from '@valerius_petrini/corekit-ui';
 
 	function getHeaderGreeting() {
 		const now = new Date();
@@ -28,6 +29,13 @@
 				<Image class="h-10 w-10" src={service.icon} alt="{service.name} Logo" />
 				<Text>{service.name}</Text>
 			</Card>
+		{/each}
+	</div>
+	<div class="flex gap-4">
+		{#each WEBSITE_LIST as website}
+			<Card class="flex-center p-2 w-fit h-fit" href={website.link} external use={[[tooltip, website.name]]}>
+                <Image class="h-8 w-8" src={website.icon} alt="{website.name} Logo"/>
+            </Card>
 		{/each}
 	</div>
 </div>
