@@ -16,6 +16,7 @@ backups/
 stirling-data/
 localcpy/
 services/epic-freegames/config/*
+services/home-assistant/config/*
 !services/epic-freegames/config/config.example.json
 music/
 db/
