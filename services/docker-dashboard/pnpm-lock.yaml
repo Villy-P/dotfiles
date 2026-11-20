@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@lucide/svelte':
+        specifier: ^1.76.0
+        version: 1.76.0(svelte@5.57.3(@typescript-eslint/types@8.72.1))
       '@valerius_petrini/corekit-ui':
         specifier: ^0.1.105
         version: 0.1.105(svelte@5.57.3(@typescript-eslint/types@8.72.1))
@@ -399,8 +402,8 @@ packages:
   '@keyv/serialize@1.1.1':
     resolution: {integrity: sha512-dXn3FZhPv0US+7dtJsIi2R+c7qWYiReoEh5zUntWCf4oSpMNib8FDhSoed6m3QyZdx5hK7iLFkYk3rNxwt8vTA==}
 
-  '@lucide/svelte@1.66.0':
-    resolution: {integrity: sha512-G2qFyutQpgk9TY0QYgqXk9rQtUt8p509mFpQzmTpyc894hfRSFhGNcGAVAUgB8znAyVsp5WTF/2vmCwprnNQ/w==}
+  '@lucide/svelte@1.76.0':
+    resolution: {integrity: sha512-cDlhnZsqXm/ktY7ZBir7baKJhvSRRADQe7iZyMYks5qeZeQqTfeH9M+BVsyInt3DrERBYiPrfxf5RmRSgPnUzA==}
     peerDependencies:
       svelte: ^5
 
@@ -2073,7 +2076,7 @@ snapshots:
 
   '@keyv/serialize@1.1.1': {}
 
-  '@lucide/svelte@1.66.0(svelte@5.57.3(@typescript-eslint/types@8.72.1))':
+  '@lucide/svelte@1.76.0(svelte@5.57.3(@typescript-eslint/types@8.72.1))':
     dependencies:
       svelte: 5.57.3(@typescript-eslint/types@8.72.1)
 
@@ -2405,7 +2408,7 @@ snapshots:
   '@valerius_petrini/corekit-ui@0.1.105(svelte@5.57.3(@typescript-eslint/types@8.72.1))':
     dependencies:
       '@floating-ui/dom': 1.8.0
-      '@lucide/svelte': 1.66.0(svelte@5.57.3(@typescript-eslint/types@8.72.1))
+      '@lucide/svelte': 1.76.0(svelte@5.57.3(@typescript-eslint/types@8.72.1))
       '@valerius_petrini/corekit-scripts': 1.0.0
       bytes: 3.1.2
       svelte: 5.57.3(@typescript-eslint/types@8.72.1)

@@ -43,6 +43,7 @@
 		"#lib/*": "./src/lib/*"
 	},
 	"dependencies": {
+		"@lucide/svelte": "^1.76.0",
 		"@valerius_petrini/corekit-ui": "^0.1.105",
 		"discord.js": "^14.28.0",
 		"dockerode": "^5.0.1",
