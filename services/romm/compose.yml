@@ -7,7 +7,7 @@ services:
       - DB_HOST=romm-db
       - DB_NAME=romm
       - DB_USER=romm-user
-      - DB_PASSWD=change-me-db-password
+      - DB_PASSWD=${ROMM_MARIADB_PASSWORD}
       - ROMM_AUTH_SECRET_KEY=${ROMM_SECRET_KEY}
       - IGDB_CLIENT_ID=
       - IGDB_CLIENT_SECRET=
@@ -26,6 +26,7 @@ services:
         condition: service_healthy
     networks:
       - proxy
+      - default
 
   romm-db:
     image: mariadb:latest
@@ -44,6 +45,8 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    networks:
+      - default
 
 networks:
   proxy:
