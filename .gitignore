@@ -17,6 +17,8 @@ stirling-data/
 localcpy/
 services/epic-freegames/config/*
 services/home-assistant/config/*
+services/romm/config/*
+services/romm/assets/*
 !services/epic-freegames/config/config.example.json
 music/
 db/

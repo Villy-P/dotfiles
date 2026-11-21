@@ -134,7 +134,13 @@ atlas.tailc8658b.ts.net:8468 {
         header_up -X-Forwarded-For
     }
 }
+
 atlas.tailc8658b.ts.net:8467 {
     tls /certs/atlas.tailc8658b.ts.net.crt /certs/atlas.tailc8658b.ts.net.key
     reverse_proxy drawio:8080
+}
+
+atlas.tailc8658b.ts.net:8469 {
+    tls /certs/atlas.tailc8658b.ts.net.crt /certs/atlas.tailc8658b.ts.net.key
+    reverse_proxy romm:8080
 }
