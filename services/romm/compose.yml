@@ -1,0 +1,55 @@
+services:
+  romm:
+    image: rommapp/romm:latest
+    container_name: romm
+    restart: unless-stopped
+    environment:
+      - DB_HOST=romm-db
+      - DB_NAME=romm
+      - DB_USER=romm-user
+      - DB_PASSWD=change-me-db-password
+      - ROMM_AUTH_SECRET_KEY=${ROMM_SECRET_KEY}
+      - IGDB_CLIENT_ID=
+      - IGDB_CLIENT_SECRET=
+      - SCREENSCRAPER_USER=
+      - SCREENSCRAPER_PASSWORD=
+      - STEAMGRIDDB_API_KEY=
+      - RETROACHIEVEMENTS_API_KEY=
+    volumes:
+      - romm_resources:/romm/resources
+      - romm_redis_data:/redis-data
+      - ./library:/romm/library
+      - ./assets:/romm/assets
+      - ./config:/romm/config
+    depends_on:
+      romm-db:
+        condition: service_healthy
+    networks:
+      - proxy
+
+  romm-db:
+    image: mariadb:latest
+    container_name: romm-db
+    restart: unless-stopped
+    environment:
+      - MARIADB_ROOT_PASSWORD=${ROMM_MARIADB_ROOT_PASSWORD}
+      - MARIADB_DATABASE=romm
+      - MARIADB_USER=romm-user
+      - MARIADB_PASSWORD=${ROMM_MARIADB_PASSWORD}
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      start_period: 30s
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+networks:
+  proxy:
+    external: true
+
+volumes:
+  mysql_data:
+  romm_resources:
+  romm_redis_data:
