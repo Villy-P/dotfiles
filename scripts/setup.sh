@@ -1,12 +1,14 @@
 #!/bin/bash
 set -euo pipefail
 
+HOSTNAME=$(gum choose "archlinux" "homelab")
+
 if [ ! -f /etc/pacman.conf.bak ]; then
     sudo cp /etc/pacman.conf /etc/pacman.conf.bak
 fi
 sudo sed -i '/#\[multilib\]/,+1 s/^#//' /etc/pacman.conf
 sudo pacman -Syu --noconfirm
-sudo pacman -S --needed - < ~/dotfiles/packages/pacman.txt
+sudo pacman -S --needed - < ~/dotfiles/packages/$HOSTNAME/pacman.txt
 
 if ! command -v yay &> /dev/null; then
     git clone https://aur.archlinux.org/yay.git /tmp/yay-install
@@ -15,23 +17,13 @@ if ! command -v yay &> /dev/null; then
     cd -
     rm -rf /tmp/yay-install
 fi
-yay -S --needed --noconfirm $(cat ~/dotfiles/packages/aur.txt | grep -Ev "yay")
+yay -S --needed --noconfirm $(cat ~/dotfiles/packages/$HOSTNAME/aur.txt | grep -Ev "yay")
 
-~/dotfiles/scripts/stow_all.sh
-
-mkdir -p ~/.config/matugen/templates
-mkdir -p ~/.local/state/quickshell/generated
+python3 ~/dotfiles/scripts/stow.py --host $HOSTNAME
 
 chsh -s /usr/bin/zsh
 
-mkdir -p ~/pictures
-curl -o ~/pictures/wallpaper/wallpaper.jpg https://images.unsplash.com/photo-1464822759023-fed622ff2c3b
-
-chmod +x ~/dotfiles/scripts/setwall.sh
-chmod +x ~/dotfiles/scripts/ignore_desktop.sh
-
-source ~/dotfiles/scripts/setwall.sh ~/pictures/wallpaper/wallpaper.jpg
-source ~/dotfiles/scripts/ignore_desktop.sh
-
 sudo auto-cpufreq --install
-curl -fsSL https://raw.githubusercontent.com/Brainitech/Brain_Shell/refs/heads/main/install.sh | bash
+if [[ "$HOSTNAME" == "archlinux" ]]; then
+    curl -fsSL https://raw.githubusercontent.com/Brainitech/Brain_Shell/refs/heads/main/install.sh | bash
+fi
