@@ -25,6 +25,7 @@ import UptimeKumaLogo from '#lib/assets/service-icons/uptime-kuma.svg';
 import VaultwardenLogo from '#lib/assets/service-icons/vaultwarden-light.svg';
 import YamtrackLogo from '#lib/assets/service-icons/yamtrack-light.svg';
 import HomeAssistantLogo from '#lib/assets/service-icons/home-assistant.svg';
+import RomMLogo from '#lib/assets/service-icons/romm.svg'
 import { CircleCheck, type LucideProps } from '@lucide/svelte';
 import type { Server } from './servers';
 import type { Component } from 'svelte';
@@ -231,6 +232,12 @@ export const SERVICE_LIST: Service[] = [
         description: 'Smart Home Management',
         icon: HomeAssistantLogo,
         port: 8468,
+        server: 'homelab'
+    }, {
+        name: 'RomM',
+        description: 'ROM Player',
+        icon: RomMLogo,
+        port: 8469,
         server: 'homelab'
     }
 ].sort((a, b) => a.name.localeCompare(b.name));
