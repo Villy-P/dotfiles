@@ -34,7 +34,6 @@ services:
       - "8466:8466"
       - "8467:8467"
       - "8468:8468"
-      - "8469:8469"
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
       - ./certs:/certs
