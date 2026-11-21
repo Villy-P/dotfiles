@@ -10,7 +10,7 @@ services:
     networks:
       - proxy
     environment:
-      - DOMAIN=https://homelab.tailc8658b.ts.net
+      - DOMAIN=https://atlas.tailc8658b.ts.net
       - LOGIN_RATELIMIT_MAX_BURST=10
       - LOGIN_RATELIMIT_SECONDS=60
       - ADMIN_RATELIMIT_MAX_BURST=10

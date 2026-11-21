@@ -27,14 +27,14 @@ services:
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
       - MYSQL_HOST=db
-      - NEXTCLOUD_TRUSTED_DOMAINS=homelab.tailc8658b.ts.net
+      - NEXTCLOUD_TRUSTED_DOMAINS=atlas.tailc8658b.ts.net
       - TRUSTED_PROXIES=172.16.0.0/12
       - OVERWRITEPROTOCOL=https
     networks:
       - proxy
       - internal
     extra_hosts:
-      - "homelab.tailc8658b.ts.net:172.18.0.8"
+      - "atlas.tailc8658b.ts.net:172.18.0.8"
 
 networks:
   proxy:

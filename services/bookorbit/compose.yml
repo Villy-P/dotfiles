@@ -17,8 +17,8 @@ services:
       POSTGRES_DB: bookorbit
       JWT_SECRET: ${BOOKORBIT_JWT_SECRET?required}
       SETUP_BOOTSTRAP_TOKEN: ${BOOKORBIT_SETUP_BOOTSTRAP_TOKEN?required}
-      APP_URL: https://homelab.tailc8658b.ts.net:8461
-      CLIENT_URL: ${CLIENT_URL:-https://homelab.tailc8658b.ts.net:8461}
+      APP_URL: https://atlas.tailc8658b.ts.net:8461
+      CLIENT_URL: ${CLIENT_URL:-https://atlas.tailc8658b.ts.net:8461}
       TZ: ${TZ:-UTC}
       PUID: ${PUID:-1000}
       PGID: ${PGID:-1000}

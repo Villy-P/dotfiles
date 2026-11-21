@@ -5,7 +5,7 @@
 - Homelab Services:
     - PiHole:
         icon: pi-hole.png
-        href: https://homelab.tailc8658b.ts.net:8445/admin/
+        href: https://atlas.tailc8658b.ts.net:8445/admin/
         description: DNS and ad-blocking service.
         # widget:
         #     type: pihole
@@ -16,7 +16,7 @@
 
     - Immich:
         icon: immich.png
-        href: https://homelab.tailc8658b.ts.net:8444/
+        href: https://atlas.tailc8658b.ts.net:8444/
         description: Self-hosted photo and video backup solution.
         # widget:
         #     type: immich
@@ -34,14 +34,14 @@
         container: caddy
 
     - Actual:
-        icon: https://homelab.tailc8658b.ts.net:8443/favicon.ico
-        href: https://homelab.tailc8658b.ts.net:8443/
+        icon: https://atlas.tailc8658b.ts.net:8443/favicon.ico
+        href: https://atlas.tailc8658b.ts.net:8443/
         description: Self-hosted budgeting software.
         container: actual-actual_server-1
 
     - Nextcloud:
         icon: nextcloud.png
-        href: https://homelab.tailc8658b.ts.net:8447/
+        href: https://atlas.tailc8658b.ts.net:8447/
         description: Self-hosted file sharing and collaboration platform.
         container: nextcloud-app-1
         # widget:
@@ -52,102 +52,102 @@
 
     - ConvertX:
         icon: convertx.png
-        href: https://homelab.tailc8658b.ts.net:8448/
+        href: https://atlas.tailc8658b.ts.net:8448/
         description: Self-hosted media conversion service.
         container: convertx
 
     - Vaultwarden:
         icon: vaultwarden.png
-        href: https://homelab.tailc8658b.ts.net:8449/
+        href: https://atlas.tailc8658b.ts.net:8449/
         description: Self-hosted password manager.
         container: vaultwarden
 
     - IT Tools:
         icon: it-tools.png
-        href: https://homelab.tailc8658b.ts.net:8442/
+        href: https://atlas.tailc8658b.ts.net:8442/
         description: Self-hosted IT tools and utilities.
         container: it-tools
 
     - Kopia:
         icon: kopia.png
-        href: https://homelab.tailc8658b.ts.net:8441/
+        href: https://atlas.tailc8658b.ts.net:8441/
         description: Fast and secure backup tool.
         container: Kopia
 
     - Kopia Local Copy:
         icon: kopia.png
-        href: https://homelab.tailc8658b.ts.net:8452/
+        href: https://atlas.tailc8658b.ts.net:8452/
         description: Fast and secure backup tool (local copy).
         container: KopiaLocal
 
     - Collabora:
         icon: https://www.collaboraonline.com/wp-content/uploads/2023/06/collabora-symbols-600.png
-        href: https://homelab.tailc8658b.ts.net:8450/
+        href: https://atlas.tailc8658b.ts.net:8450/
         description: Self-hosted online office suite.
         container: collabora
 
     - Stirling PDF:
         icon: https://framerusercontent.com/images/XSySaBeEKENm2npePwLJyrxmfE.png
-        href: https://homelab.tailc8658b.ts.net:8451/
+        href: https://atlas.tailc8658b.ts.net:8451/
         description: Self-hosted PDF conversion service.
         container: stirling-pdf
 
     - Epic Free Games:
         icon: https://www.epicgames.com/favicon.ico
-        href: https://homelab.tailc8658b.ts.net:8453/
+        href: https://atlas.tailc8658b.ts.net:8453/
         description: Self-hosted Epic Games redeemer.
         container: epic-freegames
 
     - Navidrome:
         icon: navidrome.png
-        href: https://homelab.tailc8658b.ts.net:8454/
+        href: https://atlas.tailc8658b.ts.net:8454/
         description: Self-hosted music library
         container: navidrome-navidrome-1
 
     - Yamtrack:
         icon: yamtrack.png
-        href: https://homelab.tailc8658b.ts.net:8455/
+        href: https://atlas.tailc8658b.ts.net:8455/
         description: Self-hosted media tracker
         container: yamtrack
 
     - Uptime Kuma:
         icon: uptime-kuma.png
-        href: https://homelab.tailc8658b.ts.net:8456/
+        href: https://atlas.tailc8658b.ts.net:8456/
         description: Service uptime tracker
         container: uptime-kuma
 
     - Dozzle:
         icon: dozzle.png
-        href: https://homelab.tailc8658b.ts.net:8457/
+        href: https://atlas.tailc8658b.ts.net:8457/
         description: Docker logs viewer
         container: dozzle
 
     - Audiomuse:
-        icon: https://homelab.tailc8658b.ts.net:8458/static/images/favicon-32x32.ico
-        href: https://homelab.tailc8658b.ts.net:8458
+        icon: https://atlas.tailc8658b.ts.net:8458/static/images/favicon-32x32.ico
+        href: https://atlas.tailc8658b.ts.net:8458
         description: Audio AI analysis of Navidrome music
         container: audiomuse-audiomuse-1
 
     - Feishin:
         icon: feishin.png
-        href: https://homelab.tailc8658b.ts.net:8459
+        href: https://atlas.tailc8658b.ts.net:8459
         description: Modern UI for Navidrome
         container: feishin
 
     - Jellyfin:
         icon: jellyfin.png
-        href: https://homelab.tailc8658b.ts.net:8460
+        href: https://atlas.tailc8658b.ts.net:8460
         description: Movie and TV show streaming
         container: jellyfin
 
     - BookOrbit:
         icon: bookorbit.png
-        href: https://homelab.tailc8658b.ts.net:8461
+        href: https://atlas.tailc8658b.ts.net:8461
         description: Book database
         container: bookorbit
 
     - SearXNG:
         icon: searxng.png
-        href: https://homelab.tailc8658b.ts.net:8462
+        href: https://atlas.tailc8658b.ts.net:8462
         description: Private Search Engine
         container: searxng-core

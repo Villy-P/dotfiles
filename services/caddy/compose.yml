@@ -42,7 +42,7 @@ services:
     networks:
       proxy:
         aliases:
-          - homelab.tailc8658b.ts.net
+          - atlas.tailc8658b.ts.net
 
 volumes:
   caddy_data:

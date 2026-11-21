@@ -9,11 +9,11 @@ services:
     restart: unless-stopped
     environment:
       - extra_params=--o:ssl.enable=false --o:ssl.termination=true
-      - domain=https://homelab.tailc8658b.ts.net
+      - domain=https://atlas.tailc8658b.ts.net
       - username=valerius
       - password=${COLLABORA_PASSWORD}
     extra_hosts:
-      - "homelab.tailc8658b.ts.net:172.18.0.8"
+      - "atlas.tailc8658b.ts.net:172.18.0.8"
 
 networks:
   proxy:
