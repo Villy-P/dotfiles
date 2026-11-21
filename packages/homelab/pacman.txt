@@ -11,12 +11,14 @@ cpufetch
 cronie
 docker
 docker-compose
+earlyoom
 efibootmgr
 eslint
 eza
 fail2ban
 fastfetch
 ffmpeg
+gdu
 git
 github-cli
 grub
@@ -44,6 +46,7 @@ pacman-contrib
 pkgfile
 powertop
 prettier
+prometheus-node-exporter
 pyright
 python-beautifulsoup4
 python-mutagen
@@ -75,6 +78,7 @@ yamllint
 yazi
 yt-dlp
 zoxide
+zram-generator
 zsh
 zsh-autosuggestions
 zsh-syntax-highlighting

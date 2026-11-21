@@ -17,7 +17,7 @@
 [a-h] base               core Arch base package group
 [a-h] base-devel         build tools (makepkg deps, compilers, etc), needed for AUR
 [a-h] snapper            Btrfs snapshot management tool
-[a--] zram-generator     create compressed swap in RAM
+[a-h] zram-generator     create compressed swap in RAM
 [a-h] sudo               privilege escalation
 [a-h] inotify-tools      file system event monitoring
 [a-h] mkinitcpio         Bash script to create initramfs images
@@ -35,11 +35,16 @@
 [a--] netkit-bsd-finger  BSD finger client/server
 [--h] cronie             cron job manager
 [--h] inetutils          includes hostname command
-[a-h] smartmontools      SMART data drive analysis
+[--h] earlyoom           systemctl service to delete processes that would take down server
+
+## monitoring ---------------------------------------------------------------------------------------------------
+[--h] prometheus-node-exporter  Tool to export server data (RAM, CPU, etc.)
+[a-h] smartmontools             SMART data drive analysis
 
 ## filesystem ---------------------------------------------------------------------------------------------------
 [a-h] btrfs-progs  Btrfs filesystem utilities
 [a--] exfatprogs   tools for exFAT filesystem support
+[--h] gdu                       Monitor filesystem size
 
 ## cli_tools ----------------------------------------------------------------------------------------------------
 [a-h] wget            tool to extract data from web servers

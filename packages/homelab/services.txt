@@ -1,14 +1,13 @@
 containerd.service
 cronie.service
 dbus-broker.service
-dirmngr@etc-pacman.d-gnupg.service
 docker.service
+earlyoom.service
 fail2ban.service
 getty@tty1.service
-gpg-agent@etc-pacman.d-gnupg.service
 grub-btrfsd.service
 NetworkManager.service
-polkit.service
+prometheus-node-exporter.service
 smartd.service
 sshd.service
 systemd-journald.service
@@ -17,6 +16,5 @@ systemd-timesyncd.service
 systemd-udevd.service
 systemd-userdbd.service
 tailscaled.service
-●
 user@1000.service
 wpa_supplicant.service
