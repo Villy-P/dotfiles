@@ -43,6 +43,8 @@ services:
       - default
       - proxy
     cpus: "1.0"
+    ports:
+      - "9458:8000"
     mem_limit: 2g
 
   audiomuse-worker:

@@ -33,6 +33,8 @@ services:
     networks:
       - proxy
       - internal
+    ports:
+      - "9447:80"
     extra_hosts:
       - "atlas.tailc8658b.ts.net:172.18.0.8"
 

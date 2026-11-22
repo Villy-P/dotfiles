@@ -14,6 +14,8 @@ services:
       - password=${COLLABORA_PASSWORD}
     extra_hosts:
       - "atlas.tailc8658b.ts.net:172.18.0.8"
+    ports:
+      - "9450:9980"
 
 networks:
   proxy:

@@ -9,6 +9,8 @@ services:
       - ./data/:/data/
     networks:
       - proxy
+    ports:
+      - "9449:80"
     environment:
       - DOMAIN=https://atlas.tailc8658b.ts.net
       - LOGIN_RATELIMIT_MAX_BURST=10

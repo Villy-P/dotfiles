@@ -14,6 +14,8 @@ services:
       - proxy
     env_file:
       - ../.env
+    ports:
+      - "9446:3000"
 
 networks:
   proxy:

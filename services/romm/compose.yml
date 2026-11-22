@@ -3,6 +3,8 @@ services:
     image: rommapp/romm:latest
     container_name: romm
     restart: unless-stopped
+    ports:
+      - "9469:8080"
     environment:
       - DB_HOST=romm-db
       - DB_NAME=romm

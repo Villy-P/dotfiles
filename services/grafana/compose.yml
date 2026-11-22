@@ -8,6 +8,8 @@ services:
       - grafana_data:/var/lib/grafana
     networks:
       - proxy
+    ports:
+      - "9466:3000"
 
 networks:
   proxy:

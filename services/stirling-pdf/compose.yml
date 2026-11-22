@@ -11,6 +11,8 @@ services:
       - SECURITY_ENABLELOGIN=false
     networks:
       - proxy
+    ports:
+      - "9451:8080"
 
 networks:
   proxy:

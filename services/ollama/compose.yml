@@ -16,6 +16,8 @@ services:
     cpuset: "0-5"
     networks:
       - proxy
+    ports:
+      - "9463:11434"
 
 volumes:
   ollama:

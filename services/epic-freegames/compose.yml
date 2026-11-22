@@ -8,6 +8,8 @@ services:
     mem_limit: 2g
     volumes:
       - ./config:/usr/app/config:rw
+    ports:
+      - "9453:3000"
     networks:
       - proxy
 

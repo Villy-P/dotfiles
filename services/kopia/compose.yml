@@ -36,6 +36,8 @@ services:
       - ./repository:/repository
       # Mount path for browsing mounted snapshots
       - ./tmp:/tmp:shared
+    ports:
+      - "9441:51515"
     networks:
       - proxy
 
@@ -60,6 +62,8 @@ services:
       KOPIA_CONFIG_PATH: /app/config/localcpy/repository.config
       KOPIA_CACHE_DIRECTORY: /app/cache/localcpy
       KOPIA_LOG_DIR: /app/logs/localcpy
+    ports:
+      - "9452:51516"
     volumes:
       # Mount local folders needed by kopia
       - ./localcpy/config:/app/config/localcpy

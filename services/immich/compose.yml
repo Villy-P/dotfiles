@@ -27,6 +27,8 @@ services:
       - redis
       - database
     restart: always
+    ports:
+      - "9444:2283"
     networks:
       - proxy
       - internal

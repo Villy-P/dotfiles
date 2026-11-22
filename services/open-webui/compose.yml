@@ -16,6 +16,8 @@ services:
     mem_limit: 2g
     networks:
       - proxy
+    ports:
+      - "9465:8080"
 
 volumes:
   open-webui:

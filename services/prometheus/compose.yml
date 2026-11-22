@@ -13,6 +13,8 @@ services:
       - --storage.tsdb.retention.time=30d
     networks:
       - proxy
+    ports:
+      - "9464:9090"
 
 networks:
   proxy:

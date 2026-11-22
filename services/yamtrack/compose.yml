@@ -13,7 +13,7 @@ services:
     volumes:
       - ./db:/yamtrack/db
     ports:
-      - "8000:8000"
+      - "9455:8000"
     networks:
       - proxy
 

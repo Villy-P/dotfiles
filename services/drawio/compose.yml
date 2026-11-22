@@ -6,6 +6,8 @@ services:
     mem_limit: 1g
     networks:
       - proxy
+    ports:
+      - "9467:8080"
 
 networks:
   proxy:

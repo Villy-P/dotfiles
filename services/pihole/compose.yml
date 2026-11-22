@@ -8,6 +8,7 @@ services:
     ports:
       - "53:53/tcp"
       - "53:53/udp"
+      - "9445:80"
     environment:
       # Set the appropriate timezone for your location (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones), e.g:
       TZ: 'America/Chicago'
