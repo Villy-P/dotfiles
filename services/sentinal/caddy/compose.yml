@@ -1,0 +1,55 @@
+name: caddy
+
+services:
+  caddy:
+    image: caddy:latest
+    container_name: caddy
+    restart: unless-stopped
+    ports:
+      - "8440:8440"
+      - "8441:8441"
+      - "8442:8442"
+      - "8443:8443"
+      - "8444:8444"
+      - "8445:8445"
+      - "8446:8446"
+      - "8447:8447"
+      - "8448:8448"
+      - "8449:8449"
+      - "8450:8450"
+      - "8451:8451"
+      - "8452:8452"
+      - "8453:8453"
+      - "8454:8454"
+      - "8455:8455"
+      - "8456:8456"
+      - "8457:8457"
+      - "8458:8458"
+      - "8459:8459"
+      - "8460:8460"
+      - "8461:8461"
+      - "8462:8462"
+      - "8463:8463"
+      - "8464:8464"
+      - "8465:8465"
+      - "8466:8466"
+      - "8467:8467"
+      - "8468:8468"
+      - "8469:8469"
+    volumes:
+      - /home/valerius/dotfiles/services/sentinal/caddy/Caddyfile.sentinal:/etc/caddy/Caddyfile
+      - ./certs:/certs:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      proxy:
+        aliases:
+          - monitor.tailc8658b.ts.net
+
+volumes:
+  caddy_data:
+  caddy_config:
+
+networks:
+  proxy:
+    external: true

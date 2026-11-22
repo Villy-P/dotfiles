@@ -6,9 +6,5 @@ services:
     image: sharevb/it-tools:latest
     pull_policy: always
     restart: unless-stopped
-    networks:
-      - proxy
-
-networks:
-  proxy:
-    external: true
+    ports:
+      - "9442:8080"
