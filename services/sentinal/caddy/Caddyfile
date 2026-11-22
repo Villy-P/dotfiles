@@ -1,145 +1,127 @@
-atlas.tailc8658b.ts.net:8441 {
-    tls /certs/atlas.tailc8658b.ts.net.crt /certs/atlas.tailc8658b.ts.net.key
-    reverse_proxy Kopia:51515
+(ts_tls) {
+    tls /certs/sentinal.tailc8658b.ts.net.crt /certs/sentinal.tailc8658b.ts.net.key
 }
 
-atlas.tailc8658b.ts.net:8442 {
-    tls /certs/atlas.tailc8658b.ts.net.crt /certs/atlas.tailc8658b.ts.net.key
-    reverse_proxy it-tools:8080
+sentinal.tailc8658b.ts.net:8440 {
+    import ts_tls
+    respond "Caddy on sentinal works"
 }
 
-atlas.tailc8658b.ts.net:8443 {
-    tls /certs/atlas.tailc8658b.ts.net.crt /certs/atlas.tailc8658b.ts.net.key
-    reverse_proxy actual-actual_server-1:5006
+sentinal.tailc8658b.ts.net:8441 {
+    import ts_tls
+    reverse_proxy atlas:9441
 }
-
-atlas.tailc8658b.ts.net:8444 {
-    tls /certs/atlas.tailc8658b.ts.net.crt /certs/atlas.tailc8658b.ts.net.key
-    reverse_proxy immich_server:2283
+sentinal.tailc8658b.ts.net:8442 {
+    import ts_tls
+    reverse_proxy sentinal:9442
 }
-
-atlas.tailc8658b.ts.net:8445 {
-    tls /certs/atlas.tailc8658b.ts.net.crt /certs/atlas.tailc8658b.ts.net.key
-    reverse_proxy pihole:80
+sentinal.tailc8658b.ts.net:8443 {
+    import ts_tls
+    reverse_proxy atlas:9443
 }
-
-atlas.tailc8658b.ts.net:8446 {
-    tls /certs/atlas.tailc8658b.ts.net.crt /certs/atlas.tailc8658b.ts.net.key
-    reverse_proxy homepage:3000
+sentinal.tailc8658b.ts.net:8444 {
+    import ts_tls
+    reverse_proxy atlas:9444
 }
-
-atlas.tailc8658b.ts.net:8447 {
-    tls /certs/atlas.tailc8658b.ts.net.crt /certs/atlas.tailc8658b.ts.net.key
-    reverse_proxy nextcloud-app-1:80
+sentinal.tailc8658b.ts.net:8445 {
+    import ts_tls
+    reverse_proxy atlas:9445
 }
-
-atlas.tailc8658b.ts.net:8448 {
-    tls /certs/atlas.tailc8658b.ts.net.crt /certs/atlas.tailc8658b.ts.net.key
-    reverse_proxy convertx:3000
+sentinal.tailc8658b.ts.net:8446 {
+    import ts_tls
+    reverse_proxy atlas:9446
 }
-
-atlas.tailc8658b.ts.net:8449 {
-    tls /certs/atlas.tailc8658b.ts.net.crt /certs/atlas.tailc8658b.ts.net.key
-    reverse_proxy vaultwarden:80
+sentinal.tailc8658b.ts.net:8447 {
+    import ts_tls
+    reverse_proxy atlas:9447
 }
-
-atlas.tailc8658b.ts.net:8450 {
-    tls /certs/atlas.tailc8658b.ts.net.crt /certs/atlas.tailc8658b.ts.net.key
-    reverse_proxy collabora:9980
+sentinal.tailc8658b.ts.net:8448 {
+    import ts_tls
+    reverse_proxy atlas:9448
 }
-
-atlas.tailc8658b.ts.net:8451 {
-    tls /certs/atlas.tailc8658b.ts.net.crt /certs/atlas.tailc8658b.ts.net.key
-    reverse_proxy stirling-pdf:8080
+sentinal.tailc8658b.ts.net:8449 {
+    import ts_tls
+    reverse_proxy atlas:9449
 }
-
-atlas.tailc8658b.ts.net:8452 {
-    tls /certs/atlas.tailc8658b.ts.net.crt /certs/atlas.tailc8658b.ts.net.key
-    reverse_proxy KopiaLocal:51516
+sentinal.tailc8658b.ts.net:8450 {
+    import ts_tls
+    reverse_proxy atlas:9450
 }
-
-atlas.tailc8658b.ts.net:8453 {
-    tls /certs/atlas.tailc8658b.ts.net.crt /certs/atlas.tailc8658b.ts.net.key
-    reverse_proxy epic-freegames:3000
+sentinal.tailc8658b.ts.net:8451 {
+    import ts_tls
+    reverse_proxy atlas:9451
 }
-
-atlas.tailc8658b.ts.net:8454 {
-    tls /certs/atlas.tailc8658b.ts.net.crt /certs/atlas.tailc8658b.ts.net.key
-    reverse_proxy navidrome-navidrome-1:4533
+sentinal.tailc8658b.ts.net:8452 {
+    import ts_tls
+    reverse_proxy atlas:9452
 }
-
-atlas.tailc8658b.ts.net:8455 {
-    tls /certs/atlas.tailc8658b.ts.net.crt /certs/atlas.tailc8658b.ts.net.key
-    reverse_proxy yamtrack:8000
+sentinal.tailc8658b.ts.net:8453 {
+    import ts_tls
+    reverse_proxy atlas:9453
 }
-
-atlas.tailc8658b.ts.net:8456 {
-    tls /certs/atlas.tailc8658b.ts.net.crt /certs/atlas.tailc8658b.ts.net.key
-    reverse_proxy uptime-kuma:3001
+sentinal.tailc8658b.ts.net:8454 {
+    import ts_tls
+    reverse_proxy atlas:9454
 }
-
-atlas.tailc8658b.ts.net:8457 {
-    tls /certs/atlas.tailc8658b.ts.net.crt /certs/atlas.tailc8658b.ts.net.key
-    reverse_proxy dozzle:8080
+sentinal.tailc8658b.ts.net:8455 {
+    import ts_tls
+    reverse_proxy atlas:9455
 }
-
-atlas.tailc8658b.ts.net:8458 {
-    tls /certs/atlas.tailc8658b.ts.net.crt /certs/atlas.tailc8658b.ts.net.key
-    reverse_proxy audiomuse:8000
+sentinal.tailc8658b.ts.net:8456 {
+    import ts_tls
+    reverse_proxy atlas:9456
 }
-
-atlas.tailc8658b.ts.net:8459 {
-    tls /certs/atlas.tailc8658b.ts.net.crt /certs/atlas.tailc8658b.ts.net.key
-    reverse_proxy feishin:9180
+sentinal.tailc8658b.ts.net:8457 {
+    import ts_tls
+    reverse_proxy atlas:9457
 }
-
-atlas.tailc8658b.ts.net:8460 {
-    tls /certs/atlas.tailc8658b.ts.net.crt /certs/atlas.tailc8658b.ts.net.key
-    reverse_proxy jellyfin:8096
+sentinal.tailc8658b.ts.net:8458 {
+    import ts_tls
+    reverse_proxy atlas:9458
 }
-
-atlas.tailc8658b.ts.net:8461 {
-    tls /certs/atlas.tailc8658b.ts.net.crt /certs/atlas.tailc8658b.ts.net.key
-    reverse_proxy bookorbit:3000
+sentinal.tailc8658b.ts.net:8459 {
+    import ts_tls
+    reverse_proxy atlas:9459
 }
-
-atlas.tailc8658b.ts.net:8462 {
-    tls /certs/atlas.tailc8658b.ts.net.crt /certs/atlas.tailc8658b.ts.net.key
-    reverse_proxy searxng-core:8080
+sentinal.tailc8658b.ts.net:8460 {
+    import ts_tls
+    reverse_proxy atlas:9460
 }
-
-atlas.tailc8658b.ts.net:8463 {
-    tls /certs/atlas.tailc8658b.ts.net.crt /certs/atlas.tailc8658b.ts.net.key
-    reverse_proxy ollama:11434
+sentinal.tailc8658b.ts.net:8461 {
+    import ts_tls
+    reverse_proxy atlas:9461
 }
-
-atlas.tailc8658b.ts.net:8464 {
-    tls /certs/atlas.tailc8658b.ts.net.crt /certs/atlas.tailc8658b.ts.net.key
-    reverse_proxy prometheus-prometheus-1:9090
+sentinal.tailc8658b.ts.net:8462 {
+    import ts_tls
+    reverse_proxy atlas:9462
 }
-
-atlas.tailc8658b.ts.net:8465 {
-    tls /certs/atlas.tailc8658b.ts.net.crt /certs/atlas.tailc8658b.ts.net.key
-    reverse_proxy open-webui:8080
+sentinal.tailc8658b.ts.net:8463 {
+    import ts_tls
+    reverse_proxy atlas:9463
 }
-
-atlas.tailc8658b.ts.net:8466 {
-    tls /certs/atlas.tailc8658b.ts.net.crt /certs/atlas.tailc8658b.ts.net.key
-    reverse_proxy grafana-grafana-1:3000
+sentinal.tailc8658b.ts.net:8464 {
+    import ts_tls
+    reverse_proxy atlas:9464
 }
-
-atlas.tailc8658b.ts.net:8468 {
-    tls /certs/atlas.tailc8658b.ts.net.crt /certs/atlas.tailc8658b.ts.net.key
-    reverse_proxy homeassistant:8123 {
+sentinal.tailc8658b.ts.net:8465 {
+    import ts_tls
+    reverse_proxy atlas:9465
+}
+sentinal.tailc8658b.ts.net:8466 {
+    import ts_tls
+    reverse_proxy atlas:9466
+}
+sentinal.tailc8658b.ts.net:8467 {
+    import ts_tls
+    reverse_proxy atlas:9467
+}
+sentinal.tailc8658b.ts.net:8468 {
+    import ts_tls
+    reverse_proxy atlas:9468 {
         header_up -X-Forwarded-For
     }
 }
-atlas.tailc8658b.ts.net:8467 {
-    tls /certs/atlas.tailc8658b.ts.net.crt /certs/atlas.tailc8658b.ts.net.key
-    reverse_proxy drawio:8080
-}
-
-atlas.tailc8658b.ts.net:8469 {
-    tls /certs/atlas.tailc8658b.ts.net.crt /certs/atlas.tailc8658b.ts.net.key
-    reverse_proxy romm:8080
+sentinal.tailc8658b.ts.net:8469 {
+    import ts_tls
+    reverse_proxy atlas:9469
 }

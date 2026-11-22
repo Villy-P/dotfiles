@@ -37,7 +37,7 @@ services:
       - "8468:8468"
       - "8469:8469"
     volumes:
-      - /home/valerius/dotfiles/services/sentinal/caddy/Caddyfile.sentinal:/etc/caddy/Caddyfile
+      - /home/valerius/dotfiles/services/sentinal/caddy/Caddyfile:/etc/caddy/Caddyfile
       - ./certs:/certs:ro
       - caddy_data:/data
       - caddy_config:/config
