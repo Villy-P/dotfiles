@@ -73,7 +73,7 @@ sentinal.tailc8658b.ts.net:8456 {
 }
 sentinal.tailc8658b.ts.net:8457 {
     import ts_tls
-    reverse_proxy atlas:9457
+    reverse_proxy sentinal:9457
 }
 sentinal.tailc8658b.ts.net:8458 {
     import ts_tls
