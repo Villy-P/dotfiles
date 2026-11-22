@@ -8,6 +8,12 @@ scrape_configs:
 
   - job_name: node
     static_configs:
-      - targets: ["host.docker.internal:9100"]
+      - targets: ["atlas:9100"]
         labels:
           machine: homelab
+      - targets: ["sentinal:9100"]
+        labels:
+          machine: sentinal
+      - targets: ["media:9100"]
+        labels:
+          machine: media

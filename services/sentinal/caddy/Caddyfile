@@ -101,7 +101,7 @@ sentinal.tailc8658b.ts.net:8463 {
 }
 sentinal.tailc8658b.ts.net:8464 {
     import ts_tls
-    reverse_proxy atlas:9464
+    reverse_proxy sentinal:9464
 }
 sentinal.tailc8658b.ts.net:8465 {
     import ts_tls
@@ -109,7 +109,7 @@ sentinal.tailc8658b.ts.net:8465 {
 }
 sentinal.tailc8658b.ts.net:8466 {
     import ts_tls
-    reverse_proxy atlas:9466
+    reverse_proxy sentinal:9466
 }
 sentinal.tailc8658b.ts.net:8467 {
     import ts_tls
