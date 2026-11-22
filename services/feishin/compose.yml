@@ -5,7 +5,7 @@ services:
     environment:
       - SERVER_NAME=Navidrome
       - SERVER_TYPE=navidrome
-      - SERVER_URL=https://atlas.tailc8658b.ts.net:8454
+      - SERVER_URL=https://precisionlab.tailc8658b.ts.net:8454
       - SERVER_LOCK=false
     restart: unless-stopped
     networks:

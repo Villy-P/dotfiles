@@ -10,7 +10,7 @@ services:
     networks:
       - proxy
     environment:
-      - DOZZLE_REMOTE_AGENT=atlas:7007
+      - DOZZLE_REMOTE_AGENT=precisionlab:7007
 
 volumes:
   dozzle_data:

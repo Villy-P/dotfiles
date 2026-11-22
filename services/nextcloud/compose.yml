@@ -27,7 +27,7 @@ services:
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
       - MYSQL_HOST=db
-      - NEXTCLOUD_TRUSTED_DOMAINS=atlas.tailc8658b.ts.net
+      - NEXTCLOUD_TRUSTED_DOMAINS=precisionlab.tailc8658b.ts.net
       - TRUSTED_PROXIES=172.16.0.0/12
       - OVERWRITEPROTOCOL=https
     networks:
@@ -36,7 +36,7 @@ services:
     ports:
       - "9447:80"
     extra_hosts:
-      - "atlas.tailc8658b.ts.net:172.18.0.8"
+      - "precisionlab.tailc8658b.ts.net:172.18.0.8"
 
 networks:
   proxy:

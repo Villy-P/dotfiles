@@ -9,11 +9,11 @@ services:
     restart: unless-stopped
     environment:
       - extra_params=--o:ssl.enable=false --o:ssl.termination=true
-      - domain=https://atlas.tailc8658b.ts.net
+      - domain=https://precisionlab.tailc8658b.ts.net
       - username=valerius
       - password=${COLLABORA_PASSWORD}
     extra_hosts:
-      - "atlas.tailc8658b.ts.net:172.18.0.8"
+      - "precisionlab.tailc8658b.ts.net:172.18.0.8"
     ports:
       - "9450:9980"
 

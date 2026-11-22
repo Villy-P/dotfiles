@@ -8,7 +8,7 @@ scrape_configs:
 
   - job_name: node
     static_configs:
-      - targets: ["atlas:9100"]
+      - targets: ["precisionlab:9100"]
         labels:
           machine: homelab
       - targets: ["sentinal:9100"]
