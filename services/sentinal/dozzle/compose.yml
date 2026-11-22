@@ -9,6 +9,8 @@ services:
       - "9457:8080"
     networks:
       - proxy
+    environment:
+      - DOZZLE_REMOTE_AGENT=atlas:7007
 
 volumes:
   dozzle_data:
