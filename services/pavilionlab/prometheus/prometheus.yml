@@ -10,10 +10,13 @@ scrape_configs:
     static_configs:
       - targets: ["precisionlab:9100"]
         labels:
-          machine: homelab
+          machine: precisionlab
       - targets: ["pavilionlab:9100"]
         labels:
           machine: pavilionlab
       - targets: ["elitebooklab:9100"]
         labels:
-          machine: media
+          machine: elitebooklab
+      - targets: ["fireflylab:9100"]
+       labels:
+         machine: fireflylab
