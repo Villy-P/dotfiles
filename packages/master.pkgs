@@ -44,7 +44,7 @@
 ## filesystem ---------------------------------------------------------------------------------------------------
 [a-h] btrfs-progs  Btrfs filesystem utilities
 [a--] exfatprogs   tools for exFAT filesystem support
-[--h] gdu                       Monitor filesystem size
+[--h] gdu          Monitor filesystem size
 
 ## cli_tools ----------------------------------------------------------------------------------------------------
 [a-h] wget            tool to extract data from web servers
@@ -95,6 +95,7 @@
 [--h] nethogs         per-process network bandwidth monitor
 [a--] iperf3          measure network bandwidth between two hosts
 [a--] iw              tool for configuring wireless devices
+[a--] nmap            network exploration and security auditing tool
 
 ## windows_desktop ----------------------------------------------------------------------------------------------
 [-w-] autohotkey  Keybind manager for Windows
