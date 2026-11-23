@@ -1,0 +1,16 @@
+services:
+  scrutiny-collector:
+    image: ghcr.io/analogj/scrutiny:master-collector
+    container_name: scrutiny-collector
+    restart: unless-stopped
+    cap_add:
+      - SYS_RAWIO
+      - SYS_ADMIN
+    volumes:
+      - /run/udev:/run/udev:ro
+    devices:
+      - /dev/nvme0
+      - /dev/nvme0n1
+    environment:
+      - COLLECTOR_API_ENDPOINT=http://pavilionlab:9470
+      - COLLECTOR_HOST_ID=elitebooklab
