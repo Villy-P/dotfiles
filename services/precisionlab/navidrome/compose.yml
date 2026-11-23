@@ -14,8 +14,8 @@ services:
       ND_ENABLEMEDIAFILECOVERART: "false"
       ND_LYRICSPRIORITY: .lrc,nd-lyrics,.txt,embedded
     volumes:
-      - "/home/valerius/dotfiles/services/navidrome/data:/data"
-      - "/home/valerius/dotfiles/services/navidrome/music:/music"
+      - "./data:/data"
+      - "./music:/music"
     networks:
       - proxy
 
