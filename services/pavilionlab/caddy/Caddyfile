@@ -1,127 +1,127 @@
 (ts_tls) {
-    tls /certs/sentinal.tailc8658b.ts.net.crt /certs/sentinal.tailc8658b.ts.net.key
+    tls /certs/pavilionlab.tailc8658b.ts.net.crt /certs/pavilionlab.tailc8658b.ts.net.key
 }
 
-sentinal.tailc8658b.ts.net:8440 {
+pavilionlab.tailc8658b.ts.net:8440 {
     import ts_tls
-    respond "Caddy on sentinal works"
+    respond "Caddy on pavilionlab works"
 }
 
-sentinal.tailc8658b.ts.net:8441 {
+pavilionlab.tailc8658b.ts.net:8441 {
     import ts_tls
     reverse_proxy precisionlab:9441
 }
-sentinal.tailc8658b.ts.net:8442 {
+pavilionlab.tailc8658b.ts.net:8442 {
     import ts_tls
-    reverse_proxy sentinal:9442
+    reverse_proxy pavilionlab:9442
 }
-sentinal.tailc8658b.ts.net:8443 {
+pavilionlab.tailc8658b.ts.net:8443 {
     import ts_tls
     reverse_proxy precisionlab:9443
 }
-sentinal.tailc8658b.ts.net:8444 {
+pavilionlab.tailc8658b.ts.net:8444 {
     import ts_tls
     reverse_proxy precisionlab:9444
 }
-sentinal.tailc8658b.ts.net:8445 {
+pavilionlab.tailc8658b.ts.net:8445 {
     import ts_tls
     reverse_proxy precisionlab:9445
 }
-sentinal.tailc8658b.ts.net:8446 {
+pavilionlab.tailc8658b.ts.net:8446 {
     import ts_tls
     reverse_proxy precisionlab:9446
 }
-sentinal.tailc8658b.ts.net:8447 {
+pavilionlab.tailc8658b.ts.net:8447 {
     import ts_tls
     reverse_proxy precisionlab:9447
 }
-sentinal.tailc8658b.ts.net:8448 {
+pavilionlab.tailc8658b.ts.net:8448 {
     import ts_tls
     reverse_proxy precisionlab:9448
 }
-sentinal.tailc8658b.ts.net:8449 {
+pavilionlab.tailc8658b.ts.net:8449 {
     import ts_tls
     reverse_proxy precisionlab:9449
 }
-sentinal.tailc8658b.ts.net:8450 {
+pavilionlab.tailc8658b.ts.net:8450 {
     import ts_tls
     reverse_proxy precisionlab:9450
 }
-sentinal.tailc8658b.ts.net:8451 {
+pavilionlab.tailc8658b.ts.net:8451 {
     import ts_tls
     reverse_proxy precisionlab:9451
 }
-sentinal.tailc8658b.ts.net:8452 {
+pavilionlab.tailc8658b.ts.net:8452 {
     import ts_tls
     reverse_proxy precisionlab:9452
 }
-sentinal.tailc8658b.ts.net:8453 {
+pavilionlab.tailc8658b.ts.net:8453 {
     import ts_tls
     reverse_proxy precisionlab:9453
 }
-sentinal.tailc8658b.ts.net:8454 {
+pavilionlab.tailc8658b.ts.net:8454 {
     import ts_tls
     reverse_proxy precisionlab:9454
 }
-sentinal.tailc8658b.ts.net:8455 {
+pavilionlab.tailc8658b.ts.net:8455 {
     import ts_tls
     reverse_proxy precisionlab:9455
 }
-sentinal.tailc8658b.ts.net:8456 {
+pavilionlab.tailc8658b.ts.net:8456 {
     import ts_tls
-    reverse_proxy sentinal:9456
+    reverse_proxy pavilionlab:9456
 }
-sentinal.tailc8658b.ts.net:8457 {
+pavilionlab.tailc8658b.ts.net:8457 {
     import ts_tls
-    reverse_proxy sentinal:9457
+    reverse_proxy pavilionlab:9457
 }
-sentinal.tailc8658b.ts.net:8458 {
+pavilionlab.tailc8658b.ts.net:8458 {
     import ts_tls
     reverse_proxy precisionlab:9458
 }
-sentinal.tailc8658b.ts.net:8459 {
+pavilionlab.tailc8658b.ts.net:8459 {
     import ts_tls
     reverse_proxy precisionlab:9459
 }
-sentinal.tailc8658b.ts.net:8460 {
+pavilionlab.tailc8658b.ts.net:8460 {
     import ts_tls
     reverse_proxy precisionlab:9460
 }
-sentinal.tailc8658b.ts.net:8461 {
+pavilionlab.tailc8658b.ts.net:8461 {
     import ts_tls
     reverse_proxy precisionlab:9461
 }
-sentinal.tailc8658b.ts.net:8462 {
+pavilionlab.tailc8658b.ts.net:8462 {
     import ts_tls
     reverse_proxy precisionlab:9462
 }
-sentinal.tailc8658b.ts.net:8463 {
+pavilionlab.tailc8658b.ts.net:8463 {
     import ts_tls
     reverse_proxy precisionlab:9463
 }
-sentinal.tailc8658b.ts.net:8464 {
+pavilionlab.tailc8658b.ts.net:8464 {
     import ts_tls
-    reverse_proxy sentinal:9464
+    reverse_proxy pavilionlab:9464
 }
-sentinal.tailc8658b.ts.net:8465 {
+pavilionlab.tailc8658b.ts.net:8465 {
     import ts_tls
     reverse_proxy precisionlab:9465
 }
-sentinal.tailc8658b.ts.net:8466 {
+pavilionlab.tailc8658b.ts.net:8466 {
     import ts_tls
-    reverse_proxy sentinal:9466
+    reverse_proxy pavilionlab:9466
 }
-sentinal.tailc8658b.ts.net:8467 {
+pavilionlab.tailc8658b.ts.net:8467 {
     import ts_tls
     reverse_proxy precisionlab:9467
 }
-sentinal.tailc8658b.ts.net:8468 {
+pavilionlab.tailc8658b.ts.net:8468 {
     import ts_tls
     reverse_proxy precisionlab:9468 {
         header_up -X-Forwarded-For
     }
 }
-sentinal.tailc8658b.ts.net:8469 {
+pavilionlab.tailc8658b.ts.net:8469 {
     import ts_tls
     reverse_proxy precisionlab:9469
 }

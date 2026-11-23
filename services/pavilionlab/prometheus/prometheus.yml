@@ -11,9 +11,9 @@ scrape_configs:
       - targets: ["precisionlab:9100"]
         labels:
           machine: homelab
-      - targets: ["sentinal:9100"]
+      - targets: ["pavilionlab:9100"]
         labels:
-          machine: sentinal
-      - targets: ["media:9100"]
+          machine: pavilionlab
+      - targets: ["elitebooklab:9100"]
         labels:
           machine: media
