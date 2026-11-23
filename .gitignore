@@ -19,6 +19,8 @@ services/**/epic-freegames/config/*
 services/**/home-assistant/config/*
 services/**/romm/config/*
 services/**/romm/assets/*
+services/**/scrutiny/config/*
+influxdb/
 !services/**/epic-freegames/config/config.example.json
 music/
 db/
