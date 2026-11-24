@@ -129,3 +129,7 @@ pavilionlab.tailc8658b.ts.net:8470 {
     import ts_tls
     reverse_proxy pavilionlab:9470
 }
+pavilionlab.tailc8658b.ts.net:8471 {
+    import ts_tls
+    reverse_proxy precisionlab:9471
+}
