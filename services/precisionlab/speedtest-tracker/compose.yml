@@ -12,6 +12,7 @@ services:
       - SPEEDTEST_SCHEDULE=0 */6 * * *
       - APP_URL=https://pavilionlab.tailc8658b.ts.net:8471
       - ASSET_URL=https://pavilionlab.tailc8658b.ts.net:8471
+      - DB_DATABASE=/config/database.sqlite
     volumes:
       - ./config:/config
     ports:
