@@ -6,7 +6,7 @@ services:
     volumes:
       - ./config:/config
       - ./cache:/cache
-      - ./media:/media
+      - /mnt/media:/media:ro
     devices:
       - /dev/dri:/dev/dri
     group_add:
